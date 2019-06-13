@@ -617,6 +617,7 @@ $li-share: #0077B5;
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
+
 .header-1 {
 	.topline {
 		> .inner-wrapper {
@@ -638,8 +639,8 @@ $li-share: #0077B5;
 									color: $white;
 									margin: 0;
 									@extend .font-2;
-									font-size: 24px;
-									line-height: 1.2em;
+									font-size: 18px;
+									line-height: 1.35em;
 									text-transform: uppercase;
 									text-align: center;
 									letter-spacing: normal;
@@ -666,7 +667,7 @@ $li-share: #0077B5;
 							a {
 								color: $gray;
 								&:hover {
-									color: $default;
+									color: $white;
 									.title {
 										color: $default;
 									}

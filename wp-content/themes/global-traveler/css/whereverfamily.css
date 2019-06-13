@@ -8259,8 +8259,8 @@ a.text-dark:hover, a.text-dark:focus {
     display: block;
     color: #FFFFFF;
     margin: 0;
-    font-size: 24px;
-    line-height: 1.2em;
+    font-size: 18px;
+    line-height: 1.35em;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: normal; }
@@ -8287,7 +8287,7 @@ a.text-dark:hover, a.text-dark:focus {
     -ms-transition: all 0.2s ease;
     -o-transition: all 0.2s ease; }
     .header-1 .topline .site-section .posts-api-wrapper ul.categories li a:hover {
-      color: #1F163E; }
+      color: #FFFFFF; }
       .header-1 .topline .site-section .posts-api-wrapper ul.categories li a:hover .title {
         color: #1F163E; }
 
