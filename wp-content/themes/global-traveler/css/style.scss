@@ -131,7 +131,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-	@extend .acumin;
+	@extend .font-2;
 	font-size: 72px;
 	line-height: 1em;
 	text-transform: uppercase;
@@ -166,7 +166,7 @@ h1 {
 }
 
 h2 {
-	@extend .acumin;
+	@extend .font-2;
 	font-size: 36px;
 	line-height: 45px;
 	text-transform: uppercase;
@@ -178,7 +178,7 @@ h2 {
 }
 
 h3 {
-	@extend .acumin;
+	@extend .font-2;
 	font-size: 24px;
 	line-height: 32px;
 	text-transform: uppercase;
@@ -188,7 +188,7 @@ h3 {
 }
 
 h4 {
-	@extend .acumin;
+	@extend .font-2;
 	font-size: 48px;
 	text-transform: uppercase;
 	&.light {
@@ -733,13 +733,13 @@ h5 {
 		.modal-header {
 			background-color: $orange;
 			.close {
-				@extend .acumin;
+				@extend .font-2;
 			}
 			input {
 				&[type="text"] {
 					text-transform: uppercase;
 					font-size: 72px;
-					@extend .acumin;
+					@extend .font-2;
 					color: $white;
 
 					&::-webkit-input-placeholder {
@@ -802,7 +802,7 @@ h5 {
 		padding-right: 80px;
 		span {
 			font-size: 72px;
-			@extend .acumin;
+			@extend .font-2;
 			&.underline {
 				font-size: 72px;
 				margin-right: 80px;

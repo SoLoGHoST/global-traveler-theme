@@ -51,15 +51,14 @@ $li-share: #0077B5;
 //--------------------- FONTS --------------------//
 //------------------------------------------------//
 
+.font_1 {
+	font-family: "sofia-pro", arial, sans-serif;
+}
 
-.acumin {
+.font-2 {
 	font-family: "acumin-pro-condensed", sans-serif;
 	font-style: normal;
 	font-weight: 800;
-}
-
-.font_1 {
-	font-family: "sofia-pro", arial, sans-serif;
 }
 
 @mixin font($style: regular) {
@@ -583,7 +582,7 @@ $li-share: #0077B5;
 									display: block;
 									color: $default;
 									margin: 0;
-									@extend .acumin;
+									@extend .font-2;
 									font-size: 24px;
 									line-height: 1.2em;
 									text-transform: uppercase;
