@@ -8194,7 +8194,7 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 /* default link color */
-.font_1, .font-regular, p, .font-medium, h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content .section .date, #main-content #content .section .date, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, .recent-posts-wrapper #featured .innerbox .featured-details .date, .font-menu, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a, .font-bold, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body .post-wrapper .overlay p, #mainMenu #main_navigation li a, .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
+.font_1, .font-regular, p, .font-medium, #mainMenu #main_navigation li a, h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content .section .date, #main-content #content .section .date, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, .recent-posts-wrapper #featured .innerbox .featured-details .date, .font-menu, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a, .font-bold, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body .post-wrapper .overlay p, #mainMenu #main_navigation li a > ul li a, .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
   font-family: canada-type-gibson, sans-serif;
   font-weight: 400;
   font-style: normal; }
@@ -8204,12 +8204,17 @@ a.text-dark:hover, a.text-dark:focus {
   font-weight: 700;
   font-style: normal; }
 
+.font-medium, #mainMenu #main_navigation li a, h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content .section .date, #main-content #content .section .date, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, .recent-posts-wrapper #featured .innerbox .featured-details .date {
+  font-family: canada-type-gibson, sans-serif;
+  font-weight: 6;
+  font-style: normal; }
+
 .font-regular, p {
   font-style: normal;
   font-weight: 400;
   font-size: 16px; }
 
-.font-medium, h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content .section .date, #main-content #content .section .date, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, .recent-posts-wrapper #featured .innerbox .featured-details .date {
+.font-medium, #mainMenu #main_navigation li a, h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content .section .date, #main-content #content .section .date, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, .recent-posts-wrapper #featured .innerbox .featured-details .date {
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -8239,22 +8244,14 @@ a.text-dark:hover, a.text-dark:focus {
   border-top: 1px solid #108751;
   background-color: #046D41;
   color: #FFFFFF; }
-  .header-1 .topline .site-section .posts-api-wrapper .post-box .copy a:hover span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF));
-    background: linear-gradient(#046D41, #046D41), linear-gradient(#046D41, #046D41), linear-gradient(#FFFFFF, #FFFFFF);
-    background-size: 0 2px, 0 2px, 2px 2px;
-    background-repeat: no-repeat,no-repeat,repeat-x;
-    text-shadow: 0.03em 0 #046D41, -0.03em 0 #046D41, 0 0.03em #046D41, 0 -0.03em #046D41, 0.06em 0 #046D41, -0.06em 0 #046D41, 0.09em 0 #046D41, -0.09em 0 #046D41, 0.12em 0 #046D41, -0.12em 0 #046D41, 0.15em 0 #046D41, -0.15em 0 #046D41;
-    background-position: 100% 94%, 100% 94%; }
   .header-1 .topline .site-section .posts-api-wrapper .post-box .copy a span.text {
-    display: inline;
-    position: relative;
-    background-position: 0 94%, 0 94%;
-    background-size: 94% 2px;
-    -webkit-transition: background-size 0.3s;
-    -moz-transition: background-size 0.3s;
-    -ms-transition: background-size 0.3s;
-    -o-transition: background-size 0.3s; }
+    color: #FFFFFF;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease; }
+  .header-1 .topline .site-section .posts-api-wrapper .post-box .copy a:hover span.text {
+    color: #90C844; }
   .header-1 .topline .site-section .posts-api-wrapper .post-box .copy h3.title a {
     display: block;
     color: #FFFFFF;
@@ -8265,19 +8262,7 @@ a.text-dark:hover, a.text-dark:focus {
     text-align: center;
     letter-spacing: normal; }
   .header-1 .topline .site-section .posts-api-wrapper .post-box .img-wrapper:hover + .copy a span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF));
-    background: linear-gradient(#046D41, #046D41), linear-gradient(#046D41, #046D41), linear-gradient(#FFFFFF, #FFFFFF);
-    background-size: 0 2px, 0 2px, 2px 2px;
-    background-repeat: no-repeat,no-repeat,repeat-x;
-    text-shadow: 0.03em 0 #046D41, -0.03em 0 #046D41, 0 0.03em #046D41, 0 -0.03em #046D41, 0.06em 0 #046D41, -0.06em 0 #046D41, 0.09em 0 #046D41, -0.09em 0 #046D41, 0.12em 0 #046D41, -0.12em 0 #046D41, 0.15em 0 #046D41, -0.15em 0 #046D41;
-    background-position: 100% 94%, 100% 94%; }
-  .header-1 .topline .site-section .posts-api-wrapper .post-box .img-wrapper:hover + .copy a span.text {
-    display: inline;
-    position: relative;
-    -webkit-transition: background-size 0.3s;
-    -moz-transition: background-size 0.3s;
-    -ms-transition: background-size 0.3s;
-    -o-transition: background-size 0.3s; }
+    color: #90C844; }
   .header-1 .topline .site-section .posts-api-wrapper a:hover {
     color: #1F163E; }
   .header-1 .topline .site-section .posts-api-wrapper ul.categories li a {
@@ -8295,6 +8280,17 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #FFFFFF; }
   .navbar.sticky-nav {
     background-color: #FFFFFF; }
+
+#mainMenu {
+  background-color: #046D41; }
+  #mainMenu #main_navigation li a {
+    color: #FFFFFF; }
+    #mainMenu #main_navigation li a:hover {
+      color: #90C844; }
+  #mainMenu #main_navigation > li.dropdown.show > a {
+    background-color: #90C844; }
+  #mainMenu #main_navigation ul.dropdown-menu {
+    background-color: #108751; }
 
 .site-section {
   min-height: 200px;
@@ -8499,7 +8495,6 @@ h5 {
   width: 100%; }
 
 #mainMenu {
-  background-color: #1F163E;
   height: 100%;
   left: -17.5rem;
   overflow: hidden;
@@ -8525,16 +8520,11 @@ h5 {
       padding-right: 1.5rem;
       padding-top: .3rem;
       padding-bottom: .3rem;
-      color: #B4A5BE;
-      font-style: normal;
-      font-weight: 700;
       -webkit-transition: all 0.2s ease;
       -moz-transition: all 0.2s ease;
       -ms-transition: all 0.2s ease;
       -o-transition: all 0.2s ease;
       font-size: 16px; }
-      #mainMenu #main_navigation li a:hover {
-        color: #FFFFFF; }
     #mainMenu #main_navigation > li {
       padding: 0;
       border-top: 2px solid #000000; }
@@ -8551,7 +8541,6 @@ h5 {
         padding-top: 1.2rem;
         padding-bottom: 1.2rem; }
       #mainMenu #main_navigation > li.dropdown.show > a {
-        background-color: #046D41;
         color: #FFFFFF; }
         #mainMenu #main_navigation > li.dropdown.show > a span.caret-arrow:before, #mainMenu #main_navigation > li.dropdown.show > a span.caret-arrow:after {
           border-color: #FFFFFF; }
@@ -8634,7 +8623,6 @@ h5 {
             -ms-transition: all 0.2s ease;
             -o-transition: all 0.2s ease; }
     #mainMenu #main_navigation ul.dropdown-menu {
-      background-color: #8A7399;
       float: left;
       width: 100%;
       border: 0;
@@ -8728,7 +8716,7 @@ h5 {
     .header-1 .navbar-toggler.focus {
       outline: none; }
     .header-1 .navbar-toggler > span {
-      background-color: #8A7399; }
+      background-color: #BEC3B5; }
       .header-1 .navbar-toggler > span.icon-bar {
         width: 26px;
         height: 2px;
@@ -8838,7 +8826,7 @@ h5 {
     .navbar.sticky-nav .navbar-toggler.focus {
       outline: none; }
     .navbar.sticky-nav .navbar-toggler > span {
-      background-color: #8A7399; }
+      background-color: #BEC3B5; }
       .navbar.sticky-nav .navbar-toggler > span.icon-bar {
         width: 26px;
         height: 2px;

@@ -47,6 +47,7 @@ $header-backcolor: $white;
 $taglink: #BEC3B5;
 $light-green: $tagline;
 $border-green: #108751;
+$burgermenu-color: $taglink;
 
 $social-color: #D0D2D3;
 
@@ -67,6 +68,12 @@ $li-share: #0077B5;
 .font-2 {
 	font-family: canada-type-gibson, sans-serif;
 	font-weight: 700;
+	font-style: normal;
+}
+
+.font-medium {
+	font-family: canada-type-gibson, sans-serif;
+	font-weight: 6;
 	font-style: normal;
 }
 
@@ -631,7 +638,22 @@ $li-share: #0077B5;
 			.posts-api-wrapper {
 				.post-box {
 					.copy {
-						@include border-link($green, $white, span, true, null, text, 2px, 94%);
+						// @include border-link($green, $white, span, true, null, text, 2px, 94%);
+						a {
+							span {
+								&.text {
+									color: $white;
+									@include transition(all 0.3s ease);
+								}
+							}
+							&:hover {
+								span {
+									&.text {
+										color: $light-green;
+									}
+								}
+							}
+						}
 						h3 {
 							&.title {
 								a {
@@ -651,7 +673,14 @@ $li-share: #0077B5;
 					.img-wrapper {
 						&:hover {
 							&+.copy {
-								@include border-link($green, $white, span, false, null, text, 2px, 94%);
+								a {
+									span {
+										&.text {
+											color: $light-green;
+										}
+									}
+								}
+								// @include border-link($green, $white, span, false, null, text, 2px, 94%);
 							}
 						}
 					}
@@ -686,6 +715,42 @@ $li-share: #0077B5;
 	background-color: $white;
 	&.sticky-nav {
 		background-color: $white;
+	}
+}
+
+#mainMenu {
+	background-color: $green;
+	#main_navigation {
+		li {
+			a {
+				color: $white;
+				@extend .font-medium;
+				&:hover {
+					color: $light-green;
+				}
+				> ul {
+					li {
+						a {
+							@extend .font_1;
+						}
+					}
+				}
+			}
+		}
+		> li {
+			&.dropdown {
+				&.show {
+					> a {
+						background-color: $light-green;
+					}
+				}
+			}
+		}
+		ul {
+			&.dropdown-menu {
+				background-color: $border-green;
+			}
+		}
 	}
 }
 

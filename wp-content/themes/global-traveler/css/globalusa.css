@@ -8295,6 +8295,19 @@ a.text-dark:hover, a.text-dark:focus {
   color: #1F163E;
   background-color: #FFFFFF; }
 
+#mainMenu {
+  background-color: #1F163E; }
+  #mainMenu #main_navigation li a {
+    color: #B4A5BE;
+    font-style: normal;
+    font-weight: 700; }
+    #mainMenu #main_navigation li a:hover {
+      color: #FFFFFF; }
+  #mainMenu #main_navigation > li.dropdown.show > a {
+    background-color: #2CB78F; }
+  #mainMenu #main_navigation ul.dropdown-menu {
+    background-color: #8A7399; }
+
 .site-section {
   min-height: 200px;
   position: absolute;
@@ -8498,7 +8511,6 @@ h5 {
   width: 100%; }
 
 #mainMenu {
-  background-color: #1F163E;
   height: 100%;
   left: -17.5rem;
   overflow: hidden;
@@ -8524,16 +8536,11 @@ h5 {
       padding-right: 1.5rem;
       padding-top: .3rem;
       padding-bottom: .3rem;
-      color: #B4A5BE;
-      font-style: normal;
-      font-weight: 700;
       -webkit-transition: all 0.2s ease;
       -moz-transition: all 0.2s ease;
       -ms-transition: all 0.2s ease;
       -o-transition: all 0.2s ease;
       font-size: 16px; }
-      #mainMenu #main_navigation li a:hover {
-        color: #FFFFFF; }
     #mainMenu #main_navigation > li {
       padding: 0;
       border-top: 2px solid #000000; }
@@ -8550,7 +8557,6 @@ h5 {
         padding-top: 1.2rem;
         padding-bottom: 1.2rem; }
       #mainMenu #main_navigation > li.dropdown.show > a {
-        background-color: #2CB78F;
         color: #FFFFFF; }
         #mainMenu #main_navigation > li.dropdown.show > a span.caret-arrow:before, #mainMenu #main_navigation > li.dropdown.show > a span.caret-arrow:after {
           border-color: #FFFFFF; }
@@ -8633,7 +8639,6 @@ h5 {
             -ms-transition: all 0.2s ease;
             -o-transition: all 0.2s ease; }
     #mainMenu #main_navigation ul.dropdown-menu {
-      background-color: #8A7399;
       float: left;
       width: 100%;
       border: 0;

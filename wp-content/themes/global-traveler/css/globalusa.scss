@@ -51,6 +51,7 @@ $li-share: #0077B5;
 // Globalizing Theme here...
 $tagline: $white;
 $header-backcolor: $default;
+$burgermenu-color: $purple;
 
 
 
@@ -687,6 +688,35 @@ $header-backcolor: $default;
 .site-section {
 	color: $default;
 	background-color: $white;
+}
+
+#mainMenu {
+	background-color: $default;
+	#main_navigation {
+		li {
+			a {
+				color: $ltpurple;
+				@include font(bold);
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+		> li {
+			&.dropdown {
+				&.show {
+					> a {
+						background-color: $green;
+					}
+				}
+			}
+		}
+		ul {
+			&.dropdown-menu {
+				background-color: $purple;
+			}
+		}
+	}
 }
 
 @import "style.scss";
