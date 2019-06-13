@@ -190,7 +190,6 @@ add_action('init', 'register_my_menus');
 //------------------------------------------------//
 
 function theme_widgets_init() {
-
 	register_sidebar( array (
 		'name' => 'Primary Widget Area',
 		'id' => 'primary_widget_area',
@@ -208,7 +207,6 @@ function theme_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
-
 }
 add_action( 'init', 'theme_widgets_init' );
 
