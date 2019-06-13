@@ -514,7 +514,7 @@ h5 {
 }
 
 .header-1 {
-	background-color: $default;
+	background-color: $topline;
 	position: relative;
 	width: 100%;
 	left: 0;
@@ -550,34 +550,18 @@ h5 {
 			line-height: 30px;
     		> li {
     			white-space: nowrap;
+    			@include topline_links();
+
     			a {
     				display: inline-block;
     				padding: 0 15px;
-    				color: $orange;
-    				&:hover {
-    					color: $purple;
-    				}
-    			}
-    			// Need to attach to hover effect.
-    			&.external-link {
-    				&:hover {
-    					a {
-    						background-color: $white;
-    					}
-    				}
-    				&.active {
-    					a {
-    						color: $purple;
-    						background-color: $white;
-    					}
-    				}
     			}
     		}
     	}
     	li {
     		&.tagline {
     			@extend .font-menu;
-    			color: $white;
+    			color: $tagline;
     			margin-top: 5px;
     		}
     	}
@@ -616,7 +600,6 @@ h5 {
 }
 
 .navbar {
-	background-color: $default;
 	.navbar-brand {
 		margin-right: 0;
 	}
@@ -628,19 +611,13 @@ h5 {
 			margin-bottom: 0;
 			> li {
 				> a {
-					color: $white;
 					font-size: 20px;
 					@include transition(all 0.2s ease);
-					&:hover {
-						color: $green;
-					}
+					
 					&.search-link {
-						color: $orange;
 						font-size: 24px;
-						&:hover {
-							color: $orange;
-						}
 					}
+					@include global-social-links();
 				}
 			}
 		}

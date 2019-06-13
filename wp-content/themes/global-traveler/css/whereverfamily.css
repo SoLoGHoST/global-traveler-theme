@@ -8235,8 +8235,8 @@ a.text-dark:hover, a.text-dark:focus {
 .header-1 .topline .site-section {
   background-color: #FFFFFF; }
   .header-1 .topline .site-section .posts-api-wrapper .post-box .copy a:hover span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
     background-size: 0 2px, 0 2px, 2px 2px;
     background-repeat: no-repeat,no-repeat,repeat-x;
     text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -8260,8 +8260,8 @@ a.text-dark:hover, a.text-dark:focus {
     text-align: center;
     letter-spacing: normal; }
   .header-1 .topline .site-section .posts-api-wrapper .post-box .img-wrapper:hover + .copy a span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
     background-size: 0 2px, 0 2px, 2px 2px;
     background-repeat: no-repeat,no-repeat,repeat-x;
     text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -8285,6 +8285,9 @@ a.text-dark:hover, a.text-dark:focus {
       color: #1F163E; }
       .header-1 .topline .site-section .posts-api-wrapper ul.categories li a:hover .title {
         color: #1F163E; }
+
+.navbar {
+  background-color: #FFFFFF; }
 
 .site-section {
   color: #1F163E;
@@ -8352,8 +8355,8 @@ p {
   line-height: 36px; }
 
 .entry-content a {
-  color: #2CB78F;
-  border-bottom: 2px solid #2CB78F; }
+  color: #046D41;
+  border-bottom: 2px solid #046D41; }
 
 a {
   text-decoration: none;
@@ -8465,7 +8468,7 @@ h5 {
     display: inline-block;
     margin: 0;
     padding: 6px 18px;
-    color: #2CB78F; }
+    color: #046D41; }
     h5.categories a {
       color: #C0BBBD;
       -webkit-transition: all 0.2s ease;
@@ -8483,7 +8486,7 @@ h5 {
   h5.sponsored span {
     display: inline-block;
     padding: 6px 10px;
-    background-color: #2CB78F;
+    background-color: #046D41;
     color: #FFFFFF; }
 
 #main_navigation li {
@@ -8543,7 +8546,7 @@ h5 {
         padding-top: 1.2rem;
         padding-bottom: 1.2rem; }
       #mainMenu #main_navigation > li.dropdown.show > a {
-        background-color: #2CB78F;
+        background-color: #046D41;
         color: #FFFFFF; }
         #mainMenu #main_navigation > li.dropdown.show > a span.caret-arrow:before, #mainMenu #main_navigation > li.dropdown.show > a span.caret-arrow:after {
           border-color: #FFFFFF; }
@@ -8584,7 +8587,7 @@ h5 {
               -ms-transition: all 0.2s ease;
               -o-transition: all 0.2s ease; }
               #mainMenu #main_navigation > li.social-buttons > ul .social-media > a:hover {
-                color: #2CB78F; }
+                color: #046D41; }
       #mainMenu #main_navigation > li.copyright {
         padding: .25rem 1rem 3rem;
         text-align: center;
@@ -8592,7 +8595,7 @@ h5 {
         line-height: 18px;
         letter-spacing: 1px;
         text-transform: uppercase;
-        color: #2CB78F; }
+        color: #046D41; }
         #mainMenu #main_navigation > li.copyright p {
           width: 100%;
           text-align: center;
@@ -8601,7 +8604,7 @@ h5 {
           display: inline-block;
           float: none;
           width: auto;
-          color: #2CB78F;
+          color: #046D41;
           padding: 0;
           font-size: 10px;
           line-height: 18px;
@@ -8618,7 +8621,7 @@ h5 {
               height: 1px;
               bottom: 0;
               left: 0;
-              background-color: #2CB78F; }
+              background-color: #046D41; }
           #mainMenu #main_navigation > li.copyright a.privacy-policy:hover span:before {
             width: 100%;
             -webkit-transition: all 0.2s ease;
@@ -8705,7 +8708,7 @@ h5 {
   z-index: 2999; }
 
 .header-1 {
-  background-color: #1F163E;
+  background-color: #046D41;
   position: relative;
   width: 100%;
   left: 0;
@@ -8740,18 +8743,19 @@ h5 {
     .header-1 .topline .topline-menu > li {
       white-space: nowrap; }
       .header-1 .topline .topline-menu > li a {
-        display: inline-block;
-        padding: 0 15px;
-        color: #EEB538; }
+        color: #BEC3B5; }
         .header-1 .topline .topline-menu > li a:hover {
-          color: #8A7399; }
+          color: #FFFFFF; }
       .header-1 .topline .topline-menu > li.external-link:hover a {
-        background-color: #FFFFFF; }
+        background-color: #90C844; }
       .header-1 .topline .topline-menu > li.external-link.active a {
-        color: #8A7399;
-        background-color: #FFFFFF; }
+        color: #FFFFFF;
+        background-color: #90C844; }
+      .header-1 .topline .topline-menu > li a {
+        display: inline-block;
+        padding: 0 15px; }
   .header-1 .topline li.tagline {
-    color: #FFFFFF;
+    color: #90C844;
     margin-top: 5px; }
   .header-1 .topline a {
     color: #8A7399; }
@@ -8770,79 +8774,78 @@ h5 {
     width: 100%;
     display: block; }
 
-.navbar {
-  background-color: #1F163E; }
-  .navbar .navbar-brand {
-    margin-right: 0; }
-  .navbar.navbar-light {
-    color: #FFFFFF; }
-  .navbar .social ul {
-    margin-bottom: 0; }
-    .navbar .social ul > li > a {
-      color: #FFFFFF;
-      font-size: 20px;
-      -webkit-transition: all 0.2s ease;
-      -moz-transition: all 0.2s ease;
-      -ms-transition: all 0.2s ease;
-      -o-transition: all 0.2s ease; }
-      .navbar .social ul > li > a:hover {
-        color: #2CB78F; }
-      .navbar .social ul > li > a.search-link {
-        color: #EEB538;
-        font-size: 24px; }
-        .navbar .social ul > li > a.search-link:hover {
-          color: #EEB538; }
-  .navbar.sticky-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #1F163E;
-    z-index: 1000; }
-    .navbar.sticky-nav a.navbar-brand img.default-top {
-      display: inline-block;
-      vertical-align: top; }
-    .navbar.sticky-nav .icon-bar {
-      width: 26px;
-      height: 3px;
-      display: block;
-      transition: all 0.2s;
-      margin-top: 4px; }
-    .navbar.sticky-nav .navbar-toggler {
-      border: none;
-      background: transparent !important; }
-    .navbar.sticky-nav .navbar-toggler .top-bar {
-      transform: rotate(45deg);
-      transform-origin: 10% 10%; }
-    .navbar.sticky-nav .navbar-toggler .middle-bar {
-      opacity: 0; }
-    .navbar.sticky-nav .navbar-toggler .bottom-bar {
-      transform: rotate(-45deg);
-      transform-origin: 10% 90%; }
-    .navbar.sticky-nav .navbar-toggler.collapsed .top-bar {
-      transform: rotate(0); }
-    .navbar.sticky-nav .navbar-toggler.collapsed .middle-bar {
-      opacity: 1; }
-    .navbar.sticky-nav .navbar-toggler.collapsed .bottom-bar {
-      transform: rotate(0); }
-    .navbar.sticky-nav .navbar-toggler {
-      margin-top: 8px;
-      margin-right: 10px;
+.navbar .navbar-brand {
+  margin-right: 0; }
+.navbar.navbar-light {
+  color: #FFFFFF; }
+.navbar .social ul {
+  margin-bottom: 0; }
+  .navbar .social ul > li > a {
+    font-size: 20px;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    color: #BEC3B5; }
+    .navbar .social ul > li > a.search-link {
+      font-size: 24px; }
+    .navbar .social ul > li > a:hover {
+      color: #046D41; }
+    .navbar .social ul > li > a.search-link {
+      color: #90C844; }
+      .navbar .social ul > li > a.search-link:hover {
+        color: #90C844; }
+.navbar.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1F163E;
+  z-index: 1000; }
+  .navbar.sticky-nav a.navbar-brand img.default-top {
+    display: inline-block;
+    vertical-align: top; }
+  .navbar.sticky-nav .icon-bar {
+    width: 26px;
+    height: 3px;
+    display: block;
+    transition: all 0.2s;
+    margin-top: 4px; }
+  .navbar.sticky-nav .navbar-toggler {
+    border: none;
+    background: transparent !important; }
+  .navbar.sticky-nav .navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%; }
+  .navbar.sticky-nav .navbar-toggler .middle-bar {
+    opacity: 0; }
+  .navbar.sticky-nav .navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%; }
+  .navbar.sticky-nav .navbar-toggler.collapsed .top-bar {
+    transform: rotate(0); }
+  .navbar.sticky-nav .navbar-toggler.collapsed .middle-bar {
+    opacity: 1; }
+  .navbar.sticky-nav .navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0); }
+  .navbar.sticky-nav .navbar-toggler {
+    margin-top: 8px;
+    margin-right: 10px;
+    outline: none; }
+    .navbar.sticky-nav .navbar-toggler.focus {
       outline: none; }
-      .navbar.sticky-nav .navbar-toggler.focus {
-        outline: none; }
-      .navbar.sticky-nav .navbar-toggler > span {
-        background-color: #8A7399; }
-        .navbar.sticky-nav .navbar-toggler > span.icon-bar {
-          width: 26px;
-          height: 2px;
-          margin-top: 7px;
-          -webkit-transition: all 0.2s;
-          -moz-transition: all 0.2s;
-          -ms-transition: all 0.2s;
-          -o-transition: all 0.2s; }
-        .navbar.sticky-nav .navbar-toggler > span.middle-bar {
-          width: 80%; }
+    .navbar.sticky-nav .navbar-toggler > span {
+      background-color: #8A7399; }
+      .navbar.sticky-nav .navbar-toggler > span.icon-bar {
+        width: 26px;
+        height: 2px;
+        margin-top: 7px;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+        -o-transition: all 0.2s; }
+      .navbar.sticky-nav .navbar-toggler > span.middle-bar {
+        width: 80%; }
 
 .tif-search-modal .modal-dialog .modal-header {
   background-color: #EEB538; }
@@ -8895,7 +8898,7 @@ h5 {
       font-size: 72px;
       margin-right: 80px;
       text-transform: uppercase;
-      border-color: #2CB78F; }
+      border-color: #046D41; }
 
 #home-content, #main-content {
   padding: 0;
@@ -8910,8 +8913,8 @@ h5 {
     overflow: hidden;
     min-height: 630px; }
     #home-content .hero-header .hero-body #hero-content .desc-wrapper a:hover span.text, #main-content .hero-header .hero-body #hero-content .desc-wrapper a:hover span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
       background-size: 0 2px, 0 2px, 2px 2px;
       background-repeat: no-repeat,no-repeat,repeat-x;
       text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -8932,8 +8935,8 @@ h5 {
       #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span > span, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span > span {
         padding: 0; }
     #home-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text, #main-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
       background-size: 0 2px, 0 2px, 2px 2px;
       background-repeat: no-repeat,no-repeat,repeat-x;
       text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -9011,7 +9014,7 @@ h5 {
         top: 0; }
   #home-content #content #instagram-feed, #main-content #content #instagram-feed {
     width: 100%;
-    background-color: #2CB78F;
+    background-color: #046D41;
     position: relative; }
     #home-content #content #instagram-feed a.insta-feed, #main-content #content #instagram-feed a.insta-feed {
       display: inline-block;
@@ -9099,7 +9102,7 @@ h5 {
       -ms-transition: all 0.4s ease;
       -o-transition: all 0.4s ease; }
       #home-content #content #posts-section #social-share a:hover, #main-content #content #posts-section #social-share a:hover {
-        color: #2CB78F; }
+        color: #046D41; }
         #home-content #content #posts-section #social-share a:hover i.fa-facebook-f, #main-content #content #posts-section #social-share a:hover i.fa-facebook-f {
           color: #2d4373; }
         #home-content #content #posts-section #social-share a:hover i.fa-twitter, #main-content #content #posts-section #social-share a:hover i.fa-twitter {
@@ -9119,8 +9122,8 @@ h5 {
   #home-content #content #posts-section #body-content p, #main-content #content #posts-section #body-content p {
     margin-bottom: 0; }
   #home-content #content #posts-section #body-content a, #main-content #content #posts-section #body-content a {
-    color: #2CB78F;
-    border-bottom: 2px solid #2CB78F; }
+    color: #046D41;
+    border-bottom: 2px solid #046D41; }
   #home-content #content .post-item p, #main-content #content .post-item p {
     font-size: 16px;
     line-height: 1.5em; }
@@ -9146,10 +9149,10 @@ h5 {
         margin-top: 0.2em;
         background: #FFFFFF; }
   #home-content #content .post-item .copy .content a, #main-content #content .post-item .copy .content a {
-    color: #2CB78F;
+    color: #046D41;
     border-bottom: none; }
     #home-content #content .post-item .copy .content a:hover, #main-content #content .post-item .copy .content a:hover {
-      color: #27a27f; }
+      color: #035432; }
   #home-content .post-half .image, #main-content .post-half .image {
     background-size: cover;
     min-height: 280px;
@@ -9164,8 +9167,8 @@ h5 {
     text-align: center;
     padding: 0 15px 0 5px; }
     #home-content .post-half .copy a:hover span.text, #main-content .post-half .copy a:hover span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
       background-size: 0 2px, 0 2px, 2px 2px;
       background-repeat: no-repeat,no-repeat,repeat-x;
       text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -9189,8 +9192,8 @@ h5 {
     #home-content .post-half .copy h3.title, #main-content .post-half .copy h3.title {
       margin-bottom: 0; }
   #home-content .post-half .img-wrapper:hover + .copy a span.text, #main-content .post-half .img-wrapper:hover + .copy a span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
     background-size: 0 2px, 0 2px, 2px 2px;
     background-repeat: no-repeat,no-repeat,repeat-x;
     text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -9213,8 +9216,8 @@ h5 {
     background-repeat: no-repeat;
     background-size: cover; }
   #home-content .post-list .post-wide .copy a:hover span.text, #main-content .post-list .post-wide .copy a:hover span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
     background-size: 0 2px, 0 2px, 2px 2px;
     background-repeat: no-repeat,no-repeat,repeat-x;
     text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -9241,8 +9244,8 @@ h5 {
     display: inline-block;
     padding-left: 15px; }
   #home-content .post-list .post-wide .img-wrapper:hover + .copy a span.text, #main-content .post-list .post-wide .img-wrapper:hover + .copy a span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
     background-size: 0 2px, 0 2px, 2px 2px;
     background-repeat: no-repeat,no-repeat,repeat-x;
     text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -9279,8 +9282,8 @@ h5 {
     width: 100%;
     text-align: center; }
     #home-content .post-grid.row .post-tall .copy a:hover span.text, #main-content .post-grid.row .post-tall .copy a:hover span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
       background-size: 0 2px, 0 2px, 2px 2px;
       background-repeat: no-repeat,no-repeat,repeat-x;
       text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -9306,8 +9309,8 @@ h5 {
           padding: 0 0 2px;
           margin: 0 5px 10px; }
   #home-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text, #main-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
     background-size: 0 2px, 0 2px, 2px 2px;
     background-repeat: no-repeat,no-repeat,repeat-x;
     text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -9337,12 +9340,12 @@ body.search #main-content .hero-header .headline {
 body.search #main-content #search-no-results p, body.search #main-content #search-error p {
   text-align: center; }
 body.tag #main-content .hero-header .headline {
-  background-color: #2CB78F; }
+  background-color: #046D41; }
 body.page #main-content #content .content a {
-  color: #2CB78F;
-  border-bottom: 2px solid #2CB78F; }
+  color: #046D41;
+  border-bottom: 2px solid #046D41; }
   body.page #main-content #content .content a:hover {
-    color: #2CB78F; }
+    color: #046D41; }
 body #content .content .mw-300 {
   width: 100%;
   max-width: 300px; }
@@ -9365,8 +9368,8 @@ body #content .content .mw-300 {
       text-transform: uppercase;
       color: #FFFFFF; }
     #main-content .hero-header .hero-body .post-wrapper .overlay a:hover span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
       background-size: 0 2px, 0 2px, 2px 2px;
       background-repeat: no-repeat,no-repeat,repeat-x;
       text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -9504,8 +9507,8 @@ body #content .content .mw-300 {
       .recent-posts-wrapper #featured .innerbox .featured-details h5.categories {
         padding-left: 0; }
     .recent-posts-wrapper #featured .innerbox a:hover span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
       background-size: 0 2px, 0 2px, 2px 2px;
       background-repeat: no-repeat,no-repeat,repeat-x;
       text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -9530,8 +9533,8 @@ body #content .content .mw-300 {
           .recent-posts-wrapper #featured .innerbox h2 a.post span > span {
             padding: 0; }
   .recent-posts-wrapper #featured .img-wrapper:hover + .innerbox a span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
     background-size: 0 2px, 0 2px, 2px 2px;
     background-repeat: no-repeat,no-repeat,repeat-x;
     text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -9558,8 +9561,8 @@ body #content .content .mw-300 {
 .recent-posts-wrapper .right-side > h3 {
   padding: 0 15px; }
 .recent-posts-wrapper .right-side a:hover span.text {
-  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-  background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+  background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
   background-size: 0 2px, 0 2px, 2px 2px;
   background-repeat: no-repeat,no-repeat,repeat-x;
   text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -9576,7 +9579,7 @@ body #content .content .mw-300 {
 .recent-posts-wrapper .right-side h5 {
   padding: 0 15px; }
   .recent-posts-wrapper .right-side h5 a {
-    color: #2CB78F; }
+    color: #046D41; }
 
 .traze-mobile-footer.advads-sticky, .traze-mobile-footer_2.advads-sticky {
   display: block;
@@ -9623,8 +9626,8 @@ body #content .content .mw-300 {
     font-size: 46px; }
 
   #home-content .post-half .copy a:hover span.text, #main-content .post-half .copy a:hover span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
     background-size: 0 2px, 0 2px, 2px 2px;
     background-repeat: no-repeat,no-repeat,repeat-x;
     text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -9639,8 +9642,8 @@ body #content .content .mw-300 {
     -ms-transition: background-size 0.3s;
     -o-transition: background-size 0.3s; }
   #home-content .post-half .img-wrapper:hover + .copy a span.text, #main-content .post-half .img-wrapper:hover + .copy a span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
     background-size: 0 2px, 0 2px, 2px 2px;
     background-repeat: no-repeat,no-repeat,repeat-x;
     text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -9696,8 +9699,8 @@ body #content .content .mw-300 {
     min-height: initial;
     min-height: auto; }
     #home-content .hero-header .hero-body.post-item #hero-content .desc-wrapper a:hover span.text, #main-content .hero-header .hero-body.post-item #hero-content .desc-wrapper a:hover span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
       background-size: 0 2px, 0 2px, 2px 2px;
       background-repeat: no-repeat,no-repeat,repeat-x;
       text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
@@ -9725,8 +9728,8 @@ body #content .content .mw-300 {
         top: -5px;
         color: #1F163E; }
     #home-content .hero-header .hero-body.post-item #hero-content .image-wrapper:hover + .desc-wrapper a span.text, #main-content .hero-header .hero-body.post-item #hero-content .image-wrapper:hover + .desc-wrapper a span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
+      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
+      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
       background-size: 0 2px, 0 2px, 2px 2px;
       background-repeat: no-repeat,no-repeat,repeat-x;
       text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;

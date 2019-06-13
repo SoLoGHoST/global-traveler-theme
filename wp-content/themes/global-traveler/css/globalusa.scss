@@ -47,6 +47,13 @@ $fa-share: #3B5998;
 $tw-share: #08A0E9;
 $li-share: #0077B5;
 
+
+// Globalizing Theme here...
+$tagline: $white;
+$topline: $default;
+
+
+
 //------------------------------------------------//
 //--------------------- FONTS --------------------//
 //------------------------------------------------//
@@ -565,6 +572,47 @@ $li-share: #0077B5;
   }
 }
 
+// Site Specific MIXINS
+
+@mixin topline_links()
+{
+	a {
+		color: $orange;
+		&:hover {
+			color: $purple;
+		}
+	}
+	// Need to attach to hover effect.
+	&.external-link {
+		&:hover {
+			a {
+				background-color: $white;
+			}
+		}
+		&.active {
+			a {
+				color: $purple;
+				background-color: $white;
+			}
+		}
+	}
+}
+
+@mixin global_social_links()
+{
+	color: $white;
+	&:hover {
+		color: $green;
+	}
+	&.search-link {
+		color: $orange;
+		&:hover {
+			color: $orange;
+		}
+	}
+}
+
+
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
@@ -626,6 +674,8 @@ $li-share: #0077B5;
 	}
 }
 
-
+.navbar {
+	background-color: $default;
+}
 
 @import "style.scss";

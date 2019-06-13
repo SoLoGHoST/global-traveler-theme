@@ -41,7 +41,7 @@ $all_sites = array(
 				'image' => '',
 				'button' => 'order-1',
 			), 
-			'width' => 208, 
+			'width' => 208,
 			'height' => 38
 		),
 		'url' => 'https://trazee-travel-cp.local'

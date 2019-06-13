@@ -34,12 +34,18 @@ $black: #000000;
 
 $gray: #C0BBBD;
 $default: #1F163E; // Default text color and background color of some sections.
-$green: #2CB78F; // Used for Links and underlines
+$green: #046D41; // Used for Links and underlines
 $orange: #EEB538; // Used for background color of headlines, and search icon...
 $purple: #8A7399;
 $ltpurple: #B4A5BE;
 $menuborder: #484C5B;
 $border-gray: #E6E7E8;
+
+// Wherever Colors...
+$tagline: #90C844;
+$topline: #046D41;
+$taglink: #BEC3B5;
+$light-green: $tagline;
 
 $social-color: #D0D2D3;
 
@@ -567,6 +573,46 @@ $li-share: #0077B5;
   }
 }
 
+// Site Specific MIXINS
+
+@mixin topline_links()
+{
+	a {
+		color: $taglink;
+		&:hover {
+			color: $white;
+		}
+	}
+	// Need to attach to hover effect.
+	&.external-link {
+		&:hover {
+			a {
+				background-color: $light-green;
+			}
+		}
+		&.active {
+			a {
+				color: $white;
+				background-color: $light-green;
+			}
+		}
+	}
+}
+
+@mixin global_social_links()
+{
+	color: $taglink;
+	&:hover {
+		color: $green;
+	}
+	&.search-link {
+		color: $light-green;
+		&:hover {
+			color: $light-green;
+		}
+	}
+}
+
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
@@ -626,6 +672,10 @@ $li-share: #0077B5;
 			}
 		}
 	}
+}
+
+.navbar {
+	background-color: $white;
 }
 
 @import "style.scss";
