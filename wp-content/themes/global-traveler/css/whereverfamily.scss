@@ -43,9 +43,10 @@ $border-gray: #E6E7E8;
 
 // Wherever Colors...
 $tagline: #90C844;
-$topline: #046D41;
+$header-backcolor: $white;
 $taglink: #BEC3B5;
 $light-green: $tagline;
+$border-green: #108751;
 
 $social-color: #D0D2D3;
 
@@ -618,17 +619,23 @@ $li-share: #0077B5;
 **************************************/
 .header-1 {
 	.topline {
+		> .inner-wrapper {
+    		border-bottom: 1px solid $green;
+    		background-color: $green;
+    	}
 		.site-section {
-			background-color: $white;
+			border-top: 1px solid $border-green;
+			background-color: $green;
+			color: $white;
 			.posts-api-wrapper {
 				.post-box {
 					.copy {
-						@include border-link($white, $green, span, true, null, text, 2px, 94%);
+						@include border-link($green, $white, span, true, null, text, 2px, 94%);
 						h3 {
 							&.title {
 								a {
 									display: block;
-									color: $default;
+									color: $white;
 									margin: 0;
 									@extend .font-2;
 									font-size: 24px;
@@ -643,7 +650,7 @@ $li-share: #0077B5;
 					.img-wrapper {
 						&:hover {
 							&+.copy {
-								@include border-link($white, $green, span, false, null, text, 2px, 94%);
+								@include border-link($green, $white, span, false, null, text, 2px, 94%);
 							}
 						}
 					}
@@ -676,6 +683,9 @@ $li-share: #0077B5;
 
 .navbar {
 	background-color: $white;
+	&.sticky-nav {
+		background-color: $white;
+	}
 }
 
 @import "style.scss";

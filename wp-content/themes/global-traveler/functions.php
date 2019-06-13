@@ -49,14 +49,14 @@ $all_sites = array(
 	'whereverfamily' => array(
 		'title' => __('WhereverFamily', 'tif_global'),
 		'logo' => array(
-			'image' => get_stylesheet_directory_uri() . '/images/wherever-logo.png',
+			'image' => get_stylesheet_directory_uri() . '/images/wherever-logo.svg',
 			'classes' => array(
 				'link' => 'default-top order-2',
 				'image' => '',
 				'button' => 'order-1',
 			), 
-			'width' => 335, 
-			'height' => 48
+			'width' => 300,
+			'height' => 26
 		),
 		'url' => 'https://wherever-family.local'
 	)

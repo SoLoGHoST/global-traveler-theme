@@ -49,7 +49,7 @@ $li-share: #0077B5;
 
 // Global colors for theme here...
 $tagline: $white;
-$topline: $default;
+$header-backcolor: $default;
 
 //------------------------------------------------//
 //--------------------- FONTS --------------------//
@@ -615,6 +615,9 @@ $topline: $default;
 **************************************/
 .header-1 {
 	.topline {
+		> .inner-wrapper {
+    		border-bottom: 1px solid $menuborder;
+    	}
 		.site-section {
 			background-color: $white;
 			.posts-api-wrapper {
@@ -673,6 +676,14 @@ $topline: $default;
 
 .navbar {
 	background-color: $default;
+	&.sticky-nav {
+		background-color: $default;
+	}
+}
+
+.site-section {
+	color: $default;
+	background-color: $white;
 }
 
 @import "style.scss";

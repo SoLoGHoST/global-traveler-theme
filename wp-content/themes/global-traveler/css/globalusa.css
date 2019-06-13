@@ -8230,6 +8230,8 @@ a.text-dark:hover, a.text-dark:focus {
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
+.header-1 .topline > .inner-wrapper {
+  border-bottom: 1px solid #484C5B; }
 .header-1 .topline .site-section {
   background-color: #FFFFFF; }
   .header-1 .topline .site-section .posts-api-wrapper .post-box .copy a:hover span.text {
@@ -8286,16 +8288,20 @@ a.text-dark:hover, a.text-dark:focus {
 
 .navbar {
   background-color: #1F163E; }
+  .navbar.sticky-nav {
+    background-color: #1F163E; }
 
 .site-section {
   color: #1F163E;
+  background-color: #FFFFFF; }
+
+.site-section {
   min-height: 200px;
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   margin-top: 30px;
-  background-color: #FFFFFF;
   z-index: -1;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -8732,12 +8738,10 @@ h5 {
         -o-transition: all 0.2s; }
       .header-1 .navbar-toggler > span.middle-bar {
         width: 80%; }
-  .header-1 .topline > .inner-wrapper {
-    border-bottom: 1px solid #484C5B; }
   .header-1 .topline .topline-menu {
     padding: 0 10px;
     height: 30px;
-    line-height: 30px; }
+    line-height: 0; }
     .header-1 .topline .topline-menu > li {
       white-space: nowrap; }
       .header-1 .topline .topline-menu > li a {
@@ -8751,7 +8755,8 @@ h5 {
         background-color: #FFFFFF; }
       .header-1 .topline .topline-menu > li a {
         display: inline-block;
-        padding: 0 15px; }
+        padding: 0 15px;
+        line-height: 31px; }
   .header-1 .topline li.tagline {
     color: #FFFFFF;
     margin-top: 5px; }
@@ -8798,7 +8803,6 @@ h5 {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #1F163E;
   z-index: 1000; }
   .navbar.sticky-nav a.navbar-brand img.default-top {
     display: inline-block;

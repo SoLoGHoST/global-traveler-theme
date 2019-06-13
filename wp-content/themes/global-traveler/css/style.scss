@@ -3,14 +3,12 @@
 //------------------------------------------------//
 
 .site-section {
-	color: $default;
 	min-height: 200px;
 	position: absolute;
 	left: 0;
 	top: 0;
 	width: 100%;
 	margin-top: 30px;
-	background-color: $white;
 	z-index: -1;
 	@include transition(all 0.3s ease-in-out);
 	&.fade {
@@ -514,7 +512,7 @@ h5 {
 }
 
 .header-1 {
-	background-color: $topline;
+	background-color: $header-backcolor;
 	position: relative;
 	width: 100%;
 	left: 0;
@@ -541,13 +539,10 @@ h5 {
     	}
     }
     .topline {
-    	> .inner-wrapper {
-    		border-bottom: 1px solid $menuborder;
-    	}
     	.topline-menu {
     		padding: 0 10px;
 			height: 30px;
-			line-height: 30px;
+			line-height: 0;
     		> li {
     			white-space: nowrap;
     			@include topline_links();
@@ -555,6 +550,7 @@ h5 {
     			a {
     				display: inline-block;
     				padding: 0 15px;
+    				line-height: 31px;
     			}
     		}
     	}
@@ -628,7 +624,6 @@ h5 {
 	    top: 0;
 	    left: 0;
 	    width: 100%;
-	    background-color: $default;
 	    z-index: 1000;
 
 	    a {
