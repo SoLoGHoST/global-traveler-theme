@@ -20,14 +20,44 @@ $instagram_access_token = array(
 $all_sites = array(
 	'globalusa' => array(
 		'title' => __('Global Traveler', 'tif_global'),
+		'logo' => array(
+			'image' => '',
+			'classes' => array(
+				'link' => 'default-top order-2',
+				'image' => '',
+				'button' => 'order-1',
+			), 
+			'width' => 208, 
+			'height' => 38
+		),
 		'url' => 'https://global-traveler-cp.local'
 	),
 	'trazeetravel' => array(
 		'title' => __('Trazee Travel', 'tif_global'),
+		'logo' => array(
+			'image' => get_stylesheet_directory_uri() . '/images/trazee-logo.svg',
+			'classes' => array(
+				'link' => 'default-top order-2',
+				'image' => '',
+				'button' => 'order-1',
+			), 
+			'width' => 208, 
+			'height' => 38
+		),
 		'url' => 'https://trazee-travel-cp.local'
 	),
 	'whereverfamily' => array(
 		'title' => __('WhereverFamily', 'tif_global'),
+		'logo' => array(
+			'image' => get_stylesheet_directory_uri() . '/images/wherever-logo.png',
+			'classes' => array(
+				'link' => 'default-top order-2',
+				'image' => '',
+				'button' => 'order-1',
+			), 
+			'width' => 335, 
+			'height' => 48
+		),
 		'url' => 'https://wherever-family.local'
 	)
 );
@@ -906,11 +936,19 @@ add_action('wp_head', 'trazee_head');
 
 function trazee_head()
 {
+	global $global_site;
+
+	$typekit = array(
+		'trazeetravel' => 'vot5tfa',
+		'whereverfamily' => 'fdp5sin',
+		'globalusa' => ''
+	);
+
 	echo '
 		<script>
 		  (function(d) {
 		    var config = {
-		      kitId: \'vot5tfa\',
+		      kitId: \'' . $typekit[$global_site] . '\',
 		      scriptTimeout: 3000,
 		      async: true
 		    },

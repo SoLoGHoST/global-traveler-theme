@@ -52,13 +52,15 @@ $li-share: #0077B5;
 //------------------------------------------------//
 
 .font_1 {
-	font-family: "sofia-pro", arial, sans-serif;
+	font-family: canada-type-gibson, sans-serif;
+	font-weight: 400;
+	font-style: normal;
 }
 
 .font-2 {
-	font-family: "acumin-pro-condensed", sans-serif;
+	font-family: canada-type-gibson, sans-serif;
+	font-weight: 700;
 	font-style: normal;
-	font-weight: 800;
 }
 
 @mixin font($style: regular) {

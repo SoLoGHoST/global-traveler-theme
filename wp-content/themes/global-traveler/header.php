@@ -114,24 +114,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'after' => '</div></div>'
 			)
 		), 
-		'main_menu' => array(
-			'classes' => array(
-				'main' => array('navbar-light'), 
-				'menu' => array('align-self-start', 'flex-row'), 
-				'container' => ''
-			),
-			'logo' => array(
-				'image' => get_stylesheet_directory_uri() . '/images/trazee-logo.svg', 
+		'main_menu' => array_merge(
+			array(
 				'classes' => array(
-					'link' => 'default-top order-2',
-					'image' => '',
-					'button' => 'order-1',
-				), 
-				'width' => 208, 
-				'height' => 38
-			),
-			'location' => 'main_navigation', 
-			'depth' => 2
+					'main' => array('navbar-light'), 
+					'menu' => array('align-self-start', 'flex-row'), 
+					'container' => ''
+				),
+				'location' => 'main_navigation', 
+				'depth' => 2
+			), array('logo' => $all_sites[$global_site]['logo'])
 		)
 	);
 
