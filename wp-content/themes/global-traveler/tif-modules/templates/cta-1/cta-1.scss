@@ -1,0 +1,91 @@
+.cta-1 {
+	background-color: $dk-gray;
+	.inner {
+		.content {
+			margin-bottom: 15px;
+			.copy {
+				padding: 0 0 10px 0;
+				margin: 0 0 10px 0;
+				border-bottom: 1px solid $gray;
+				h1 {
+					color: white;
+					margin: 0 0 30px 0;
+				}
+				p {
+					color: white;
+				}
+			}
+		}
+		.contact {
+			.details {
+				display: block;
+				position: relative;
+				margin: 0 0 10px 0;
+				color: white;
+				font-weight: bold;
+				&:before {
+					content: '';
+					display: inline-block;
+					position: relative;
+					top: 0;
+					left: 0;
+					width: 15px;
+					height: 15px;
+					background-color: green;
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cta-1 {
+
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cta-1 {
+
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cta-1 {
+	.inner {
+		.content {
+			margin-bottom: 0;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			border-right: 1px solid $gray;
+			.copy {
+				border: none;
+				padding: 0;
+				margin: 0;
+			}
+		}
+		.contact {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+	}
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cta-1 {
+
+  }
+}
+
+// Super wide devices (full width)
+@media (min-width: 1440px) {
+  .cta-1 {
+
+  }
+}

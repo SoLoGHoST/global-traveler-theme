@@ -1,0 +1,181 @@
+
+$white: #FFFFFF;
+$black: #000000;
+$gray: #BEC7CE;
+$underline: rgba($gray, 0.2);
+$underline-active: #FF6763;
+$close: $white;
+$close-hover: $underline-active;
+
+@mixin search-appearance ($value: none) {
+	-webkit-appearance: $value;
+   -moz-appearance:    $value;
+   appearance:         $value;
+}
+
+.modal-backdrop {
+	background-color: $white;
+	&.show {
+		@include opacity(0.9);
+	}
+}
+
+.tif-search-modal {
+	padding: 0 !important;
+	.modal-dialog {
+		max-width: none;
+		margin: 0;
+	}
+	.modal-content, .modal-header {
+		border: 0;
+		border-radius: 0;
+	}
+	.modal-header {
+		background-color: $black;
+		color: $white;
+		.close {
+			opacity: 1;
+			color: $close;
+			position: absolute;
+			right: 1rem;
+			top: 0.5rem;
+			font-size: 2.5rem;
+			margin: 0;
+			padding: 0;
+			line-height: 0.8em;
+			outline: none;
+			text-shadow: 0 1px 0 $close;
+			@include transition(all 0.25 ease-in);
+			&:focus {
+				outline: none;
+			}
+			&:hover {
+				color: $close-hover;
+				text-shadow: 0 1px 0 $close-hover;
+			}
+		}
+		input {
+			outline: none;
+			&:focus {
+				outline: none;
+			}
+			&[type="text"] {
+				@include search-appearance(none);
+				border: 0;
+				background: none;
+				font-size: 2.8rem;
+    			line-height: 1.3;
+    			outline: none;
+			    color: $white;
+
+				&::-webkit-input-placeholder {
+					color: rgba($gray, 0.8);
+				}
+				&:-moz-placeholder {
+					color: $gray;
+				}
+
+				&::-moz-placeholder {
+					color: $gray;
+				}
+
+				&:-ms-input-placeholder {
+					color: $gray;
+				}
+			}
+		}
+	}
+	&.modal {
+		z-index: 9999;
+		opacity: 0;
+		@include transition(opacity 0.3s ease);
+		&.show {
+			opacity: 1;
+		}
+	}
+
+	.form-wrapper {
+		position: relative;
+		width: 100%;
+		border-bottom: 2px solid $underline;
+		#searchform {
+			width: 100%;
+		}
+		span {
+			position: absolute;
+			bottom: -2px;
+			left: 0;
+			height: 0;
+			overflow: hidden;
+			color: transparent;
+			font-size: 2.8rem;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			max-width: 100%;
+			border-top: 3px solid $underline-active;
+			border-radius: 2px;
+			min-width: 3px;
+			outline: none;
+		}
+	}
+
+/*
+div {
+  padding: 0.4rem 0;
+  border-bottom: 4px solid #383838;
+  width: 90vw;
+}
+span {
+  position: relative;
+  bottom: -11px;
+  color: white;
+  display: inline-block;
+  padding: 0.4rem 0;
+  border-bottom: 4px solid #D5BA5E;
+  outline: 0;
+}
+*/
+
+
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+	.tif-search-modal {
+
+	}
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+	.tif-search-modal {
+		.form-wrapper {
+			width: 75%;
+		}
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	.tif-search-modal {
+
+	}
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+	.tif-search-modal {
+
+	}
+}
+
+// Super wide devices (full width)
+@media (min-width: 1440px) {
+	.tif-search-modal {
+
+	}
+}

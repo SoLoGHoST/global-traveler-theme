@@ -1,0 +1,81 @@
+.post-grid-2 {
+	.inner {
+		.content {
+			h1 {
+				text-align: center;
+				margin: 0 0 75px 0;
+			}
+		}
+		.grid {
+			.grid-item {
+				padding: 40px 0 40px 0;
+				border-bottom: 1px solid gainsboro;
+				&:first-child {
+					border-top: 1px solid gainsboro;
+				}
+				&:last-child {
+					border-bottom: none;
+				}
+				.title {
+					.small-title {
+						font-size: 12px;
+						line-height: 14px;
+						font-weight: bold;
+						letter-spacing: 0.1em;
+						text-transform: uppercase;
+						margin-bottom: 10px;
+					}
+					h4 {
+						margin-bottom: 10px;
+					}
+				}
+				.description {
+					p {
+						margin: 20px 0 0 0;
+					}
+				}
+				.click {
+					padding-top: 25px;
+					p {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .post-grid-2 {
+
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .post-grid-2 {
+
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .post-grid-2 {
+
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .post-grid-2 {
+
+  }
+}
+
+// Super wide devices (full width)
+@media (min-width: 1440px) {
+  .post-grid-2 {
+
+  }
+}

@@ -1,0 +1,147 @@
+
+$white: #FFFFFF;
+$black: #000000;
+$close-gallery: $white;
+$close-gallery-hover: #FF6763;
+
+.tif-featherlight-slider {
+
+	a {
+		&.featherlight-link {
+			display: inline-block;
+			position: relative;
+			outline: 0;
+
+			h3 {
+				opacity: 1;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.5);
+				span {
+					color: $white;
+					@include centerThis(absolute);
+					
+				}
+			}
+		}
+	}
+
+	
+}
+
+.featherlight {
+	&:last-of-type {
+		background: $black;
+	}
+	.featherlight-content {
+		position: static;
+		background: none;
+		border: 0;
+
+		.featherlight-previous, .featherlight-next {
+			position: fixed;
+			background: none;
+			width: 23px;
+		    height: 50px;
+		    top: 50%;
+		    @include transform(translateY(-50%));
+		    background-repeat: no-repeat;
+		    padding: 40vh 0 40vh 50vw;
+		    span {
+		    	display: none;
+		    }
+		}
+		.featherlight-previous {
+		    left: 0;
+		    background-image: url(../tif-modules/templates/tif-featherlight-slider/assets/images/arrow-left.png);
+		    background-position: left 10% center;
+		}
+		.featherlight-next {
+		    right: 0;
+		    left: auto;
+		    background-image: url(../tif-modules/templates/tif-featherlight-slider/assets/images/arrow-right.png);
+		    background-position: right 10% center;
+		    background-size: 23px 50px;
+		}
+
+		.featherlight-close-icon {
+			background: none;
+			opacity: 1;
+			color: $close-gallery;
+			position: absolute;
+			right: 1rem;
+			top: 1rem;
+			font-size: 2rem;
+			margin: 0;
+			padding: 0;
+			line-height: 0.8em;
+			outline: none;
+			text-shadow: 0 1px 0 $close-gallery;
+			@include transition(all 0.25 ease-in);
+			&:focus {
+				outline: none;
+			}
+			&:hover {
+				color: $close-gallery-hover;
+				text-shadow: 0 1px 0 $close-gallery-hover;
+			}
+		}
+	}
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+	.tif-featherlight-slider {
+
+	}
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+	.tif-featherlight-slider {
+		a {
+			&.featherlight-link {
+				h3 {
+					opacity: 0;
+					background: rgba(0, 0, 0, 0);
+					@include transition(all 0.25s ease-in);
+				}
+				&:hover {
+					h3 {
+						opacity: 1;
+						background: rgba(0, 0, 0, .5);
+					}
+				}
+			}
+		}
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	.tif-featherlight-slider {
+
+		
+
+	}
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+	.tif-featherlight-slider {
+
+	}
+}
+
+// Super wide devices (full width)
+@media (min-width: 1440px) {
+	.tif-featherlight-slider {
+
+	}
+}

@@ -1,0 +1,53 @@
+.cta-2 {
+	background-color: $dk-gray;
+	.inner {
+		.content {
+			text-align: center;
+			h1 {
+				color: white;
+				margin: 0 0 55px 0;
+			}
+			.btn {
+				margin: 0 0 90px 0;
+			}
+			p {
+				color: white;
+			}
+		}
+	}
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cta-2 {
+
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cta-2 {
+
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cta-2 {
+
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cta-2 {
+
+  }
+}
+
+// Super wide devices (full width)
+@media (min-width: 1440px) {
+  .cta-2 {
+
+  }
+}

@@ -1,0 +1,80 @@
+@media (min-width: 992px) {
+	
+	#home-content, #main-content {
+		#content {
+			#posts-section {
+				margin-top: -6.5rem;
+			}
+		}
+		.hero-header {
+			.hero-body {
+				.caption {
+					position: absolute;
+					text-shadow: 1px 1px 0 black;
+					bottom: 6.5rem;
+					left: 0;
+					right: 0;
+					margin: auto;
+					p {
+						color: $white;
+					}
+				}
+				.caption-post {
+					p {
+						text-shadow: 1px 1px 0 black;
+					}
+				}
+			}
+		}
+	}
+
+	body {
+		&.archive {
+			#main-content {
+				#content {
+					#posts-section {
+						margin-top: auto;
+					}
+				}
+			}
+		}
+	}
+
+
+
+
+}
+
+@media (min-width: 1270px) {
+	body {
+		&.hometakeover {
+			#home-content, #main-content {
+				#content {
+					#posts-section {
+						margin-top: 0;
+					}
+				}
+			}
+			.header-1 {
+				.topline {
+					max-height: 92px;
+				}
+			}
+		}
+
+		&.sticky {
+			&.hometakeover {
+				#home-content, #main-content {
+					.hero-header {
+						.hero-body {
+							.traze-takeover-ad {
+								position: fixed;
+								top: 92px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

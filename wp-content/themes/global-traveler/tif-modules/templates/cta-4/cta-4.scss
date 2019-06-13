@@ -1,0 +1,83 @@
+.cta-4 {
+	.inner {
+		padding: 0;
+		.content {
+			.half-image {
+				height: 350px;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				.copy {
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					-webkit-transform: translate(-50%, -50%);
+					-moz-transform: translate(-50%, -50%);
+					-ms-transform: translate(-50%, -50%);
+					-o-transform: translate(-50%, -50%);
+					width: 100%;
+					max-width: 540px;
+					text-align: center;
+					padding: 0 25px;
+					h1 {
+						color: white;
+						margin-bottom: 20px;
+					}
+					p {
+						color: white;
+						margin: 0 0 30px 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cta-4 {
+
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cta-4 {
+
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cta-4 {
+
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cta-4 {
+	.inner {
+		.content {
+			.half-image {
+				height: 430px;
+			}
+		}
+	}
+  }
+}
+
+// Super wide devices (full width)
+@media (min-width: 1440px) {
+  .cta-4 {
+	.inner {
+		.content {
+			.half-image {
+				height: 530px;
+			}
+		}
+	}
+  }
+}

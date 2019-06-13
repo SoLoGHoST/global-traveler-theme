@@ -1,0 +1,28 @@
+@media (min-width: 768px) {
+	
+	#main-content {
+		#content {
+			#posts-section {
+				#social-share {
+					max-width: 50px;
+					margin-left: 30px;
+					margin-right: 0;
+					.social-title {
+						display: block;
+						margin-bottom: 15px;
+						span {
+							display: block;
+							padding-left: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.traze-mobile-footer, .traze-mobile-footer_2 {
+		&.advads-sticky {
+			display: none;
+		}
+	}
+}
