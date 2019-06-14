@@ -27,8 +27,8 @@ $all_sites = array(
 				'image' => '',
 				'button' => 'order-1',
 			), 
-			'width' => 300, 
-			'height' => 26
+			'width' => 175, 
+			'height' => 55
 		),
 		'url' => 'https://global-traveler-cp.local'
 	),
