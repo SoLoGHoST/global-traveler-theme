@@ -21,14 +21,14 @@ $all_sites = array(
 	'globalusa' => array(
 		'title' => __('Global Traveler', 'tif_global'),
 		'logo' => array(
-			'image' => '',
+			'image' => get_stylesheet_directory_uri() . '/images/globalusa-logo.png',
 			'classes' => array(
 				'link' => 'default-top order-2',
 				'image' => '',
 				'button' => 'order-1',
 			), 
-			'width' => 208, 
-			'height' => 38
+			'width' => 300, 
+			'height' => 26
 		),
 		'url' => 'https://global-traveler-cp.local'
 	),

@@ -707,6 +707,30 @@ $burgermenu-color: $purple;
 				&.show {
 					> a {
 						background-color: $green;
+						color: $white;
+						span {
+							&.caret-arrow {
+								&:before, &:after {
+									border-color: $white;
+								}
+							}
+						}
+					}
+				}
+			}
+			&.social-buttons, &.copyright {
+				background-color: $black;
+			}
+			&.copyright {
+				color : $green;
+				a {
+					&.privacy-policy {
+						color: $green;
+						span {
+							&:before {
+								background-color: $green;
+							}
+						}
 					}
 				}
 			}
@@ -714,6 +738,24 @@ $burgermenu-color: $purple;
 		ul {
 			&.dropdown-menu {
 				background-color: $purple;
+			}
+		}
+		.dropdown-toggle {
+			span {
+				&.caret-arrow {
+					&:before, &:after {
+						border-bottom: 12px solid $ltpurple;
+					}
+				}
+			}
+			&:hover {
+				span {
+					&.caret-arrow {
+						&:before, &:after {
+							border-color: $white;
+						}
+					}
+				}
 			}
 		}
 	}

@@ -48,6 +48,7 @@ $taglink: #BEC3B5;
 $light-green: $tagline;
 $border-green: #108751;
 $burgermenu-color: $taglink;
+$dark-background: #202433;
 
 $social-color: #D0D2D3;
 
@@ -742,6 +743,36 @@ $li-share: #0077B5;
 				&.show {
 					> a {
 						background-color: $light-green;
+						color: $white;
+						span {
+							&.caret-arrow {
+								&:before, &:after {
+									border-color: $border-green;
+								}
+							}
+						}
+					}
+				}
+			}
+			> a {
+				line-height: 1em;
+			}
+			&.social-buttons, &.copyright {
+				background-color: $dark-background;
+			}
+			&.copyright {
+				color : $white;
+				> p {
+					line-height: 1em;
+				}
+				a {
+					&.privacy-policy {
+						color: $white;
+						span {
+							&:before {
+								background-color: $white;
+							}
+						}
 					}
 				}
 			}
@@ -749,6 +780,24 @@ $li-share: #0077B5;
 		ul {
 			&.dropdown-menu {
 				background-color: $border-green;
+			}
+		}
+		.dropdown-toggle {
+			span {
+				&.caret-arrow {
+					&:before, &:after {
+						border-bottom: 12px solid $border-green;
+					}
+				}
+			}
+			&:hover {
+				span {
+					&.caret-arrow {
+						&:before, &:after {
+							border-color: $border-green;
+						}
+					}
+				}
 			}
 		}
 	}
