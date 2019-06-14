@@ -25,16 +25,8 @@ if (wp_is_mobile())
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-
-	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri(); ?>/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon-16x16.png">
-	<link rel="manifest" href="/<?php echo get_stylesheet_directory_uri(); ?>/site.webmanifest">
-	<link rel="mask-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/safari-pinned-tab.svg" color="#00aba9">
-	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico">
-	<meta name="msapplication-TileColor" content="#00aba9">
-	<meta name="msapplication-config" content="/<?php echo get_stylesheet_directory_uri(); ?>/browserconfig.xml">
-	<meta name="theme-color" content="#ffffff">
+	<?php
+		do_action('tif_global_favicon_' . $global_site); ?>
 
 <!-- 	<meta name="viewport" content="initial-scale=1, maximum-scale=1"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

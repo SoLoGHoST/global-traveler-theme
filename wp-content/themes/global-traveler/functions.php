@@ -1216,5 +1216,56 @@ function trazee_ads_group_output_array($output, $ad_group)
 }
 */
 
+add_action('tif_global_favicon_globalusa', 'tif_global_favicon_globalusa');
+add_action('tif_global_favicon_trazeetravel', 'tif_global_favicon_trazeetravel');
+add_action('tif_global_favicon_whereverfamily', 'tif_global_favicon_whereverfamily');
+
+function tif_global_favicon_whereverfamily()
+{
+	$icon_path = get_stylesheet_directory_uri() . '/images/whereverfamily/favicons/';
+	echo '
+		<link rel="apple-touch-icon" sizes="57x57" href="', $icon_path, 'apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="', $icon_path, 'apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="', $icon_path, 'apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="', $icon_path, 'apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="', $icon_path, 'apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="', $icon_path, 'apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="', $icon_path, 'apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="', $icon_path, 'apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="', $icon_path, 'apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="', $icon_path, 'android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="', $icon_path, 'favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="', $icon_path, 'favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="', $icon_path, 'favicon-16x16.png">
+		<link rel="manifest" href="', $icon_path, 'manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="', $icon_path, 'ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">';
+}
+
+function tif_global_favicon_trazeetravel()
+{
+	$icon_path = get_stylesheet_directory_uri() . '/images/trazeetravel/favicons/';
+	echo '
+		<link rel="apple-touch-icon" sizes="180x180" href="', $icon_path, 'apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="256x256"  href="', $icon_path, 'android-chrome-256x256.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="', $icon_path, 'android-chrome-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="', $icon_path, 'favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="', $icon_path, 'favicon-16x16.png">
+		<link rel="mask-icon" href="', $icon_path, 'safari-pinned-tab.svg" color="#00aba9">
+		<link rel="shortcut icon" href="', $icon_path, 'favicon.ico">
+		<meta name="msapplication-TileColor" content="#00aba9">
+		<meta name="msapplication-TileImage" content="', $icon_path, 'mstile-150x150.png">
+		<meta name="msapplication-config" content="', $icon_path, 'browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">';
+}
+
+function tif_global_favicon_globalusa()
+{
+	$icon_path = get_stylesheet_directory_uri() . '/images/globalusa/favicons/';
+	echo '
+		<link rel="shortcut icon" type="image/png" sizes="16x16" href="', $icon_path, 'favicon-16x16.png">';
+}
+
 
 ?>
