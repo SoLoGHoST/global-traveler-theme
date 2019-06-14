@@ -61,8 +61,7 @@ $burgermenu-color: $purple;
 
 @font-face {
   font-family: "Noe Display Bold";
-  src: 	url("../fonts/Noe-Display-Bold.woff") format("woff"),
-  		url("../fonts/Noe-Display-Bold.otf") format("otf");
+  src: 	url("../fonts/Noe-Display-Bold.woff") format("woff"), url("../fonts/Noe-Display-Bold.otf") format("opentype");
 }
 
 @mixin font($type: font_1, $style: null) {

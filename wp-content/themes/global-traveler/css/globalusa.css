@@ -8196,7 +8196,7 @@ a.text-dark:hover, a.text-dark:focus {
 /* default link color */
 @font-face {
   font-family: "Noe Display Bold";
-  src: url("../fonts/Noe-Display-Bold.woff") format("woff"), url("../fonts/Noe-Display-Bold.otf") format("otf"); }
+  src: url("../fonts/Noe-Display-Bold.woff") format("woff"), url("../fonts/Noe-Display-Bold.otf") format("opentype"); }
 p, h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content .section .date, #main-content #content .section .date, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, .recent-posts-wrapper #featured .innerbox .featured-details .date, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body .post-wrapper .overlay p, #mainMenu #main_navigation li a, .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
   font-family: brandon-grotesque,sans-serif;
   font-style: normal; }
