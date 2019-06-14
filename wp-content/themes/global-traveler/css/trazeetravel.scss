@@ -57,52 +57,52 @@ $burgermenu-color: $purple;
 //------------------------------------------------//
 
 
-.font_1 {
-	font-family: "sofia-pro", arial, sans-serif;
+@mixin font($type: font_1, $style: regular) {
+	
+	@extend %#{$type};
+	@if ($style == regular) {
+		font-weight: 400;
+		font-style: normal;
+	} @elseif ($style == medium) {
+		font-weight: 500;
+		font-style: normal;
+	} @elseif ($style == bold) {
+		font-weight: 700;
+		font-style: normal;
+	}
 }
 
-.font-2 {
+%font_1 {
+	font-family: "sofia-pro", arial, sans-serif;
+	font-style: normal;
+}
+%font-2 {
 	font-family: "acumin-pro-condensed", sans-serif;
 	font-style: normal;
 	font-weight: 800;
 }
 
-@mixin font($style: regular) {
-	
-	@extend .font_1;
-	@if ($style == regular) {
-		font-style: normal;
-		font-weight: 400;
-	} @elseif ($style == medium) {
-		font-style: normal;
-		font-weight: 500;
-	} @elseif ($style == bold) {
-		font-style: normal;
-		font-weight: 700;
-	}
-}
-
-.font-regular {
-	@include font(regular);
+%font-regular {
+	@include font(font_1, regular);
 	font-size: 16px;
 }
 
-.font-medium {
-	@include font(medium);
+%font-medium {
+	@include font(font_1, medium);
 	font-size: 12px;
 	line-height: 18px;
 	letter-spacing: 1.2px;
 }
 
-.font-menu {
-	@include font(medium);
+%font-menu {
+	@include font(font_1, medium);
 	letter-spacing: .1em;
 	font-size: 10px;
 	text-transform: uppercase;
 }
 
-.font-bold {
-	@include font(bold);
+%font-bold {
+	@include font(font_1, bold);
 	font-size: 16px;
 	line-height: 2em;
 }
@@ -631,7 +631,7 @@ $burgermenu-color: $purple;
 									display: block;
 									color: $default;
 									margin: 0;
-									@extend .font-2;
+									@extend %font-2;
 									font-size: 24px;
 									line-height: 1.2em;
 									text-transform: uppercase;
@@ -692,7 +692,7 @@ $burgermenu-color: $purple;
 		li {
 			a {
 				color: $ltpurple;
-				@include font(bold);
+				@include font(font_1, bold);
 				&:hover {
 					color: $white;
 				}

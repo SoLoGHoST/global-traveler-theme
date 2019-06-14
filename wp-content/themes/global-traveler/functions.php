@@ -941,7 +941,7 @@ function trazee_head()
 	$typekit = array(
 		'trazeetravel' => 'vot5tfa',
 		'whereverfamily' => 'vhn5psy',
-		'globalusa' => ''
+		'globalusa' => 'onr7ydr'
 	);
 
 	echo '

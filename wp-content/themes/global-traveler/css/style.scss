@@ -70,7 +70,7 @@ body {
 }
 
 p {
-	@extend .font-regular;
+	@extend %font-regular;
 	font-size: 21px;
 	line-height: 36px;
 }
@@ -129,7 +129,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-	@extend .font-2;
+	@extend %font-2;
 	font-size: 72px;
 	line-height: 1em;
 	text-transform: uppercase;
@@ -164,7 +164,7 @@ h1 {
 }
 
 h2 {
-	@extend .font-2;
+	@extend %font-2;
 	font-size: 36px;
 	line-height: 45px;
 	text-transform: uppercase;
@@ -176,7 +176,7 @@ h2 {
 }
 
 h3 {
-	@extend .font-2;
+	@extend %font-2;
 	font-size: 24px;
 	line-height: 32px;
 	text-transform: uppercase;
@@ -186,7 +186,7 @@ h3 {
 }
 
 h4 {
-	@extend .font-2;
+	@extend %font-2;
 	font-size: 48px;
 	text-transform: uppercase;
 	&.light {
@@ -223,7 +223,7 @@ h4 {
 }
 
 h5 {
-	@extend .font-medium;
+	@extend %font-medium;
 	text-transform: uppercase;
 	&.categories {
 		display: inline-block;
@@ -530,13 +530,13 @@ h5 {
     	}
     	li {
     		&.tagline {
-    			@extend .font-menu;
+    			@extend %font-menu;
     			color: $tagline;
     			margin-top: 5px;
     		}
     	}
     	a {
-    		@extend .font-menu;
+    		@extend %font-menu;
     		color: $purple;
 
     		&:hover {
@@ -679,13 +679,13 @@ h5 {
 		.modal-header {
 			background-color: $orange;
 			.close {
-				@extend .font-2;
+				@extend %font-2;
 			}
 			input {
 				&[type="text"] {
 					text-transform: uppercase;
 					font-size: 72px;
-					@extend .font-2;
+					@extend %font-2;
 					color: $white;
 
 					&::-webkit-input-placeholder {
@@ -720,7 +720,7 @@ h5 {
 						outline: 0;
 						border: none;
 						background-color: transparent;
-						@include font(bold);
+						@include font(font_1, bold);
 						opacity: .8;
 						&:after {
 							content: url('../images/search-btn-img.png');
@@ -748,7 +748,7 @@ h5 {
 		padding-right: 80px;
 		span {
 			font-size: 72px;
-			@extend .font-2;
+			@extend %font-2;
 			&.underline {
 				font-size: 72px;
 				margin-right: 80px;
@@ -774,7 +774,7 @@ h5 {
 					@include border-link($white, $green, span, true, null, text, 2px);
 					.desc-inner {
 						p {
-							@extend .font-bold;
+							@extend %font-bold;
 							color: $white;
 						}
 
@@ -835,7 +835,7 @@ h5 {
 					margin-bottom: 5px;
 					text-align: center;
 					display: block;
-					@extend .font-medium;
+					@extend %font-medium;
 					letter-spacing: normal;
 					@include opacity(0.7);
 				}
@@ -845,7 +845,7 @@ h5 {
 					text-shadow: 1px 1px 0 black;
 					font-size: 12px !important;
 					text-align: center;
-					@extend .font-medium;
+					@extend %font-medium;
 					letter-spacing: normal;
 					@include opacity(0.7);
 					color: $white;
@@ -878,7 +878,7 @@ h5 {
 			.date {
 				display: inline-block;
 				text-transform: uppercase;
-				@extend .font-medium;
+				@extend %font-medium;
 			}
 			.title {
 				a {
@@ -916,7 +916,7 @@ h5 {
 					span {
 						padding-left: 10px;
 						display: inline-block;
-						@extend .font-medium;
+						@extend %font-medium;
 						vertical-align: middle;
 					}
 					&:hover {
@@ -949,7 +949,7 @@ h5 {
 							position: absolute;
 							width: 100%;
 							bottom: 5%;
-							@extend .font-medium;
+							@extend %font-medium;
 							color: $white;
 							margin-left: 10px;
 							text-align: left;
@@ -968,7 +968,7 @@ h5 {
 				max-width: 300px;
 
 				.social-title {
-					@extend .font-medium;
+					@extend %font-medium;
 					text-transform: uppercase;
 					font-size: 10px;
 					line-height: 1.8em;
@@ -1299,14 +1299,14 @@ body {
 					text-align: center;
 
 					p {
-						@extend .font-bold;
+						@extend %font-bold;
 						color: $white;
 						margin: 0;
 					}
 					.date {
 						display: block;
 						text-transform: uppercase;
-						@extend .font-medium;
+						@extend %font-medium;
 						color: $white;
 					}
 
@@ -1473,7 +1473,7 @@ body {
 				.date {
 					display: inline-block;
 					text-transform: uppercase;
-					@extend .font-medium;
+					@extend %font-medium;
 				}
 				h5 {
 					&.categories {
@@ -1818,7 +1818,7 @@ body {
 		.skip-this {
 			float: right;
 			a {
-				@extend .font-menu;
+				@extend %font-menu;
 				text-shadow: none;
 	    		color: $white;
 	    		@include opacity(0.7);
