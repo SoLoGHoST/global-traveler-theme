@@ -34,13 +34,13 @@ $global-gray: #9FACBD;
 $red: #F46E5D;
 $blue: #3FA2DA;
 $tagline: $blue;
+$global-green: #108751;
 
 
 
 
 
 $dk-gray: #414042;
-// $gray: #6D6E71;
 $border-lines: #BECED3;
 $light-blue: #25AECC;  /* default link color */
 $border-color: #D6E3E8;
@@ -726,27 +726,29 @@ $li-share: #0077B5;
 }
 
 #mainMenu {
-	background-color: $default;
+	background-color: $white;
 	#main_navigation {
 		li {
 			a {
-				color: $ltpurple;
+				color: $white;
 				@include font(font_1, bold);
+				font-size: 18px;
 				&:hover {
-					color: $white;
+					color: $red;
 				}
 			}
 		}
 		> li {
 			&.dropdown {
 				&.show {
+					    border-top: 2px solid $default;
 					> a {
-						background-color: $green;
-						color: $white;
+						background-color: $blue;
+						color: $default;
 						span {
 							&.caret-arrow {
 								&:before, &:after {
-									border-color: $white;
+									border-color: $default;
 								}
 							}
 						}
@@ -769,17 +771,25 @@ $li-share: #0077B5;
 					}
 				}
 			}
+			> a {
+				color: $default;
+				@include font(font_1, bold);
+				&:hover {
+					color: $default;
+				}
+			}
 		}
 		ul {
 			&.dropdown-menu {
-				background-color: $purple;
+				margin-top: 0;
+				background-color: $default;
 			}
 		}
 		.dropdown-toggle {
 			span {
 				&.caret-arrow {
 					&:before, &:after {
-						border-bottom: 12px solid $ltpurple;
+						border-bottom: 12px solid $global-green;
 					}
 				}
 			}
@@ -787,7 +797,7 @@ $li-share: #0077B5;
 				span {
 					&.caret-arrow {
 						&:before, &:after {
-							border-color: $white;
+							border-color: $global-green;
 						}
 					}
 				}

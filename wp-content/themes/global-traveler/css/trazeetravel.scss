@@ -696,6 +696,7 @@ $burgermenu-color: $purple;
 			a {
 				color: $ltpurple;
 				@include font(font_1, bold);
+				font-size: 16px;
 				&:hover {
 					color: $white;
 				}

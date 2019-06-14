@@ -8305,7 +8305,8 @@ body {
   #mainMenu #main_navigation li a {
     color: #B4A5BE;
     font-weight: 700;
-    font-style: normal; }
+    font-style: normal;
+    font-size: 16px; }
     #mainMenu #main_navigation li a:hover {
       color: #FFFFFF; }
   #mainMenu #main_navigation > li.dropdown.show > a {
@@ -8557,8 +8558,7 @@ h5 {
       -webkit-transition: all 0.2s ease;
       -moz-transition: all 0.2s ease;
       -ms-transition: all 0.2s ease;
-      -o-transition: all 0.2s ease;
-      font-size: 16px; }
+      -o-transition: all 0.2s ease; }
     #mainMenu #main_navigation > li {
       padding: 0;
       border-top: 2px solid #000000; }

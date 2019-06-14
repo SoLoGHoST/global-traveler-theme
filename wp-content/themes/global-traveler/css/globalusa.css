@@ -8283,18 +8283,21 @@ body {
   background-color: #FFFFFF; }
 
 #mainMenu {
-  background-color: #12222D; }
+  background-color: #FFFFFF; }
   #mainMenu #main_navigation li a {
-    color: #B4A5BE;
+    color: #FFFFFF;
     font-weight: 700;
-    font-style: normal; }
+    font-style: normal;
+    font-size: 18px; }
     #mainMenu #main_navigation li a:hover {
-      color: #FFFFFF; }
-  #mainMenu #main_navigation > li.dropdown.show > a {
-    background-color: #2CB78F;
-    color: #FFFFFF; }
-    #mainMenu #main_navigation > li.dropdown.show > a span.caret-arrow:before, #mainMenu #main_navigation > li.dropdown.show > a span.caret-arrow:after {
-      border-color: #FFFFFF; }
+      color: #F46E5D; }
+  #mainMenu #main_navigation > li.dropdown.show {
+    border-top: 2px solid #12222D; }
+    #mainMenu #main_navigation > li.dropdown.show > a {
+      background-color: #3FA2DA;
+      color: #12222D; }
+      #mainMenu #main_navigation > li.dropdown.show > a span.caret-arrow:before, #mainMenu #main_navigation > li.dropdown.show > a span.caret-arrow:after {
+        border-color: #12222D; }
   #mainMenu #main_navigation > li.social-buttons, #mainMenu #main_navigation > li.copyright {
     background-color: #000000; }
   #mainMenu #main_navigation > li.copyright {
@@ -8303,12 +8306,19 @@ body {
       color: #2CB78F; }
       #mainMenu #main_navigation > li.copyright a.privacy-policy span:before {
         background-color: #2CB78F; }
+  #mainMenu #main_navigation > li > a {
+    color: #12222D;
+    font-weight: 700;
+    font-style: normal; }
+    #mainMenu #main_navigation > li > a:hover {
+      color: #12222D; }
   #mainMenu #main_navigation ul.dropdown-menu {
-    background-color: #8A7399; }
+    margin-top: 0;
+    background-color: #12222D; }
   #mainMenu #main_navigation .dropdown-toggle span.caret-arrow:before, #mainMenu #main_navigation .dropdown-toggle span.caret-arrow:after {
-    border-bottom: 12px solid #B4A5BE; }
+    border-bottom: 12px solid #108751; }
   #mainMenu #main_navigation .dropdown-toggle:hover span.caret-arrow:before, #mainMenu #main_navigation .dropdown-toggle:hover span.caret-arrow:after {
-    border-color: #FFFFFF; }
+    border-color: #108751; }
 
 .site-section {
   min-height: 200px;
@@ -8539,8 +8549,7 @@ h5 {
       -webkit-transition: all 0.2s ease;
       -moz-transition: all 0.2s ease;
       -ms-transition: all 0.2s ease;
-      -o-transition: all 0.2s ease;
-      font-size: 16px; }
+      -o-transition: all 0.2s ease; }
     #mainMenu #main_navigation > li {
       padding: 0;
       border-top: 2px solid #000000; }
