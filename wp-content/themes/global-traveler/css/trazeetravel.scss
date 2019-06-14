@@ -56,7 +56,6 @@ $burgermenu-color: $purple;
 //--------------------- FONTS --------------------//
 //------------------------------------------------//
 
-
 @mixin font($type: font_1, $style: regular) {
 	
 	@extend %#{$type};
@@ -305,6 +304,10 @@ $burgermenu-color: $purple;
 	-webkit-appearance: $value;
    -moz-appearance:    $value;
    appearance:         $value;
+}
+
+%font-smoothing {
+	@include fontsmoothing(antialiased);
 }
 
 //------------------------------------------------//

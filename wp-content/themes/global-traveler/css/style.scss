@@ -33,7 +33,7 @@ html, body {
 }
 
 body {
-	@include fontsmoothing(antialiased);
+	@extend %font-smoothing;
 	height: 100%;
 	position: relative;
 	&.slide-menu-open {

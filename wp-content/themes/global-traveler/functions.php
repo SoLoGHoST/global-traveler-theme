@@ -1062,7 +1062,7 @@ function trazee_get_seo_socials($return)
 	{
 		$social_media = array_filter($social_media);
 		
-		$social_keys = array('instagram_url' => 'fa-instagram', 'facebook_site' => 'fa-facebook-f', 'twitter_site' => 'fa-twitter', 'pinterest_url' => 'fa-pinterest-p', 'youtube_url' => 'fa-youtube-play');
+		$social_keys = array('instagram_url' => 'fa-instagram', 'facebook_site' => 'fa-facebook-f', 'twitter_site' => 'fa-twitter', 'linkedin_url' => 'fa-linkedin', 'pinterest_url' => 'fa-pinterest-p', 'youtube_url' => 'fa-youtube-play');
 
 		if (!empty($social_media))
 			$socials = array_intersect_key($social_keys, $social_media);

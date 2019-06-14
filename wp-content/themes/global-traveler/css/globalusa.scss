@@ -22,18 +22,33 @@ $grid-breakpoints: (
 //-------------------- COLORS --------------------//
 //------------------------------------------------//
 
-$dk-gray: #414042;
-// $gray: #6D6E71;
-$border-lines: #BECED3;
-// $default: #003646;
-$light-blue: #25AECC;  /* default link color */
-$border-color: #D6E3E8;
-$offblue: #F0F5F7;
+// Basic Colors...
 $white: #FFFFFF;
 $black: #000000;
 
+// Global Traveler Colors...
+$dkblue: #12222D;
+$header-backcolor: $white;
+$burgermenu-color: $dkblue;
+$global-gray: #9FACBD;
+$red: #F46E5D;
+$blue: #3FA2DA;
+$tagline: $blue;
+
+
+
+
+
+$dk-gray: #414042;
+// $gray: #6D6E71;
+$border-lines: #BECED3;
+$light-blue: #25AECC;  /* default link color */
+$border-color: #D6E3E8;
+$offblue: #F0F5F7;
+
+
 $gray: #C0BBBD;
-$default: #1F163E; // Default text color and background color of some sections.
+$default: $dkblue; // #1F163E Default text color and background color of some sections.
 $green: #2CB78F; // Used for Links and underlines
 $orange: #EEB538; // Used for background color of headlines, and search icon...
 $purple: #8A7399;
@@ -46,14 +61,6 @@ $social-color: #D0D2D3;
 $fa-share: #3B5998;
 $tw-share: #08A0E9;
 $li-share: #0077B5;
-
-
-// Globalizing Theme here...
-$tagline: $white;
-$header-backcolor: $default;
-$burgermenu-color: $purple;
-
-
 
 //------------------------------------------------//
 //--------------------- FONTS --------------------//
@@ -309,6 +316,10 @@ $burgermenu-color: $purple;
 	-webkit-appearance: $value;
    -moz-appearance:    $value;
    appearance:         $value;
+}
+
+%font-smoothing {
+	@include fontsmoothing(auto);
 }
 
 //------------------------------------------------//
@@ -580,22 +591,23 @@ $burgermenu-color: $purple;
 @mixin topline_links()
 {
 	a {
-		color: $orange;
+		color: $white;
 		&:hover {
-			color: $purple;
+			color: $white;
+			background-color: $blue;
 		}
 	}
 	// Need to attach to hover effect.
 	&.external-link {
 		&:hover {
 			a {
-				background-color: $white;
+				background-color: $blue;
 			}
 		}
 		&.active {
 			a {
-				color: $purple;
-				background-color: $white;
+				color: $white;
+				background-color: $blue;
 			}
 		}
 	}
@@ -603,14 +615,14 @@ $burgermenu-color: $purple;
 
 @mixin global_social_links()
 {
-	color: $white;
+	color: $global-gray;
 	&:hover {
-		color: $green;
+		color: $blue;
 	}
 	&.search-link {
-		color: $orange;
+		color: $red;
 		&:hover {
-			color: $orange;
+			color: $red;
 		}
 	}
 }
@@ -622,14 +634,29 @@ $burgermenu-color: $purple;
 .header-1 {
 	.topline {
 		> .inner-wrapper {
-    		border-bottom: 1px solid $menuborder;
+    		background-color: $dkblue;
     	}
 		.site-section {
 			background-color: $white;
 			.posts-api-wrapper {
 				.post-box {
 					.copy {
-						@include border-link($white, $green, span, true, null, text, 2px, 94%);
+						a {
+							span {
+								&.text {
+									color: $dkblue;
+									@include transition(all 0.3s ease);
+								}
+							}
+							&:hover {
+								span {
+									&.text {
+										color: $blue;
+									}
+								}
+							}
+						}
+
 						h3 {
 							&.title {
 								a {
@@ -639,7 +666,7 @@ $burgermenu-color: $purple;
 									@extend %font-2;
 									font-size: 24px;
 									line-height: 1.2em;
-									text-transform: uppercase;
+									text-transform: initial;
 									text-align: center;
 									letter-spacing: normal;
 								}
@@ -649,7 +676,13 @@ $burgermenu-color: $purple;
 					.img-wrapper {
 						&:hover {
 							&+.copy {
-								@include border-link($white, $green, span, false, null, text, 2px, 94%);
+								a {
+									span {
+										&.text {
+											color: $blue;
+										}
+									}
+								}
 							}
 						}
 					}
@@ -663,11 +696,11 @@ $burgermenu-color: $purple;
 					&.categories {
 						li {
 							a {
-								color: $gray;
+								color: $global-gray;
 								&:hover {
-									color: $default;
+									color: $blue;
 									.title {
-										color: $default;
+										color: $blue;
 									}
 								}
 								@include transition(all 0.2s ease);
@@ -681,9 +714,9 @@ $burgermenu-color: $purple;
 }
 
 .navbar {
-	background-color: $default;
+	background-color: $white;
 	&.sticky-nav {
-		background-color: $default;
+		background-color: $white;
 	}
 }
 
