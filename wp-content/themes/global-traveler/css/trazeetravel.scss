@@ -718,6 +718,18 @@ $burgermenu-color: $purple;
 					}
 				}
 			}
+			&.social-buttons {
+				> ul {
+					.social-media {
+						> a {
+							color: $white;
+							&:hover {
+								color: $green;
+							}
+						}
+					}
+				}
+			}
 			&.social-buttons, &.copyright {
 				background-color: $black;
 			}

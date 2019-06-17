@@ -749,6 +749,19 @@ $li-share: #0077B5;
 					}
 				}
 			}
+			&.social-buttons {
+				> ul {
+					.social-media {
+						> a {
+							color: $white;
+
+							&:hover {
+								color: $green;
+							}
+						}
+					}
+				}
+			}
 			> a {
 				line-height: 1em;
 			}

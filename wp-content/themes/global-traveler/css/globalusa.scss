@@ -755,24 +755,39 @@ $li-share: #0077B5;
 					}
 				}
 			}
+			&.social-buttons {
+				> ul {
+					.social-media {
+						> a {
+							color: $white;
+							&:hover {
+								color: $red;
+							}
+						}
+					}
+				}
+			}
 			&.social-buttons, &.copyright {
 				background-color: $black;
 			}
 			&.copyright {
-				color : $green;
+				color : $white;
+				> p {
+					line-height: 1em;
+				}
 				a {
 					&.privacy-policy {
-						color: $green;
+						color: $white;
 						span {
 							&:before {
-								background-color: $green;
+								background-color: $white;
 							}
 						}
 					}
 				}
 			}
 			> a {
-				color: $default;
+				color: $global-gray;
 				@include font(font_1, bold);
 				&:hover {
 					color: $default;
@@ -789,7 +804,7 @@ $li-share: #0077B5;
 			span {
 				&.caret-arrow {
 					&:before, &:after {
-						border-bottom: 12px solid $global-green;
+						border-bottom: 12px solid $blue;
 					}
 				}
 			}
@@ -797,7 +812,7 @@ $li-share: #0077B5;
 				span {
 					&.caret-arrow {
 						&:before, &:after {
-							border-color: $global-green;
+							border-color: $default;
 						}
 					}
 				}

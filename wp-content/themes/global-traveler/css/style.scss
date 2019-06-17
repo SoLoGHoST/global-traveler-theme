@@ -353,12 +353,8 @@ h5 {
 						width: auto;
 						> a {
 							padding: 0;
-							color: $white;
 							font-size: 20px;
 							@include transition(all 0.2s ease);
-							&:hover {
-								color: $green;
-							}
 						}
 					}
 				}
