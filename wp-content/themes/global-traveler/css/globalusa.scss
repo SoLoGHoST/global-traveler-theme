@@ -835,4 +835,19 @@ h3 {
 	}
 }
 
+.tif-search-modal {
+	.modal-dialog {
+		.modal-header {
+			background-color: $red;
+		}
+	}
+	.form-wrapper {
+		span {
+			&.underline {
+				border-color: $blue;
+			}
+		}
+	}
+}
+
 @import "style.scss";

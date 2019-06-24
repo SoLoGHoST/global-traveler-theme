@@ -20,6 +20,7 @@ $instagram_access_token = array(
 $all_sites = array(
 	'globalusa' => array(
 		'title' => __('Global Traveler', 'tif_global'),
+		'search_placeholder' => __('Global Traveler', 'tif_global'),
 		'logo' => array(
 			'image' => get_stylesheet_directory_uri() . '/images/globalusa-logo.svg',
 			'classes' => array(
@@ -34,6 +35,7 @@ $all_sites = array(
 	),
 	'trazeetravel' => array(
 		'title' => __('Trazee Travel', 'tif_global'),
+		'search_placeholder' => __('Trazee', 'tif_global'),
 		'logo' => array(
 			'image' => get_stylesheet_directory_uri() . '/images/trazee-logo.svg',
 			'classes' => array(
@@ -48,6 +50,7 @@ $all_sites = array(
 	),
 	'whereverfamily' => array(
 		'title' => __('WhereverFamily', 'tif_global'),
+		'search_placeholder' => __('WhereverFamily', 'tif_global'),
 		'logo' => array(
 			'image' => get_stylesheet_directory_uri() . '/images/wherever-logo.svg',
 			'classes' => array(
@@ -1080,18 +1083,28 @@ function trazee_get_seo_socials($return)
 	return $return;
 }
 
-add_filter('tif_search_placeholder', 'trazee_search_placeholder', 10, 1);
+add_filter('tif_search_placeholder', 'global_site_search_placeholder', 10, 1);
 
-function trazee_search_placeholder($placeholder)
+function global_site_search_placeholder($placeholder)
 {
-	return 'Search Trazee';
+	global $all_sites, $global_site;
+
+	$global_site = !empty($global_site) ? $global_site : apply_filters('get_global_site', '');
+
+	if (!empty($global_site) && isset($all_sites[$global_site]['search_placeholder'])) {
+		return sprintf('Search %s', $all_sites[$global_site]['search_placeholder']);
+	}
+
+	return 'Search';
 }
 
-add_filter('tif_search_submit_button', 'trazee_search_submit_button', 10, 1);
+add_filter('tif_search_submit_button', 'tif_global_search_submit_button', 10, 1);
 
-function trazee_search_submit_button($button)
+function tif_global_search_submit_button($button)
 {
-	return '<div class="button-wrapper"><button type="submit" class="submit' . apply_filters('tif_search_button_classes', '') . '" id="searchsubmit">' . apply_filters('tif_search_submit', __('Go', 'tif_global')) . '</button></div>';
+	global $global_site;
+
+	return '<div class="button-wrapper"><button type="submit" class="submit' . apply_filters('tif_search_button_classes', '') . '" id="searchsubmit">' . ($global_site != 'globalusa' ? apply_filters('tif_search_submit', __('Go', 'tif_global')) : '') . '</button></div>';
 }
 
 add_filter('get_global_site', 'tif_global_get_site', 10, 1);

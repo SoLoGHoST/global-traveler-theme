@@ -8334,6 +8334,11 @@ h3.blue {
   #mainMenu #main_navigation .dropdown-toggle:hover span.caret-arrow:before, #mainMenu #main_navigation .dropdown-toggle:hover span.caret-arrow:after {
     border-color: #12222D; }
 
+.tif-search-modal .modal-dialog .modal-header {
+  background-color: #F46E5D; }
+.tif-search-modal .form-wrapper span.underline {
+  border-color: #3FA2DA; }
+
 .site-section {
   min-height: 200px;
   position: absolute;
@@ -8859,48 +8864,45 @@ h5 {
       .navbar.sticky-nav .navbar-toggler > span.middle-bar {
         width: 80%; }
 
-.tif-search-modal .modal-dialog .modal-header {
-  background-color: #EEB538; }
-  .tif-search-modal .modal-dialog .modal-header input[type="text"] {
-    text-transform: uppercase;
-    font-size: 72px;
+.tif-search-modal .modal-dialog .modal-header input[type="text"] {
+  font-size: 72px;
+  color: #FFFFFF; }
+  .tif-search-modal .modal-dialog .modal-header input[type="text"]::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.2); }
+  .tif-search-modal .modal-dialog .modal-header input[type="text"]:-moz-placeholder {
     color: #FFFFFF; }
-    .tif-search-modal .modal-dialog .modal-header input[type="text"]::-webkit-input-placeholder {
-      color: rgba(255, 255, 255, 0.2); }
-    .tif-search-modal .modal-dialog .modal-header input[type="text"]:-moz-placeholder {
-      color: #FFFFFF; }
-    .tif-search-modal .modal-dialog .modal-header input[type="text"]::-moz-placeholder {
-      color: #FFFFFF; }
-    .tif-search-modal .modal-dialog .modal-header input[type="text"]:-ms-input-placeholder {
-      color: #FFFFFF; }
-  .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    height: 16px; }
-    .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
-      font-size: 28px;
-      color: #FFFFFF;
-      text-transform: uppercase;
-      cursor: pointer;
-      outline: 0;
-      border: none;
-      background-color: transparent;
-      font-weight: 700;
-      font-style: normal;
-      opacity: .8; }
-      .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button:after {
-        content: url("../images/search-btn-img.png");
-        display: inline-block;
-        padding-left: 5px;
-        width: 21px;
-        height: 16px; }
-      .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button:hover {
-        opacity: 1; }
-  .tif-search-modal .modal-dialog .modal-header button.close {
-    display: none; }
+  .tif-search-modal .modal-dialog .modal-header input[type="text"]::-moz-placeholder {
+    color: #FFFFFF; }
+  .tif-search-modal .modal-dialog .modal-header input[type="text"]:-ms-input-placeholder {
+    color: #FFFFFF; }
+.tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 16px; }
+  .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
+    font-size: 28px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    background-color: transparent;
+    font-weight: 700;
+    font-style: normal;
+    opacity: .8; }
+    .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button:after {
+      content: url("../images/search-btn-img.png");
+      display: inline-block;
+      padding-left: 5px;
+      width: 21px;
+      height: 16px; }
+    .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button:hover {
+      opacity: 1; }
+.tif-search-modal .modal-dialog .modal-header button.close {
+  display: none; }
 .tif-search-modal .form-wrapper {
   border-bottom: 2px solid #FFFFFF !important;
   padding-right: 80px; }
@@ -8908,9 +8910,7 @@ h5 {
     font-size: 72px; }
     .tif-search-modal .form-wrapper span.underline {
       font-size: 72px;
-      margin-right: 80px;
-      text-transform: uppercase;
-      border-color: #2CB78F; }
+      margin-right: 80px; }
 
 #home-content, #main-content {
   padding: 0;

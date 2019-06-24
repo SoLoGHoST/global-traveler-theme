@@ -778,4 +778,25 @@ h2, h3 {
 	}
 }
 
+.tif-search-modal {
+	.modal-dialog {
+		.modal-header {
+			background-color: $orange;
+			input {
+				&[type="text"] {
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+	.form-wrapper {
+		span {
+			&.underline {
+				text-transform: uppercase;
+				border-color: $green;
+			}
+		}
+	}
+}
+
 @import "style.scss";
