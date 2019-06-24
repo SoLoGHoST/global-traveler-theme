@@ -52,6 +52,7 @@ $ltpurple: #B4A5BE;
 $menuborder: #484C5B;
 $border-gray: #E6E7E8;
 
+$overlay-color: rgba(56, 56, 56, .5);
 
 
 $social-color: #D0D2D3;
@@ -623,6 +624,14 @@ $li-share: #0077B5;
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
+h1 {
+	a {
+		&.hero-post {
+			color: $white;
+			font-weight: normal;
+		}
+	}
+}
 h2 {
 	font-size: 32px;
 	line-height: 45px;
@@ -639,6 +648,19 @@ h5 {
 	font-size: 12px;
 	line-height: 18px;
 	letter-spacing: 1.2px;
+	&.categories {
+		padding: 6px 18px 2px;
+		&.highlight {
+			background-color: $light-green;
+			a {
+				color: $white;
+				@include transition(all 0.2s ease);
+				&:hover {
+					color: $default;
+				}
+			}
+		}
+	}
 }
 
 .header-1 {
@@ -964,6 +986,49 @@ h5 {
 							span {
 								&.text {
 									color: $light-green;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.hero-header {
+		.hero-body {
+			#hero-content {
+				.desc-wrapper {
+					a {
+						span {
+							&.text {
+								color: $default;
+								@include transition(all 0.3s ease);
+							}
+						}
+						&:hover {
+							span {
+								&.text {
+									color: $light-green;
+								}
+							}
+						}
+					}
+					.desc-inner {
+						p {
+							@extend %font-regular;
+							line-height: 1.5em;
+							color: $white;
+						}
+					}
+				}
+				.image-wrapper {
+					&:hover {
+						&+.desc-wrapper {
+							a {
+								span {
+									&.text {
+										color: $light-green;
+									}
 								}
 							}
 						}

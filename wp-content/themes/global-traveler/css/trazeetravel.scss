@@ -630,6 +630,18 @@ h2, h3 {
 }
 h5 {
 	@extend %font-medium;
+	&.categories {
+		padding: 6px 18px;
+		&.highlight {
+			background-color: $purple;
+			a {
+				color: $white;
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+	}
 }
 .header-1 {
 	.topline {
@@ -873,6 +885,28 @@ h5 {
 				&:hover {
 					&+.copy {
 						@include border-link($white, $green, span, false, null, text, 2px, 98%);
+					}
+				}
+			}
+		}
+	}
+	.hero-header {
+		.hero-body {
+			#hero-content {
+				.desc-wrapper {
+					@include border-link($white, $green, span, true, null, text, 2px);
+					.desc-inner {
+						p {
+							@extend %font-bold;
+							color: $white;
+						}
+					}
+				}
+				.image-wrapper {
+					&:hover {
+						&+.desc-wrapper {
+								@include border-link($white, $green, span, false, null, text, 2px);
+						}
 					}
 				}
 			}

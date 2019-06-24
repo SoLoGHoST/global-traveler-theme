@@ -41,7 +41,7 @@ if (!empty($type)):
 			$category_link = get_category_link($categories[0]->term_id); 
 		*/ ?>
 		
-		<div class="hero-body" style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(<?php echo $post_image; ?>) no-repeat center center; background-size: cover;">
+		<div class="hero-body" style="background: linear-gradient(to bottom, rgba(56, 56, 56, 0.5) 100%, rgba(56, 56, 56, 0.5) 100%), url(<?php echo $post_image; ?>) no-repeat center center; background-size: cover;">
 			<div class="container-fluid post-wrapper">
 				<div class="overlay">
 					<?php if (!empty($sponsored_post)): ?>
@@ -109,7 +109,7 @@ if (!empty($type)):
 			top: -20px;
 			width: calc(100% + 40px);
 			height: calc(100% + 40px);
-			background: url(<?php echo $post_image; ?>) no-repeat center center;
+			background: linear-gradient(to bottom, rgba(56, 56, 56, 0.5) 100%, rgba(56, 56, 56, 0.5) 100%), url(<?php echo $post_image; ?>) no-repeat center center;
 			background-size: cover;
 		}
 		body.home .hero-body a.pic-link:before {
@@ -123,7 +123,7 @@ if (!empty($type)):
 			top: -20px;
 			width: calc(100% + 40px);
 			height: calc(100% + 40px);
-			background: url(<?php echo $post_image; ?>) no-repeat center center;
+			background: linear-gradient(to bottom, rgba(56, 56, 56, 0.5) 100%, rgba(56, 56, 56, 0.5) 100%), url(<?php echo $post_image; ?>) no-repeat center center;
 			background-size: cover;
 		}
 		body.home .hero-body a.pic-link::before {
@@ -153,30 +153,40 @@ if (!empty($type)):
 				<div id="hero-content" class="row px-md-5 my-md-5 align-items-start">
 					<div class="col-24 col-md-12 px-0 py-md-4 pb-0 px-md-3 image-wrapper">
 						
-						<a href="<?php the_permalink($main_post->ID); ?>"><img src="<?php echo $post_image; ?>" alt="<?php echo $image_alt; ?>" class="img-fluid px-md-2 d-sm-none d-md-none d-lg-none" /></a> 
+						<a href="<?php the_permalink($main_post->ID); ?>"><img src="<?php echo $post_image; ?>" alt="<?php echo $image_alt; ?>" class="img-fluid px-md-2 d-sm-none d-md-none d-lg-none" /></a>
+
+						<div class="desc-wrapper">
+							<div class="desc-inner px-2">
+								<h5 class="categories highlight">
+									<?php if (!empty($categories)): 
+										if (!empty($categories['primary'])): ?>
+											<a href="<?php echo esc_url($categories['primary']['link']); ?>"><?php echo $categories['primary']['title']; ?></a>
+											<?php
+											if (!empty($categories['child'])): ?>
+											/ <a href="<?php echo esc_url($categories['child']['link']); ?>"><?php echo $categories['child']['title']; ?></a>
+											<?php
+											endif;
+										endif;
+									endif; ?>
+								</h5>
+								<h1 class="title my-4">
+									<a href="<?php the_permalink($main_post->ID); ?>" class="hero-post"><span><?php echo get_the_title($main_post->ID); ?></span></a>
+								</h1>
+								<?php if (!empty($author_name)): ?>
+								<p>by <?php echo $author_name; ?></p>
+								<?php endif; 
+								$the_excerpt = apply_filters('tif_global_get_the_excerpt', '', $main_post->ID, 375);
+
+								if (!empty($the_excerpt)): ?>
+									<p class="the-excerpt"><?php echo $the_excerpt; ?></p>
+								<?php
+								endif; ?>
+							</div>
+						</div>
 						
 					</div>
-					<div class="col-24 col-md-12 py-0 py-md-4 px-4 px-md-3 desc-wrapper">
-						<div class="desc-inner px-2">
-							<h5 class="categories highlight">
-								<?php if (!empty($categories)): 
-									if (!empty($categories['primary'])): ?>
-										<a href="<?php echo esc_url($categories['primary']['link']); ?>"><?php echo $categories['primary']['title']; ?></a>
-										<?php
-										if (!empty($categories['child'])): ?>
-										/ <a href="<?php echo esc_url($categories['child']['link']); ?>"><?php echo $categories['child']['title']; ?></a>
-										<?php
-										endif;
-									endif;
-								endif; ?>
-							</h5>
-							<h1 class="title">
-								<a href="<?php the_permalink($main_post->ID); ?>" class="post"><span><span class="text"><?php echo get_the_title($main_post->ID); ?></span></span></a>
-							</h1>
-							<?php if (!empty($author_name)): ?>
-							<p>by <?php echo $author_name; ?></p>
-							<?php endif; ?>
-						</div>
+					<div class="col-24 col-md-12 py-0 py-md-4 px-4 px-md-3">
+						
 						<?php // get the author link last here... ?>
 					</div>
 				</div>

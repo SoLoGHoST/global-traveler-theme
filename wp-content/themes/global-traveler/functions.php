@@ -1346,5 +1346,32 @@ function tif_global_favicon_globalusa()
 		<link rel="shortcut icon" type="image/png" sizes="16x16" href="', $icon_path, 'favicon-16x16.png">';
 }
 
+add_filter('tif_global_get_the_excerpt', 'tif_global_get_the_excerpt', 10, 3);
+
+function tif_global_get_the_excerpt($excerpt, $post_id, $charlength = 0)
+{
+	global $post;
+	if (empty($post_id))
+		$post_id = $post->ID;
+
+	return !empty($charlength) ? the_excerpt_max_charlength($post_id, $charlength) : $excerpt;
+}
+
+function the_excerpt_max_charlength($post_id, $charlength) {
+	$return = '';
+	$excerpt = get_the_excerpt($post_id);
+	$charlength++;
+
+	if (mb_strlen($excerpt) > $charlength) {
+		$subex = mb_substr($excerpt, 0, $charlength - 5);
+		$exwords = explode(' ', $subex);
+		$excut = - (mb_strlen($exwords[ count($exwords) - 1]));
+		$return = $excut < 0 ? mb_substr($subex, 0, $excut) . '...' : $subex . '...';
+	} else
+		$return = $excerpt;
+
+	return $return;
+}
+
 
 ?>

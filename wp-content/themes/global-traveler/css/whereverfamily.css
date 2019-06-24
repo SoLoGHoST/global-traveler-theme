@@ -8194,7 +8194,7 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 /* default link color */
-.header-1 .topline .site-section .posts-api-wrapper .post-box .copy h3.title a, h1, h4, .tif-search-modal .modal-dialog .modal-header .close, .tif-search-modal .modal-dialog .modal-header input[type="text"], .tif-search-modal .form-wrapper span, p, #mainMenu #main_navigation li a, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content .section .date, #main-content #content .section .date, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, .recent-posts-wrapper #featured .innerbox .featured-details .date, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body .post-wrapper .overlay p, h2, h3, h5, #mainMenu #main_navigation li a > ul li a, .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
+.header-1 .topline .site-section .posts-api-wrapper .post-box .copy h3.title a, h1, h4, .tif-search-modal .modal-dialog .modal-header .close, .tif-search-modal .modal-dialog .modal-header input[type="text"], .tif-search-modal .form-wrapper span, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, p, #mainMenu #main_navigation li a, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content .section .date, #main-content #content .section .date, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, .recent-posts-wrapper #featured .innerbox .featured-details .date, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a, #main-content .hero-header .hero-body .post-wrapper .overlay p, h2, h3, h5, #mainMenu #main_navigation li a > ul li a, .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
   font-family: canada-type-gibson, sans-serif;
   font-style: normal; }
 
@@ -8202,7 +8202,7 @@ a.text-dark:hover, a.text-dark:focus {
   font-style: normal;
   font-weight: 700; }
 
-p {
+#home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, p {
   font-style: normal;
   font-weight: 400;
   font-size: 16px; }
@@ -8221,7 +8221,7 @@ p {
   font-size: 10px;
   text-transform: uppercase; }
 
-#home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body .post-wrapper .overlay p {
+#main-content .hero-header .hero-body .post-wrapper .overlay p {
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -8234,6 +8234,10 @@ body {
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
+h1 a.hero-post {
+  color: #FFFFFF;
+  font-weight: normal; }
+
 h2 {
   font-size: 32px;
   line-height: 45px;
@@ -8253,6 +8257,18 @@ h5 {
   font-size: 12px;
   line-height: 18px;
   letter-spacing: 1.2px; }
+  h5.categories {
+    padding: 6px 18px 2px; }
+    h5.categories.highlight {
+      background-color: #90C844; }
+      h5.categories.highlight a {
+        color: #FFFFFF;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease; }
+        h5.categories.highlight a:hover {
+          color: #202433; }
 
 .header-1 .topline > .inner-wrapper {
   border-bottom: 1px solid #046D41;
@@ -8382,6 +8398,19 @@ h5 {
 #home-content .post-list .post-wide .copy a:hover span.text, #main-content .post-list .post-wide .copy a:hover span.text {
   color: #90C844; }
 #home-content .post-list .post-wide .img-wrapper:hover + .copy a span.text, #main-content .post-list .post-wide .img-wrapper:hover + .copy a span.text {
+  color: #90C844; }
+#home-content .hero-header .hero-body #hero-content .desc-wrapper a span.text, #main-content .hero-header .hero-body #hero-content .desc-wrapper a span.text {
+  color: #202433;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease; }
+#home-content .hero-header .hero-body #hero-content .desc-wrapper a:hover span.text, #main-content .hero-header .hero-body #hero-content .desc-wrapper a:hover span.text {
+  color: #90C844; }
+#home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p {
+  line-height: 1.5em;
+  color: #FFFFFF; }
+#home-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text, #main-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text {
   color: #90C844; }
 
 .site-section {
@@ -8553,7 +8582,6 @@ h5 {
   h5.categories {
     display: inline-block;
     margin: 0;
-    padding: 6px 18px;
     color: #046D41; }
     h5.categories a {
       color: #BEC3B5;
@@ -8563,12 +8591,6 @@ h5 {
       -o-transition: all 0.2s ease; }
       h5.categories a:hover {
         color: #202433; }
-    h5.categories.highlight {
-      background-color: #8A7399; }
-      h5.categories.highlight a {
-        color: #FFFFFF; }
-        h5.categories.highlight a:hover {
-          color: #FFFFFF; }
   h5.sponsored span {
     display: inline-block;
     padding: 6px 10px;
@@ -8965,42 +8987,12 @@ h5 {
     position: relative;
     overflow: hidden;
     min-height: 630px; }
-    #home-content .hero-header .hero-body #hero-content .desc-wrapper a:hover span.text, #main-content .hero-header .hero-body #hero-content .desc-wrapper a:hover span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
-      background-size: 0 2px, 0 2px, 2px 2px;
-      background-repeat: no-repeat,no-repeat,repeat-x;
-      text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
-      background-position: 100% 88%, 100% 88%; }
-    #home-content .hero-header .hero-body #hero-content .desc-wrapper a span.text, #main-content .hero-header .hero-body #hero-content .desc-wrapper a span.text {
-      display: inline;
-      position: relative;
-      background-position: 0 88%, 0 88%;
-      background-size: 88% 2px;
-      -webkit-transition: background-size 0.3s;
-      -moz-transition: background-size 0.3s;
-      -ms-transition: background-size 0.3s;
-      -o-transition: background-size 0.3s; }
     #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p {
       color: #FFFFFF; }
     #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span {
       padding: 0 1rem 0 1rem; }
       #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span > span, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span > span {
         padding: 0; }
-    #home-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text, #main-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#046D41), to(#046D41));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#046D41, #046D41);
-      background-size: 0 2px, 0 2px, 2px 2px;
-      background-repeat: no-repeat,no-repeat,repeat-x;
-      text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
-      background-position: 100% 88%, 100% 88%; }
-    #home-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text, #main-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text {
-      display: inline;
-      position: relative;
-      -webkit-transition: background-size 0.3s;
-      -moz-transition: background-size 0.3s;
-      -ms-transition: background-size 0.3s;
-      -o-transition: background-size 0.3s; }
     #home-content .hero-header .hero-body .container, #main-content .hero-header .hero-body .container {
       position: relative;
       height: 100%; }

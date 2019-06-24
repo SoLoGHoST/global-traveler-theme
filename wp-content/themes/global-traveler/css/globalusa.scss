@@ -645,6 +645,18 @@ h3 {
 }
 h5 {
 	@extend %font-medium;
+	&.categories {
+		padding: 6px 18px 2px;
+		&.highlight {
+			// background-color: $purple;
+			a {
+				color: $default;
+				&:hover {
+					color: $light-blue;
+				}
+			}
+		}
+	}
 }
 
 .header-1 {
@@ -969,6 +981,48 @@ h5 {
 							span {
 								&.text {
 									color: $light-blue;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.hero-header {
+		.hero-body {
+			#hero-content {
+				.desc-wrapper {
+					a {
+						span {
+							&.text {
+								color: $default;
+								@include transition(all 0.3s ease);
+							}
+						}
+						&:hover {
+							span {
+								&.text {
+									color: $light-blue;
+								}
+							}
+						}
+					}
+					.desc-inner {
+						p {
+							@extend %font-bold;
+							color: $white;
+						}
+					}
+				}
+				.image-wrapper {
+					&:hover {
+						&+.desc-wrapper {
+							a {
+								span {
+									&.text {
+										color: $light-blue;
+									}
 								}
 							}
 						}

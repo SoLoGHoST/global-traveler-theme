@@ -221,7 +221,6 @@ h5 {
 	&.categories {
 		display: inline-block;
 		margin: 0;
-		padding: 6px 18px;
 		color: $green;
 		a {
 			color: $gray;
@@ -229,15 +228,6 @@ h5 {
 				color: $default;
 			}
 			@include transition(all 0.2s ease);
-		}
-		&.highlight {
-			background-color: $purple;
-			a {
-				color: $white;
-				&:hover {
-					color: $white;
-				}
-			}
 		}
 	}
 	&.sponsored {
@@ -753,10 +743,8 @@ h5 {
 			min-height: 630px;
 			#hero-content {
 				.desc-wrapper {
-					@include border-link($white, $green, span, true, null, text, 2px);
 					.desc-inner {
 						p {
-							@extend %font-bold;
 							color: $white;
 						}
 
@@ -772,14 +760,6 @@ h5 {
 									}
 								}
 							}
-						}
-
-					}
-				}
-				.image-wrapper {
-					&:hover {
-						&+.desc-wrapper {
-								@include border-link($white, $green, span, false, null, text, 2px);
 						}
 					}
 				}

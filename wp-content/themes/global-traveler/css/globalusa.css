@@ -8244,6 +8244,13 @@ h2 {
 h3.blue {
   color: #3FA2DA; }
 
+h5.categories {
+  padding: 6px 18px 2px; }
+  h5.categories.highlight a {
+    color: #12222D; }
+    h5.categories.highlight a:hover {
+      color: #25AECC; }
+
 .header-1 .topline > .inner-wrapper {
   background-color: #12222D; }
 .header-1 .topline .site-section {
@@ -8378,6 +8385,18 @@ h3.blue {
 #home-content .post-list .post-wide .copy a:hover span.text, #main-content .post-list .post-wide .copy a:hover span.text {
   color: #25AECC; }
 #home-content .post-list .post-wide .img-wrapper:hover + .copy a span.text, #main-content .post-list .post-wide .img-wrapper:hover + .copy a span.text {
+  color: #25AECC; }
+#home-content .hero-header .hero-body #hero-content .desc-wrapper a span.text, #main-content .hero-header .hero-body #hero-content .desc-wrapper a span.text {
+  color: #12222D;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease; }
+#home-content .hero-header .hero-body #hero-content .desc-wrapper a:hover span.text, #main-content .hero-header .hero-body #hero-content .desc-wrapper a:hover span.text {
+  color: #25AECC; }
+#home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p {
+  color: #FFFFFF; }
+#home-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text, #main-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text {
   color: #25AECC; }
 
 .site-section {
@@ -8549,7 +8568,6 @@ h5 {
   h5.categories {
     display: inline-block;
     margin: 0;
-    padding: 6px 18px;
     color: #2CB78F; }
     h5.categories a {
       color: #C0BBBD;
@@ -8559,12 +8577,6 @@ h5 {
       -o-transition: all 0.2s ease; }
       h5.categories a:hover {
         color: #12222D; }
-    h5.categories.highlight {
-      background-color: #8A7399; }
-      h5.categories.highlight a {
-        color: #FFFFFF; }
-        h5.categories.highlight a:hover {
-          color: #FFFFFF; }
   h5.sponsored span {
     display: inline-block;
     padding: 6px 10px;
@@ -8962,42 +8974,12 @@ h5 {
     position: relative;
     overflow: hidden;
     min-height: 630px; }
-    #home-content .hero-header .hero-body #hero-content .desc-wrapper a:hover span.text, #main-content .hero-header .hero-body #hero-content .desc-wrapper a:hover span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
-      background-size: 0 2px, 0 2px, 2px 2px;
-      background-repeat: no-repeat,no-repeat,repeat-x;
-      text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
-      background-position: 100% 88%, 100% 88%; }
-    #home-content .hero-header .hero-body #hero-content .desc-wrapper a span.text, #main-content .hero-header .hero-body #hero-content .desc-wrapper a span.text {
-      display: inline;
-      position: relative;
-      background-position: 0 88%, 0 88%;
-      background-size: 88% 2px;
-      -webkit-transition: background-size 0.3s;
-      -moz-transition: background-size 0.3s;
-      -ms-transition: background-size 0.3s;
-      -o-transition: background-size 0.3s; }
     #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p {
       color: #FFFFFF; }
     #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span {
       padding: 0 1rem 0 1rem; }
       #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span > span, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span > span {
         padding: 0; }
-    #home-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text, #main-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
-      background-size: 0 2px, 0 2px, 2px 2px;
-      background-repeat: no-repeat,no-repeat,repeat-x;
-      text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
-      background-position: 100% 88%, 100% 88%; }
-    #home-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text, #main-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text {
-      display: inline;
-      position: relative;
-      -webkit-transition: background-size 0.3s;
-      -moz-transition: background-size 0.3s;
-      -ms-transition: background-size 0.3s;
-      -o-transition: background-size 0.3s; }
     #home-content .hero-header .hero-body .container, #main-content .hero-header .hero-body .container {
       position: relative;
       height: 100%; }
