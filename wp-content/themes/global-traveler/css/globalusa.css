@@ -8201,7 +8201,7 @@ p, h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-hea
   font-family: brandon-grotesque,sans-serif;
   font-style: normal; }
 
-.header-1 .topline .site-section .posts-api-wrapper .post-box .copy h3.title a, h1, h2, h3, h4, .tif-search-modal .modal-dialog .modal-header .close, .tif-search-modal .modal-dialog .modal-header input[type="text"], .tif-search-modal .form-wrapper span {
+h2, h3, .header-1 .topline .site-section .posts-api-wrapper .post-box .copy h3.title a, h1, h4, .tif-search-modal .modal-dialog .modal-header .close, .tif-search-modal .modal-dialog .modal-header input[type="text"], .tif-search-modal .form-wrapper span {
   font-family: "Noe Display Bold", sans-serif;
   font-style: normal; }
 
@@ -8237,6 +8237,10 @@ body {
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
+h2 {
+  font-size: 40px;
+  line-height: 1em; }
+
 h3.blue {
   color: #3FA2DA; }
 
@@ -8338,6 +8342,43 @@ h3.blue {
   background-color: #F46E5D; }
 .tif-search-modal .form-wrapper span.underline {
   border-color: #12222D; }
+
+#home-content .post-half .copy, #main-content .post-half .copy {
+  margin: -45px auto 0; }
+  #home-content .post-half .copy a span.text, #main-content .post-half .copy a span.text {
+    color: #12222D;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease; }
+  #home-content .post-half .copy a:hover span.text, #main-content .post-half .copy a:hover span.text {
+    color: #25AECC; }
+  #home-content .post-half .copy a.post span, #main-content .post-half .copy a.post span {
+    padding: 10px 15px; }
+#home-content .post-half .img-wrapper:hover + .copy a span.text, #main-content .post-half .img-wrapper:hover + .copy a span.text {
+  color: #25AECC; }
+#home-content .post-grid.row .post-tall .copy a span.text, #main-content .post-grid.row .post-tall .copy a span.text {
+  color: #12222D;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease; }
+#home-content .post-grid.row .post-tall .copy a:hover span.text, #main-content .post-grid.row .post-tall .copy a:hover span.text {
+  color: #25AECC; }
+#home-content .post-grid.row .post-tall .copy .title a.post span, #main-content .post-grid.row .post-tall .copy .title a.post span {
+  padding: 6px 0 2px; }
+#home-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text, #main-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text {
+  color: #25AECC; }
+#home-content .post-list .post-wide .copy a span.text, #main-content .post-list .post-wide .copy a span.text {
+  color: #12222D;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease; }
+#home-content .post-list .post-wide .copy a:hover span.text, #main-content .post-list .post-wide .copy a:hover span.text {
+  color: #25AECC; }
+#home-content .post-list .post-wide .img-wrapper:hover + .copy a span.text, #main-content .post-list .post-wide .img-wrapper:hover + .copy a span.text {
+  color: #25AECC; }
 
 .site-section {
   min-height: 200px;
@@ -8465,11 +8506,8 @@ h1 {
         padding: 0;
         z-index: 1; }
 
-h2 {
-  font-size: 36px;
-  line-height: 45px; }
-  h2.title a {
-    color: #12222D; }
+h2.title a {
+  color: #12222D; }
 
 h3 {
   font-size: 24px;
@@ -9175,48 +9213,14 @@ h5 {
     max-width: 90%;
     display: block;
     background-color: #FFFFFF;
-    margin: -45px auto 0;
     text-align: center;
     padding: 0 15px 0 5px; }
-    #home-content .post-half .copy a:hover span.text, #main-content .post-half .copy a:hover span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
-      background-size: 0 2px, 0 2px, 2px 2px;
-      background-repeat: no-repeat,no-repeat,repeat-x;
-      text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
-      background-position: 100% 94%, 100% 94%; }
-    #home-content .post-half .copy a span.text, #main-content .post-half .copy a span.text {
-      display: inline;
-      position: relative;
-      background-position: 0 94%, 0 94%;
-      background-size: 94% 2px;
-      -webkit-transition: background-size 0.3s;
-      -moz-transition: background-size 0.3s;
-      -ms-transition: background-size 0.3s;
-      -o-transition: background-size 0.3s; }
     #home-content .post-half .copy a.post, #main-content .post-half .copy a.post {
       padding: 10px 15px 5px; }
-      #home-content .post-half .copy a.post span, #main-content .post-half .copy a.post span {
-        padding: 0 15px; }
-        #home-content .post-half .copy a.post span > span, #main-content .post-half .copy a.post span > span {
-          top: 3px !important;
-          padding: 0; }
+      #home-content .post-half .copy a.post span > span, #main-content .post-half .copy a.post span > span {
+        padding: 0; }
     #home-content .post-half .copy h3.title, #main-content .post-half .copy h3.title {
       margin-bottom: 0; }
-  #home-content .post-half .img-wrapper:hover + .copy a span.text, #main-content .post-half .img-wrapper:hover + .copy a span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
-    background-size: 0 2px, 0 2px, 2px 2px;
-    background-repeat: no-repeat,no-repeat,repeat-x;
-    text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
-    background-position: 100% 94%, 100% 94%; }
-  #home-content .post-half .img-wrapper:hover + .copy a span.text, #main-content .post-half .img-wrapper:hover + .copy a span.text {
-    display: inline;
-    position: relative;
-    -webkit-transition: background-size 0.3s;
-    -moz-transition: background-size 0.3s;
-    -ms-transition: background-size 0.3s;
-    -o-transition: background-size 0.3s; }
   #home-content .post-list .post-wide .image, #main-content .post-list .post-wide .image {
     display: inline-block;
     width: 100%;
@@ -9227,22 +9231,6 @@ h5 {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover; }
-  #home-content .post-list .post-wide .copy a:hover span.text, #main-content .post-list .post-wide .copy a:hover span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
-    background-size: 0 2px, 0 2px, 2px 2px;
-    background-repeat: no-repeat,no-repeat,repeat-x;
-    text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
-    background-position: 100% 98%, 100% 98%; }
-  #home-content .post-list .post-wide .copy a span.text, #main-content .post-list .post-wide .copy a span.text {
-    display: inline;
-    position: relative;
-    background-position: 0 98%, 0 98%;
-    background-size: 98% 2px;
-    -webkit-transition: background-size 0.3s;
-    -moz-transition: background-size 0.3s;
-    -ms-transition: background-size 0.3s;
-    -o-transition: background-size 0.3s; }
   #home-content .post-list .post-wide .copy .tagline h5.categories, #main-content .post-list .post-wide .copy .tagline h5.categories {
     padding-left: 15px;
     padding-right: 15px; }
@@ -9255,20 +9243,6 @@ h5 {
   #home-content .post-list .post-wide .copy .content, #main-content .post-list .post-wide .copy .content {
     display: inline-block;
     padding-left: 15px; }
-  #home-content .post-list .post-wide .img-wrapper:hover + .copy a span.text, #main-content .post-list .post-wide .img-wrapper:hover + .copy a span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
-    background-size: 0 2px, 0 2px, 2px 2px;
-    background-repeat: no-repeat,no-repeat,repeat-x;
-    text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
-    background-position: 100% 98%, 100% 98%; }
-  #home-content .post-list .post-wide .img-wrapper:hover + .copy a span.text, #main-content .post-list .post-wide .img-wrapper:hover + .copy a span.text {
-    display: inline;
-    position: relative;
-    -webkit-transition: background-size 0.3s;
-    -moz-transition: background-size 0.3s;
-    -ms-transition: background-size 0.3s;
-    -o-transition: background-size 0.3s; }
   #home-content .post-grid.row .post-tall h3, #main-content .post-grid.row .post-tall h3 {
     text-align: center;
     margin: 0 auto;
@@ -9293,22 +9267,6 @@ h5 {
   #home-content .post-grid.row .post-tall .copy, #main-content .post-grid.row .post-tall .copy {
     width: 100%;
     text-align: center; }
-    #home-content .post-grid.row .post-tall .copy a:hover span.text, #main-content .post-grid.row .post-tall .copy a:hover span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
-      background-size: 0 2px, 0 2px, 2px 2px;
-      background-repeat: no-repeat,no-repeat,repeat-x;
-      text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
-      background-position: 100% 94%, 100% 94%; }
-    #home-content .post-grid.row .post-tall .copy a span.text, #main-content .post-grid.row .post-tall .copy a span.text {
-      display: inline;
-      position: relative;
-      background-position: 0 94%, 0 94%;
-      background-size: 94% 2px;
-      -webkit-transition: background-size 0.3s;
-      -moz-transition: background-size 0.3s;
-      -ms-transition: background-size 0.3s;
-      -o-transition: background-size 0.3s; }
     #home-content .post-grid.row .post-tall .copy .title, #main-content .post-grid.row .post-tall .copy .title {
       max-width: 90%;
       margin: -35px auto 0;
@@ -9318,30 +9276,13 @@ h5 {
         padding: 18px 0 5px;
         text-align: center; }
         #home-content .post-grid.row .post-tall .copy .title a.post span, #main-content .post-grid.row .post-tall .copy .title a.post span {
-          padding: 0 0 2px;
           margin: 0 5px 10px; }
-  #home-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text, #main-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
-    background-size: 0 2px, 0 2px, 2px 2px;
-    background-repeat: no-repeat,no-repeat,repeat-x;
-    text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
-    background-position: 100% 94%, 100% 94%; }
-  #home-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text, #main-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text {
-    display: inline;
-    position: relative;
-    -webkit-transition: background-size 0.3s;
-    -moz-transition: background-size 0.3s;
-    -ms-transition: background-size 0.3s;
-    -o-transition: background-size 0.3s; }
   #home-content .post-grid.row .post-tall.alt-top .copy .title, #main-content .post-grid.row .post-tall.alt-top .copy .title {
     width: 90%;
     margin: 0 auto -20px;
     position: relative; }
     #home-content .post-grid.row .post-tall.alt-top .copy .title a.post, #main-content .post-grid.row .post-tall.alt-top .copy .title a.post {
       padding-top: 0; }
-  #home-content .post-grid.row .post-tall.alt-top .tagline, #main-content .post-grid.row .post-tall.alt-top .tagline {
-    margin-bottom: -5px; }
   #home-content .post-grid.row .post-tall .tagline, #main-content .post-grid.row .post-tall .tagline {
     width: 100%; }
     #home-content .post-grid.row .post-tall .tagline .categories, #main-content .post-grid.row .post-tall .tagline .categories {
@@ -9637,36 +9578,6 @@ body #content .content .mw-300 {
   .tif-search-modal .form-wrapper span.underline {
     font-size: 46px; }
 
-  #home-content .post-half .copy a:hover span.text, #main-content .post-half .copy a:hover span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
-    background-size: 0 2px, 0 2px, 2px 2px;
-    background-repeat: no-repeat,no-repeat,repeat-x;
-    text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
-    background-position: 100% 100%, 100% 100%; }
-  #home-content .post-half .copy a span.text, #main-content .post-half .copy a span.text {
-    display: inline;
-    position: relative;
-    background-position: 0 100%, 0 100%;
-    background-size: 100% 2px;
-    -webkit-transition: background-size 0.3s;
-    -moz-transition: background-size 0.3s;
-    -ms-transition: background-size 0.3s;
-    -o-transition: background-size 0.3s; }
-  #home-content .post-half .img-wrapper:hover + .copy a span.text, #main-content .post-half .img-wrapper:hover + .copy a span.text {
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-    background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
-    background-size: 0 2px, 0 2px, 2px 2px;
-    background-repeat: no-repeat,no-repeat,repeat-x;
-    text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
-    background-position: 100% 100%, 100% 100%; }
-  #home-content .post-half .img-wrapper:hover + .copy a span.text, #main-content .post-half .img-wrapper:hover + .copy a span.text {
-    display: inline;
-    position: relative;
-    -webkit-transition: background-size 0.3s;
-    -moz-transition: background-size 0.3s;
-    -ms-transition: background-size 0.3s;
-    -o-transition: background-size 0.3s; }
   #home-content .post-half .image, #main-content .post-half .image {
     max-height: 280px; }
   #home-content .post-grid.row .post-tall .image, #main-content .post-grid.row .post-tall .image {
@@ -9710,22 +9621,6 @@ body #content .content .mw-300 {
   #home-content .hero-header .hero-body.post-item, #main-content .hero-header .hero-body.post-item {
     min-height: initial;
     min-height: auto; }
-    #home-content .hero-header .hero-body.post-item #hero-content .desc-wrapper a:hover span.text, #main-content .hero-header .hero-body.post-item #hero-content .desc-wrapper a:hover span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
-      background-size: 0 2px, 0 2px, 2px 2px;
-      background-repeat: no-repeat,no-repeat,repeat-x;
-      text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
-      background-position: 100% 92%, 100% 92%; }
-    #home-content .hero-header .hero-body.post-item #hero-content .desc-wrapper a span.text, #main-content .hero-header .hero-body.post-item #hero-content .desc-wrapper a span.text {
-      display: inline;
-      position: relative;
-      background-position: 0 92%, 0 92%;
-      background-size: 92% 2px;
-      -webkit-transition: background-size 0.3s;
-      -moz-transition: background-size 0.3s;
-      -ms-transition: background-size 0.3s;
-      -o-transition: background-size 0.3s; }
     #home-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner, #main-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner {
       margin-top: -3.5rem;
       text-align: center;
@@ -9738,21 +9633,7 @@ body #content .content .mw-300 {
       #home-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner p {
         position: relative;
         top: -5px;
-        color: #12222D; }
-    #home-content .hero-header .hero-body.post-item #hero-content .image-wrapper:hover + .desc-wrapper a span.text, #main-content .hero-header .hero-body.post-item #hero-content .image-wrapper:hover + .desc-wrapper a span.text {
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
-      background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
-      background-size: 0 2px, 0 2px, 2px 2px;
-      background-repeat: no-repeat,no-repeat,repeat-x;
-      text-shadow: 0.03em 0 #FFFFFF, -0.03em 0 #FFFFFF, 0 0.03em #FFFFFF, 0 -0.03em #FFFFFF, 0.06em 0 #FFFFFF, -0.06em 0 #FFFFFF, 0.09em 0 #FFFFFF, -0.09em 0 #FFFFFF, 0.12em 0 #FFFFFF, -0.12em 0 #FFFFFF, 0.15em 0 #FFFFFF, -0.15em 0 #FFFFFF;
-      background-position: 100% 92%, 100% 92%; }
-    #home-content .hero-header .hero-body.post-item #hero-content .image-wrapper:hover + .desc-wrapper a span.text, #main-content .hero-header .hero-body.post-item #hero-content .image-wrapper:hover + .desc-wrapper a span.text {
-      display: inline;
-      position: relative;
-      -webkit-transition: background-size 0.3s;
-      -moz-transition: background-size 0.3s;
-      -ms-transition: background-size 0.3s;
-      -o-transition: background-size 0.3s; } }
+        color: #12222D; } }
 .no-pad {
   padding: 0 !important; }
 

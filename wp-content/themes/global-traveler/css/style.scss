@@ -164,9 +164,6 @@ h1 {
 }
 
 h2 {
-	@extend %font-2;
-	font-size: 36px;
-	line-height: 45px;
 	&.title {
 		a {
 			color: $default;
@@ -175,7 +172,6 @@ h2 {
 }
 
 h3 {
-	@extend %font-2;
 	font-size: 24px;
 	line-height: 32px;
 	&.light {
@@ -221,7 +217,6 @@ h4 {
 }
 
 h5 {
-	@extend %font-medium;
 	text-transform: uppercase;
 	&.categories {
 		display: inline-block;
@@ -1050,19 +1045,14 @@ h5 {
 			max-width: 90%;
 			display: block;
 			background-color: $white;
-			margin: -45px auto 0;
 			text-align: center;
 			padding: 0 15px 0 5px;
-			@include border-link($white, $green, span, true, null, text, 2px, 94%);
 
 			a {
 				&.post {
 					padding: 10px 15px 5px;
 					span {
-						padding: 0 15px;
-
 						> span {
-							top: 3px !important;
 							padding: 0;
 						}
 					}
@@ -1071,13 +1061,6 @@ h5 {
 			h3 {
 				&.title {
 					margin-bottom: 0;
-				}
-			}
-		}
-		.img-wrapper {
-			&:hover {
-				&+.copy {
-					@include border-link($white, $green, span, false, null, text, 2px, 94%);
 				}
 			}
 		}
@@ -1097,7 +1080,6 @@ h5 {
 				background-size: cover;
 			}
 			.copy {
-				@include border-link($white, $green, span, true, null, text, 2px, 98%);
 				.tagline {
 					h5 {
 						&.categories {
@@ -1120,13 +1102,6 @@ h5 {
 				.content {
 					display: inline-block;
 					padding-left: 15px;
-				}
-			}
-			.img-wrapper {
-				&:hover {
-					&+.copy {
-						@include border-link($white, $green, span, false, null, text, 2px, 98%);
-					}
 				}
 			}
 		}
@@ -1163,7 +1138,6 @@ h5 {
 				.copy {
 					width: 100%;
 					text-align: center;
-					@include border-link($white, $green, span, true, null, text, 2px, 94%);
 					.title {
 						max-width: 90%;
 						margin: -35px auto 0;
@@ -1174,20 +1148,12 @@ h5 {
 								padding: 18px 0 5px;
 								text-align: center;
 								span {
-									padding: 0 0 2px;
 									margin: 0 5px 10px;
 									> span {
 										// margin: 0 10px;
 									}
 								}
 							}
-						}
-					}
-				}
-				.img-wrapper {
-					&:hover {
-						&+.copy {
-							@include border-link($white, $green, span, false, null, text, 2px, 94%);
 						}
 					}
 				}
@@ -1204,9 +1170,6 @@ h5 {
 								}
 							}
 						}
-					}
-					.tagline {
-						margin-bottom: -5px;
 					}
 				}
 				.tagline {
@@ -1626,16 +1589,6 @@ body {
 
 	#home-content, #main-content {
 		.post-half {
-			.copy {
-				@include border-link($white, $green, span, true, null, text, 2px, 100%);
-			}
-			.img-wrapper {
-				&:hover {
-					&+.copy {
-						@include border-link($white, $green, span, false, null, text, 2px, 100%);
-					}
-				}
-			}
 			.image {
 				max-height: 280px;
 			}
@@ -1737,7 +1690,6 @@ body {
 					min-height: auto;
 					#hero-content {
 						.desc-wrapper {
-							@include border-link($white, $green, span, true, null, text, 2px, 92%);
 							.desc-inner {
 								margin-top: -3.5rem;
 								text-align: center;
@@ -1761,13 +1713,6 @@ body {
 									position: relative;
 									top: -5px;
 									color: $default;
-								}
-							}
-						}
-						.image-wrapper {
-							&:hover {
-								&+.desc-wrapper {
-										@include border-link($white, $green, span, false, null, text, 2px, 92%);
 								}
 							}
 						}

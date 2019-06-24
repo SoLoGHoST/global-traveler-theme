@@ -631,11 +631,20 @@ $li-share: #0077B5;
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
+h2 {
+	@extend %font-2;
+	font-size: 40px;
+	line-height: 1em;
+}
 
 h3 {
+	@extend %font-2;
 	&.blue {
 		color: $blue;
 	}
+}
+h5 {
+	@extend %font-medium;
 }
 
 .header-1 {
@@ -845,6 +854,126 @@ h3 {
 		span {
 			&.underline {
 				border-color: $dkblue;
+			}
+		}
+	}
+}
+
+#home-content, #main-content {
+	.post-half {
+		.copy {
+			margin: -45px auto 0;
+			a {
+				span {
+					&.text {
+						color: $default;
+						@include transition(all 0.3s ease);
+					}
+				}
+				&:hover {
+					span {
+						&.text {
+							color: $light-blue;
+						}
+					}
+				}
+				&.post {
+					span {
+						padding: 10px 15px;
+					}
+				}
+			}
+		}
+		.img-wrapper {
+			&:hover {
+				&+.copy {
+					a {
+						span {
+							&.text {
+								color: $light-blue;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.post-grid {
+		&.row {
+			.post-tall {
+				.copy {
+					a {
+						span {
+							&.text {
+								color: $default;
+								@include transition(all 0.3s ease);
+							}
+						}
+						&:hover {
+							span {
+								&.text {
+									color: $light-blue;
+								}
+							}
+						}
+					}
+					.title {
+						a {
+							&.post {
+								span {
+									padding: 6px 0 2px;
+								}
+							}
+						}
+					}
+				}
+				.img-wrapper {
+					&:hover {
+						&+.copy {
+							a {
+								span {
+									&.text {
+										color: $light-blue;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.post-list {
+		.post-wide {
+			.copy {
+				a {
+					span {
+						&.text {
+							color: $default;
+							@include transition(all 0.3s ease);
+						}
+					}
+					&:hover {
+						span {
+							&.text {
+								color: $light-blue;
+							}
+						}
+					}
+				}
+			}
+			.img-wrapper {
+				&:hover {
+					&+.copy {
+						a {
+							span {
+								&.text {
+									color: $light-blue;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}

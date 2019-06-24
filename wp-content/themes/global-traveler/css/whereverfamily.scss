@@ -32,15 +32,6 @@ $offblue: #F0F5F7;
 $white: #FFFFFF;
 $black: #000000;
 
-$gray: #C0BBBD;
-$default: #1F163E; // Default text color and background color of some sections.
-$green: #046D41; // Used for Links and underlines
-$orange: #EEB538; // Used for background color of headlines, and search icon...
-$purple: #8A7399;
-$ltpurple: #B4A5BE;
-$menuborder: #484C5B;
-$border-gray: #E6E7E8;
-
 // Wherever Colors...
 $tagline: #90C844;
 $header-backcolor: $white;
@@ -49,6 +40,19 @@ $light-green: $tagline;
 $border-green: #108751;
 $burgermenu-color: $taglink;
 $dark-background: #202433;
+
+$gray: $taglink;
+$default: #202433; // Default text color and background color of some sections. -- changed for whatever family...
+
+
+$green: #046D41; // Used for Links and underlines
+$orange: #EEB538; // Used for background color of headlines, and search icon...
+$purple: #8A7399;
+$ltpurple: #B4A5BE;
+$menuborder: #484C5B;
+$border-gray: #E6E7E8;
+
+
 
 $social-color: #D0D2D3;
 
@@ -619,8 +623,22 @@ $li-share: #0077B5;
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
+h2 {
+	font-size: 32px;
+	line-height: 45px;
+	@include font(font_1, regular);
+}
+h3 {
+	@include font(font_1, regular);
+}
 h2, h3 {
 	text-transform: uppercase;
+}
+h5 {
+	@include font(font_1, regular);
+	font-size: 12px;
+	line-height: 18px;
+	letter-spacing: 1.2px;
 }
 
 .header-1 {
@@ -831,6 +849,126 @@ h2, h3 {
 			&.underline {
 				text-transform: uppercase;
 				border-color: $green;
+			}
+		}
+	}
+}
+
+#home-content, #main-content {
+	.post-half {
+		.copy {
+			margin: -45px auto 0;
+			a {
+				span {
+					&.text {
+						color: $default;
+						@include transition(all 0.3s ease);
+					}
+				}
+				&:hover {
+					span {
+						&.text {
+							color: $light-green;
+						}
+					}
+				}
+				&.post {
+					span {
+						padding: 10px 15px;
+					}
+				}
+			}
+		}
+		.img-wrapper {
+			&:hover {
+				&+.copy {
+					a {
+						span {
+							&.text {
+								color: $light-green;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.post-grid {
+		&.row {
+			.post-tall {
+				.copy {
+					a {
+						span {
+							&.text {
+								color: $default;
+								@include transition(all 0.3s ease);
+							}
+						}
+						&:hover {
+							span {
+								&.text {
+									color: $light-green;
+								}
+							}
+						}
+					}
+					.title {
+						a {
+							&.post {
+								span {
+									padding: 6px 0 2px;
+								}
+							}
+						}
+					}
+				}
+				.img-wrapper {
+					&:hover {
+						&+.copy {
+							a {
+								span {
+									&.text {
+										color: $light-green;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.post-list {
+		.post-wide {
+			.copy {
+				a {
+					span {
+						&.text {
+							color: $default;
+							@include transition(all 0.3s ease);
+						}
+					}
+					&:hover {
+						span {
+							&.text {
+								color: $light-green;
+							}
+						}
+					}
+				}
+			}
+			.img-wrapper {
+				&:hover {
+					&+.copy {
+						a {
+							span {
+								&.text {
+									color: $light-green;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
