@@ -1189,7 +1189,7 @@ function tif_global_globalusa_menu_app()
 
 	if (!empty($app_store_image))
 		echo '
-		<a href="#" class="app-store-img py-2">
+		<a href="https://itunes.apple.com/us/app/global-traveler-magazine/id585809370?mt=8" target="_blank" class="app-store-img py-2">
 			<img src="' . $app_store_image . '" alt="" class="img-fluid" />
 		</a>';
 
