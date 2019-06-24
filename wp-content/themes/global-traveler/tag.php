@@ -3,7 +3,7 @@
 // The Tags Archive Page...
 
 if (!defined('ABSPATH')) exit;
-global $post, $page_id, $homepage_id, $wp_query;
+global $post, $page_id, $homepage_id, $wp_query, $global_site;
 
 
 $tag_title = get_query_var('tag');
@@ -12,7 +12,8 @@ $tag = get_tag($tag_id);
 get_header(); ?>
 
 <?php 
-tif_get_template('inc/heroes.php', array('type' => 'category', 'title' => 'Tag: ' . $tag->name));
+$global_site = apply_filters('get_global_site', $global_site);
+tif_get_template('inc/' . $global_site . '/heroes.php', array('type' => 'category', 'title' => 'Tag: ' . $tag->name));
 
 $sponsored_posts = $random_sponsors = $random_tag_sponsored = $current_sponsored = array();
 

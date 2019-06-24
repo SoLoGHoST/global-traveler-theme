@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('ABSPATH')) exit;
-global $post, $page_id, $wpdb, $hero_type, $home_video, $the_ads;
+global $post, $page_id, $wpdb, $hero_type, $home_video, $the_ads, $global_site;
 
 $hero_type = get_field('hero_type');
 $hero_post_type = get_field('post_type');
@@ -40,7 +40,8 @@ if ($hero_type != 'hometakeover')
 	}
 }
 
-tif_get_template('inc/heroes.php', $template_args);
+$global_site = apply_filters('get_global_site', $global_site);
+tif_get_template('inc/' . $global_site . '/heroes.php', $template_args);
 
 // Grab a Random Sponsored Post
 

@@ -14,13 +14,15 @@
  * @since 1.0
  * @version 1.0
  */
-global $post, $page_id;
+global $post, $page_id, $global_site;
 get_header(); 
+
+$global_site = apply_filters('get_global_site', $global_site);
 
 $hero_type = get_field('hero_type');
 $post_type = get_field('post_type');
 
-tif_get_template('inc/heroes.php', array('main_post' => $post, 'type' => $hero_type)); 
+tif_get_template('inc/' . $global_site . '/heroes.php', array('main_post' => $post, 'type' => $hero_type)); 
 ?>
 
 <div id="content" class="container-fluid no-pad my-5">

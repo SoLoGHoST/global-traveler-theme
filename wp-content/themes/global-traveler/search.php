@@ -1,7 +1,9 @@
 <?php 
-	global $wp_query, $post;
+	global $wp_query, $post, $global_site;
 
 get_header(); 
+
+$global_site = apply_filters('get_global_site', $global_site);
 
 $has_more = false;
 $ordered_array = array();
@@ -12,7 +14,7 @@ $start = (($paged * $posts_per_page) - $posts_per_page);
 $error = get_query_var('error');
 
 if (!empty($wp_query->query_vars['s']) && !have_posts()):
-	tif_get_template('inc/heroes.php', array('type' => 'category', 'title' => 'Searching: ' . $wp_query->query_vars['s'])); ?>
+	tif_get_template('inc/' . $global_site . '/heroes.php', array('type' => 'category', 'title' => 'Searching: ' . $wp_query->query_vars['s'])); ?>
 	<div id="search-no-results" class="container-fluid no-pad my-5">
 		<div class="section content">
 			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'tif' ); ?></p>
@@ -31,7 +33,7 @@ endif; ?>
 <?php 
 if (!empty($wp_query->query_vars['s']) && empty($error) && have_posts()): 
 
-	tif_get_template('inc/heroes.php', array('type' => 'category', 'title' => 'Searching: ' . $wp_query->query_vars['s'])); ?>
+	tif_get_template('inc/' . $global_site . '/heroes.php', array('type' => 'category', 'title' => 'Searching: ' . $wp_query->query_vars['s'])); ?>
 
 	<div id="content" class="search-results container-fluid no-pad my-5">
 		<div class="section content">

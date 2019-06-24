@@ -3,14 +3,16 @@
 // USED FOR NEWS CATEGORIES
 
 if (!defined('ABSPATH')) exit;
-global $post, $page_id, $homepage_id;
+global $post, $page_id, $homepage_id, $global_site;
 
 $category = get_category(get_query_var('cat'));
 $cat_id = $category->cat_ID;
 get_header(); ?>
 
 <?php 
-tif_get_template('inc/heroes.php', array('type' => 'category', 'title' => $category->name));
+
+$global_site = apply_filters('get_global_site', $global_site);
+tif_get_template('inc/' . $global_site . '/heroes.php', array('type' => 'category', 'title' => $category->name));
 
 // Get all sponsored posts...
 $sponsored_posts = $random_sponsors = $random_category_sponsored = $current_sponsored = array();

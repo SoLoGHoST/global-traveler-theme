@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('ABSPATH')) exit;
-global $post, $page_id, $is_home, $homepage_id;
+global $post, $page_id, $is_home, $homepage_id, $global_site;
 
 $author = get_the_author();
 
@@ -21,12 +21,13 @@ $args = array(
 	'posts_per_page' => 1
 );
 
+$global_site = apply_filters('get_global_site', $global_site);
 $the_loop = new WP_Query($args);
 
 if($the_loop->have_posts()):
-	while($the_loop->have_posts()): 
+	while($the_loop->have_posts()):
 		$the_loop->the_post();
-		tif_get_template('inc/heroes.php', array());
+		tif_get_template('inc/' . $global_site . '/heroes.php', array());
 	endwhile;
 endif; 
 wp_reset_postdata();

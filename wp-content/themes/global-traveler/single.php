@@ -5,9 +5,11 @@
  */
  
 if (!defined('ABSPATH')) exit;
-global $post, $page_id, $main_categories, $wpdb;
+global $post, $page_id, $main_categories, $wpdb, $global_site;
 
 get_header();
+
+$global_site = apply_filters('get_global_site', $global_site);
 
 $posts_group_id = $wpdb->get_var('SELECT term_id FROM ' . $wpdb->terms . ' WHERE name = "Single Post Group" OR slug = "single-post-group" LIMIT 1');
 
@@ -20,7 +22,7 @@ if (have_posts()):
 
 $hero_type = get_field('hero_type');
 
-tif_get_template('inc/heroes.php', array('main_post' => $post, 'type' => empty($hero_type) ? 'post' : $hero_type));
+tif_get_template('inc/' . $global_site . '/heroes.php', array('main_post' => $post, 'type' => empty($hero_type) ? 'post' : $hero_type));
 
 $post_id = $post->ID;
 $excluded_categories = array(); ?>
