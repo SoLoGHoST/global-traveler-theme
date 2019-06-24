@@ -860,6 +860,11 @@ h5 {
 	.modal-dialog {
 		.modal-header {
 			background-color: $red;
+			input {
+				&[type="text"] {
+					font-size: 60px;
+				}
+			}
 		}
 	}
 	.form-wrapper {

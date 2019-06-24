@@ -8355,10 +8355,14 @@ h5.categories {
 .tif-search-modal .modal-dialog .modal-header {
   background-color: #EEB538; }
   .tif-search-modal .modal-dialog .modal-header input[type="text"] {
+    font-size: 72px;
     text-transform: uppercase; }
-.tif-search-modal .form-wrapper span.underline {
-  text-transform: uppercase;
-  border-color: #2CB78F; }
+.tif-search-modal .form-wrapper span {
+  font-size: 72px; }
+  .tif-search-modal .form-wrapper span.underline {
+    font-size: 72px;
+    text-transform: uppercase;
+    border-color: #2CB78F; }
 
 #home-content .post-half .copy, #main-content .post-half .copy {
   margin: -45px auto 0; }
@@ -9070,7 +9074,6 @@ h5 {
         width: 80%; }
 
 .tif-search-modal .modal-dialog .modal-header input[type="text"] {
-  font-size: 72px;
   color: #FFFFFF; }
   .tif-search-modal .modal-dialog .modal-header input[type="text"]::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.2); }
@@ -9111,11 +9114,8 @@ h5 {
 .tif-search-modal .form-wrapper {
   border-bottom: 2px solid #FFFFFF !important;
   padding-right: 80px; }
-  .tif-search-modal .form-wrapper span {
-    font-size: 72px; }
-    .tif-search-modal .form-wrapper span.underline {
-      font-size: 72px;
-      margin-right: 80px; }
+  .tif-search-modal .form-wrapper span.underline {
+    margin-right: 80px; }
 
 #home-content, #main-content {
   padding: 0;

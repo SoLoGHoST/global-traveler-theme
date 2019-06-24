@@ -169,7 +169,7 @@ if (!empty($type)):
 										endif;
 									endif; ?>
 								</h5>
-								<h1 class="title mt-4 mb-3">
+								<h1 class="title mt-md-4 mb-md-3">
 									<a href="<?php the_permalink($main_post->ID); ?>" class="hero-post"><span><?php echo get_the_title($main_post->ID); ?></span></a>
 								</h1>
 								<?php if (!empty($author_name)): ?>

@@ -807,6 +807,7 @@ h5 {
 			background-color: $orange;
 			input {
 				&[type="text"] {
+					font-size: 72px;
 					text-transform: uppercase;
 				}
 			}
@@ -814,7 +815,9 @@ h5 {
 	}
 	.form-wrapper {
 		span {
+			font-size: 72px;
 			&.underline {
+				font-size: 72px;
 				text-transform: uppercase;
 				border-color: $green;
 			}
