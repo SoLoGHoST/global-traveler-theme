@@ -1094,13 +1094,36 @@ function trazee_search_submit_button($button)
 	return '<div class="button-wrapper"><button type="submit" class="submit' . apply_filters('tif_search_button_classes', '') . '" id="searchsubmit">' . apply_filters('tif_search_submit', __('Go', 'tif_global')) . '</button></div>';
 }
 
+add_filter('get_global_site', 'tif_global_get_site', 10, 1);
+
+function tif_global_get_site($site) {
+
+	global $global_site;
+
+	if (empty($global_site)) {
+		$global_site = get_theme_mod('tif_global_site');
+		$global_site = !empty($global_site) ? $global_site : 'trazeetravel';
+	}
+
+	return !empty($global_site) ? $global_site : $site;
+}
+
 add_filter('wp_nav_menu_items', 'trazee_wp_nav_menu_items', 10, 2);
 
 function trazee_wp_nav_menu_items($items, $args) {
 
+	global $global_site;
+
     if($args->theme_location == 'main_navigation')
     {
+    	$global_site = apply_filters('get_global_site', 'trazeetravel');
     	$socials = apply_filters('trazee_get_socials', array());
+
+    	if ($global_site == 'globalusa') {
+    		ob_start();
+    		do_action('globalusa_menu_app');
+    		$items .= ob_get_clean();
+    	}
 
     	if (!empty($socials))
     	{
@@ -1116,6 +1139,49 @@ function trazee_wp_nav_menu_items($items, $args) {
     }
 
     return $items;
+}
+
+add_filter('get_global_site_directory_path_uri', 'tif_global_get_path_url_for_site', 10, 3);
+
+function tif_global_get_path_url_for_site($url, $path_type, $filename)
+{
+	global $global_site;
+
+	// path type is required!
+	if (!empty($path_type)) {
+
+		if (empty($global_site)) {
+			$global_site = get_theme_mod('tif_global_site');
+			$global_site = !empty($global_site) ? $global_site : 'trazeetravel';
+		}
+
+		$url = get_template_directory_uri() . '/' . $path_type . '/' . $global_site;
+
+		if (!empty($filename))
+			$url .= '/' . $filename;
+	}
+
+	return $url;
+}
+
+add_action('globalusa_menu_app', 'tif_global_globalusa_menu_app');
+
+function tif_global_globalusa_menu_app()
+{
+	$app_store_image = apply_filters('get_global_site_directory_path_uri', '', 'images', 'app-store.png');
+
+	echo '
+	<li class="get-the-app text-center pt-4">
+		<h3 class="blue">', __('Get the GT App', 'vetgirl'), '</h3>';
+
+	if (!empty($app_store_image))
+		echo '
+		<a href="#" class="app-store-img py-2">
+			<img src="' . $app_store_image . '" alt="" class="img-fluid" />
+		</a>';
+
+	echo '
+	</li>';
 }
 
 add_filter('get_post_first_paragraph', 'get_post_first_paragraph', 10, 2);

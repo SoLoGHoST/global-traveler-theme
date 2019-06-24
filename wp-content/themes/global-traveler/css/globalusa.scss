@@ -631,6 +631,13 @@ $li-share: #0077B5;
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
+
+h3 {
+	&.blue {
+		color: $blue;
+	}
+}
+
 .header-1 {
 	.topline {
 		> .inner-wrapper {
@@ -756,6 +763,7 @@ $li-share: #0077B5;
 				}
 			}
 			&.social-buttons {
+				padding: 0 1rem;
 				> ul {
 					.social-media {
 						> a {
@@ -767,10 +775,16 @@ $li-share: #0077B5;
 					}
 				}
 			}
-			&.social-buttons, &.copyright {
+			&.social-buttons, &.copyright, &.get-the-app {
 				background-color: $black;
 			}
+			&.get-the-app {
+				h4 {
+					color: $blue;
+				}
+			}
 			&.copyright {
+				padding: 0 1rem 3rem;
 				color : $white;
 				> p {
 					line-height: 1em;

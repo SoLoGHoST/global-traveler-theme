@@ -8235,6 +8235,9 @@ body {
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
+h2, h3 {
+  text-transform: uppercase; }
+
 .header-1 .topline > .inner-wrapper {
   border-bottom: 1px solid #484C5B; }
 .header-1 .topline .site-section {
@@ -8314,13 +8317,16 @@ body {
     color: #FFFFFF; }
     #mainMenu #main_navigation > li.dropdown.show > a span.caret-arrow:before, #mainMenu #main_navigation > li.dropdown.show > a span.caret-arrow:after {
       border-color: #FFFFFF; }
-  #mainMenu #main_navigation > li.social-buttons > ul .social-media > a {
-    color: #FFFFFF; }
-    #mainMenu #main_navigation > li.social-buttons > ul .social-media > a:hover {
-      color: #2CB78F; }
+  #mainMenu #main_navigation > li.social-buttons {
+    padding: 3rem 1rem .25rem; }
+    #mainMenu #main_navigation > li.social-buttons > ul .social-media > a {
+      color: #FFFFFF; }
+      #mainMenu #main_navigation > li.social-buttons > ul .social-media > a:hover {
+        color: #2CB78F; }
   #mainMenu #main_navigation > li.social-buttons, #mainMenu #main_navigation > li.copyright {
     background-color: #000000; }
   #mainMenu #main_navigation > li.copyright {
+    padding: .25rem 1rem 3rem;
     color: #2CB78F; }
     #mainMenu #main_navigation > li.copyright a.privacy-policy {
       color: #2CB78F; }
@@ -8461,15 +8467,13 @@ h1 {
 
 h2 {
   font-size: 36px;
-  line-height: 45px;
-  text-transform: uppercase; }
+  line-height: 45px; }
   h2.title a {
     color: #1F163E; }
 
 h3 {
   font-size: 24px;
-  line-height: 32px;
-  text-transform: uppercase; }
+  line-height: 32px; }
   h3.light {
     color: #C0BBBD; }
 
@@ -8598,22 +8602,19 @@ h5 {
         padding-right: 2.5rem; }
       #mainMenu #main_navigation > li.social-buttons, #mainMenu #main_navigation > li.copyright {
         border: none; }
-      #mainMenu #main_navigation > li.social-buttons {
-        padding: 3rem 1rem .25rem; }
-        #mainMenu #main_navigation > li.social-buttons > ul {
-          text-align: center; }
-          #mainMenu #main_navigation > li.social-buttons > ul .social-media {
-            float: none;
-            width: auto; }
-            #mainMenu #main_navigation > li.social-buttons > ul .social-media > a {
-              padding: 0;
-              font-size: 20px;
-              -webkit-transition: all 0.2s ease;
-              -moz-transition: all 0.2s ease;
-              -ms-transition: all 0.2s ease;
-              -o-transition: all 0.2s ease; }
+      #mainMenu #main_navigation > li.social-buttons > ul {
+        text-align: center; }
+        #mainMenu #main_navigation > li.social-buttons > ul .social-media {
+          float: none;
+          width: auto; }
+          #mainMenu #main_navigation > li.social-buttons > ul .social-media > a {
+            padding: 0;
+            font-size: 20px;
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            -ms-transition: all 0.2s ease;
+            -o-transition: all 0.2s ease; }
       #mainMenu #main_navigation > li.copyright {
-        padding: .25rem 1rem 3rem;
         text-align: center;
         font-size: 10px;
         line-height: 18px;

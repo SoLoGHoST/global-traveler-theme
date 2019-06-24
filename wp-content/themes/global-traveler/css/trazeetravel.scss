@@ -617,6 +617,9 @@ $burgermenu-color: $purple;
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
+h2, h3 {
+	text-transform: uppercase;
+}
 .header-1 {
 	.topline {
 		> .inner-wrapper {
@@ -719,6 +722,7 @@ $burgermenu-color: $purple;
 				}
 			}
 			&.social-buttons {
+				padding: 3rem 1rem .25rem;
 				> ul {
 					.social-media {
 						> a {
@@ -734,6 +738,7 @@ $burgermenu-color: $purple;
 				background-color: $black;
 			}
 			&.copyright {
+				padding: .25rem 1rem 3rem;
 				color : $green;
 				a {
 					&.privacy-policy {
