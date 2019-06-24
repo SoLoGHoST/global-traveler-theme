@@ -8,7 +8,9 @@ if (!defined('ABSPATH')) exit(0);
 
 global $main_categories;
 
-if (!empty($type)): ?>
+if (!empty($type)): 
+	error_log($type);
+	?>
 
 	<div class="hero-header">
 
@@ -109,7 +111,6 @@ if (!empty($type)): ?>
 			height: calc(100% + 40px);
 			background: url(<?php echo $post_image; ?>) no-repeat center center;
 			background-size: cover;
-			z-index: -1;
 		}
 		body.home .hero-body a.pic-link:before {
 			-webkit-transform-origin: top left;
@@ -124,7 +125,6 @@ if (!empty($type)): ?>
 			height: calc(100% + 40px);
 			background: url(<?php echo $post_image; ?>) no-repeat center center;
 			background-size: cover;
-			z-index: -1;
 		}
 		body.home .hero-body a.pic-link::before {
 			-webkit-transform-origin: top left;
