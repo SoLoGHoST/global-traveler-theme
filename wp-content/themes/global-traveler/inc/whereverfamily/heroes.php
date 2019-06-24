@@ -153,7 +153,7 @@ if (!empty($type)):
 				<div id="hero-content" class="row px-md-5 my-md-5 align-items-start">
 					<div class="col-24 col-md-12 px-0 py-md-4 pb-0 px-md-3 image-wrapper">
 						
-						<a href="<?php the_permalink($main_post->ID); ?>"><img src="<?php echo $post_image; ?>" alt="<?php echo $image_alt; ?>" class="img-fluid px-md-2 d-sm-none d-md-none d-lg-none" /></a>
+						<a href="<?php the_permalink($main_post->ID); ?>"><img src="<?php echo $post_image; ?>" alt="<?php echo $image_alt; ?>" class="img-fluid px-md-2 d-md-none d-lg-none" /></a>
 
 						<div class="desc-wrapper">
 							<div class="desc-inner px-2">
@@ -169,7 +169,7 @@ if (!empty($type)):
 										endif;
 									endif; ?>
 								</h5>
-								<h1 class="title my-4">
+								<h1 class="title mt-4 mb-3">
 									<a href="<?php the_permalink($main_post->ID); ?>" class="hero-post"><span><?php echo get_the_title($main_post->ID); ?></span></a>
 								</h1>
 								<?php if (!empty($author_name)): ?>

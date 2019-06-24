@@ -153,7 +153,7 @@ if (!empty($type)): ?>
 				<div id="hero-content" class="row px-md-5 my-md-5 align-items-start">
 					<div class="col-24 col-md-12 px-0 py-md-4 pb-0 px-md-3 image-wrapper">
 						
-						<a href="<?php the_permalink($main_post->ID); ?>"><img src="<?php echo $post_image; ?>" alt="<?php echo $image_alt; ?>" class="img-fluid px-md-2 d-sm-none d-md-none d-lg-none" /></a> 
+						<a href="<?php the_permalink($main_post->ID); ?>"><img src="<?php echo $post_image; ?>" alt="<?php echo $image_alt; ?>" class="img-fluid px-md-2 d-md-none d-lg-none" /></a> 
 						
 					</div>
 					<div class="col-24 col-md-12 py-0 py-md-4 px-4 px-md-3 desc-wrapper">
