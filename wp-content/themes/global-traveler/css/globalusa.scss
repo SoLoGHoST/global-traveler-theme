@@ -1075,6 +1075,7 @@ h5 {
 						@include box-shadow(none);
 
 						> span {
+							text-transform: lowercase;
 							@include box-shadow(none);
 							background: transparent;
 							box-shadow: none;

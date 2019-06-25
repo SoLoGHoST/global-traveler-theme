@@ -8434,6 +8434,7 @@ h5.categories {
       -moz-box-shadow: none;
       box-shadow: none; }
       #home-content #content #instagram-feed h4.title span > span, #main-content #content #instagram-feed h4.title span > span {
+        text-transform: lowercase;
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
         box-shadow: none;
