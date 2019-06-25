@@ -214,6 +214,7 @@ function register_my_menus() {
 	register_nav_menus(
 		array(
 			'main_navigation' => __('Main Navigation', 'tif_global'),
+			'sub_navigation' => __('Secondary Navigation', 'tif_global'),
 			'footer_menu' => __('Footer Navigation', 'tif_global')
 		)
 	);
@@ -1122,6 +1123,30 @@ function tif_global_get_site($site) {
 	}
 
 	return !empty($global_site) ? $global_site : $site;
+}
+
+add_filter('global_site_menu_after', 'tif_global_site_menu_after', 10, 2);
+
+function tif_global_site_menu_after($data, $menu)
+{
+	// Get menu items for the sub_navigation menu (if exists and is attached to a menu)
+	$theme_locations = get_nav_menu_locations();
+	$submenu_html = '';
+
+	if (!empty($data['theme_location']) && !empty($theme_locations[$data['theme_location']])) {
+
+		$submenu = get_term($theme_locations[$data['theme_location']], 'nav_menu');
+		$submenu_items = wp_get_nav_menu_items($submenu, array('nopaging' => true));
+
+		error_log(var_export($submenu_items, true));
+
+		foreach($submenu_items as $submenu_item) {
+			$submenu_html .= '<a href="' . $submenu_item->url . '" class="menu-link">' . $submenu_item->title . '</a>';
+		}
+
+	}
+
+	return $submenu_html;
 }
 
 add_filter('wp_nav_menu_items', 'trazee_wp_nav_menu_items', 10, 2);

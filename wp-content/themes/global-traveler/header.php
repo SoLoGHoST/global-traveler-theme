@@ -114,7 +114,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					'container' => ''
 				),
 				'location' => 'main_navigation', 
-				'depth' => 2
+				'depth' => 2,
+				'after' => array(
+					'class' => '',
+					'filters' => array('global_site_menu_after' => array('theme_location' => 'sub_navigation'))
+				)
 			), array('logo' => $all_sites[$global_site]['logo'])
 		)
 	);
