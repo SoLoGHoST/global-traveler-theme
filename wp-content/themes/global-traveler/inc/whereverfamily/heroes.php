@@ -150,7 +150,7 @@ if (!empty($type)):
 			<?php 
 			if (is_front_page()): ?>
 			<div class="container-fluid px-0 px-md-2">
-				<div id="hero-content" class="row px-md-5 my-md-5 align-items-start">
+				<div id="hero-content" class="row px-md-5 my-md-5 align-items-center">
 					<div class="col-24 col-md-12 px-0 py-md-4 pb-0 px-md-3 image-wrapper">
 						
 						<a href="<?php the_permalink($main_post->ID); ?>"><img src="<?php echo $post_image; ?>" alt="<?php echo $image_alt; ?>" class="img-fluid px-md-2 d-md-none d-lg-none" /></a>
@@ -170,7 +170,7 @@ if (!empty($type)):
 									endif; ?>
 								</h5>
 								<h1 class="title mt-md-4 mb-md-3">
-									<a href="<?php the_permalink($main_post->ID); ?>" class="hero-post"><span><?php echo get_the_title($main_post->ID); ?></span></a>
+									<a href="<?php the_permalink($main_post->ID); ?>" class="hero-post"><span><span class="text"><?php echo get_the_title($main_post->ID); ?></span></span></a>
 								</h1>
 								<?php if (!empty($author_name)): ?>
 								<p>by <?php echo $author_name; ?></p>
@@ -178,7 +178,7 @@ if (!empty($type)):
 								$the_excerpt = apply_filters('tif_global_get_the_excerpt', '', $main_post->ID, 375);
 
 								if (!empty($the_excerpt)): ?>
-									<p class="the-excerpt"><?php echo $the_excerpt; ?></p>
+									<p class="d-none d-md-block the-excerpt"><?php echo $the_excerpt; ?></p>
 								<?php
 								endif; ?>
 							</div>
@@ -186,7 +186,11 @@ if (!empty($type)):
 						
 					</div>
 					<div class="col-24 col-md-12 py-0 py-md-4 px-4 px-md-3">
-						
+						<p class="d-none d-md-flex mb-0 align-items-center justify-content-end">
+							<a href="<?php the_permalink($main_post->ID); ?>" class="btn btn-white btn-arrow read-more"><?php _e('Read More', 'tif_global'); ?>
+								<span class="caret-arrow"></span>
+							</a>
+						</p>
 						<?php // get the author link last here... ?>
 					</div>
 				</div>

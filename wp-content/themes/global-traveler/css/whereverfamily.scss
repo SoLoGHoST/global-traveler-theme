@@ -42,7 +42,7 @@ $burgermenu-color: $taglink;
 $dark-background: #202433;
 
 $gray: $taglink;
-$default: #202433; // Default text color and background color of some sections. -- changed for whatever family...
+$default: $dark-background; // Default text color and background color of some sections. -- changed for whatever family...
 
 
 $green: #046D41; // Used for Links and underlines
@@ -111,6 +111,12 @@ $li-share: #0077B5;
 	@include font(font_1, bold);
 	font-size: 16px;
 	line-height: 2em;
+}
+
+%button-text {
+	@include font(font_1, medium);
+	font-size: 18px;
+	text-transform: uppercase;
 }
 
 
@@ -624,21 +630,13 @@ $li-share: #0077B5;
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
-h1 {
-	a {
-		&.hero-post {
-			color: $white;
-			font-weight: 700;
-		}
-	}
-}
 h2 {
 	font-size: 32px;
 	line-height: 45px;
-	@include font(font_1, regular);
+	@include font(font_1, bold);
 }
 h3 {
-	@include font(font_1, regular);
+	@include font(font_1, bold);
 }
 h2, h3 {
 	text-transform: uppercase;
@@ -997,6 +995,18 @@ h5 {
 	.hero-header {
 		.hero-body {
 			#hero-content {
+				h1 {
+					padding-top: 10px;
+					a {
+						&.hero-post {
+							display: inline;
+							padding: 10px;
+							background-color: $white;
+							color: $default;
+							font-weight: 700;
+						}
+					}
+				}
 				.desc-wrapper {
 					a {
 						span {
@@ -1039,6 +1049,91 @@ h5 {
 	}
 }
 
+.btn {
+	@extend %button-text;
+	@include border-radius(0);
+	position: relative;
+	outline: 0;
+	@include box-shadow(none);
+	&.btn-white {
+		border: 1px solid $white;
+		color: $white;
+		background-color: transparent;
+		@include transition(all .4s ease);
+		&:hover {
+			color: $default;
+			background-color: $white;
+		}
+	}
+	&.btn-arrow {
+    	padding: 0.7rem 4.5rem 0.5rem 1.8rem;
+		span {
+			&.caret-arrow {
+				@include transform(rotate(0deg));
+				position: absolute;
+				right: 1.5rem;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				width: 12px;
+				height: 12px;
+				display: inline-block;
+				
+				@include transition(all .4s ease);
+
+				&:before, &:after {
+					content: "";
+					background-color: $white;
+					width: 2px;
+				    height: 10px;
+				    display: inline-block;
+				    position: absolute;
+				    top: 0;
+				    left: 0;
+				    
+				    @include transition(all 0.2s ease);
+				}
+
+				&:before {
+					@include transform(rotate(135deg));
+					margin-top: -3px;
+				}
+				&:after {
+					@include transform(rotate(45deg));
+					margin-top: 3px;
+				}
+			}
+		}
+		&:hover {
+			outline: 0;
+			span {
+				&.caret-arrow {
+					right: 1.25rem;
+					&:before, &:after {
+						background-color: $default;
+					}
+				}
+			}
+		}
+		&:focus {
+			outline: 0;
+			@include box-shadow(none);
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	h1 {
+		&.hero-post {
+			span {
+				> span {
+					top: -5px;
+				}
+			}
+		}
+	}
+}
+
 @media (max-width: 991px) {
 
 	#home-content, #main-content {
@@ -1049,17 +1144,43 @@ h5 {
 						.desc-inner {
 							h1 {
 								&.title {
-									position: absolute;
-									top: 0;
-									bottom: 0;
-									margin-top: 50px;
-									padding: 0 15px;
-									width: 100%;
-									height: 0;
+									a {
+										&.hero-post {
+											span {
+												> span {
+													top: -5px;
+													&.text {
+														color: $default;
+													}
+												}
+											}
+
+											span {
+											    line-height: 0;
+											    margin: 0;
+											    padding: 0 1.5rem 0 1.5rem;
+												border: 0;
+												-webkit-box-decoration-break: clone;
+												box-decoration-break: clone;
+
+												webkit-box-shadow: inset 0 80px 0 $white, 0 0 0 $white;
+												-moz-box-shadow: inset 0 80px 0 $white, 0 0 0 $white;
+												box-shadow: inset 0 80px 0 $white, 0 0 0 $white;
+
+												> span {
+													background: transparent;
+													box-shadow: none;
+													line-height: 0;
+													position: relative;
+													top: 0;
+													padding: 0;
+													z-index: 1;
+												}
+											}
+
+										}
+									}
 								}
-							}
-							.the-excerpt {
-								margin-top: 50px;
 							}
 						}
 					}
@@ -1068,6 +1189,49 @@ h5 {
 		}
 	}
 
+}
+
+@media (min-width: 992px) {
+
+	#home-content, #main-content {
+		.hero-header {
+			.hero-body {
+				.caption {
+					position: absolute;
+					text-shadow: 1px 1px 0 black;
+					bottom: 6.5rem;
+					left: 0;
+					right: 0;
+					margin: auto;
+					p {
+						color: $white;
+					}
+				}
+				#hero-content {
+					h1 {
+						padding-top: 0;
+						a {
+							&.hero-post {
+								display: inline-block;
+								padding: 0;
+								color: $white;
+								background-color: transparent;
+								padding-top: initial;
+								> span {
+									padding-top: 0;
+									> span {
+										&.text {
+											color: $white;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 

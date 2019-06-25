@@ -958,4 +958,24 @@ h5 {
 	}
 }
 
+@media (min-width: 992px) {
+	#home-content, #main-content {
+		.hero-header {
+			.hero-body {
+				.caption {
+					position: absolute;
+					text-shadow: 1px 1px 0 black;
+					bottom: 6.5rem;
+					left: 0;
+					right: 0;
+					margin: auto;
+					p {
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}
+
 @import "style.scss";

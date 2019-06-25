@@ -8401,6 +8401,16 @@ h5.categories {
 #home-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text, #main-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text {
   color: #25AECC; }
 
+@media (min-width: 992px) {
+  #home-content .hero-header .hero-body .caption, #main-content .hero-header .hero-body .caption {
+    position: absolute;
+    text-shadow: 1px 1px 0 black;
+    bottom: 6.5rem;
+    left: 0;
+    right: 0;
+    margin: auto; }
+    #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p {
+      color: #FFFFFF; } }
 .site-section {
   min-height: 200px;
   position: absolute;
@@ -10126,15 +10136,6 @@ body #content .content .mw-300 {
 @media (min-width: 992px) {
   #home-content #content #posts-section, #main-content #content #posts-section {
     margin-top: -6.5rem; }
-  #home-content .hero-header .hero-body .caption, #main-content .hero-header .hero-body .caption {
-    position: absolute;
-    text-shadow: 1px 1px 0 black;
-    bottom: 6.5rem;
-    left: 0;
-    right: 0;
-    margin: auto; }
-    #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p {
-      color: #FFFFFF; }
   #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p {
     text-shadow: 1px 1px 0 black; }
 
