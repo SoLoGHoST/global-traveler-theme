@@ -173,7 +173,7 @@ if (!empty($type)): ?>
 								<?php if (!empty($author_name)): ?>
 								<p>by <?php echo $author_name; ?></p>
 								<?php endif; 
-								$the_excerpt = apply_filters('tif_global_get_the_excerpt', '', $main_post->ID, 375);
+								$the_excerpt = apply_filters('tif_global_get_the_excerpt', '', $main_post->ID, 250);
 
 								if (!empty($the_excerpt)): ?>
 									<p class="d-none d-md-block the-excerpt"><?php echo $the_excerpt; ?></p>

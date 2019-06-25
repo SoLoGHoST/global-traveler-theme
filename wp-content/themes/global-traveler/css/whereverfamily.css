@@ -8510,11 +8510,13 @@ h5 {
       color: #046D41; }
 #home-content #content #posts-section #body-content a, #main-content #content #posts-section #body-content a {
   color: #90C844; }
+  #home-content #content #posts-section #body-content a:hover, #main-content #content #posts-section #body-content a:hover {
+    border-bottom: 2px solid #90C844; }
 #home-content #content .post-item .copy .content a, #main-content #content .post-item .copy .content a {
   color: #90C844;
   border-bottom: none; }
   #home-content #content .post-item .copy .content a:hover, #main-content #content .post-item .copy .content a:hover {
-    color: #83bb37; }
+    border-bottom: 2px solid #90C844; }
 
 #main-content .hero-header .hero-body .post-wrapper .overlay p {
   line-height: 2em;
@@ -8555,6 +8557,8 @@ h5 {
   padding: 0 15px; }
   .recent-posts-wrapper .right-side h5 a {
     color: #90C844; }
+    .recent-posts-wrapper .right-side h5 a:hover {
+      border-bottom: 2px solid #90C844; }
 
 body.search #main-content .hero-header .headline {
   background-color: #90C844; }

@@ -1175,6 +1175,9 @@ h5 {
 			#body-content {
 				a {
 					color: $light-green;
+					&:hover {
+						border-bottom: 2px solid $light-green;
+					}
 				}
 			}
 		}
@@ -1185,7 +1188,7 @@ h5 {
 						color: $light-green;
 						border-bottom: none;
 						&:hover {
-							color: darken($light-green, 5%);
+							border-bottom: 2px solid $light-green;
 						}
 					}
 				}
@@ -1288,6 +1291,9 @@ h5 {
 			padding: 0 15px;
 			a {
 				color: $light-green;
+				&:hover {
+					border-bottom: 2px solid $light-green;
+				}
 			}
 		}
 	}
