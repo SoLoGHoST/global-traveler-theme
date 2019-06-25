@@ -1057,7 +1057,36 @@ h5 {
 	}
 	#content {
 		#instagram-feed {
-			background-color: $green;
+			background-color: $blue;
+			h4 {
+				&.title {
+					display: inline-block;
+					margin: 0;
+					padding: 15px 0;
+					width: 100%;
+
+					span {
+					    line-height: 0;
+					    margin: 0;
+					    padding: 0 15px;
+						border: 0;
+						-webkit-box-decoration-break: clone;
+						box-decoration-break: clone;
+						@include box-shadow(none);
+
+						> span {
+							@include box-shadow(none);
+							background: transparent;
+							box-shadow: none;
+							line-height: 0;
+							position: relative;
+							top: -8px;
+							padding: 0;
+							z-index: 1;
+						}
+					}
+				}
+			}
 			a {
 				&.insta-feed {
 					color: $white;

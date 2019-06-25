@@ -8417,7 +8417,33 @@ h5.categories {
 #home-content .hero-header .headline, #main-content .hero-header .headline {
   background-color: #8A7399; }
 #home-content #content #instagram-feed, #main-content #content #instagram-feed {
-  background-color: #2CB78F; }
+  background-color: #3FA2DA; }
+  #home-content #content #instagram-feed h4.title, #main-content #content #instagram-feed h4.title {
+    display: inline-block;
+    margin: 0;
+    padding: 15px 0;
+    width: 100%; }
+    #home-content #content #instagram-feed h4.title span, #main-content #content #instagram-feed h4.title span {
+      line-height: 0;
+      margin: 0;
+      padding: 0 15px;
+      border: 0;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none; }
+      #home-content #content #instagram-feed h4.title span > span, #main-content #content #instagram-feed h4.title span > span {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        background: transparent;
+        box-shadow: none;
+        line-height: 0;
+        position: relative;
+        top: -8px;
+        padding: 0;
+        z-index: 1; }
   #home-content #content #instagram-feed a.insta-feed, #main-content #content #instagram-feed a.insta-feed {
     color: #FFFFFF;
     font-size: 16px;
