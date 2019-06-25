@@ -4,9 +4,12 @@
 	Description: Pulls in instagram posts and content...
 */
 
-if (!defined('ABSPATH')) exit(); 
+if (!defined('ABSPATH')) exit();
 
-$global_site = get_theme_mod('tif_global_site');
+global $all_sites, $global_site;
+
+$global_site = !empty($global_site) ? $global_site : apply_filters('get_global_site', '');
+
 $instagram_account = 'trazeetravel';
 switch($global_site)
 {
@@ -27,7 +30,11 @@ switch($global_site)
 
 <div id="instagram-feed" class="py-4 px-2 py-sm-5 px-sm-5 mb-5 mb-sm-0">
 	<div class="col-24 px-2 px-sm-3">
-		<h4 class="light title text-center"><span><span class="text">#trazeetravel</span></span></h4>
+		<?php 
+		if (!empty($all_sites[$global_site]['instagram_tag'])): ?>
+		<h4 class="light title text-center"><span><span class="text">#<?php echo $all_sites[$global_site]['instagram_tag']; ?></span></span></h4>
+		<?php
+		endif; ?>
 		<a href="https://www.instagram.com/<?php echo $instagram_account; ?>/" target="_blank" class="insta-feed"><i class="fa fa-instagram"></i><span class="text">Insta Feed</span></a>
 	</div>
 <?php

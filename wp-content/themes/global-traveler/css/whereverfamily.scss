@@ -55,11 +55,7 @@ $border-gray: #E6E7E8;
 $overlay-color: rgba(56, 56, 56, .5);
 
 
-$social-color: #D0D2D3;
-
-$fa-share: #3B5998;
-$tw-share: #08A0E9;
-$li-share: #0077B5;
+$social-color: $taglink;
 
 //------------------------------------------------//
 //--------------------- FONTS --------------------//
@@ -117,6 +113,13 @@ $li-share: #0077B5;
 	@include font(font_1, medium);
 	font-size: 18px;
 	text-transform: uppercase;
+}
+
+%social-text {
+	@include font(font_1, regular);
+	font-size: 10px;
+	line-height: 1.8em;
+	letter-spacing: 1.2px;
 }
 
 
@@ -632,7 +635,6 @@ $li-share: #0077B5;
 **************************************/
 h2 {
 	font-size: 32px;
-	line-height: 45px;
 	@include font(font_1, bold);
 }
 h3 {
@@ -647,8 +649,10 @@ h5 {
 	line-height: 18px;
 	letter-spacing: 1.2px;
 	&.categories {
+		color: $light-green;
 		padding: 6px 18px 2px;
 		&.highlight {
+			color: $default;
 			background-color: $light-green;
 			a {
 				color: $white;
@@ -656,6 +660,16 @@ h5 {
 				&:hover {
 					color: $default;
 				}
+			}
+		}
+	}
+}
+.sponsored {
+	h5 {
+		&.categories {
+			color: $light-green;
+			a {
+				color: $light-green;
 			}
 		}
 	}
@@ -867,7 +881,7 @@ h5 {
 	.form-wrapper {
 		span {
 			&.underline {
-				text-transform: uppercase;
+				font-size: 60px;
 				border-color: $green;
 			}
 		}
@@ -993,6 +1007,17 @@ h5 {
 		}
 	}
 	.hero-header {
+		&.header-type-post {
+			.hero-body {
+				.post-wrapper {
+					h1 {
+						&.hero-post {
+							color: $white;
+						}
+					}
+				}
+			}
+		}
 		.hero-body {
 			#hero-content {
 				h1 {
@@ -1041,6 +1066,261 @@ h5 {
 									}
 								}
 							}
+						}
+					}
+				}
+			}
+			.caption {
+				p {
+					color: $white;
+					@include font(font_1, regular);
+					font-size: 12px;
+					line-height: 18px;
+					letter-spacing: 1.2px;
+				}
+			}
+			.caption-post {
+				p {
+					color: $white;
+					@include font(font_1, regular);
+					font-size: 12px;
+					line-height: 18px;
+					letter-spacing: 1.2px;
+				}
+			}
+		}
+		.headline {
+			background-color: $light-green;
+		}
+	}
+	#content {
+		#instagram-feed {
+			background-color: $light-green;
+			h4 {
+				&.title {
+					display: inline-block;
+					margin: 0;
+					padding: 15px 0;
+					width: 100%;
+
+					span {
+					    line-height: 0;
+					    margin: 0;
+					    padding: 0 15px;
+						border: 0;
+						-webkit-box-decoration-break: clone;
+						box-decoration-break: clone;
+						webkit-box-shadow: inset 0 40px 0 $green, 0 -15px 0 $green;
+						-moz-box-shadow: inset 0 40px 0 $green, 0 -15px 0 $green;
+						box-shadow: inset 0 40px 0 $green, 0 -15px 0 $green;
+
+						> span {
+							background: transparent;
+							box-shadow: none;
+							line-height: 0;
+							position: relative;
+							top: -8px;
+							padding: 0;
+							z-index: 1;
+						}
+					}
+				}
+			}
+			a {
+				&.insta-feed {
+					color: $white;
+					font-size: 16px;
+					@include opacity(0.8);
+					span {
+						@extend %font-medium;
+					}
+					&:hover {
+						@include opacity(1);
+					}
+				}
+			}
+			#instagram-inner {
+				a {
+					&.instagram-link {
+						&:before {
+							@include gradient(transparent, $black);
+							@include opacity(.8);
+						}
+						.likes {
+							@extend %font-medium;
+							color: $white;
+						}
+					}
+				}
+			}
+		}
+		#posts-section {
+			#social-share {
+				color: $social-color;
+
+				.social-title {
+					@extend %social-text;
+					text-transform: uppercase;
+					font-size: 10px;
+					line-height: 1.8em;
+					color: $social-color;
+				}
+				a {
+					color: $social-color;
+					&:hover {
+						color: $green;
+					}
+				}
+			}
+			#body-content {
+				a {
+					color: $light-green;
+				}
+			}
+		}
+		.post-item {
+			.copy {
+				.content {
+					a {
+						color: $light-green;
+						border-bottom: none;
+						&:hover {
+							color: darken($light-green, 5%);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#main-content {
+	.hero-header {
+		.hero-body {
+			.post-wrapper {
+				.overlay {
+					p {
+						@extend %font-regular;
+						line-height: 2em;
+						color: $white;
+					}
+					.date {
+						text-transform: uppercase;
+						@extend %font-medium;
+						color: $white;
+					}
+
+					a {
+						span {
+							&.text {
+								color: $default;
+								@include transition(all 0.3s ease);
+							}
+						}
+						&:hover {
+							span {
+								&.text {
+									color: $light-green;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.recent-posts-wrapper {
+	#featured {
+		.innerbox {
+			a {
+				span {
+					&.text {
+						color: $default;
+						@include transition(all 0.3s ease);
+					}
+				}
+				&:hover {
+					span {
+						&.text {
+							color: $light-green;
+						}
+					}
+				}
+			}
+		}
+		.img-wrapper {
+			&:hover {
+				&+.innerbox {
+					a {
+						span {
+							&.text {
+								color: $light-green;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.right-side {
+		> h3 {
+			padding: 0 15px;
+		}
+		a {
+			span {
+				&.text {
+					color: $default;
+					@include transition(all 0.3s ease);
+				}
+			}
+			&:hover {
+				span {
+					&.text {
+						color: $light-green;
+					}
+				}
+			}
+		}
+
+		h5 {
+			padding: 0 15px;
+			a {
+				color: $light-green;
+			}
+		}
+	}
+}
+
+body {
+	&.search {
+		#main-content {
+			.hero-header {
+				.headline {
+					background-color: $light-green;
+				}
+			}
+		}
+	}
+	&.tag {
+		#main-content {
+			.hero-header {
+				.headline {
+					background-color: $light-green;
+				}
+			}
+		}
+	}
+	&.page {
+		#main-content {
+			#content {
+				.content {
+					a {
+						color: $light-green;
+
+						&:hover {
+							color: $light-green;
 						}
 					}
 				}

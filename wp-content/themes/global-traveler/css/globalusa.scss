@@ -646,6 +646,7 @@ h3 {
 h5 {
 	@extend %font-medium;
 	&.categories {
+		color: $green;
 		padding: 6px 18px 2px;
 		&.highlight {
 			// background-color: $purple;
@@ -870,6 +871,7 @@ h5 {
 	.form-wrapper {
 		span {
 			&.underline {
+				font-size: 60px;
 				border-color: $dkblue;
 			}
 		}
@@ -1030,6 +1032,252 @@ h5 {
 									}
 								}
 							}
+						}
+					}
+				}
+			}
+			.caption {
+				p {
+					color: $white;
+					@extend %font-medium;
+					@include opacity(0.7);
+				}
+			}
+			.caption-post {
+				p {
+					color: $white;
+					@extend %font-medium;
+					@include opacity(0.7);
+				}
+			}
+		}
+		.headline {
+			background-color: $purple;
+		}
+	}
+	#content {
+		#instagram-feed {
+			background-color: $green;
+			a {
+				&.insta-feed {
+					color: $white;
+					font-size: 16px;
+					@include opacity(0.8);
+					span {
+						@extend %font-medium;
+					}
+					&:hover {
+						@include opacity(1);
+					}
+				}
+			}
+			#instagram-inner {
+				a {
+					&.instagram-link {
+						&:before {
+							@include gradient(transparent, $black);
+							@include opacity(.8);
+						}
+						.likes {
+							@extend %font-medium;
+							color: $white;
+						}
+					}
+				}
+			}
+		}
+		#posts-section {
+			#social-share {
+				color: $social-color;
+
+				.social-title {
+					@extend %font-medium;
+					text-transform: uppercase;
+					font-size: 10px;
+					line-height: 1.8em;
+					color: $social-color;
+				}
+				a {
+					color: $social-color;
+					&:hover {
+						color: $green;
+
+						i {
+							&.fa-facebook-f {
+								color: darken($fa-share, 10%);
+							}
+							&.fa-twitter {
+								color: darken($tw-share, 10%);
+							}
+							&.fa-linkedin {
+								color: darken($li-share, 10%);
+							}
+						}
+					}
+					i {
+						&.fa-facebook-f {
+							color: $fa-share;
+						}
+						&.fa-twitter {
+							color: $tw-share;
+						}
+						&.fa-linkedin {
+							color: $li-share;
+						}
+					}
+				}
+			}
+			#body-content {
+				a {
+					color: $green;
+					border-bottom: 2px solid $green;
+				}
+			}
+		}
+		.post-item {
+			.copy {
+				.content {
+					a {
+						color: $light-blue;
+						border-bottom: none;
+						&:hover {
+							color: darken($light-blue, 5%);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#main-content {
+	.hero-header {
+		.hero-body {
+			.post-wrapper {
+				.overlay {
+					p {
+						@extend %font-regular;
+						line-height: 2em;
+						color: $white;
+					}
+					.date {
+						text-transform: uppercase;
+						@extend %font-medium;
+						color: $white;
+					}
+
+					a {
+						span {
+							&.text {
+								color: $default;
+								@include transition(all 0.3s ease);
+							}
+						}
+						&:hover {
+							span {
+								&.text {
+									color: $light-blue;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.recent-posts-wrapper {
+	#featured {
+		.innerbox {
+			a {
+				span {
+					&.text {
+						color: $default;
+						@include transition(all 0.3s ease);
+					}
+				}
+				&:hover {
+					span {
+						&.text {
+							color: $light-blue;
+						}
+					}
+				}
+			}
+		}
+		.img-wrapper {
+			&:hover {
+				&+.innerbox {
+					a {
+						span {
+							&.text {
+								color: $light-blue;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.right-side {
+		> h3 {
+			padding: 0 15px;
+		}
+		a {
+			span {
+				&.text {
+					color: $default;
+					@include transition(all 0.3s ease);
+				}
+			}
+			&:hover {
+				span {
+					&.text {
+						color: $light-blue;
+					}
+				}
+			}
+		}
+
+		h5 {
+			padding: 0 15px;
+			a {
+				color: $light-blue;
+			}
+		}
+	}
+}
+
+body {
+	&.search {
+		#main-content {
+			.hero-header {
+				.headline {
+					background-color: $orange;
+				}
+			}
+		}
+	}
+	&.tag {
+		#main-content {
+			.hero-header {
+				.headline {
+					background-color: $green;
+				}
+			}
+		}
+	}
+	&.page {
+		#main-content {
+			#content {
+				.content {
+					a {
+						color: $green;
+						border-bottom: 2px solid $green;
+
+						&:hover {
+							color: $green;
 						}
 					}
 				}

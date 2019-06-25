@@ -221,7 +221,6 @@ h5 {
 	&.categories {
 		display: inline-block;
 		margin: 0;
-		color: $green;
 		a {
 			color: $gray;
 			&:hover {
@@ -521,9 +520,9 @@ h5 {
     	}
     	.header-ad {
     		margin-bottom: .5rem;
-    		.traze-homepage-leaderboard {
+    		a {
     			img {
-    				width: 100%;
+    				max-width: 100%;
     				height: auto;
     			}
     		}
@@ -734,6 +733,24 @@ h5 {
     position: relative;
     @include transition(left 0.2s linear);
 	.hero-header {
+		&.header-type-category {
+			position: relative;
+			overflow: hidden;
+			max-height: 80px;
+			min-height: 50px;
+			.headline {
+				height: 100%;
+				padding: 6vw 0;
+				h1 {
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					margin: auto;
+					line-height: 0.5em;
+				}
+			}
+		}
 		.hero-body {
 			position: relative;
 			overflow: hidden;
@@ -794,9 +811,7 @@ h5 {
 					margin-bottom: 5px;
 					text-align: center;
 					display: block;
-					@extend %font-medium;
 					letter-spacing: normal;
-					@include opacity(0.7);
 				}
 			}
 			.caption-post {
@@ -804,15 +819,11 @@ h5 {
 					text-shadow: 1px 1px 0 black;
 					font-size: 12px !important;
 					text-align: center;
-					@extend %font-medium;
 					letter-spacing: normal;
-					@include opacity(0.7);
-					color: $white;
 				}
 			}
 		}
 		.headline {
-			background-color: $purple;
 			color: $white;
 			margin: 0 auto;
 		    padding: 0;
@@ -854,7 +865,6 @@ h5 {
 		}
 		#instagram-feed {
 			width: 100%;
-			background-color: $green;
 			position: relative;
 			a {
 				&.insta-feed {
@@ -863,10 +873,7 @@ h5 {
 					float: right;
 					text-align: right;
     				top: -65px;
-					color: $white;
-					font-size: 16px;
 					text-transform: uppercase;
-					@include opacity(0.8);
 					@include transition(all .2s ease);
 					i {
 						display: inline-block;
@@ -875,11 +882,7 @@ h5 {
 					span {
 						padding-left: 10px;
 						display: inline-block;
-						@extend %font-medium;
 						vertical-align: middle;
-					}
-					&:hover {
-						@include opacity(1);
 					}
 				}
 			}
@@ -901,15 +904,11 @@ h5 {
 							bottom: 0;
 							height: 20%;
 							width: 100%;
-							@include gradient(transparent, $black);
-							@include opacity(.8);
 						}
 						.likes {
 							position: absolute;
 							width: 100%;
 							bottom: 5%;
-							@extend %font-medium;
-							color: $white;
 							margin-left: 10px;
 							text-align: left;
 						}
@@ -920,54 +919,21 @@ h5 {
 
 		#posts-section {
 			#social-share {
-				color: $social-color;
 				text-align: center;
 				margin-left: auto;
 				margin-right: auto;
 				max-width: 300px;
 
 				.social-title {
-					@extend %font-medium;
-					text-transform: uppercase;
-					font-size: 10px;
-					line-height: 1.8em;
 					display: inline-block;
 					margin-bottom: 0;
-					color: $social-color;
 					span {
 						display: inline-block;
 						padding-left: 5px;
 					}
 				}
 				a {
-					color: $social-color;
 					@include transition(all .4s ease);
-					&:hover {
-						color: $green;
-
-						i {
-							&.fa-facebook-f {
-								color: darken($fa-share, 10%);
-							}
-							&.fa-twitter {
-								color: darken($tw-share, 10%);
-							}
-							&.fa-linkedin {
-								color: darken($li-share, 10%);
-							}
-						}
-					}
-					i {
-						&.fa-facebook-f {
-							color: $fa-share;
-						}
-						&.fa-twitter {
-							color: $tw-share;
-						}
-						&.fa-linkedin {
-							color: $li-share;
-						}
-					}
 				}
 				ul {
 					li {
@@ -982,10 +948,6 @@ h5 {
 				p {
 					margin-bottom: 0;
 				}
-				a {
-					color: $green;
-					border-bottom: 2px solid $green;
-				}
 			}
 		}
 		.post-item {
@@ -994,17 +956,6 @@ h5 {
 				line-height: 1.5em;
 				&.block-with-text {
 				  @include multiLineEllipsis(1.5em, 5, $white);  
-				}
-			}
-			.copy {
-				.content {
-					a {
-						color: $green;
-						border-bottom: none;
-						&:hover {
-							color: darken($green, 5%);
-						}
-					}
 				}
 			}
 		}
@@ -1163,11 +1114,6 @@ h5 {
 body {
 	&.search {
 		#main-content {
-			.hero-header {
-				.headline {
-					background-color: $orange;
-				}
-			}
 			#search-no-results, #search-error {
 				p {
 					text-align: center;
@@ -1175,32 +1121,6 @@ body {
 			}
 		}
 	}
-	&.tag {
-		#main-content {
-			.hero-header {
-				.headline {
-					background-color: $green;
-				}
-			}
-		}
-	}
-	&.page {
-		#main-content {
-			#content {
-				.content {
-					a {
-						color: $green;
-						border-bottom: 2px solid $green;
-
-						&:hover {
-							color: $green;
-						}
-					}
-				}
-			}
-		}
-	}
-
 	#content {
 		.content {
 			.mw-300 {
@@ -1226,18 +1146,11 @@ body {
 					text-align: center;
 
 					p {
-						@extend %font-bold;
-						color: $white;
 						margin: 0;
 					}
 					.date {
 						display: block;
-						text-transform: uppercase;
-						@extend %font-medium;
-						color: $white;
 					}
-
-					@include border-link($white, $green, span, true, null, text, 2px);
 
 					.categories {
 						margin-top: 1.5rem;
@@ -1409,8 +1322,6 @@ body {
 				}
 			}
 
-			@include border-link($white, $green, span, true, null, text, 2px, 94%);
-
 			h2 {
 				margin-top: -10px;
 				margin-bottom: 0;
@@ -1425,13 +1336,6 @@ body {
 							}
 						}
 					}
-				}
-			}
-		}
-		.img-wrapper {
-			&:hover {
-				&+.innerbox {
-					@include border-link($white, $green, span, false, null, text, 2px, 94%);
 				}
 			}
 		}
@@ -1455,19 +1359,6 @@ body {
 						}
 					}
 				}
-			}
-		}
-	}
-	.right-side {
-		> h3 {
-			padding: 0 15px;
-		}
-		@include border-link($white, $green, span, true, null, text, 2px, 94%);
-
-		h5 {
-			padding: 0 15px;
-			a {
-				color: $green;
 			}
 		}
 	}

@@ -8,11 +8,9 @@ if (!defined('ABSPATH')) exit(0);
 
 global $main_categories;
 
-if (!empty($type)): 
-	error_log($type);
-	?>
+if (!empty($type)): ?>
 
-	<div class="hero-header">
+	<div class="hero-header header-type-<?php echo $type; ?>">
 
 	<?php if ($type == 'post'):
 
@@ -49,7 +47,7 @@ if (!empty($type)):
 						<span><?php _e('Sponsored Content', 'trazee'); ?></span>
 					</h5>
 					<?php endif; ?>
-					<h1 class="title my-3 post">
+					<h1 class="title my-3 hero-post">
 						<span><span class="text"><?php echo get_the_title($main_post->ID); ?></span></span>
 					</h1>
 					<?php if (!empty($author_name)): ?>
