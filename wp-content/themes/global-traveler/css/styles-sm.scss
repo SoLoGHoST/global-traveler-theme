@@ -20,6 +20,24 @@
 		}
 	}
 
+	body {
+		&.site-globalusa {
+			.posts-slider {
+				.post-item {
+					width: 80vw;
+					padding: 0 5px 0 0;
+					.image {
+						.details {
+							.info {
+								
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
 	.traze-mobile-footer, .traze-mobile-footer_2 {
 		&.advads-sticky {
 			display: none;

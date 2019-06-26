@@ -28,6 +28,21 @@ jQuery(document).ready(function($) {
 		});
 	}
 
+	if ($('.posts-slider').length) {
+		$('.posts-slider').slick({
+			autoplay: false,
+			autoplaySpeed: 8000,
+			variableWidth: true,
+			arrows: false
+		});
+		
+		/*
+		$('.events-slider .content .event-title').click(function() {
+			$('.event-slider').slick('slickNext');
+		});
+		*/
+	}
+
 	$(window).on('scroll', function() {
 
 		var scrollVal = $(this).scrollTop();

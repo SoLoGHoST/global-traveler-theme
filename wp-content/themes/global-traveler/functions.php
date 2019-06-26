@@ -144,12 +144,21 @@ add_action('customize_register', 'global_traveler_customize_register');
 //------------------------------------------------//
 function tif_scripts() {
 
-	global $post, $home_video;
+	global $post, $home_video, $global_site;
 
 	$dependants = array();
 
+	if (empty($global_site)) {
+		$global_site = get_theme_mod('tif_global_site');
+		$global_site = !empty($global_site) ? $global_site : 'trazeetravel';
+	}
+
     wp_register_script('ajax-scroll-script', get_stylesheet_directory_uri() . '/js/ajax-scroll.js', array('jquery'), '0.0.3');
     wp_register_script('tif-video-script', get_stylesheet_directory_uri() . '/js/tif-video.js', array('jquery'), '0.0.3');
+    wp_register_script('script-slick-slider', get_stylesheet_directory_uri() . '/js/slick.min.js', array('jquery'), '1.8.0');
+
+    if (!empty($global_site) && $global_site == 'globalusa' && is_front_page())
+		$dependants[] = 'script-slick-slider';
 
     if (!empty($home_video))
     	$dependants[] = 'tif-video-script';
@@ -185,6 +194,9 @@ function tif_scripts() {
 function tif_styles() {
 	global $global_site;
 
+	$dependants = array();
+
+	wp_register_style('style-slick-slider', get_stylesheet_directory_uri() . '/css/slick.css', array(), '1.8.0');
 	wp_enqueue_style('style-fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array());
 	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css', array());
 
@@ -198,7 +210,11 @@ function tif_styles() {
 		$global_site = !empty($global_site) ? $global_site : 'trazeetravel';
 	}
 
-	wp_enqueue_style('global-site-style', get_stylesheet_directory_uri() . '/css/' . $global_site . '.min.css', array(), filemtime(get_template_directory() . '/css/' . $global_site . '.min.css'));
+	if (!empty($global_site) && $global_site == 'globalusa' && is_front_page())
+		$dependants[] = 'style-slick-slider';
+
+
+	wp_enqueue_style('global-site-style', get_stylesheet_directory_uri() . '/css/' . $global_site . '.min.css', $dependants, filemtime(get_template_directory() . '/css/' . $global_site . '.min.css'));
 }
 add_action('wp_enqueue_scripts', 'tif_scripts');
 add_action('wp_enqueue_scripts', 'tif_styles');

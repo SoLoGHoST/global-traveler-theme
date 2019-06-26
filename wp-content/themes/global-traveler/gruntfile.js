@@ -11,7 +11,8 @@ module.exports = function(grunt) {
 				files: {
 					'css/trazeetravel.css': 'css/trazeetravel.scss',
 					'css/whereverfamily.css': 'css/whereverfamily.scss',
-					'css/globalusa.css': 'css/globalusa.scss'
+					'css/globalusa.css': 'css/globalusa.scss',
+					'css/slick.css': 'css/slick.scss'
 				}
 			}
 		},

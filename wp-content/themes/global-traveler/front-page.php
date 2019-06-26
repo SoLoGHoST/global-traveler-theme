@@ -22,7 +22,18 @@ $template_args = array(
 	'type' => $hero_type
 );
 
-if ($hero_type != 'hometakeover')
+if (empty($global_site)) {
+	$global_site = get_theme_mod('tif_global_site');
+	$global_site = !empty($global_site) ? $global_site : 'trazeetravel';
+}
+
+$is_globalusa = !empty($global_site) && $global_site == 'globalusa';
+
+if (!empty($is_globalusa))
+	if (in_array($hero_type, array('hometakeover', 'home')))
+		unset($hero_post_type);
+
+if ($hero_type != 'hometakeover' && !empty($hero_post_type))
 {
 	$args = array(
 		'post_type' => $hero_post_type,

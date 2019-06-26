@@ -96,7 +96,7 @@ $li-share: #0077B5;
 
 %font-regular {
 	@include font(font_1, regular);
-	font-size: 16px;
+	font-size: 18px;
 }
 
 %font-medium {
@@ -631,6 +631,12 @@ $li-share: #0077B5;
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
+h1 {
+	@extend %font-2;
+	font-size: 60px;
+	line-height: 1em;
+	text-transform: uppercase;
+}
 h2 {
 	@extend %font-2;
 	font-size: 40px;
@@ -1319,6 +1325,7 @@ body {
 			padding-left: 0;
 			padding-right: 0;
 			#subnav {
+				@extend %font-regular;
 				border-top: 1px solid $border-lines;
 				li {
 					a {
@@ -1331,6 +1338,27 @@ body {
 					&.active {
 						a {
 							color: $blue;
+						}
+					}
+				}
+			}
+		}
+		.posts-slider {
+			.post-item {
+				.image {
+					.details {
+						.info {
+							h1 {
+								a {
+									@include font(font-2, bold);
+									color: $white;
+									outline: none;
+									@include transition(color 0.15s ease-in-out);
+									&:hover {
+										color: $blue;
+									}
+								}
+							}
 						}
 					}
 				}

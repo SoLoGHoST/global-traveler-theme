@@ -129,10 +129,6 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-	@extend %font-2;
-	font-size: 72px;
-	line-height: 1em;
-	text-transform: uppercase;
 	&.post {
 		display: inline-block;
 		margin: 0;
@@ -1126,6 +1122,38 @@ body {
 			.mw-300 {
 				width: 100%;
 				max-width: 300px;
+			}
+		}
+	}
+	&.site-globalusa {
+		.posts-slider {
+			.post-item {
+				display: block;
+				position: relative;
+				height: 510px;
+				width: 100vw;
+				outline: none;
+				padding: 0 2.5px;
+				.image {
+					display: block;
+					position: relative;
+					width: 100%;
+					height: 100%;
+					background-position: center center;
+					background-repeat: no-repeat;
+					background-size: cover;
+					.details {
+						.info {
+							width: 100%;
+							h1 {
+								margin: 0;
+							}
+							p {
+								margin: 0;
+							}
+						}
+					}
+				}
 			}
 		}
 	}

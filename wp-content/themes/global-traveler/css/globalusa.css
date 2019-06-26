@@ -8197,18 +8197,18 @@ a.text-dark:hover, a.text-dark:focus {
 @font-face {
   font-family: "Noe Display Bold";
   src: url("../fonts/Noe-Display-Bold.woff") format("woff"), url("../fonts/Noe-Display-Bold.otf") format("opentype"); }
-#main-content .hero-header .hero-body .post-wrapper .overlay p, p, h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, #home-content #content .section .date, #main-content #content .section .date, .recent-posts-wrapper #featured .innerbox .featured-details .date, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #mainMenu #main_navigation li a, .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
+#main-content .hero-header .hero-body .post-wrapper .overlay p, body.site-globalusa .navbar #subnav, p, h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, #home-content #content .section .date, #main-content #content .section .date, .recent-posts-wrapper #featured .innerbox .featured-details .date, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #mainMenu #main_navigation li a, .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
   font-family: brandon-grotesque,sans-serif;
   font-style: normal; }
 
-h2, h3, .header-1 .topline .site-section .posts-api-wrapper .post-box .copy h3.title a, h1, h4, .tif-search-modal .modal-dialog .modal-header .close, .tif-search-modal .modal-dialog .modal-header input[type="text"], .tif-search-modal .form-wrapper span {
+h1, h2, h3, .header-1 .topline .site-section .posts-api-wrapper .post-box .copy h3.title a, body.site-globalusa .posts-slider .post-item .image .details .info h1 a, h4, .tif-search-modal .modal-dialog .modal-header .close, .tif-search-modal .modal-dialog .modal-header input[type="text"], .tif-search-modal .form-wrapper span {
   font-family: "Noe Display Bold", sans-serif;
   font-style: normal; }
 
-#main-content .hero-header .hero-body .post-wrapper .overlay p, p {
+#main-content .hero-header .hero-body .post-wrapper .overlay p, body.site-globalusa .navbar #subnav, p {
   font-weight: 400;
   font-style: normal;
-  font-size: 16px; }
+  font-size: 18px; }
 
 h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, #home-content #content .section .date, #main-content #content .section .date, .recent-posts-wrapper #featured .innerbox .featured-details .date {
   font-weight: 700;
@@ -8237,6 +8237,11 @@ body {
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
+h1 {
+  font-size: 60px;
+  line-height: 1em;
+  text-transform: uppercase; }
+
 h2 {
   font-size: 40px;
   line-height: 1em; }
@@ -8562,6 +8567,17 @@ body.site-globalusa .navbar {
         color: #3FA2DA; }
     body.site-globalusa .navbar #subnav li.active a {
       color: #3FA2DA; }
+body.site-globalusa .posts-slider .post-item .image .details .info h1 a {
+  font-weight: 700;
+  font-style: normal;
+  color: #FFFFFF;
+  outline: none;
+  -webkit-transition: color 0.15s ease-in-out;
+  -moz-transition: color 0.15s ease-in-out;
+  -ms-transition: color 0.15s ease-in-out;
+  -o-transition: color 0.15s ease-in-out; }
+  body.site-globalusa .posts-slider .post-item .image .details .info h1 a:hover {
+    color: #3FA2DA; }
 
 @media (min-width: 992px) {
   #home-content .hero-header .hero-body .caption, #main-content .hero-header .hero-body .caption {
@@ -8671,33 +8687,29 @@ a {
         padding: 0;
         z-index: 1; }
 
-h1 {
-  font-size: 72px;
-  line-height: 1em;
-  text-transform: uppercase; }
-  h1.post {
-    display: inline-block;
+h1.post {
+  display: inline-block;
+  margin: 0;
+  padding: 15px;
+  color: #12222D; }
+  h1.post span {
+    line-height: 0;
     margin: 0;
-    padding: 15px;
-    color: #12222D; }
-    h1.post span {
+    padding: 0 1.5rem 0 1.5rem;
+    border: 0;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    webkit-box-shadow: inset 0 80px 0 #FFFFFF, 0 0 0 #FFFFFF;
+    -moz-box-shadow: inset 0 80px 0 #FFFFFF, 0 0 0 #FFFFFF;
+    box-shadow: inset 0 80px 0 #FFFFFF, 0 0 0 #FFFFFF; }
+    h1.post span > span {
+      background: transparent;
+      box-shadow: none;
       line-height: 0;
-      margin: 0;
-      padding: 0 1.5rem 0 1.5rem;
-      border: 0;
-      -webkit-box-decoration-break: clone;
-      box-decoration-break: clone;
-      webkit-box-shadow: inset 0 80px 0 #FFFFFF, 0 0 0 #FFFFFF;
-      -moz-box-shadow: inset 0 80px 0 #FFFFFF, 0 0 0 #FFFFFF;
-      box-shadow: inset 0 80px 0 #FFFFFF, 0 0 0 #FFFFFF; }
-      h1.post span > span {
-        background: transparent;
-        box-shadow: none;
-        line-height: 0;
-        position: relative;
-        top: -15px;
-        padding: 0;
-        z-index: 1; }
+      position: relative;
+      top: -15px;
+      padding: 0;
+      z-index: 1; }
 
 h2.title a {
   color: #12222D; }
@@ -9398,6 +9410,27 @@ body.search #main-content #search-no-results p, body.search #main-content #searc
 body #content .content .mw-300 {
   width: 100%;
   max-width: 300px; }
+body.site-globalusa .posts-slider .post-item {
+  display: block;
+  position: relative;
+  height: 510px;
+  width: 100vw;
+  outline: none;
+  padding: 0 2.5px; }
+  body.site-globalusa .posts-slider .post-item .image {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    body.site-globalusa .posts-slider .post-item .image .details .info {
+      width: 100%; }
+      body.site-globalusa .posts-slider .post-item .image .details .info h1 {
+        margin: 0; }
+      body.site-globalusa .posts-slider .post-item .image .details .info p {
+        margin: 0; }
 
 #main-content .hero-header .hero-body .post-wrapper {
   position: absolute;
@@ -10166,6 +10199,10 @@ body #content .content .mw-300 {
         display: block;
         padding-left: 0; }
 
+  body.site-globalusa .posts-slider .post-item {
+    width: 80vw;
+    padding: 0 5px 0 0; }
+
   .traze-mobile-footer.advads-sticky, .traze-mobile-footer_2.advads-sticky {
     display: none; } }
 @media (min-width: 992px) {
@@ -10175,7 +10212,10 @@ body #content .content .mw-300 {
     text-shadow: 1px 1px 0 black; }
 
   body.archive #main-content #content #posts-section {
-    margin-top: auto; } }
+    margin-top: auto; }
+  body.site-globalusa .posts-slider .post-item {
+    width: 75vw;
+    padding: 0 5px 0 0; } }
 @media (min-width: 1270px) {
   body.hometakeover #home-content #content #posts-section, body.hometakeover #main-content #content #posts-section {
     margin-top: 0; }
@@ -10184,6 +10224,9 @@ body #content .content .mw-300 {
   body.sticky.hometakeover #home-content .hero-header .hero-body .traze-takeover-ad, body.sticky.hometakeover #main-content .hero-header .hero-body .traze-takeover-ad {
     position: fixed;
     top: 92px; } }
+@media (min-width: 1800px) {
+  body.site-globalusa .posts-slider .post-item {
+    width: 40vw; } }
 body.postid-48601 #main-content .hero-header .hero-body {
   background-position-y: bottom !important; }
   body.postid-48601 #main-content .hero-header .hero-body .post-wrapper {
