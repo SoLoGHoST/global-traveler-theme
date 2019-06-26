@@ -8551,6 +8551,17 @@ body.page #main-content #content .content a {
   border-bottom: 2px solid #2CB78F; }
   body.page #main-content #content .content a:hover {
     color: #2CB78F; }
+body.site-globalusa .navbar {
+  padding-left: 0;
+  padding-right: 0; }
+  body.site-globalusa .navbar #subnav {
+    border-top: 1px solid #EAEFF2; }
+    body.site-globalusa .navbar #subnav li a {
+      color: #12222D; }
+      body.site-globalusa .navbar #subnav li a:hover {
+        color: #3FA2DA; }
+    body.site-globalusa .navbar #subnav li.active a {
+      color: #3FA2DA; }
 
 @media (min-width: 992px) {
   #home-content .hero-header .hero-body .caption, #main-content .hero-header .hero-body .caption {
@@ -9432,7 +9443,7 @@ body #content .content .mw-300 {
   position: relative;
   margin: 10px 15px;
   padding: 20px 30px 20px 15px;
-  border: 1px solid #BECED3;
+  border: 1px solid #EAEFF2;
   -webkit-transition: all 0.1s linear;
   -moz-transition: all 0.1s linear;
   -ms-transition: all 0.1s linear;
@@ -9479,7 +9490,7 @@ body #content .content .mw-300 {
       margin: 0; }
       #page-submenu > ul li a {
         position: relative;
-        color: #BECED3;
+        color: #EAEFF2;
         padding: 20px;
         display: inline-block;
         border-top: 5px solid transparent;

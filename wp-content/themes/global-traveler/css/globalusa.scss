@@ -41,7 +41,7 @@ $global-green: #108751;
 
 
 $dk-gray: #414042;
-$border-lines: #BECED3;
+$border-lines: #EAEFF2; // updated for globalusa...
 $light-blue: #25AECC;  /* default link color */
 $border-color: #D6E3E8;
 $offblue: #F0F5F7;
@@ -1308,6 +1308,29 @@ body {
 
 						&:hover {
 							color: $green;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.site-globalusa {
+		.navbar {
+			padding-left: 0;
+			padding-right: 0;
+			#subnav {
+				border-top: 1px solid $border-lines;
+				li {
+					a {
+						color: $default;
+
+						&:hover {
+							color: $blue;
+						}
+					}
+					&.active {
+						a {
+							color: $blue;
 						}
 					}
 				}

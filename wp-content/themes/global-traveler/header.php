@@ -5,7 +5,7 @@ global $page_id, $is_home, $homepage_id, $is_mobile, $is_tablet, $hero_type, $ho
 $homepage_id = (int) get_option('page_on_front'); // Returns the ID of the Homepage!
 $page_id = is_front_page() ? $homepage_id : get_queried_object_id();
 $is_home = isset($is_home) ? $is_home : $homepage_id === $page_id;
-$class = array();
+$class = array('site-' . $global_site);
 
 if (wp_is_mobile())
 	$class[] = 'mobile';
@@ -114,11 +114,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					'container' => ''
 				),
 				'location' => 'main_navigation', 
-				'depth' => 2,
-				'after' => array(
-					'class' => '',
-					'filters' => array('global_site_menu_after' => array('theme_location' => 'sub_navigation'))
-				)
+				'depth' => 2
 			), array('logo' => $all_sites[$global_site]['logo'])
 		)
 	);
