@@ -145,27 +145,29 @@ if (!empty($type)): ?>
 				foreach($slider_posts as $post): setup_postdata($post); 
 					$post_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "full"); ?>
 					<div class="post-item">
-						<div class="image"<?php echo !empty($post_image[0]) ?' style="background-image: url(' . $post_image[0] . ');"' : ''; ?>>
-							<div class="details">
-								<div class="info">
-									<h1><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a></h1>
-									<p><?php the_date('M j, Y'); ?></p>
-								</div>
-								<div class="categories">
-									<h5 class="categories highlight">
-										<?php 
-										$categories = apply_filters('get_the_primary_category_with_child', array(), $post->ID);
-										if (!empty($categories)): 
-											if (!empty($categories['primary'])): ?>
-												<a href="<?php echo esc_url($categories['primary']['link']); ?>"><?php echo $categories['primary']['title']; ?></a>
-												<?php
-												if (!empty($categories['child'])): ?>
-												/ <a href="<?php echo esc_url($categories['child']['link']); ?>"><?php echo $categories['child']['title']; ?></a>
-												<?php
+						<div class="image"<?php echo !empty($post_image[0]) ?' style="background: linear-gradient(to bottom, rgba(56, 56, 56, 0.5) 100%, rgba(56, 56, 56, 0.5) 100%), url(' . $post_image[0] . ') no-repeat center center; background-size: cover;"' : ''; ?>>
+							<div class="details-wrapper">
+								<div class="details">
+									<div class="info d-flex justify-content-center flex-column">
+										<h1><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a></h1>
+										<p><?php the_date('F j, Y'); ?></p>
+									</div>
+									<div class="categories">
+										<h5 class="categories highlight">
+											<?php 
+											$categories = apply_filters('get_the_primary_category_with_child', array(), $post->ID);
+											if (!empty($categories)): 
+												if (!empty($categories['primary'])): ?>
+													<a href="<?php echo esc_url($categories['primary']['link']); ?>"><?php echo $categories['primary']['title']; ?></a>
+													<?php
+													if (!empty($categories['child'])): ?>
+													/ <a href="<?php echo esc_url($categories['child']['link']); ?>"><?php echo $categories['child']['title']; ?></a>
+													<?php
+													endif;
 												endif;
-											endif;
-										endif; ?>
-									</h5>
+											endif; ?>
+										</h5>
+									</div>
 								</div>
 							</div>
 						</div>

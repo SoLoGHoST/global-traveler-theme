@@ -1346,19 +1346,61 @@ body {
 		.posts-slider {
 			.post-item {
 				.image {
-					.details {
-						.info {
-							h1 {
-								a {
-									@include font(font-2, bold);
-									color: $white;
-									outline: none;
-									@include transition(color 0.15s ease-in-out);
-									&:hover {
-										color: $blue;
+					.details-wrapper {
+						.details {
+							.info {
+								border: 5px solid $blue;
+								color: $white;
+								h1 {
+									p, a, span {
+										color: $white;
+									}
+									a {
+										@include font(font-2, bold);
+										outline: none;
+										@include transition(color 0.15s ease-in-out);
+										&:hover {
+											color: $blue;
+										}
 									}
 								}
 							}
+							h5 {
+								&.categories {
+									&.highlight {
+										a {
+											color: $white;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				&.slick-slide {
+					&:after {
+						content: '';
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						left: 0;
+						top: 0;
+						pointer-events: none;
+						@include opacity(.6);
+						background: $black;
+						@include transition(all 0.3s ease);
+					}
+					.details-wrapper {
+						@include opacity(0);
+						@include transition(all 0.3s ease);
+					}
+					&.slick-active {
+						&:after {
+							pointer-events: none;
+							@include opacity(0);
+						}
+						.details-wrapper {
+							@include opacity(1);
 						}
 					}
 				}

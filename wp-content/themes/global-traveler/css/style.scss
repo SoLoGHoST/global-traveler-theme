@@ -1142,14 +1142,41 @@ body {
 					background-position: center center;
 					background-repeat: no-repeat;
 					background-size: cover;
-					.details {
-						.info {
-							width: 100%;
-							h1 {
-								margin: 0;
+					.details-wrapper {
+						position: absolute;
+						max-width: 840px;
+						max-height: 265px;
+						width: 100%;
+						height: 100%;
+						left: 0;
+						right: 0;
+						top: 0;
+						bottom: 0;
+						margin: auto;
+						.details {
+							.info {
+								padding: 2.5rem;
+								margin-left: 3rem;
+								width: 100%;
+								h1 {
+									margin: 0;
+								}
+								p {
+									margin: 0;
+								}
 							}
-							p {
-								margin: 0;
+							h5 {
+								&.categories {
+									transform: rotate(-90deg) translate(50px, -65px);
+									position: absolute;
+									left: 0;
+									top: 0;
+									bottom: 0;
+									margin: auto;
+									height: 50px;
+									width: 200px;
+									text-align: right;
+								}
 							}
 						}
 					}

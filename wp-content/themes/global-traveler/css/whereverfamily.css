@@ -9539,12 +9539,35 @@ body.site-globalusa .posts-slider .post-item {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover; }
-    body.site-globalusa .posts-slider .post-item .image .details .info {
-      width: 100%; }
-      body.site-globalusa .posts-slider .post-item .image .details .info h1 {
-        margin: 0; }
-      body.site-globalusa .posts-slider .post-item .image .details .info p {
-        margin: 0; }
+    body.site-globalusa .posts-slider .post-item .image .details-wrapper {
+      position: absolute;
+      max-width: 840px;
+      max-height: 265px;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto; }
+      body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info {
+        padding: 2.5rem;
+        margin-left: 3rem;
+        width: 100%; }
+        body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info h1 {
+          margin: 0; }
+        body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info p {
+          margin: 0; }
+      body.site-globalusa .posts-slider .post-item .image .details-wrapper .details h5.categories {
+        transform: rotate(-90deg) translate(50px, -65px);
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 50px;
+        width: 200px;
+        text-align: right; }
 
 #main-content .hero-header .hero-body .post-wrapper {
   position: absolute;
@@ -10338,9 +10361,19 @@ body.site-globalusa .posts-slider .post-item {
   body.sticky.hometakeover #home-content .hero-header .hero-body .traze-takeover-ad, body.sticky.hometakeover #main-content .hero-header .hero-body .traze-takeover-ad {
     position: fixed;
     top: 92px; } }
-@media (min-width: 1800px) {
-  body.site-globalusa .posts-slider .post-item {
-    width: 40vw; } }
+/*
+@media (min-width: 1800px) {	
+	body {
+		&.site-globalusa {
+			.posts-slider {
+				.post-item {
+					width: 40vw;
+				}
+			}
+		}
+	}
+}
+*/
 body.postid-48601 #main-content .hero-header .hero-body {
   background-position-y: bottom !important; }
   body.postid-48601 #main-content .hero-header .hero-body .post-wrapper {
