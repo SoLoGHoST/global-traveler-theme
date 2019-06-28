@@ -33,7 +33,10 @@ jQuery(document).ready(function($) {
 			autoplay: false,
 			autoplaySpeed: 8000,
 			variableWidth: true,
-			arrows: false
+			appendArrows: '.next',
+			prevArrow: '',
+			nextArrow: '<button type="button" class="slick-next btn btn-arrow">Next <span class="caret-arrow"></span></button>'
+			// arrows: false
 		});
 		
 		/*

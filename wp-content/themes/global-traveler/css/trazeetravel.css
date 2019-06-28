@@ -8235,6 +8235,10 @@ body {
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
+p {
+  font-size: 21px;
+  line-height: 36px; }
+
 h1 {
   font-size: 72px;
   line-height: 1em;
@@ -8789,10 +8793,6 @@ body {
   padding-top: 100px;
   padding-bottom: 100px; }
 
-p {
-  font-size: 21px;
-  line-height: 36px; }
-
 .entry-content a {
   color: #2CB78F;
   border-bottom: 2px solid #2CB78F; }
@@ -9293,73 +9293,90 @@ h5 {
   -moz-transition: left 0.2s linear;
   -ms-transition: left 0.2s linear;
   -o-transition: left 0.2s linear; }
-  #home-content .hero-header.header-type-category, #main-content .hero-header.header-type-category {
-    position: relative;
-    overflow: hidden;
-    max-height: 80px;
-    min-height: 50px; }
-    #home-content .hero-header.header-type-category .headline, #main-content .hero-header.header-type-category .headline {
+  #home-content .hero-header, #main-content .hero-header {
+    position: relative; }
+    #home-content .hero-header .next, #main-content .hero-header .next {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 24vw;
       height: 100%;
-      padding: 6vw 0; }
-      #home-content .hero-header.header-type-category .headline h1, #main-content .hero-header.header-type-category .headline h1 {
+      padding: 0; }
+      #home-content .hero-header .next button.slick-next, #main-content .hero-header .next button.slick-next {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); }
+    #home-content .hero-header.header-type-category, #main-content .hero-header.header-type-category {
+      position: relative;
+      overflow: hidden;
+      max-height: 80px;
+      min-height: 50px; }
+      #home-content .hero-header.header-type-category .headline, #main-content .hero-header.header-type-category .headline {
+        height: 100%;
+        padding: 6vw 0; }
+        #home-content .hero-header.header-type-category .headline h1, #main-content .hero-header.header-type-category .headline h1 {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          line-height: 0.5em; }
+    #home-content .hero-header .hero-body, #main-content .hero-header .hero-body {
+      position: relative;
+      overflow: hidden;
+      min-height: 630px; }
+      #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p {
+        color: #FFFFFF; }
+      #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span {
+        padding: 0 1rem 0 1rem; }
+        #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span > span, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span > span {
+          padding: 0; }
+      #home-content .hero-header .hero-body .container, #main-content .hero-header .hero-body .container {
+        position: relative;
+        height: 100%; }
+      #home-content .hero-header .hero-body a.pic-link, #main-content .hero-header .hero-body a.pic-link {
+        display: inline-block;
         position: absolute;
         left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        line-height: 0.5em; }
-  #home-content .hero-header .hero-body, #main-content .hero-header .hero-body {
-    position: relative;
-    overflow: hidden;
-    min-height: 630px; }
-    #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p {
-      color: #FFFFFF; }
-    #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span {
-      padding: 0 1rem 0 1rem; }
-      #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span > span, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner h1 a.post span > span {
-        padding: 0; }
-    #home-content .hero-header .hero-body .container, #main-content .hero-header .hero-body .container {
-      position: relative;
-      height: 100%; }
-    #home-content .hero-header .hero-body a.pic-link, #main-content .hero-header .hero-body a.pic-link {
-      display: inline-block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%; }
-    #home-content .hero-header .hero-body.post-item.takeover img, #main-content .hero-header .hero-body.post-item.takeover img {
-      display: block;
-      width: 100vw;
-      object-fit: cover; }
-    #home-content .hero-header .hero-body .caption, #main-content .hero-header .hero-body .caption {
-      pointer-events: none;
-      width: 100%;
-      max-width: 1270px; }
-      #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p {
-        font-size: 12px;
-        position: relative;
-        margin-bottom: 5px;
-        text-align: center;
+        top: 0;
+        width: 100%;
+        height: 100%; }
+      #home-content .hero-header .hero-body.post-item.takeover img, #main-content .hero-header .hero-body.post-item.takeover img {
         display: block;
+        width: 100vw;
+        object-fit: cover; }
+      #home-content .hero-header .hero-body .caption, #main-content .hero-header .hero-body .caption {
+        pointer-events: none;
+        width: 100%;
+        max-width: 1270px; }
+        #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p {
+          font-size: 12px;
+          position: relative;
+          margin-bottom: 5px;
+          text-align: center;
+          display: block;
+          letter-spacing: normal; }
+      #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p {
+        text-shadow: 1px 1px 0 black;
+        font-size: 12px !important;
+        text-align: center;
         letter-spacing: normal; }
-    #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p {
-      text-shadow: 1px 1px 0 black;
-      font-size: 12px !important;
-      text-align: center;
-      letter-spacing: normal; }
-  #home-content .hero-header .headline, #main-content .hero-header .headline {
-    color: #FFFFFF;
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-    text-align: center; }
-    #home-content .hero-header .headline h1, #main-content .hero-header .headline h1 {
+    #home-content .hero-header .headline, #main-content .hero-header .headline {
       color: #FFFFFF;
-      margin-bottom: 0;
-      display: inline-block;
-      margin: 0 auto -8px;
-      vertical-align: bottom; }
+      margin: 0 auto;
+      padding: 0;
+      width: 100%;
+      text-align: center; }
+      #home-content .hero-header .headline h1, #main-content .hero-header .headline h1 {
+        color: #FFFFFF;
+        margin-bottom: 0;
+        display: inline-block;
+        margin: 0 auto -8px;
+        vertical-align: bottom; }
   #home-content #content .section, #main-content #content .section {
     background-color: #FFFFFF;
     position: relative;
@@ -9580,8 +9597,7 @@ body.site-globalusa .posts-slider .post-item {
       margin: auto; }
       body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info {
         padding: 2.5rem;
-        margin-left: 3rem;
-        width: 100%; }
+        margin-left: 3rem; }
         body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info h1 {
           margin: 0; }
         body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info p {
@@ -9596,6 +9612,43 @@ body.site-globalusa .posts-slider .post-item {
         height: 50px;
         width: 200px;
         text-align: right; }
+  body.site-globalusa .posts-slider .post-item.slick-slide:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    -webkit-opacity: 0.6;
+    -moz-opacity: 0.6;
+    opacity: 0.6;
+    filter: alpha(opacity=60) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity);
+    background: #000000;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease; }
+  body.site-globalusa .posts-slider .post-item.slick-slide .details-wrapper {
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+    filter: alpha(opacity=0) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease; }
+  body.site-globalusa .posts-slider .post-item.slick-slide.slick-active:after {
+    pointer-events: none;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+    filter: alpha(opacity=0) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
+  body.site-globalusa .posts-slider .post-item.slick-slide.slick-active .details-wrapper {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+    filter: alpha(opacity=100) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
 
 #main-content .hero-header .hero-body .post-wrapper {
   position: absolute;

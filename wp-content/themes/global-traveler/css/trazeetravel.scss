@@ -617,6 +617,13 @@ $burgermenu-color: $purple;
 /**************************************
 	START OF CUSTOM THEME WORK
 **************************************/
+
+p {
+	@extend %font-regular;
+	font-size: 21px;
+	line-height: 36px;
+}
+
 h1 {
 	@extend %font-2;
 	font-size: 72px;

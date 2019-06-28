@@ -176,6 +176,7 @@ if (!empty($type)): ?>
 				endforeach;
 				wp_reset_postdata(); ?>
 				</div>
+				<div class="next"></div>
 			<?php
 			endif; ?>
 			<?php
