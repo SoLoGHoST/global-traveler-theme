@@ -38,7 +38,23 @@ jQuery(document).ready(function($) {
 			nextArrow: '<button type="button" class="slick-next btn btn-arrow">Next <span class="caret-arrow"></span></button>'
 			// arrows: false
 		});
-		
+
+		$('.posts-slider').on('mouseenter', '.slick-slide', function (e) {
+
+			var $index = $(this).index();
+			var $currTarget = $(e.currentTarget);
+
+			if (!$currTarget.hasClass('slider-image-hover-' + $index))
+				$currTarget.addClass('slider-image-hover-' + $index);
+
+		}).on('mouseleave', '.slick-slide', function(e) {
+			var $index = $(this).index();
+			var $currTarget = $(e.currentTarget);
+
+			if ($currTarget.hasClass('slider-image-hover-' + $index))
+				$currTarget.removeClass('slider-image-hover-' + $index);
+		});
+
 		/*
 		$('.events-slider .content .event-title').click(function() {
 			$('.event-slider').slick('slickNext');

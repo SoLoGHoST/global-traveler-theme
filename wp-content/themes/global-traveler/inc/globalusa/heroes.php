@@ -138,19 +138,38 @@ if (!empty($type)): ?>
 	else: 
 		if ($type == 'home'): 
 			$slider_posts = get_field('slider_posts');
-
 			if (!empty($slider_posts)): ?>
 				<div class="posts-slider col-xs-24 no-pad">
 				<?php
-				foreach($slider_posts as $post): setup_postdata($post); 
-					$post_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "full"); ?>
+				foreach($slider_posts as $post_index => $post): setup_postdata($post); 
+					$post_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "full");
+					$index = ($post_index + 1); ?>
 					<div class="post-item">
-						<div class="image"<?php echo !empty($post_image[0]) ?' style="background: linear-gradient(to bottom, rgba(56, 56, 56, 0.5) 100%, rgba(56, 56, 56, 0.5) 100%), url(' . $post_image[0] . ') no-repeat center center; background-size: cover;"' : ''; ?>>
+						<style>
+							.slider-image-hover-<?php echo $index; ?> .image {
+								background: linear-gradient(to bottom, rgba(56, 56, 56, 0.3) 100%, rgba(56, 56, 56, 0.3) 100%), url('<?php echo $post_image[0]; ?>') no-repeat center center !important;
+								background-size: cover !important;
+								background-position: 50% 50% !important;
+								width: 100% !important;
+								height: 100vh !important;
+								background-repeat: no-repeat !important;
+								-webkit-opacity: 	0.8;
+								-moz-opacity: 		0.8;
+								opacity: 		0.8;
+								filter: alpha(opacity=80) progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+								-webkit-transform: perspective(1000px) !important;
+								transform: perspective(1000px) !important;
+							}
+						</style>
+						<div class="image"<?php echo !empty($post_image[0]) ?' style="background: linear-gradient(to bottom, rgba(56, 56, 56, 0.5) 100%, rgba(56, 56, 56, 0.5) 100%), url(' . $post_image[0] . ') no-repeat center center; background-size: cover; -webkit-backface-visibility: hidden; backface-visibility: hidden;"' : ''; ?>>
+							<a href="<?php the_permalink(); ?>" class="post-link" target="_blank"></a>
 							<div class="details-wrapper">
+								<a href="<?php the_permalink(); ?>" class="post-link" target="_blank"></a>
 								<div class="details">
+									<a href="<?php the_permalink(); ?>" class="post-link" target="_blank"></a>
 									<div class="info d-flex justify-content-center flex-column">
 										<h1><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a></h1>
-										<p><?php the_date('F j, Y'); ?></p>
+										<p class="mt-3 mb-2"><?php the_date('F j, Y'); ?></p>
 									</div>
 									<div class="categories">
 										<h5 class="categories highlight">

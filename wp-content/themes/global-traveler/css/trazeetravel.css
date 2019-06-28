@@ -8727,6 +8727,8 @@ body.page #main-content #content .content a {
     -ms-transition: background-size 0.3s;
     -o-transition: background-size 0.3s; } }
 @media (min-width: 992px) {
+  #home-content #content #posts-section, #main-content #content #posts-section {
+    margin-top: -6.5rem; }
   #home-content .hero-header .hero-body .caption, #main-content .hero-header .hero-body .caption {
     position: absolute;
     text-shadow: 1px 1px 0 black;
@@ -9296,12 +9298,13 @@ h5 {
   #home-content .hero-header, #main-content .hero-header {
     position: relative; }
     #home-content .hero-header .next, #main-content .hero-header .next {
+      display: none;
       position: absolute;
       top: 0;
       right: 0;
-      width: 24vw;
+      width: 18vw;
       height: 100%;
-      padding: 0; }
+      padding: 0 0 0 10px; }
       #home-content .hero-header .next button.slick-next, #main-content .hero-header .next button.slick-next {
         position: relative;
         top: 50%;
@@ -9573,7 +9576,7 @@ body.site-globalusa .posts-slider .post-item {
   display: block;
   position: relative;
   height: 510px;
-  width: 100vw;
+  width: 85vw;
   outline: none;
   padding: 0 2.5px; }
   body.site-globalusa .posts-slider .post-item .image {
@@ -9581,9 +9584,17 @@ body.site-globalusa .posts-slider .post-item {
     position: relative;
     width: 100%;
     height: 100%;
-    background-position: center center;
+    overflow: hidden;
     background-repeat: no-repeat;
-    background-size: cover; }
+    background-size: cover;
+    background-position: center center;
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -ms-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    -webkit-transform: perspective(1000px) !important;
+    transform: perspective(1000px) !important;
+    -webkit-backface-visibility: hidden; }
     body.site-globalusa .posts-slider .post-item .image .details-wrapper {
       position: absolute;
       max-width: 840px;
@@ -9594,10 +9605,11 @@ body.site-globalusa .posts-slider .post-item {
       right: 0;
       top: 0;
       bottom: 0;
-      margin: auto; }
+      margin: 3rem auto auto; }
       body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info {
         padding: 2.5rem;
-        margin-left: 3rem; }
+        margin-left: 3rem;
+        margin-right: 2rem; }
         body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info h1 {
           margin: 0; }
         body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info p {
@@ -9612,6 +9624,20 @@ body.site-globalusa .posts-slider .post-item {
         height: 50px;
         width: 200px;
         text-align: right; }
+        body.site-globalusa .posts-slider .post-item .image .details-wrapper .details h5.categories a {
+          -webkit-opacity: 0.7;
+          -moz-opacity: 0.7;
+          opacity: 0.7;
+          filter: alpha(opacity=70) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity);
+          -webkit-transition: all 0.2s ease;
+          -moz-transition: all 0.2s ease;
+          -ms-transition: all 0.2s ease;
+          -o-transition: all 0.2s ease; }
+          body.site-globalusa .posts-slider .post-item .image .details-wrapper .details h5.categories a:hover {
+            -webkit-opacity: 1;
+            -moz-opacity: 1;
+            opacity: 1;
+            filter: alpha(opacity=100) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
   body.site-globalusa .posts-slider .post-item.slick-slide:after {
     content: '';
     position: absolute;
@@ -10406,6 +10432,9 @@ body.site-globalusa .posts-slider .post-item {
   background-color: #1F163E; }
 
 @media (min-width: 768px) {
+  #home-content .hero-header .next, #main-content .hero-header .next {
+    display: block; }
+
   #main-content #content #posts-section #social-share {
     max-width: 50px;
     margin-left: 30px;
@@ -10424,10 +10453,10 @@ body.site-globalusa .posts-slider .post-item {
   .traze-mobile-footer.advads-sticky, .traze-mobile-footer_2.advads-sticky {
     display: none; } }
 @media (min-width: 992px) {
-  #home-content #content #posts-section, #main-content #content #posts-section {
-    margin-top: -6.5rem; }
   #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p {
     text-shadow: 1px 1px 0 black; }
+  #home-content .hero-header .next, #main-content .hero-header .next {
+    width: 24vw; }
 
   body.archive #main-content #content #posts-section {
     margin-top: auto; }

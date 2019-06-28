@@ -1170,6 +1170,11 @@ body {
 
 @media (min-width: 992px) {
 	#home-content, #main-content {
+		#content {
+			#posts-section {
+				margin-top: -6.5rem;
+			}
+		}
 		.hero-header {
 			.hero-body {
 				.caption {
