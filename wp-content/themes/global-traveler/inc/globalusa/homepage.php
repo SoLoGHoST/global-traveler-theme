@@ -36,9 +36,106 @@ if (!empty($sponsored_posts))
 	}
 }
 
+
+$first_set_adgroup_id = $wpdb->get_var('SELECT term_id FROM ' . $wpdb->terms . ' WHERE name = "Homepage Skyscraper" OR slug = "homepage-skyscraper" LIMIT 1');
+
+if (!empty($first_set_adgroup_id) && function_exists('get_ad_group') && group_has_ads($first_set_adgroup_id)) {
+	$offset = 2;
+	$first_set_ads[] = get_ad_group($first_set_adgroup_id);
+}
+else {
+	$offset = 3;
+}
+
+$first_set = $second_set = array();
+
+$args = array(
+	'post_type' => 'post',
+	'orderby' => 'date',
+	'post_status' => 'publish',
+	'offset' => 0,
+	'post__not_in' => $sponsored_ids,
+	'posts_per_page' => $offset,
+);
+
+$the_query = new WP_Query($args);
+
+if (!empty($the_query->posts)): 
+
+$first_set = $the_query->posts;
+
+if (!empty($first_set_ads))
+{
+	$random_ad = count($first_set_ads) > 1 ? array_rand($first_set_ads, 1) : 0;
+	$first_set[] = (object) [
+		'ad_type' => 'basic',
+		'output' => array_splice($first_set_ads, $random_ad, 1)
+	];
+} 
+
+$args = array(
+	'post_type' => 'post',
+	'orderby' => 'date',
+	'post_status' => 'publish',
+	'offset' => $offset,
+	'post__not_in' => $sponsored_ids,
+	'posts_per_page' => 3
+);
+
+$second_query = new WP_Query($args);
+
+if (!empty($second_query->posts)) {
+	if (!empty($current_sponsored)) {
+		$second_set = array_merge(array_slice($second_query->posts, 0, 1), array_splice($current_sponsored, 0, 1), array_slice($second_query->posts, 1));
+		$offset = $offset + (count($second_query->posts) - 1);
+	} else {
+		$second_set = $second_query->posts;
+		$offset = $offset + count($second_query->posts);
+	}
+} ?>
+
+<div id="content">
+	<div class="container-fluid d-flex no-pad">
+		<div id="posts-section" class="section content pb-sm-5">
+		<?php
+			tif_get_template('inc/' . $global_site . '/6posts-template.php', array('post_data' => $first_set));
+
+			if(function_exists('the_ad_placement') && placement_has_ads('homepage-leaderboard_2'))
+			{
+			echo '
+				<div class="container header-ad px-4 mt-2">
+					<div class="row">
+						<div class="d-flex mx-auto">';
+							the_ad_placement('homepage-leaderboard_2');
+			echo '
+						</div>
+					</div>
+				</div>';
+			}
+
+			tif_get_template('inc/3posts-template.php', array('post_data' => $second_set));
+		
+			tif_get_template('inc/' . $global_site . '/home-cta.php', array()); ?>
+		</div>
+	</div>
+</div>
+<?php
+endif;
+
+
+
+
+/*
+
+
+
+
+
+
+
 $has_more = false;
 $ordered_array = array();
-$had_ads = false;
+$has_ads = false;
 // Get the id of the wp_term that has a name of '6 posts Ad Group'
 $posts_group_id = $wpdb->get_var('SELECT term_id FROM ' . $wpdb->terms . ' WHERE name = "6 posts Ad Group" OR slug = "6-posts-ad-group" LIMIT 1');
 
@@ -228,7 +325,7 @@ if (!empty($the_query->posts))
 		<?php 
 		endif; ?>
 	</div>
-</div>
+</div> */ ?>
 
 <script>
 	// Not sure we need this code below...

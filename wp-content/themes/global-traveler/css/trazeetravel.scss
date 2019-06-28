@@ -869,6 +869,8 @@ h5 {
 				.copy {
 					@include border-link($white, $green, span, true, null, text, 2px, 94%);
 					.title {
+						max-width: 90%;
+						margin: -35px auto 0;
 						a {
 							&.post {
 								span {

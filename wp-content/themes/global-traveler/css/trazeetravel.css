@@ -8426,8 +8426,11 @@ h5.categories {
   -moz-transition: background-size 0.3s;
   -ms-transition: background-size 0.3s;
   -o-transition: background-size 0.3s; }
-#home-content .post-grid.row .post-tall .copy .title a.post span, #main-content .post-grid.row .post-tall .copy .title a.post span {
-  padding: 0 0 2px; }
+#home-content .post-grid.row .post-tall .copy .title, #main-content .post-grid.row .post-tall .copy .title {
+  max-width: 90%;
+  margin: -35px auto 0; }
+  #home-content .post-grid.row .post-tall .copy .title a.post span, #main-content .post-grid.row .post-tall .copy .title a.post span {
+    padding: 0 0 2px; }
 #home-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text, #main-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text {
   background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
   background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
@@ -9547,8 +9550,6 @@ h5 {
     width: 100%;
     text-align: center; }
     #home-content .post-grid.row .post-tall .copy .title, #main-content .post-grid.row .post-tall .copy .title {
-      max-width: 90%;
-      margin: -35px auto 0;
       position: relative;
       text-align: center; }
       #home-content .post-grid.row .post-tall .copy .title a.post, #main-content .post-grid.row .post-tall .copy .title a.post {

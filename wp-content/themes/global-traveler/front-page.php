@@ -49,9 +49,5 @@ if ($hero_type != 'hometakeover' && !empty($hero_post_type))
 
 $global_site = apply_filters('get_global_site', $global_site);
 tif_get_template('inc/' . $global_site . '/heroes.php', $template_args);
-
-
 tif_get_template('inc/' . $global_site . '/homepage.php', array('global_site' => $global_site));
-
-
 get_footer(); ?>

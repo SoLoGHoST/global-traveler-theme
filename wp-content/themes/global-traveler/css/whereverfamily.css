@@ -8403,8 +8403,11 @@ h5 {
   -o-transition: all 0.3s ease; }
 #home-content .post-grid.row .post-tall .copy a:hover span.text, #main-content .post-grid.row .post-tall .copy a:hover span.text {
   color: #90C844; }
-#home-content .post-grid.row .post-tall .copy .title a.post span, #main-content .post-grid.row .post-tall .copy .title a.post span {
-  padding: 6px 0 2px; }
+#home-content .post-grid.row .post-tall .copy .title, #main-content .post-grid.row .post-tall .copy .title {
+  max-width: 90%;
+  margin: -35px auto 0; }
+  #home-content .post-grid.row .post-tall .copy .title a.post span, #main-content .post-grid.row .post-tall .copy .title a.post span {
+    padding: 6px 0 2px; }
 #home-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text, #main-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text {
   color: #90C844; }
 #home-content .post-list .post-wide .copy a span.text, #main-content .post-list .post-wide .copy a span.text {
@@ -9519,8 +9522,6 @@ h5 {
     width: 100%;
     text-align: center; }
     #home-content .post-grid.row .post-tall .copy .title, #main-content .post-grid.row .post-tall .copy .title {
-      max-width: 90%;
-      margin: -35px auto 0;
       position: relative;
       text-align: center; }
       #home-content .post-grid.row .post-tall .copy .title a.post, #main-content .post-grid.row .post-tall .copy .title a.post {
