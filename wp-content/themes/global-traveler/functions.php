@@ -29,7 +29,7 @@ $all_sites = array(
 				'image' => '',
 				'button' => 'order-1',
 			), 
-			'width' => 175, 
+			'width' => 175,
 			'height' => 55
 		),
 		'url' => 'https://global-traveler-cp.local'
@@ -77,6 +77,7 @@ include(get_template_directory() . '/tif-global-api.php');
 
 add_image_size('thumbnail_1', 700, 9999);
 add_image_size('thumbnail_2', 700, 400);
+add_image_size('cta_thumbnail', 180, 9999);
 
 /*******************************************************************************
 	Code below should ONLY get run on the Development Sever
@@ -221,11 +222,15 @@ add_action('wp_enqueue_scripts', 'tif_styles');
 
 
 //------------------------------------------------//
-//-------------------- MENUS ---------------------//
+//------------- MENUS / POST TYPES ---------------//
 //------------------------------------------------//
 
+function tif_register_setup()
+{
+	global $global_site;
 
-function register_my_menus() {
+	if (empty($global_site))
+		$global_site = apply_filters('get_global_site', 'trazeetravel');
 
 	register_nav_menus(
 		array(
@@ -235,8 +240,84 @@ function register_my_menus() {
 		)
 	);
 
+	if ($global_site == 'globalusa') {
+
+		register_taxonomy(
+			'excursions_category_type',
+			'excursions',
+			array(
+				'hierarchical' => true,
+				'label' => 'Categories',
+				'query_var' => true,
+				'rewrite' => true,
+				'show_in_nav_menus' => false
+			)
+		);
+		
+		register_taxonomy(
+			'excursions_tag_type',
+			'excursions',
+			array(
+				'hierarchical' => false,
+				'label' => 'Tags',
+				'query_var' => true,
+				'rewrite' => true,
+				'show_in_nav_menus' => false
+			)
+		);
+
+		//Set UI labels for Custom Post Type
+		$labels = array(
+			'name'					=> _x('Excursions', 'Post Type General Name'),
+			'singular_name'			=> _x('Excursion', 'Post Type Singular Name'),
+			'menu_name'				=> __('Excursions'),
+			'parent_item_colon' 	=> __('Parent Excursion'),
+			'all_items'				=> __('All Excursions'),
+			'view_item'				=> __('View Excursion'),
+			'add_new_item'			=> __('Add New Excursion'),
+			'add_new'				=> __('Add New'),
+			'edit_item'				=> __('Edit Excursion'),
+			'update_item'			=> __('Update Excursion'),
+			'search_items'			=> __('Search Excursions'),
+			'not_found'				=> __('Not Found'),
+			'not_found_in_trash'	=> __('Not Found in Trash')
+		);
+		
+		//Set other options for Custom Post Type
+		$args = array(
+			'label'					=> __('excursions'),
+			'description'			=> __('Excursions'),
+			'labels'				=> $labels,
+			//Features this CPT supports in Post Editor
+			'supports'				=> array('title', 'editor', 'thumbnail', 'excerpt'),
+			//You can associate this CPT with a taxonomy or custom taxonomy.
+			'taxonomies'			=> array(),
+			/* A hierarchical CPT is like Pages and can have
+			 * Parent and child items. A non-hierarchical CPT
+			 * is like Posts.
+			*/
+			'hierarchical'			=> true,
+			'public'				=> true,
+			'publicly_queriable'	=> true,
+			'show_ui'				=> true,
+			'show_in_menu'			=> true,
+			'show_in_nav_menus'		=> false,
+			'show_in_admin_bar'		=> true,
+			'menu_position'			=> 6,
+			'menu_icon'				=> 'dashicons-admin-post',
+			'can_export'			=> true,
+			'has_archive'			=> false,
+			'exclude_from_search'	=> false,
+			'publicly_queryable'	=> true,
+			'capability_type'		=> 'page',
+			'rewrite'				=> array('slug' => 'excursions')
+		);
+		
+		register_post_type('excursions', $args);
+	}
+
 }
-add_action('init', 'register_my_menus');
+add_action('init', 'tif_register_setup');
 
 //------------------------------------------------//
 //------------------- WIDGETS --------------------//

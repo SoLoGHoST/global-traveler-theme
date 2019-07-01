@@ -675,8 +675,21 @@ h5 {
 				}
 			}
 		}
+		a {
+			color: $gray;
+			&:hover {
+				color: $default;
+			}
+		}
+	}
+	&.sponsored {
+		span {
+			background-color: $green;
+			color: $white;
+		}
 	}
 }
+
 .sponsored {
 	h5 {
 		&.categories {
@@ -943,6 +956,12 @@ h5 {
 	.post-grid {
 		&.row {
 			.post-tall {
+				.image {
+					min-height: 354px;
+				}
+				.ad-wrapper {
+					background-color: whitesmoke;
+				}
 				.copy {
 					a {
 						span {

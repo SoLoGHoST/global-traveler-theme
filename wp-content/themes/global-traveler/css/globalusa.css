@@ -8197,11 +8197,11 @@ a.text-dark:hover, a.text-dark:focus {
 @font-face {
   font-family: "Noe Display Bold";
   src: url("../fonts/Noe-Display-Bold.woff") format("woff"), url("../fonts/Noe-Display-Bold.otf") format("opentype"); }
-p, #main-content .hero-header .hero-body .post-wrapper .overlay p, body.site-globalusa .navbar #subnav, h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, #home-content #content .section .date, #main-content #content .section .date, .recent-posts-wrapper #featured .innerbox .featured-details .date, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #mainMenu #main_navigation li a, .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
+p, #main-content .hero-header .hero-body .post-wrapper .overlay p, body.site-globalusa .navbar #subnav, .btn, h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, #home-content #content .section .date, #main-content #content .section .date, .recent-posts-wrapper #featured .innerbox .featured-details .date, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #mainMenu #main_navigation li a, .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
   font-family: brandon-grotesque,sans-serif;
   font-style: normal; }
 
-.btn, h1, h2, h3, .header-1 .topline .site-section .posts-api-wrapper .post-box .copy h3.title a, body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info h1 a, h4, .tif-search-modal .modal-dialog .modal-header .close, .tif-search-modal .modal-dialog .modal-header input[type="text"], .tif-search-modal .form-wrapper span {
+h1, h2, h3, .header-1 .topline .site-section .posts-api-wrapper .post-box .copy h3.title a, body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info h1 a, h4, .tif-search-modal .modal-dialog .modal-header .close, .tif-search-modal .modal-dialog .modal-header input[type="text"], .tif-search-modal .form-wrapper span {
   font-family: "Noe Display Bold", sans-serif;
   font-style: normal; }
 
@@ -8211,12 +8211,11 @@ p, #main-content .hero-header .hero-body .post-wrapper .overlay p, body.site-glo
   font-size: 18px;
   line-height: 1.38em; }
 
-h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, #home-content #content .section .date, #main-content #content .section .date, .recent-posts-wrapper #featured .innerbox .featured-details .date {
+.btn, h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, #home-content #content .section .date, #main-content #content .section .date, .recent-posts-wrapper #featured .innerbox .featured-details .date {
   font-weight: 700;
   font-style: normal;
   font-size: 12px;
-  line-height: 18px;
-  letter-spacing: 1.2px; }
+  line-height: 18px; }
 
 .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a {
   font-weight: 700;
@@ -8232,12 +8231,10 @@ h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header
   line-height: 2em; }
 
 .btn {
-  font-weight: 700;
-  font-style: normal;
-  text-transform: uppercase;
-  line-height: 32px;
-  font-size: 18px;
-  letter-spacing: 0.15em; }
+  text-transform: uppercase; }
+
+body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info, #cta .cta-inner {
+  border: 5px solid #3FA2DA; }
 
 body {
   -webkit-font-smoothing: auto;
@@ -8258,12 +8255,24 @@ h3.blue {
   color: #3FA2DA; }
 
 h5.categories {
-  color: #2CB78F;
+  color: #3FA2DA;
   padding: 6px 18px 2px; }
   h5.categories.highlight a {
+    display: inline-block;
     color: #12222D; }
     h5.categories.highlight a:hover {
       color: #25AECC; }
+    h5.categories.highlight a:first-child {
+      padding-right: 5px; }
+    h5.categories.highlight a:last-child {
+      padding-left: 5px; }
+  h5.categories a {
+    color: #12222D; }
+    h5.categories a:hover {
+      color: #12222D; }
+h5.sponsored span {
+  background-color: #2CB78F;
+  color: #FFFFFF; }
 
 .header-1 .topline > .inner-wrapper {
   background-color: #12222D; }
@@ -8283,6 +8292,13 @@ h5.categories {
     margin: 0;
     font-size: 24px;
     line-height: 1.2em;
+    text-transform: initial;
+    text-align: center;
+    letter-spacing: normal; }
+  .header-1 .topline .site-section .posts-api-wrapper .post-box .copy h2.title a {
+    display: block;
+    color: #12222D;
+    margin: 0;
     text-transform: initial;
     text-align: center;
     letter-spacing: normal; }
@@ -8381,6 +8397,9 @@ h5.categories {
     padding: 10px 15px; }
 #home-content .post-half .img-wrapper:hover + .copy a span.text, #main-content .post-half .img-wrapper:hover + .copy a span.text {
   color: #25AECC; }
+#home-content .post-grid.row .post-tall .image, #main-content .post-grid.row .post-tall .image {
+  min-height: 290px;
+  width: 100%; }
 #home-content .post-grid.row .post-tall .copy a span.text, #main-content .post-grid.row .post-tall .copy a span.text {
   color: #12222D;
   -webkit-transition: all 0.3s ease;
@@ -8449,6 +8468,8 @@ h5.categories {
   filter: alpha(opacity=70) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
 #home-content .hero-header .headline, #main-content .hero-header .headline {
   background-color: #8A7399; }
+#home-content #content .section .date, #main-content #content .section .date {
+  color: #3FA2DA; }
 #home-content #content #instagram-feed, #main-content #content #instagram-feed {
   background-color: #3FA2DA; }
   #home-content #content #instagram-feed h4.title, #main-content #content #instagram-feed h4.title {
@@ -8602,7 +8623,6 @@ body.site-globalusa .posts-slider .post-item .image .post-link {
   width: 100%;
   height: 100%; }
 body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info {
-  border: 5px solid #3FA2DA;
   color: #FFFFFF; }
   body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info h1 p, body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info h1 a, body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info h1 span {
     color: #FFFFFF; }
@@ -8619,6 +8639,14 @@ body.site-globalusa .posts-slider .post-item .image .details-wrapper .details h5
   body.site-globalusa .posts-slider .post-item .image .details-wrapper .details h5.categories.highlight a {
     color: #FFFFFF; }
 
+#cta .cta-inner {
+  padding-left: .5rem;
+  padding-right: .5rem; }
+#cta .box-image {
+  position: absolute;
+  left: 6vw;
+  top: 0; }
+
 .btn {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -8630,7 +8658,46 @@ body.site-globalusa .posts-slider .post-item .image .details-wrapper .details h5
   outline: 0;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
-  box-shadow: none; }
+  box-shadow: none;
+  padding-left: 15px;
+  padding-righ: 15px; }
+  .btn.btn-primary {
+    border: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: #F46E5D;
+    color: #FFFFFF;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease; }
+    .btn.btn-primary:hover {
+      outline: 0;
+      background-color: #f1432d; }
+    .btn.btn-primary:focus, .btn.btn-primary:active {
+      background-color: #F46E5D;
+      border: 0;
+      outline: 0;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none; }
+    .btn.btn-primary:not(:disabled):not(.disabled).active, .btn.btn-primary:not(:disabled):not(.disabled):active {
+      border: 0;
+      outline: 0;
+      background-color: #F46E5D;
+      color: #FFFFFF;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none; }
+      .btn.btn-primary:not(:disabled):not(.disabled).active:focus, .btn.btn-primary:not(:disabled):not(.disabled):active:focus {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        outline: 0;
+        background-color: #F46E5D;
+        color: #FFFFFF;
+        border: 0; }
   .btn.btn-arrow {
     -webkit-opacity: 0.8;
     -moz-opacity: 0.8;
@@ -8707,6 +8774,10 @@ body.site-globalusa .posts-slider .post-item .image .details-wrapper .details h5
       box-shadow: none; }
 
 @media (min-width: 992px) {
+  #cta .cta-inner {
+    padding-left: 120px;
+    padding-right: 0; }
+
   #home-content .hero-header .hero-body .caption, #main-content .hero-header .hero-body .caption {
     position: absolute;
     text-shadow: 1px 1px 0 black;
@@ -8884,18 +8955,13 @@ h5 {
     display: inline-block;
     margin: 0; }
     h5.categories a {
-      color: #C0BBBD;
       -webkit-transition: all 0.2s ease;
       -moz-transition: all 0.2s ease;
       -ms-transition: all 0.2s ease;
       -o-transition: all 0.2s ease; }
-      h5.categories a:hover {
-        color: #12222D; }
   h5.sponsored span {
     display: inline-block;
-    padding: 6px 10px;
-    background-color: #2CB78F;
-    color: #FFFFFF; }
+    padding: 6px 10px; }
 
 #main_navigation li {
   float: left;
@@ -9513,12 +9579,10 @@ h5 {
     display: inline-block; }
   #home-content .post-grid.row .post-tall .image, #main-content .post-grid.row .post-tall .image {
     display: block;
-    min-height: 354px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover; }
   #home-content .post-grid.row .post-tall .ad-wrapper, #main-content .post-grid.row .post-tall .ad-wrapper {
-    background-color: whitesmoke;
     width: 100%; }
     #home-content .post-grid.row .post-tall .ad-wrapper > *, #main-content .post-grid.row .post-tall .ad-wrapper > * {
       display: inline-block;

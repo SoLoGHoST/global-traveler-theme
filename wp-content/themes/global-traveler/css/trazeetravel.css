@@ -8260,6 +8260,13 @@ h5.categories {
       color: #FFFFFF; }
       h5.categories.highlight a:hover {
         color: #FFFFFF; }
+  h5.categories a {
+    color: #C0BBBD; }
+    h5.categories a:hover {
+      color: #1F163E; }
+h5.sponsored span {
+  background-color: #2CB78F;
+  color: #FFFFFF; }
 
 .header-1 .topline > .inner-wrapper {
   border-bottom: 1px solid #484C5B; }
@@ -8410,6 +8417,10 @@ h5.categories {
   -moz-transition: background-size 0.3s;
   -ms-transition: background-size 0.3s;
   -o-transition: background-size 0.3s; }
+#home-content .post-grid.row .post-tall .ad-wrapper, #main-content .post-grid.row .post-tall .ad-wrapper {
+  background-color: whitesmoke; }
+#home-content .post-grid.row .post-tall .image, #main-content .post-grid.row .post-tall .image {
+  min-height: 354px; }
 #home-content .post-grid.row .post-tall .copy a:hover span.text, #main-content .post-grid.row .post-tall .copy a:hover span.text {
   background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
   background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
@@ -8903,18 +8914,13 @@ h5 {
     display: inline-block;
     margin: 0; }
     h5.categories a {
-      color: #C0BBBD;
       -webkit-transition: all 0.2s ease;
       -moz-transition: all 0.2s ease;
       -ms-transition: all 0.2s ease;
       -o-transition: all 0.2s ease; }
-      h5.categories a:hover {
-        color: #1F163E; }
   h5.sponsored span {
     display: inline-block;
-    padding: 6px 10px;
-    background-color: #2CB78F;
-    color: #FFFFFF; }
+    padding: 6px 10px; }
 
 #main_navigation li {
   float: left;
@@ -9531,12 +9537,10 @@ h5 {
     display: inline-block; }
   #home-content .post-grid.row .post-tall .image, #main-content .post-grid.row .post-tall .image {
     display: block;
-    min-height: 354px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover; }
   #home-content .post-grid.row .post-tall .ad-wrapper, #main-content .post-grid.row .post-tall .ad-wrapper {
-    background-color: whitesmoke;
     width: 100%; }
     #home-content .post-grid.row .post-tall .ad-wrapper > *, #main-content .post-grid.row .post-tall .ad-wrapper > * {
       display: inline-block;

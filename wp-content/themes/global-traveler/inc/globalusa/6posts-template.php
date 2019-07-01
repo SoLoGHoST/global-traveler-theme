@@ -41,20 +41,20 @@ if (!empty($post_data)): ?>
 
 	} ?>
 
-	<div class="post-tall post-item col-24 col-sm-12 col-md-8 d-flex flex-wrap align-content-start px-0 px-sm-3 mb-5 mb-sm-0">
+	<div class="post-tall post-item col-24 col-sm-12 col-md-8 d-flex flex-wrap align-content-start px-0 px-sm-2 mb-5 mb-sm-0">
 		<?php 
 		if (!property_exists($data, 'ad_type')): ?>
 		<div class="img-wrapper col-24">
 			<a href="<?php echo $permalink; ?>" class="image"<?php echo !empty($post_image) ? ' style="background-image: url(' . $post_image . ');"' : ''; ?>></a>
 		</div>
 		<div class="copy d-flex flex-wrap">
-			<h3 class="title">
+			<h2 class="title">
 				<a href="<?php echo $permalink; ?>" class="post">
 					<span>
 						<span class="text"><?php echo get_the_title($data->ID); ?></span>
 					</span>
 				</a>
-			</h3>
+			</h2>
 			<?php 
 			if (!empty($is_sponsored)): ?>
 			<div class="tagline">
@@ -82,7 +82,7 @@ if (!empty($post_data)): ?>
 		</div>
 		<?php
 		elseif (!empty($output) && !empty($output[0])): ?>
-			<div class="ad-wrapper d-flex align-items-start justify-content-center py-4 py-sm-0 mb-sm-4">
+			<div class="ad-wrapper d-flex align-items-start justify-content-center justify-content-md-end py-4 py-sm-0 mb-sm-4">
 			<?php echo $output[0]; ?>
 			</div>
 		<?php	

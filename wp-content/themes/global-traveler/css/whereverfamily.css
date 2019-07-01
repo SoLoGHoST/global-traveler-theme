@@ -8282,6 +8282,13 @@ h5 {
         -o-transition: all 0.2s ease; }
         h5.categories.highlight a:hover {
           color: #202433; }
+    h5.categories a {
+      color: #BEC3B5; }
+      h5.categories a:hover {
+        color: #202433; }
+  h5.sponsored span {
+    background-color: #046D41;
+    color: #FFFFFF; }
 
 .sponsored h5.categories {
   color: #90C844; }
@@ -8395,6 +8402,10 @@ h5 {
     padding: 10px 15px; }
 #home-content .post-half .img-wrapper:hover + .copy a span.text, #main-content .post-half .img-wrapper:hover + .copy a span.text {
   color: #90C844; }
+#home-content .post-grid.row .post-tall .image, #main-content .post-grid.row .post-tall .image {
+  min-height: 354px; }
+#home-content .post-grid.row .post-tall .ad-wrapper, #main-content .post-grid.row .post-tall .ad-wrapper {
+  background-color: whitesmoke; }
 #home-content .post-grid.row .post-tall .copy a span.text, #main-content .post-grid.row .post-tall .copy a span.text {
   color: #202433;
   -webkit-transition: all 0.3s ease;
@@ -8875,18 +8886,13 @@ h5 {
     display: inline-block;
     margin: 0; }
     h5.categories a {
-      color: #BEC3B5;
       -webkit-transition: all 0.2s ease;
       -moz-transition: all 0.2s ease;
       -ms-transition: all 0.2s ease;
       -o-transition: all 0.2s ease; }
-      h5.categories a:hover {
-        color: #202433; }
   h5.sponsored span {
     display: inline-block;
-    padding: 6px 10px;
-    background-color: #046D41;
-    color: #FFFFFF; }
+    padding: 6px 10px; }
 
 #main_navigation li {
   float: left;
@@ -9503,12 +9509,10 @@ h5 {
     display: inline-block; }
   #home-content .post-grid.row .post-tall .image, #main-content .post-grid.row .post-tall .image {
     display: block;
-    min-height: 354px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover; }
   #home-content .post-grid.row .post-tall .ad-wrapper, #main-content .post-grid.row .post-tall .ad-wrapper {
-    background-color: whitesmoke;
     width: 100%; }
     #home-content .post-grid.row .post-tall .ad-wrapper > *, #main-content .post-grid.row .post-tall .ad-wrapper > * {
       display: inline-block;

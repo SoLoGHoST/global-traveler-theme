@@ -212,10 +212,6 @@ h5 {
 		display: inline-block;
 		margin: 0;
 		a {
-			color: $gray;
-			&:hover {
-				color: $default;
-			}
 			@include transition(all 0.2s ease);
 		}
 	}
@@ -223,8 +219,6 @@ h5 {
 		span {
 			display: inline-block;
 			padding: 6px 10px;
-			background-color: $green;
-			color: $white;
 		}
 	}
 }
@@ -1050,13 +1044,11 @@ h5 {
 				}
 				.image {
 					display: block;
-					min-height: 354px;
 					background-position: center center;
 					background-repeat: no-repeat;
 					background-size: cover;
 				}
 				.ad-wrapper {
-					background-color: whitesmoke;
 					width: 100%;
 					> * {
 						display: inline-block;

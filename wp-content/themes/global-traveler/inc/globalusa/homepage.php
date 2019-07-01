@@ -86,13 +86,14 @@ $second_query = new WP_Query($args);
 
 if (!empty($second_query->posts)) {
 	if (!empty($current_sponsored)) {
-		$second_set = array_merge(array_slice($second_query->posts, 0, 1), array_splice($current_sponsored, 0, 1), array_slice($second_query->posts, 1));
+		$second_set = array_merge(array_slice($second_query->posts, 0, 1), array_splice($current_sponsored, 0, 1), array_slice($second_query->posts, 1, 1));
 		$offset = $offset + (count($second_query->posts) - 1);
 	} else {
 		$second_set = $second_query->posts;
 		$offset = $offset + count($second_query->posts);
 	}
-} ?>
+}
+?>
 
 <div id="content">
 	<div class="container-fluid d-flex no-pad">
@@ -114,8 +115,22 @@ if (!empty($second_query->posts)) {
 			}
 
 			tif_get_template('inc/3posts-template.php', array('post_data' => $second_set));
-		
-			tif_get_template('inc/' . $global_site . '/home-cta.php', array()); ?>
+
+			$cta = array(
+				'cta_image' => get_field('cta_image'),
+				'cta_headline' => get_field('cta_headline'),
+				'cta_buttonurl' => get_field('cta_buttonurl'),
+				'cta_buttontext' => get_field('cta_buttontext')
+			);
+
+			// remove empty values from the array...
+			$cta = array_filter($cta);
+			if (!empty($cta)):
+				tif_get_template('inc/' . $global_site . '/call-to-action.php', $cta); 
+			endif; 
+
+			tif_get_template('inc/' . $global_site . '/fx-excursions.php');
+			?>
 		</div>
 	</div>
 </div>

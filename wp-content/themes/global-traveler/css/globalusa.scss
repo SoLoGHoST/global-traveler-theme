@@ -104,7 +104,7 @@ $li-share: #0077B5;
 	@include font(font_1, bold);
 	font-size: 12px;
 	line-height: 18px;
-	letter-spacing: 1.2px;
+	// letter-spacing: 1.2px;
 }
 
 %font-menu {
@@ -121,11 +121,11 @@ $li-share: #0077B5;
 }
 
 %button-text {
-	@include font(font-2, bold);
+	@extend %font-medium;
 	text-transform: uppercase;
-	line-height: 32px;
-	font-size: 18px;
-	letter-spacing: 0.15em;
+}
+%border-line {
+	border: 5px solid $blue;
 }
 
 
@@ -665,16 +665,35 @@ h3 {
 h5 {
 	@extend %font-medium;
 	&.categories {
-		color: $green;
+		color: $tagline;
 		padding: 6px 18px 2px;
 		&.highlight {
 			// background-color: $purple;
 			a {
+				display: inline-block;
 				color: $default;
 				&:hover {
 					color: $light-blue;
 				}
+				&:first-child {
+					padding-right: 5px;
+				}
+				&:last-child {
+					padding-left: 5px;
+				}
 			}
+		}
+		a {
+			color: $dkblue;
+			&:hover {
+				color: $default;
+			}
+		}
+	}
+	&.sponsored {
+		span {
+			background-color: $green;
+			color: $white;
 		}
 	}
 }
@@ -714,6 +733,18 @@ h5 {
 									@extend %font-2;
 									font-size: 24px;
 									line-height: 1.2em;
+									text-transform: initial;
+									text-align: center;
+									letter-spacing: normal;
+								}
+							}
+						}
+						h2 {
+							&.title {
+								a {
+									display: block;
+									color: $default;
+									margin: 0;
 									text-transform: initial;
 									text-align: center;
 									letter-spacing: normal;
@@ -939,6 +970,10 @@ h5 {
 	.post-grid {
 		&.row {
 			.post-tall {
+				.image {
+					min-height: 290px;
+					width: 100%;
+				}
 				.copy {
 					a {
 						span {
@@ -1100,6 +1135,11 @@ h5 {
 		}
 	}
 	#content {
+		.section {
+			.date {
+				color: $blue;
+			}
+		}
 		#instagram-feed {
 			background-color: $blue;
 			h4 {
@@ -1394,7 +1434,7 @@ body {
 					.details-wrapper {
 						.details {
 							.info {
-								border: 5px solid $blue;
+								@extend %border-line;
 								color: $white;
 								h1 {
 									p, a, span {
@@ -1425,12 +1465,62 @@ body {
 	}
 }
 
+#cta {
+	.cta-inner {
+		@extend %border-line;
+		padding-left: .5rem;
+		padding-right: .5rem;
+	}
+	.box-image {
+		position: absolute;
+		left: 6vw;
+		top: 0;
+	}
+}
+
 .btn {
 	@extend %button-text;
 	@include border-radius(0);
 	position: relative;
 	outline: 0;
 	@include box-shadow(none);
+	padding-left: 15px;
+	padding-righ: 15px;
+	&.btn-primary {
+		border: 0;
+		@include box-shadow(none);
+		background-color: $red;
+		color: $white;
+		@include transition(all 0.2s ease);
+		&:hover {
+			outline: 0;
+			background-color: darken($red, 10%);
+		}
+		&:focus, &:active {
+			background-color: $red;
+			border: 0;
+			outline: 0;
+			@include box-shadow(none);
+		}
+		&:not(:disabled) {
+			&:not(.disabled) {
+				&.active, &:active {
+					border: 0;
+					outline: 0;
+					background-color: $red;
+					color: $white;
+					@include box-shadow(none);
+					&:focus {
+						@include box-shadow(none);
+						outline: 0;
+						background-color: $red;
+						color: $white;
+						border: 0;
+					}
+				}
+			}
+		}
+	}
 	&.btn-arrow {
 		@include opacity(0.8);
     	@include box-shadow(none);
@@ -1488,8 +1578,17 @@ body {
 	}
 }
 
+@media (min-width: 768px) {
+
+}
 
 @media (min-width: 992px) {
+	#cta {
+		.cta-inner {
+			padding-left: 120px;
+			padding-right: 0;
+		}
+	}
 	#home-content, #main-content {
 		.hero-header {
 			.hero-body {

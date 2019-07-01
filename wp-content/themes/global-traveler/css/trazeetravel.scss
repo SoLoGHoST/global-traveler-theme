@@ -655,6 +655,18 @@ h5 {
 				}
 			}
 		}
+		a {
+			color: $gray;
+			&:hover {
+				color: $default;
+			}
+		}
+	}
+	&.sponsored {
+		span {
+			background-color: $green;
+			color: $white;
+		}
 	}
 }
 .header-1 {
@@ -866,6 +878,12 @@ h5 {
 	.post-grid {
 		&.row {
 			.post-tall {
+				.ad-wrapper {
+					background-color: whitesmoke;
+				}
+				.image {
+					min-height: 354px;
+				}
 				.copy {
 					@include border-link($white, $green, span, true, null, text, 2px, 94%);
 					.title {
