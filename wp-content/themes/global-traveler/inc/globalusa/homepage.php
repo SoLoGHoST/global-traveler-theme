@@ -2,7 +2,7 @@
 
 if (!defined('ABSPATH')) exit;
 
-global $post, $page_id, $wpdb, $the_ads;
+global $post, $page_id, $wpdb, $the_ads, $global_site;
 
 $sponsored_posts = $current_sponsored = array();
 $featured_post_id = 0;
