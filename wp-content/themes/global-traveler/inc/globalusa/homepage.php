@@ -127,12 +127,12 @@ if (!empty($second_query->posts)) {
 			$cta = array_filter($cta);
 			if (!empty($cta)):
 				tif_get_template('inc/' . $global_site . '/call-to-action.php', $cta); 
-			endif; 
-
-			tif_get_template('inc/' . $global_site . '/fx-excursions.php');
-			?>
+			endif; ?>
 		</div>
 	</div>
+	<?php
+	tif_get_template('inc/' . $global_site . '/fx-excursions.php'); 
+	tif_get_template('inc/instagram-feed.php', array()); ?>
 </div>
 <?php
 endif;

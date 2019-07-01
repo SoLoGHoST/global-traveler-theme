@@ -8197,25 +8197,37 @@ a.text-dark:hover, a.text-dark:focus {
 @font-face {
   font-family: "Noe Display Bold";
   src: url("../fonts/Noe-Display-Bold.woff") format("woff"), url("../fonts/Noe-Display-Bold.otf") format("opentype"); }
-p, #main-content .hero-header .hero-body .post-wrapper .overlay p, body.site-globalusa .navbar #subnav, .btn, h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, #home-content #content .section .date, #main-content #content .section .date, .recent-posts-wrapper #featured .innerbox .featured-details .date, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #mainMenu #main_navigation li a, .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
-  font-family: brandon-grotesque,sans-serif;
+#main-content .hero-header .hero-body .post-wrapper .overlay p, body.site-globalusa .navbar #subnav, body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info p, #fx-excursions .excursions-inner .intro, p, h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, #home-content #content .section .date, #main-content #content .section .date, .recent-posts-wrapper #featured .innerbox .featured-details .date, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #mainMenu #main_navigation li a, .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
+  font-family: brandon-grotesque, sans-serif;
   font-style: normal; }
 
-h1, h2, h3, .header-1 .topline .site-section .posts-api-wrapper .post-box .copy h3.title a, body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info h1 a, h4, .tif-search-modal .modal-dialog .modal-header .close, .tif-search-modal .modal-dialog .modal-header input[type="text"], .tif-search-modal .form-wrapper span {
+h4, #fx-excursions .excursions-inner .excursions-landing-images .image-item a h2, .btn, h1, h2, h3, .header-1 .topline .site-section .posts-api-wrapper .post-box .copy h3.title a, body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info h1 a, .tif-search-modal .modal-dialog .modal-header .close, .tif-search-modal .modal-dialog .modal-header input[type="text"], .tif-search-modal .form-wrapper span {
   font-family: "Noe Display Bold", sans-serif;
   font-style: normal; }
 
-p, #main-content .hero-header .hero-body .post-wrapper .overlay p, body.site-globalusa .navbar #subnav {
+#main-content .hero-header .hero-body .post-wrapper .overlay p, body.site-globalusa .navbar #subnav, body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info p, #fx-excursions .excursions-inner .intro {
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
   line-height: 1.38em; }
 
-.btn, h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, #home-content #content .section .date, #main-content #content .section .date, .recent-posts-wrapper #featured .innerbox .featured-details .date {
+p {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 36px; }
+
+h5, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #main-content .hero-header .hero-body .post-wrapper .overlay .date, #home-content #content .section .date, #main-content #content .section .date, .recent-posts-wrapper #featured .innerbox .featured-details .date {
   font-weight: 700;
   font-style: normal;
   font-size: 12px;
   line-height: 18px; }
+
+h4, #fx-excursions .excursions-inner .excursions-landing-images .image-item a h2 {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1.38em; }
 
 .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a {
   font-weight: 700;
@@ -8231,6 +8243,10 @@ p, #main-content .hero-header .hero-body .post-wrapper .overlay p, body.site-glo
   line-height: 2em; }
 
 .btn {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.38em;
   text-transform: uppercase; }
 
 body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info, #cta .cta-inner {
@@ -8253,6 +8269,9 @@ h2 {
 
 h3.blue {
   color: #3FA2DA; }
+
+h4.white {
+  color: #FFFFFF; }
 
 h5.categories {
   color: #3FA2DA;
@@ -8550,6 +8569,30 @@ h5.sponsored span {
 #home-content #content #posts-section #body-content a, #main-content #content #posts-section #body-content a {
   color: #2CB78F;
   border-bottom: 2px solid #2CB78F; }
+#home-content #content .post-item p, #main-content #content .post-item p {
+  font-size: 18px;
+  line-height: 24px; }
+  #home-content #content .post-item p.block-with-text, #main-content #content .post-item p.block-with-text {
+    overflow: hidden;
+    position: relative;
+    line-height: 1.38em;
+    max-height: 6.9em;
+    text-align: justify;
+    margin-right: -1em;
+    padding-right: 1em; }
+    #home-content #content .post-item p.block-with-text:before, #main-content #content .post-item p.block-with-text:before {
+      content: '...';
+      position: absolute;
+      right: 0;
+      bottom: 0; }
+    #home-content #content .post-item p.block-with-text:after, #main-content #content .post-item p.block-with-text:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 1em;
+      height: 1em;
+      margin-top: 0.2em;
+      background: #FFFFFF; }
 #home-content #content .post-item .copy .content a, #main-content #content .post-item .copy .content a {
   color: #25AECC;
   border-bottom: none; }
@@ -8646,6 +8689,42 @@ body.site-globalusa .posts-slider .post-item .image .details-wrapper .details h5
   position: absolute;
   left: 6vw;
   top: 0; }
+
+#fx-excursions {
+  background: #000000 url("../images/fxexcursions-bg.png") no-repeat center center;
+  background-size: cover; }
+  #fx-excursions .excursions-inner .intro {
+    color: #F46E5D; }
+  #fx-excursions .excursions-inner .excursions-landing-images .image-item {
+    max-width: 352px;
+    height: 474px;
+    overflow: hidden; }
+    #fx-excursions .excursions-inner .excursions-landing-images .image-item a {
+      position: relative;
+      display: block;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      height: 100%;
+      width: 100%; }
+      #fx-excursions .excursions-inner .excursions-landing-images .image-item a h2 {
+        background-color: rgba(0, 0, 0, 0.4);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 100% 100%;
+        color: #FFFFFF;
+        text-align: center;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -ms-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease; }
+      #fx-excursions .excursions-inner .excursions-landing-images .image-item a:hover h2 {
+        background-color: rgba(0, 0, 0, 0); }
+  #fx-excursions .excursions-inner p, #fx-excursions .excursions-inner h1 {
+    color: #FFFFFF; }
 
 .btn {
   -webkit-border-radius: 0;
@@ -9509,30 +9588,6 @@ h5 {
         font-size: 20px; }
   #home-content #content #posts-section #body-content p, #main-content #content #posts-section #body-content p {
     margin-bottom: 0; }
-  #home-content #content .post-item p, #main-content #content .post-item p {
-    font-size: 16px;
-    line-height: 1.5em; }
-    #home-content #content .post-item p.block-with-text, #main-content #content .post-item p.block-with-text {
-      overflow: hidden;
-      position: relative;
-      line-height: 1.5em;
-      max-height: 7.5em;
-      text-align: justify;
-      margin-right: -1em;
-      padding-right: 1em; }
-      #home-content #content .post-item p.block-with-text:before, #main-content #content .post-item p.block-with-text:before {
-        content: '...';
-        position: absolute;
-        right: 0;
-        bottom: 0; }
-      #home-content #content .post-item p.block-with-text:after, #main-content #content .post-item p.block-with-text:after {
-        content: '';
-        position: absolute;
-        right: 0;
-        width: 1em;
-        height: 1em;
-        margin-top: 0.2em;
-        background: #FFFFFF; }
   #home-content .post-half .image, #main-content .post-half .image {
     background-size: cover;
     min-height: 280px;

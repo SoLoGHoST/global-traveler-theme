@@ -86,7 +86,7 @@ $li-share: #0077B5;
 }
 
 %font_1 {
-	font-family: brandon-grotesque,sans-serif;
+	font-family: brandon-grotesque, sans-serif;
 	font-style: normal;
 }
 %font-2 {
@@ -100,11 +100,23 @@ $li-share: #0077B5;
 	line-height: 1.38em;
 }
 
+%default-p {
+	@include font(font_1, regular);
+	font-size: 24px;
+	line-height: 36px;
+}
+
 %font-medium {
 	@include font(font_1, bold);
 	font-size: 12px;
 	line-height: 18px;
 	// letter-spacing: 1.2px;
+}
+
+%font-noedisplay {
+	@include font(font-2, regular);
+	font-size: 24px;
+	line-height: 1.38em;
 }
 
 %font-menu {
@@ -121,7 +133,9 @@ $li-share: #0077B5;
 }
 
 %button-text {
-	@extend %font-medium;
+	@include font(font-2, regular);
+	font-size: 18px;
+	line-height: 1.38em;
 	text-transform: uppercase;
 }
 %border-line {
@@ -642,7 +656,7 @@ $li-share: #0077B5;
 **************************************/
 
 p {
-	@extend %font-regular;
+	@extend %default-p;
 }
 
 h1 {
@@ -660,6 +674,12 @@ h3 {
 	@extend %font-2;
 	&.blue {
 		color: $blue;
+	}
+}
+h4 {
+	@extend %font-noedisplay;
+	&.white {
+		color: $white;
 	}
 }
 h5 {
@@ -1249,6 +1269,13 @@ h5 {
 			}
 		}
 		.post-item {
+			p {
+				font-size: 18px;
+				line-height: 24px;
+				&.block-with-text {
+				  @include multiLineEllipsis(1.38em, 5, $white);  
+				}
+			}
 			.copy {
 				.content {
 					a {
@@ -1446,6 +1473,9 @@ body {
 										@include transition(color 0.15s ease-in-out);
 									}
 								}
+								p {
+									@extend %font-regular;
+								}
 							}
 							h5 {
 								&.categories {
@@ -1475,6 +1505,55 @@ body {
 		position: absolute;
 		left: 6vw;
 		top: 0;
+	}
+}
+
+#fx-excursions {
+	background: $black url('../images/fxexcursions-bg.png') no-repeat center center;
+	background-size: cover;
+	.excursions-inner {
+		.intro {
+			color: $red;
+			@extend %font-regular;
+		}
+		.excursions-landing-images {
+			.image-item {
+				max-width: 352px;
+				height: 474px;
+				overflow: hidden;
+				a {
+					position: relative;
+					display: block;
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: cover;
+					height: 100%;
+					width: 100%;
+					h2 {
+						// @include gradient(rgba(0, 0, 0, 0.4), rgba(0,0,0, 0.4));
+						background-color: rgba(0,0,0, .4);
+						background-repeat: no-repeat;
+						background-size: cover;
+						background-position: 100% 100%;
+						@extend %font-noedisplay;
+						color: $white;
+						text-align: center;
+						width: 100%;
+						padding-left: 15px;
+						padding-right: 15px;
+						@include transition(all 0.4s ease);
+					}
+					&:hover {
+						h2 {
+							background-color: rgba(0,0,0,0);
+						}
+					}
+				}
+			}
+		}
+		p, h1 {
+			color: $white;
+		}
 	}
 }
 

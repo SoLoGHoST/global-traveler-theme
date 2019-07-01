@@ -950,15 +950,6 @@ h5 {
 				}
 			}
 		}
-		.post-item {
-			p {
-				font-size: 16px;
-				line-height: 1.5em;
-				&.block-with-text {
-				  @include multiLineEllipsis(1.5em, 5, $white);  
-				}
-			}
-		}
 	}
 
 	.post-half {

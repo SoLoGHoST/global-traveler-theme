@@ -8535,6 +8535,30 @@ h5 {
   color: #90C844; }
   #home-content #content #posts-section #body-content a:hover, #main-content #content #posts-section #body-content a:hover {
     border-bottom: 2px solid #90C844; }
+#home-content #content .post-item p, #main-content #content .post-item p {
+  font-size: 16px;
+  line-height: 1.5em; }
+  #home-content #content .post-item p.block-with-text, #main-content #content .post-item p.block-with-text {
+    overflow: hidden;
+    position: relative;
+    line-height: 1.5em;
+    max-height: 7.5em;
+    text-align: justify;
+    margin-right: -1em;
+    padding-right: 1em; }
+    #home-content #content .post-item p.block-with-text:before, #main-content #content .post-item p.block-with-text:before {
+      content: '...';
+      position: absolute;
+      right: 0;
+      bottom: 0; }
+    #home-content #content .post-item p.block-with-text:after, #main-content #content .post-item p.block-with-text:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 1em;
+      height: 1em;
+      margin-top: 0.2em;
+      background: #FFFFFF; }
 #home-content #content .post-item .copy .content a, #main-content #content .post-item .copy .content a {
   color: #90C844;
   border-bottom: none; }
@@ -9439,30 +9463,6 @@ h5 {
         font-size: 20px; }
   #home-content #content #posts-section #body-content p, #main-content #content #posts-section #body-content p {
     margin-bottom: 0; }
-  #home-content #content .post-item p, #main-content #content .post-item p {
-    font-size: 16px;
-    line-height: 1.5em; }
-    #home-content #content .post-item p.block-with-text, #main-content #content .post-item p.block-with-text {
-      overflow: hidden;
-      position: relative;
-      line-height: 1.5em;
-      max-height: 7.5em;
-      text-align: justify;
-      margin-right: -1em;
-      padding-right: 1em; }
-      #home-content #content .post-item p.block-with-text:before, #main-content #content .post-item p.block-with-text:before {
-        content: '...';
-        position: absolute;
-        right: 0;
-        bottom: 0; }
-      #home-content #content .post-item p.block-with-text:after, #main-content #content .post-item p.block-with-text:after {
-        content: '';
-        position: absolute;
-        right: 0;
-        width: 1em;
-        height: 1em;
-        margin-top: 0.2em;
-        background: #FFFFFF; }
   #home-content .post-half .image, #main-content .post-half .image {
     background-size: cover;
     min-height: 280px;
