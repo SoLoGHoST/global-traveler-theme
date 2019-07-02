@@ -2,6 +2,8 @@
 /*
 	Filename: 2posts-template.php
 	Description: Shows 2 posts at a time in a wrapper, vertically.
+
+	// @TODO:  Should get rid of this file when finished with the global site, since this template NEVER gets used and is not needed!
 */
 
 if (!defined('ABSPATH')) exit();
