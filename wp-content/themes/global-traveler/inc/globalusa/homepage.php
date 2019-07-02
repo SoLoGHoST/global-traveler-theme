@@ -150,7 +150,9 @@ if (!empty($second_query->posts)) {
 	}
 
 	// Reset in order to get the correct # of sponsored posts...
-	$total_sponsored = !empty($sponsored_ids) ? count($sponsored_ids) - $total_sponsored : 0;
+	// $total_sponsored = !empty($sponsored_ids) ? count($sponsored_ids) - $total_sponsored : 0;
+	$total_sponsors_count = count($sponsored_ids);
+	$sponsors_difference = !empty($total_sponsors_count) ? ($total_sponsors_count - $total_sponsored) : 0;
 
 	$posts_per_page = !empty($the_ads) ? 12 : 13;
 	$args = array(
@@ -158,12 +160,9 @@ if (!empty($second_query->posts)) {
 		'orderby' => 'date',
 		'post_status' => 'publish',
 		'post__not_in' => $sponsored_ids,
-		'offset' => (($posts_per_page - $total_sponsored) + $offset),
-		'posts_per_page' => ($posts_per_page - $total_sponsored) // If no ad defined, we get all posts (13), otherwise, only need 12
+		'offset' => $offset,
+		'posts_per_page' => ($posts_per_page - $sponsors_difference) // If no ad defined, we get all posts (13), otherwise, only need 12
 	);
-
-
-	error_log(var_export($args, true));
 
 	$the_query = new WP_Query($args);
 
@@ -177,8 +176,8 @@ if (!empty($second_query->posts)) {
 			$has_more = true;
 		}
 
-		$first_sponsored = !empty($total_sponsored) ? $total_sponsored : 0;
-		$last_sponsored = !empty($total_sponsored) ? ($total_sponsored - 1) : 0;
+		$first_sponsored = !empty($sponsors_difference) ? 1 : 0;
+		$last_sponsored = !empty($sponsors_difference) && $sponsors_difference > 1 ? 1 : 0;
 
 		$order_pattern = array(
 			'first_set' => (3 - $first_sponsored),
@@ -202,7 +201,7 @@ if (!empty($second_query->posts)) {
 				}
 
 				if (($key == 'first_set' || $key == 'last_set') && !empty($ordered_array[$key]) && !empty($current_sponsored)) {
-					$ordered_array[$key] = array_merge(array_slice($ordered_array[$key], 0, 1), array_splice($current_sponsored, -1, 1), array_slice($ordered_array[$key], 1));
+					$ordered_array[$key] = array_merge(array_slice($ordered_array[$key], 0, 1), array_splice($current_sponsored, 0, 1), array_slice($ordered_array[$key], 1));
 				}
 			}
 		}

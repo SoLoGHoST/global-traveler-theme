@@ -925,7 +925,7 @@ function tif_posts_scroll()
 	if (!empty($start))
 		$args['offset'] = $start;
 
-	error_log(var_export($args, true));
+	// error_log(var_export($args, true));
 
 	$the_query = new WP_Query($args);
 
