@@ -32,7 +32,7 @@ $cta_image, $cta_headline, $cta_buttonurl, $cta_buttontext
 			<?php
 			endif;
 			if (!empty($cta_buttonurl) && !empty($cta_buttontext)): ?>
-			<a href="<?php echo $cta_buttonurl; ?>" class="btn btn-primary"><?php echo $cta_buttontext; ?></a>
+			<a href="<?php echo $cta_buttonurl; ?>" class="btn btn-primary" target="_blank"><?php echo $cta_buttontext; ?></a>
 			<?php
 			endif; ?>
 		</div>
