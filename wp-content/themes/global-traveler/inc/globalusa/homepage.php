@@ -114,7 +114,7 @@ if (!empty($second_query->posts)) {
 				</div>';
 			}
 
-			tif_get_template('inc/3posts-template.php', array('post_data' => $second_set));
+			tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $second_set));
 
 			$cta = array(
 				'cta_image' => get_field('cta_image'),

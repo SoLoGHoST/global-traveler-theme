@@ -1,10 +1,12 @@
 <?php
 
 if (!defined('ABSPATH')) exit;
-global $post, $page_id, $homepage_id;
+global $post, $page_id, $homepage_id, $global_site;
 
 $year = get_query_var('year');
-get_header(); 
+get_header();
+
+$global_site = apply_filters('get_global_site', $global_site);
 
 // $submenu = get_field('submenu', $homepage_id);
 ?>
@@ -57,9 +59,9 @@ if (!empty($the_query->posts))
 <div id="year-content" class="container">
 	<div id="posts-section" class="section content">
 		<?php 
-			tif_get_template('inc/2posts-template.php', array('post_data' => $first_set));
-			tif_get_template('inc/6posts-template.php', array('post_data' => $remaining_posts));
-			tif_get_template('inc/2posts-template.php', array('post_data' => $last_set));
+			tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $first_set));
+			tif_get_template('inc/' . $global_site . '/6posts-template.php', array('post_data' => $remaining_posts));
+			tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $last_set));
 		?>
 		<input type="hidden" id="args" value="year" />
 		<input type="hidden" id="year" value="<?php echo $year; ?>" />

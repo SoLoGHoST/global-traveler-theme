@@ -370,10 +370,10 @@ if (!empty($posts_to_get) || !empty($related_posts)):
 	<div class="container-fluid mt-5 pt-5 px-0">
 		<div class="section content">
 			<?php 
-				tif_get_template('inc/2posts-template.php', array('post_data' => $ordered_array['first_set']));
-				tif_get_template('inc/2posts-template.php', array('post_data' => $ordered_array['second_set']));
-				tif_get_template('inc/3posts-template.php', array('post_data' => $ordered_array['third_set']));
-				tif_get_template('inc/3posts-template.php', array('post_data' => $ordered_array['last_set']));
+				tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $ordered_array['first_set']));
+				tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $ordered_array['second_set']));
+				tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['third_set']));
+				tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['last_set']));
 			?>
 			<?php if (!empty($excluded_categories)): ?>
 			<input type="hidden" id="args" value='<?php echo json_encode(array('category__not_in' => $excluded_categories)); ?>' />

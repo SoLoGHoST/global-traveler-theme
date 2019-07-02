@@ -81,9 +81,9 @@ if (!empty($the_query->posts))
 <div id="author-content" class="container">
 	<div id="posts-section" class="section content">
 		<?php 
-			tif_get_template('inc/2posts-template.php', array('post_data' => $first_set));
-			tif_get_template('inc/6posts-template.php', array('post_data' => $remaining_posts));
-			tif_get_template('inc/2posts-template.php', array('post_data' => $last_set));
+			tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $first_set));
+			tif_get_template('inc/' . $global_site . '/6posts-template.php', array('post_data' => $remaining_posts));
+			tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $last_set));
 		?>
 		<input type="hidden" id="args" value="author" />
 		<input type="hidden" id="author" value="<?php echo get_the_author_meta('ID'); ?>" />

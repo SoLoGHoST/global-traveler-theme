@@ -133,16 +133,16 @@ if (!empty($the_query->posts))
 		<?php 
 		if (!empty($ordered_array)):
 			if (!empty($ordered_array['first_set'])):
-				tif_get_template('inc/2posts-template.php', array('post_data' => $ordered_array['first_set']));
+				tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $ordered_array['first_set']));
 			endif;
 			if (!empty($ordered_array['second_set'])):
-				tif_get_template('inc/2posts-template.php', array('post_data' => $ordered_array['second_set']));
+				tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $ordered_array['second_set']));
 			endif;
 			if (!empty($ordered_array['third_set'])):
-				tif_get_template('inc/3posts-template.php', array('post_data' => $ordered_array['third_set']));
+				tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['third_set']));
 			endif;
 			if (!empty($ordered_array['last_set'])):
-				tif_get_template('inc/3posts-template.php', array('post_data' => $ordered_array['last_set']));
+				tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['last_set']));
 			endif;
 		?>
 		<input type="hidden" id="args" value='<?php echo json_encode(array('cat' => $cat_id)); ?>' />

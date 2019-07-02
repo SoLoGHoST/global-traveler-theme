@@ -111,11 +111,11 @@ if (!empty($the_query->posts))
 		<div id="posts-section" class="section content pb-sm-5">
 			<?php 
 				if (!empty($ordered_array['first_set'])):
-					tif_get_template('inc/2posts-template.php', array('post_data' => $ordered_array['first_set']));
+					tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $ordered_array['first_set']));
 				endif;
 
 				if (!empty($ordered_array['second_set'])):
-					tif_get_template('inc/6posts-template.php', array('post_data' => $ordered_array['second_set']));
+					tif_get_template('inc/' . $global_site . '/6posts-template.php', array('post_data' => $ordered_array['second_set']));
 				endif;
 
 				if(function_exists('the_ad_placement') && placement_has_ads('homepage-middle')): ?>
@@ -129,7 +129,7 @@ if (!empty($the_query->posts))
 				<?php
 				endif;
 				if (!empty($ordered_array['last_set'])):
-					tif_get_template('inc/3posts-template.php', array('post_data' => $ordered_array['last_set']));
+					tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['last_set']));
 				endif;
 			?>
 		</div>
@@ -213,15 +213,15 @@ if (!empty($the_query->posts))
 		<div class="section content py-4">
 			<?php 
 				if (!empty($ordered_array['last_set'])):
-					tif_get_template('inc/3posts-template.php', array('post_data' => $ordered_array['last_set']));
+					tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['last_set']));
 				endif;
 
 				if (!empty($ordered_array['second_set'])):
-					tif_get_template('inc/6posts-template.php', array('post_data' => $ordered_array['second_set']));
+					tif_get_template('inc/' . $global_site . '/6posts-template.php', array('post_data' => $ordered_array['second_set']));
 				endif;
 
 				if (!empty($ordered_array['first_set'])):
-					tif_get_template('inc/2posts-template.php', array('post_data' => $ordered_array['first_set']));
+					tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $ordered_array['first_set']));
 				endif;
 			?>
 		</div>

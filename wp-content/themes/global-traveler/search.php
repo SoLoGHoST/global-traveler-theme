@@ -64,10 +64,10 @@ if (!empty($wp_query->query_vars['s']) && empty($error) && have_posts()):
 					$ordered_array[$key] = array_splice($the_posts, 0, $value);
 			}
 
-			tif_get_template('inc/2posts-template.php', array('post_data' => $ordered_array['first_set']));
-			tif_get_template('inc/2posts-template.php', array('post_data' => $ordered_array['second_set']));
-			tif_get_template('inc/3posts-template.php', array('post_data' => $ordered_array['third_set']));
-			tif_get_template('inc/3posts-template.php', array('post_data' => $ordered_array['last_set'])); ?>
+			tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $ordered_array['first_set']));
+			tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $ordered_array['second_set']));
+			tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['third_set']));
+			tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['last_set'])); ?>
 
 			<input type="hidden" id="args" value='<?php echo json_encode(array('s' => $wp_query->query_vars['s'])); ?>' />
 		<?php

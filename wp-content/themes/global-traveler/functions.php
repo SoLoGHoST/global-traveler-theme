@@ -887,6 +887,8 @@ function tif_posts_scroll()
 		'has_more' => false
 	);
 
+	$global_site = apply_filters('get_global_site', '');
+
 	$start = !empty($_POST['start']) ? (int) $_POST['start'] : 0;
 	$all_sponsors = !empty($_POST['all_sponsors']) ? json_decode(stripslashes_deep($_POST['all_sponsors']), true) : array();
 	$random_sponsors = !empty($_POST['rand_sponsors']) ? json_decode(stripslashes_deep($_POST['rand_sponsors']), true) : array();
@@ -924,8 +926,6 @@ function tif_posts_scroll()
 
 	if (!empty($start))
 		$args['offset'] = $start;
-
-	// error_log(var_export($args, true));
 
 	$the_query = new WP_Query($args);
 
@@ -967,7 +967,7 @@ function tif_posts_scroll()
 			{
 				// Make sure to get the 6posts-template here.
 				if (!empty($ordered_array[$key]))
-					tif_get_template('inc/' . ($value == 5 ? '6' : $value) . 'posts-template.php', array('post_data' => $ordered_array[$key]));
+					tif_get_template('inc/' . $global_site . '/' . ($value == 5 ? '6' : $value) . 'posts-template.php', array('post_data' => $ordered_array[$key]));
 			}
 
 			$result['posts'] = ob_get_contents();
