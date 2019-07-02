@@ -136,7 +136,7 @@ if (!empty($second_query->posts)) {
 
 
 	$has_more = false;
-	$ordered_array = array();
+	$ordered_array = $rAD = array();
 	$has_ads = false;
 
 	// Get the id of the wp_term that has a name of '6 posts Ad Group'
@@ -194,10 +194,13 @@ if (!empty($second_query->posts)) {
 				if ($key == 'second_set' && !empty($ordered_array[$key]) && !empty($the_ads))
 				{
 					$random_ad = count($the_ads) > 1 ? array_rand($the_ads, 1) : 0;
-					$ordered_array[$key][] = (object) [
+
+					$rAD[$key][] = (object) [
 						'ad_type' => 'basic',
 						'output' => array_splice($the_ads, $random_ad, 1)
 					];
+
+					$ordered_array[$key] = array_merge(array_slice($ordered_array[$key], 0, 2), $rAD[$key], array_slice($ordered_array[$key], 2));
 				}
 
 				if (($key == 'first_set' || $key == 'last_set') && !empty($ordered_array[$key]) && !empty($current_sponsored)) {

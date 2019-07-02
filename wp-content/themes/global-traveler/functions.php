@@ -940,6 +940,8 @@ function tif_posts_scroll()
 			$result['has_more'] = true;
 		}
 
+		$rAD = array();
+
 		foreach($pattern as $key => $value)
 		{
 			if (!empty($the_query->posts))
@@ -949,10 +951,18 @@ function tif_posts_scroll()
 
 				if ($value > 4 && !empty($the_ad))
 				{
-					$ordered_array[$key][] = (object) [
-						'ad_type' => 'basic',
-						'output' => array($the_ad)
-					];
+					if ($global_site == 'globalusa') {
+						$rAD[$key][] = (object) [
+							'ad_type' => 'basic',
+							'output' => array($the_ad)
+						];
+						$ordered_array[$key] = array_merge(array_slice($ordered_array[$key], 0, 2), $rAD[$key], array_slice($ordered_array[$key], 2));
+					} else {
+						$ordered_array[$key][] = (object) [
+							'ad_type' => 'basic',
+							'output' => array($the_ad)
+						];
+					}
 				}
 				if ($value == 3 && !empty($sponsors))
 					$ordered_array[$key] = array_merge(array_slice($ordered_array[$key], 0, 1), array_splice($sponsors, 0, 1), array_slice($ordered_array[$key], 1));
