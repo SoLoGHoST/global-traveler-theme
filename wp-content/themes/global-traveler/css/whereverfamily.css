@@ -8234,6 +8234,14 @@ p, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner
   line-height: 1.8em;
   letter-spacing: 1.2px; }
 
+#home-content #content .section .caption, #main-content #content .section .caption, #home-content #content #posts-section .caption, #main-content #content #posts-section .caption {
+  position: absolute;
+  margin-top: -25px;
+  left: 0;
+  right: 0;
+  color: #FFFFFF;
+  pointer-events: none; }
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }

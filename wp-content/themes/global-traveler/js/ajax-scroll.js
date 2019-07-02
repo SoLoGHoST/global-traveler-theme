@@ -67,7 +67,7 @@ jQuery(document).ready(function($) {
 		    }
 
         	// If no ad found, than we need to get an additional post for the 2nd template set.
-        	if (Scroll.is_home)
+        	if (Scroll.is_home || Scroll.global_site == 'globalusa')
 	        	thePattern[1] = typeof adGroup !== 'undefined' && adGroup ? 5 : 6;
 
 	        $.ajax({

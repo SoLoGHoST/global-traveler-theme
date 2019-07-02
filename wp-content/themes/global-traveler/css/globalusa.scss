@@ -71,77 +71,6 @@ $li-share: #0077B5;
   src: 	url("../fonts/Noe-Display-Bold.woff") format("woff"), url("../fonts/Noe-Display-Bold.otf") format("opentype");
 }
 
-@mixin font($type: font_1, $style: null) {
-	
-	@extend %#{$type};
-	@if ($style) {
-		@if ($style == regular) {
-			font-weight: 400;
-			font-style: normal;
-		} @elseif ($style == bold) {
-			font-weight: 700;
-			font-style: normal;
-		}
-	}
-}
-
-%font_1 {
-	font-family: brandon-grotesque, sans-serif;
-	font-style: normal;
-}
-%font-2 {
-	font-family: "Noe Display Bold", sans-serif;
-	font-style: normal;
-}
-
-%font-regular {
-	@include font(font_1, regular);
-	font-size: 18px;
-	line-height: 1.38em;
-}
-
-%default-p {
-	@include font(font_1, regular);
-	font-size: 24px;
-	line-height: 36px;
-}
-
-%font-medium {
-	@include font(font_1, bold);
-	font-size: 12px;
-	line-height: 18px;
-	// letter-spacing: 1.2px;
-}
-
-%font-noedisplay {
-	@include font(font-2, regular);
-	font-size: 24px;
-	line-height: 1.38em;
-}
-
-%font-menu {
-	@include font(font_1, bold);
-	letter-spacing: .1em;
-	font-size: 10px;
-	text-transform: uppercase;
-}
-
-%font-bold {
-	@include font(font_1, bold);
-	font-size: 16px;
-	line-height: 2em;
-}
-
-%button-text {
-	@include font(font-2, regular);
-	font-size: 18px;
-	line-height: 1.38em;
-	text-transform: uppercase;
-}
-%border-line {
-	border: 5px solid $blue;
-}
-
 
 //-------------------------------------------------//
 //------------------ SASS MIXINS ------------------//
@@ -648,6 +577,95 @@ $li-share: #0077B5;
 			color: $red;
 		}
 	}
+}
+
+@mixin font($type: font_1, $style: null) {
+	
+	@extend %#{$type};
+	@if ($style) {
+		@if ($style == regular) {
+			font-weight: 400;
+			font-style: normal;
+		} @elseif ($style == bold) {
+			font-weight: 700;
+			font-style: normal;
+		}
+	}
+}
+
+%font_1 {
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+}
+%font-2 {
+	font-family: "Noe Display Bold", sans-serif;
+	font-style: normal;
+}
+
+%font-regular {
+	@include font(font_1, regular);
+	font-size: 18px;
+	line-height: 1.38em;
+}
+
+%default-p {
+	@include font(font_1, regular);
+	font-size: 24px;
+	line-height: 36px;
+}
+
+%font-medium {
+	@include font(font_1, bold);
+	font-size: 12px;
+	line-height: 18px;
+	// letter-spacing: 1.2px;
+}
+
+%caption {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	color: $white;
+	pointer-events: none;
+	p {
+		text-transform: uppercase;
+		@include font(font_1, bold);
+		font-size: 10px;
+		line-height: 1.1em;
+		letter-spacing: 0.12em;
+		text-shadow: 0 0 3px $black;
+		@include opacity(0.8);
+	}
+}
+
+%font-noedisplay {
+	@include font(font-2, regular);
+	font-size: 24px;
+	line-height: 1.38em;
+}
+
+%font-menu {
+	@include font(font_1, bold);
+	letter-spacing: .1em;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+
+%font-bold {
+	@include font(font_1, bold);
+	font-size: 16px;
+	line-height: 2em;
+}
+
+%button-text {
+	@include font(font-2, regular);
+	font-size: 18px;
+	line-height: 1.38em;
+	text-transform: uppercase;
+}
+%border-line {
+	border: 5px solid $blue;
 }
 
 

@@ -931,7 +931,6 @@ function tif_posts_scroll()
 
 	if (!empty($the_query->posts))
 	{
-
 		$total_posts = count($the_query->posts);
 
 		if ($total_posts > (($posts_per_page - $total_sponsors) - 1))

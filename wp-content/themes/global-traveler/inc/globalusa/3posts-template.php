@@ -13,16 +13,19 @@ if (!empty($post_data)): ?>
 	$is_sponsored = get_field('is_sponsored', $data->ID);
 
 	$post_image = get_field('featured_image', $data->ID); // wp_get_attachment_image_src(get_post_thumbnail_id($data->ID), "full");
-	
+
 	if (empty($post_image))
 	{
-		$thumbnail_image = wp_get_attachment_image_src(get_post_thumbnail_id($data->ID), "thumbnail_2");
+		$thumbnail_id = get_post_thumbnail_id($data->ID);
+		$image_caption = wp_get_attachment_caption($thumbnail_id);
+		$thumbnail_image = wp_get_attachment_image_src($thumbnail_id, "thumbnail_2");
 		$post_image = !empty($thumbnail_image) ? $thumbnail_image[0] : '';
 	}
-	else
+	else {
+		$image_caption = $post_image['caption'];
 		$post_image = !empty($post_image) && isset($post_image['sizes'], $post_image['sizes']['thumbnail_2']) ? $post_image['sizes']['thumbnail_2'] : '';
 		// $post_image = !empty($post_image) && !empty($post_image['url']) ? $post_image['url'] : '';
-
+	}
 
 	if (empty($is_sponsored))
 	{
@@ -32,6 +35,13 @@ if (!empty($post_data)): ?>
 	
 	<div class="post-wide post-item row align-items-center py-sm-3 mt-sm-5 mx-sm-4 px-3 px-sm-2 mb-5 mb-sm-0">
 		<div class="img-wrapper col-10 col-sm">
+			<?php
+			if (!empty($image_caption)): ?>
+			<div class="caption px-4">
+				<?php echo apply_filters('the_content', $image_caption); ?>
+			</div>
+			<?php
+			endif; ?>
 			<a href="<?php echo get_the_permalink($data->ID); ?>" class="image"<?php echo !empty($post_image) ? ' style="background-image: url(' . $post_image . ');"' : ''; ?>></a>
 		</div>
 		<div class="copy col-14 offset-0 offset-sm-1 col-sm my-2">

@@ -845,6 +845,9 @@ h5 {
 			position: relative;
 			width: 100%;
 			height: 100%;
+			.caption {
+				@extend %caption;
+			}
 			.date {
 				display: inline-block;
 				text-transform: uppercase;
@@ -918,6 +921,9 @@ h5 {
 		}
 
 		#posts-section {
+			.caption {
+				@extend %caption;
+			}
 			#social-share {
 				text-align: center;
 				margin-left: auto;

@@ -81,8 +81,8 @@ if (!empty($type)): ?>
 		<?php
 		elseif ($type == 'category'): 
 			if (!empty($title)): ?>
-			<div class="headline pt-4">
-				<h1><?php echo $title; ?></h1>
+			<div class="category-headline pt-4 text-center">
+				<h5 class="categories"><?php echo $title; ?></h5>
 			</div>
 			<?php 
 			endif;
@@ -214,8 +214,8 @@ if (!empty($type)): ?>
 		<?php 
 		elseif ($type == 'category'): 
 			if (!empty($title)): ?>
-			<div class="headline pt-4">
-				<h1><?php echo $title; ?></h1>
+			<div class="category-headline pt-4 text-center">
+				<h5 class="categories"><?php echo $title; ?></h5>
 			</div>
 			<?php 
 			endif;

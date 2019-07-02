@@ -106,6 +106,15 @@ $burgermenu-color: $purple;
 	line-height: 2em;
 }
 
+%caption {
+	position: absolute;
+	margin-top: -25px;
+	left: 0;
+	right: 0;
+	color: $white;
+	pointer-events: none;
+}
+
 
 
 //-------------------------------------------------//

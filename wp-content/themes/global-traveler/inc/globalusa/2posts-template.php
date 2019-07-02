@@ -44,6 +44,9 @@ if (!empty($post_data)): ?>
 	
 	<div class="post-half post-item col-24 col-sm-12 pt-1 px-0 pt-sm-4 px-sm-4 mb-5 mb-sm-0">
 		<div class="img-wrapper">
+			<div class="caption px-4">
+				<p>Caption goes here...</p>
+			</div>
 			<a href="<?php echo $permalink; ?>" class="image d-inline-block"<?php echo !empty($post_image) ? ' style="background-image: url(' . $post_image . ');"' : ''; ?>></a>
 		</div>
 		<?php 

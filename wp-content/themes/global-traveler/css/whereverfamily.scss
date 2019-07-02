@@ -122,6 +122,15 @@ $social-color: $taglink;
 	letter-spacing: 1.2px;
 }
 
+%caption {
+	position: absolute;
+	margin-top: -25px;
+	left: 0;
+	right: 0;
+	color: $white;
+	pointer-events: none;
+}
+
 
 
 //-------------------------------------------------//
