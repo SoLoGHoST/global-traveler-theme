@@ -11,10 +11,12 @@
 
 global $instagram_access_token, $all_sites, $global_site;
 
+// https://www.instagram.com/oauth/authorize/?client_id=[Client ID]&redirect_uri=[Redirect URI]&response_type=token&scope=public_content
+
 $instagram_access_token = array(
 	'trazeetravel' => '1317793634.c13f70a.408e1346c2c040c397f3220294721747',
-	'whereverfamily' => '',
-	'globaltravelermag' => ''
+	'whereverfamily' => '5717731839.3a1c106.11d5eb7c72394b7995cd9e1faa516865',
+	'globaltravelermag' => '1166366416.436b131.30d4058113894d67b82585059ca34e6f'
 );
 
 $all_sites = array(
