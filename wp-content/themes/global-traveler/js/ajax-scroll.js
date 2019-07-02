@@ -70,20 +70,24 @@ jQuery(document).ready(function($) {
         	if (Scroll.is_home)
 	        	thePattern[1] = typeof adGroup !== 'undefined' && adGroup ? 5 : 6;
 
+	        var data = {
+				action: 'tif_posts_scroll',
+				security: Scroll.scroll_posts_nonce,
+				start: $start,
+				args: $args,
+				pattern: thePattern,
+				adgroupid: typeof adGroup !== 'undefined' && adGroup ? adGroup : 0,
+				rand_sponsors: JSON.stringify(randomSponsors),
+				all_sponsors: typeof allSponsors !== 'undefined' && allSponsors.length ? JSON.stringify(allSponsors) : '[]',
+				posts_per_page: Scroll.global_site == 'globalusa' ? 13 : 12
+			};
+
+			console.log(data);
+
 	        $.ajax({
 				url: Scroll.ajax_url,
 				type: 'post',
-				data: {
-					action: 'tif_posts_scroll',
-					security: Scroll.scroll_posts_nonce,
-					start: $start,
-					args: $args,
-					pattern: thePattern,
-					adgroupid: typeof adGroup !== 'undefined' && adGroup ? adGroup : 0,
-					rand_sponsors: JSON.stringify(randomSponsors),
-					all_sponsors: typeof allSponsors !== 'undefined' && allSponsors.length ? JSON.stringify(allSponsors) : '[]',
-					posts_per_page: 12
-				},
+				data: data,
 				dataType: 'json'
 			}).done(function(response) {
 

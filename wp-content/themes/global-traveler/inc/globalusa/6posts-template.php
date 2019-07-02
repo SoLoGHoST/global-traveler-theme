@@ -57,12 +57,12 @@ if (!empty($post_data)): ?>
 			</h2>
 			<?php 
 			if (!empty($is_sponsored)): ?>
-			<div class="tagline">
+			<div class="tagline mt-4">
 				<h5 class="categories"><?php _e('Sponsored Content', 'trazee'); ?></h5>
 			</div>
 			<?php 
 			else: ?>
-			<div class="tagline">
+			<div class="tagline mt-4">
 				<h5 class="categories">
 					<?php if (!empty($categories)): 
 						if (!empty($categories['primary'])): ?>

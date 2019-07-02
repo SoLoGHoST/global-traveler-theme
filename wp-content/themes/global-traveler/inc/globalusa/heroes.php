@@ -144,7 +144,7 @@ if (!empty($type)): ?>
 				foreach($slider_posts as $post_index => $post): setup_postdata($post); 
 					$post_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "full");
 					$index = ($post_index + 1); ?>
-					<div class="post-item">
+					<div class="slide-item">
 						<style>
 							.slider-image-hover-<?php echo $index; ?> .image {
 								background: linear-gradient(to bottom, rgba(56, 56, 56, 0.3) 100%, rgba(56, 56, 56, 0.3) 100%), url('<?php echo $post_image[0]; ?>') no-repeat center center !important;

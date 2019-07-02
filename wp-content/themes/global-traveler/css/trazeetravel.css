@@ -9577,14 +9577,14 @@ body.search #main-content #search-no-results p, body.search #main-content #searc
 body #content .content .mw-300 {
   width: 100%;
   max-width: 300px; }
-body.site-globalusa .posts-slider .post-item {
+body.site-globalusa .posts-slider .slide-item {
   display: block;
   position: relative;
   height: 510px;
   width: 85vw;
   outline: none;
   padding: 0 2.5px; }
-  body.site-globalusa .posts-slider .post-item .image {
+  body.site-globalusa .posts-slider .slide-item .image {
     display: block;
     position: relative;
     width: 100%;
@@ -9600,7 +9600,7 @@ body.site-globalusa .posts-slider .post-item {
     -webkit-transform: perspective(1000px) !important;
     transform: perspective(1000px) !important;
     -webkit-backface-visibility: hidden; }
-    body.site-globalusa .posts-slider .post-item .image .details-wrapper {
+    body.site-globalusa .posts-slider .slide-item .image .details-wrapper {
       position: absolute;
       max-width: 840px;
       max-height: 265px;
@@ -9611,15 +9611,15 @@ body.site-globalusa .posts-slider .post-item {
       top: 0;
       bottom: 0;
       margin: 3rem auto auto; }
-      body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info {
+      body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info {
         padding: 2.5rem;
         margin-left: 3rem;
         margin-right: 2rem; }
-        body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info h1 {
+        body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info h1 {
           margin: 0; }
-        body.site-globalusa .posts-slider .post-item .image .details-wrapper .details .info p {
+        body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info p {
           margin: 0; }
-      body.site-globalusa .posts-slider .post-item .image .details-wrapper .details h5.categories {
+      body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details h5.categories {
         transform: rotate(-90deg) translate(50px, -65px);
         position: absolute;
         left: 0;
@@ -9629,7 +9629,7 @@ body.site-globalusa .posts-slider .post-item {
         height: 50px;
         width: 200px;
         text-align: right; }
-        body.site-globalusa .posts-slider .post-item .image .details-wrapper .details h5.categories a {
+        body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details h5.categories a {
           -webkit-opacity: 0.7;
           -moz-opacity: 0.7;
           opacity: 0.7;
@@ -9638,12 +9638,12 @@ body.site-globalusa .posts-slider .post-item {
           -moz-transition: all 0.2s ease;
           -ms-transition: all 0.2s ease;
           -o-transition: all 0.2s ease; }
-          body.site-globalusa .posts-slider .post-item .image .details-wrapper .details h5.categories a:hover {
+          body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details h5.categories a:hover {
             -webkit-opacity: 1;
             -moz-opacity: 1;
             opacity: 1;
             filter: alpha(opacity=100) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
-  body.site-globalusa .posts-slider .post-item.slick-slide:after {
+  body.site-globalusa .posts-slider .slide-item.slick-slide:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -9660,7 +9660,7 @@ body.site-globalusa .posts-slider .post-item {
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease; }
-  body.site-globalusa .posts-slider .post-item.slick-slide .details-wrapper {
+  body.site-globalusa .posts-slider .slide-item.slick-slide .details-wrapper {
     -webkit-opacity: 0;
     -moz-opacity: 0;
     opacity: 0;
@@ -9669,13 +9669,13 @@ body.site-globalusa .posts-slider .post-item {
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease; }
-  body.site-globalusa .posts-slider .post-item.slick-slide.slick-active:after {
+  body.site-globalusa .posts-slider .slide-item.slick-slide.slick-active:after {
     pointer-events: none;
     -webkit-opacity: 0;
     -moz-opacity: 0;
     opacity: 0;
     filter: alpha(opacity=0) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
-  body.site-globalusa .posts-slider .post-item.slick-slide.slick-active .details-wrapper {
+  body.site-globalusa .posts-slider .slide-item.slick-slide.slick-active .details-wrapper {
     -webkit-opacity: 1;
     -moz-opacity: 1;
     opacity: 1;
@@ -9925,19 +9925,19 @@ body.site-globalusa .posts-slider .post-item {
     top: auto !important;
     margin: 1.5rem auto; } }
 @media (max-width: 991px) {
-  #home-content .hero-header .hero-body.post-item, #main-content .hero-header .hero-body.post-item {
+  #home-content .hero-header .hero-body.post-item, #home-content .hero-header .hero-body.slide-item, #main-content .hero-header .hero-body.post-item, #main-content .hero-header .hero-body.slide-item {
     min-height: initial;
     min-height: auto; }
-    #home-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner, #main-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner {
+    #home-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner, #home-content .hero-header .hero-body.slide-item #hero-content .desc-wrapper .desc-inner, #main-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner, #main-content .hero-header .hero-body.slide-item #hero-content .desc-wrapper .desc-inner {
       margin-top: -3.5rem;
       text-align: center;
       margin-left: auto;
       margin-right: auto; }
-      #home-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner h1.title a.post, #main-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner h1.title a.post {
+      #home-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner h1.title a.post, #home-content .hero-header .hero-body.slide-item #hero-content .desc-wrapper .desc-inner h1.title a.post, #main-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner h1.title a.post, #main-content .hero-header .hero-body.slide-item #hero-content .desc-wrapper .desc-inner h1.title a.post {
         padding-top: 10px; }
-        #home-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner h1.title a.post span > span, #main-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner h1.title a.post span > span {
+        #home-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner h1.title a.post span > span, #home-content .hero-header .hero-body.slide-item #hero-content .desc-wrapper .desc-inner h1.title a.post span > span, #main-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner h1.title a.post span > span, #main-content .hero-header .hero-body.slide-item #hero-content .desc-wrapper .desc-inner h1.title a.post span > span {
           top: -5px; }
-      #home-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner p {
+      #home-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner p, #home-content .hero-header .hero-body.slide-item #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body.post-item #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body.slide-item #hero-content .desc-wrapper .desc-inner p {
         position: relative;
         top: -5px;
         color: #1F163E; } }
@@ -10451,7 +10451,7 @@ body.site-globalusa .posts-slider .post-item {
         display: block;
         padding-left: 0; }
 
-  body.site-globalusa .posts-slider .post-item {
+  body.site-globalusa .posts-slider .slide-item {
     width: 80vw;
     padding: 0 5px 0 0; }
 
@@ -10465,7 +10465,7 @@ body.site-globalusa .posts-slider .post-item {
 
   body.archive #main-content #content #posts-section {
     margin-top: auto; }
-  body.site-globalusa .posts-slider .post-item {
+  body.site-globalusa .posts-slider .slide-item {
     width: 75vw;
     padding: 0 5px 0 0; } }
 @media (min-width: 1270px) {
@@ -10481,7 +10481,7 @@ body.site-globalusa .posts-slider .post-item {
 	body {
 		&.site-globalusa {
 			.posts-slider {
-				.post-item {
+				.slide-item {
 					width: 40vw;
 				}
 			}

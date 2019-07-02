@@ -1268,7 +1268,7 @@ h5 {
 				}
 			}
 		}
-		.post-item {
+		.post-item, .slide-item {
 			p {
 				font-size: 18px;
 				line-height: 24px;
@@ -1449,7 +1449,7 @@ body {
 			}
 		}
 		.posts-slider {
-			.post-item {
+			.slide-item {
 				.image {
 					.post-link {
 						position: absolute;

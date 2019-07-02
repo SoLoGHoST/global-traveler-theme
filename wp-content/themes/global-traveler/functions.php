@@ -172,11 +172,16 @@ function tif_scripts() {
     if (is_post_type_archive('post') || is_search() || (is_singular() && $post->post_type == 'post') || is_category() || is_author() || (!empty($post) && is_object($post) && ((is_page() && is_front_page()) || ($post->post_type == 'post' && is_tag()))))
 	{
 		$dependants[] = 'ajax-scroll-script';
+		$haspostinhero = is_front_page() || (!empty($hero_type) && $hero_type == 'home');
+
+		if ($global_site == 'globalusa' && is_front_page())
+			$haspostinhero = false;
 
 		wp_localize_script('ajax-scroll-script', 'Scroll', array(
 			'ajax_url' => admin_url('admin-ajax.php'),
-			'haspostinhero' => is_front_page() || (!empty($hero_type) && $hero_type == 'home') ? true : false,
-			'reversePattern' => is_front_page() ? true : false,
+			'haspostinhero' => $haspostinhero,
+			'global_site' => $global_site,
+			'reversePattern' => is_front_page() && $global_site != 'globalusa' ? true : false,
 			'is_home' => is_front_page() ? true : false,
 			'scroll_posts_nonce' => wp_create_nonce('scroll-posts')
 		));
@@ -888,7 +893,7 @@ function tif_posts_scroll()
 	$added_args = !empty($_POST['args']) ? json_decode(stripslashes_deep($_POST['args']), true) : array();
 	$the_adgroup_id = !empty($_POST['adgroupid']) ? (int) $_POST['adgroupid'] : 0;
 	$pattern = !empty($_POST['pattern']) ? $_POST['pattern'] : '';
-	$posts_per_page = 12; // !empty($_POST['posts_per_page']) ? (int) $_POST['posts_per_page'] : 12;
+	$posts_per_page = !empty($_POST['posts_per_page']) ? (int) $_POST['posts_per_page'] : 12;
 	$ordered_array = $sponsors = array();
 	$total_sponsors = 0;
 
@@ -919,6 +924,8 @@ function tif_posts_scroll()
 
 	if (!empty($start))
 		$args['offset'] = $start;
+
+	error_log(var_export($args, true));
 
 	$the_query = new WP_Query($args);
 

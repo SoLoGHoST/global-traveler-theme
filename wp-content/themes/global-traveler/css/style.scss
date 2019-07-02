@@ -1118,7 +1118,7 @@ body {
 	}
 	&.site-globalusa {
 		.posts-slider {
-			.post-item {
+			.slide-item {
 				display: block;
 				position: relative;
 				height: 510px;
@@ -1638,7 +1638,7 @@ body {
 	#home-content, #main-content {
 		.hero-header {
 			.hero-body {
-				&.post-item {
+				&.post-item, &.slide-item {
 					min-height: initial;
 					min-height: auto;
 					#hero-content {
