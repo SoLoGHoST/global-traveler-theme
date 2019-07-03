@@ -69,7 +69,7 @@ if (!empty($first_set_ads))
 	$random_ad = count($first_set_ads) > 1 ? array_rand($first_set_ads, 1) : 0;
 	$first_set[] = (object) [
 		'ad_type' => 'basic',
-		'output' => array_splice($first_set_ads, $random_ad, 1)
+		'output' => array_slice($first_set_ads, $random_ad, 1)
 	];
 } 
 
@@ -99,7 +99,7 @@ if (!empty($second_query->posts)) {
 	<div class="container-fluid d-flex no-pad">
 		<div id="posts-section" class="section content pb-sm-5">
 		<?php
-			tif_get_template('inc/' . $global_site . '/6posts-template.php', array('post_data' => $first_set));
+			tif_get_template('inc/' . $global_site . '/6posts-template.php', array('post_data' => $first_set, 'has_ads' => !empty($first_set_ads), 'ad_type' => !empty($first_set_ads) ? 'homepage-skyscraper' : ''));
 
 			if(function_exists('the_ad_placement') && placement_has_ads('homepage-leaderboard_2'))
 			{

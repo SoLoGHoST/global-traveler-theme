@@ -37,12 +37,8 @@ $tagline: $blue;
 $global-green: #108751;
 
 
-
-
-
 $dk-gray: #414042;
 $border-lines: #EAEFF2; // updated for globalusa...
-$light-blue: #25AECC;  /* default link color */
 $border-color: #D6E3E8;
 $offblue: #F0F5F7;
 
@@ -621,6 +617,13 @@ $li-share: #0077B5;
 	// letter-spacing: 1.2px;
 }
 
+%tagline {
+	@include font(font_1, bold);
+	font-size: 10px;
+	line-height: 18px;
+	letter-spacing: 0.125em;
+}
+
 %caption {
 	position: absolute;
 	left: 0;
@@ -659,6 +662,14 @@ $li-share: #0077B5;
 }
 
 %button-text {
+	@include font(font_1, bold);
+	font-size: 12px;
+	line-height: 1.38em;
+	letter-spacing: 0.125em;
+	text-transform: uppercase;
+}
+
+%btn-arrow {
 	@include font(font-2, regular);
 	font-size: 18px;
 	line-height: 1.38em;
@@ -701,7 +712,7 @@ h4 {
 	}
 }
 h5 {
-	@extend %font-medium;
+	@extend %tagline;
 	&.categories {
 		color: $tagline;
 		padding: 6px 18px 2px;
@@ -711,7 +722,7 @@ h5 {
 				display: inline-block;
 				color: $default;
 				&:hover {
-					color: $light-blue;
+					color: $blue;
 				}
 				&:first-child {
 					padding-right: 5px;
@@ -722,7 +733,7 @@ h5 {
 			}
 		}
 		a {
-			color: $dkblue;
+			color: $global-gray;
 			&:hover {
 				color: $default;
 			}
@@ -980,7 +991,7 @@ h5 {
 				&:hover {
 					span {
 						&.text {
-							color: $light-blue;
+							color: $blue;
 						}
 					}
 				}
@@ -997,7 +1008,7 @@ h5 {
 					a {
 						span {
 							&.text {
-								color: $light-blue;
+								color: $blue;
 							}
 						}
 					}
@@ -1023,7 +1034,7 @@ h5 {
 						&:hover {
 							span {
 								&.text {
-									color: $light-blue;
+									color: $blue;
 								}
 							}
 						}
@@ -1045,7 +1056,7 @@ h5 {
 							a {
 								span {
 									&.text {
-										color: $light-blue;
+										color: $blue;
 									}
 								}
 							}
@@ -1068,7 +1079,7 @@ h5 {
 					&:hover {
 						span {
 							&.text {
-								color: $light-blue;
+								color: $blue;
 							}
 						}
 					}
@@ -1080,7 +1091,7 @@ h5 {
 						a {
 							span {
 								&.text {
-									color: $light-blue;
+									color: $blue;
 								}
 							}
 						}
@@ -1127,7 +1138,7 @@ h5 {
 						&:hover {
 							span {
 								&.text {
-									color: $light-blue;
+									color: $blue;
 								}
 							}
 						}
@@ -1145,7 +1156,7 @@ h5 {
 							a {
 								span {
 									&.text {
-										color: $light-blue;
+										color: $blue;
 									}
 								}
 							}
@@ -1297,10 +1308,10 @@ h5 {
 			.copy {
 				.content {
 					a {
-						color: $light-blue;
+						color: $blue;
 						border-bottom: none;
 						&:hover {
-							color: darken($light-blue, 5%);
+							color: darken($blue, 5%);
 						}
 					}
 				}
@@ -1321,7 +1332,7 @@ h5 {
 					}
 					.date {
 						text-transform: uppercase;
-						@extend %font-medium;
+						@extend %tagline;
 						color: $white;
 					}
 
@@ -1335,7 +1346,7 @@ h5 {
 						&:hover {
 							span {
 								&.text {
-									color: $light-blue;
+									color: $blue;
 								}
 							}
 						}
@@ -1359,7 +1370,7 @@ h5 {
 				&:hover {
 					span {
 						&.text {
-							color: $light-blue;
+							color: $blue;
 						}
 					}
 				}
@@ -1371,7 +1382,7 @@ h5 {
 					a {
 						span {
 							&.text {
-								color: $light-blue;
+								color: $blue;
 							}
 						}
 					}
@@ -1393,7 +1404,7 @@ h5 {
 			&:hover {
 				span {
 					&.text {
-						color: $light-blue;
+						color: $blue;
 					}
 				}
 			}
@@ -1402,7 +1413,7 @@ h5 {
 		h5 {
 			padding: 0 15px;
 			a {
-				color: $light-blue;
+				color: $blue;
 			}
 		}
 	}
@@ -1619,6 +1630,7 @@ body {
 		}
 	}
 	&.btn-arrow {
+		@extend %btn-arrow;
 		@include opacity(0.8);
     	@include box-shadow(none);
     	border: 0;

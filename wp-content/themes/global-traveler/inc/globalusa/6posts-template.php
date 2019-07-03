@@ -2,12 +2,15 @@
 /*
 	Filename: 6posts-template.php
 	Description:  Shows 6 posts grouped by 3 columns in 2 rows.
+
+	$has_ads (boolean) variable exists in here if needed... either true or false
+	$ad_type (string) slug of ad, if exists...
 */
 if (!defined('ABSPATH')) exit();
 
 if (!empty($post_data)): ?>
 
-<div class="post-grid row mx-0 py-4 mt-sm-5 px-3 px-sm-4 mx-md-3 px-lg-5 mx-lg-2">
+<div class="post-grid row mx-0 py-4 mt-sm-5 px-3 px-sm-4 mx-md-3 mx-lg-2<?php echo !empty($has_ads) ? ' pl-lg-5 pr-lg-0' : ' px-lg-5'; ?>">
 	<?php foreach($post_data as $k => $data):
 
 	if (!property_exists($data, 'ad_type'))
@@ -92,8 +95,12 @@ if (!empty($post_data)): ?>
 			endif; ?>
 		</div>
 		<?php
-		elseif (!empty($output) && !empty($output[0])): ?>
-			<div class="ad-wrapper d-flex align-items-start justify-content-center justify-content-md-end py-4 py-sm-0 mb-sm-4">
+		elseif (!empty($output) && !empty($output[0])): 
+
+			$classes = !empty($ad_type) && $ad_type == 'homepage-skyscraper' ? ' d-none d-md-flex' : ' d-flex';
+
+			?>
+			<div class="ad-wrapper<?php echo $classes; ?> align-items-start justify-content-center py-4 py-sm-0 mb-sm-4<?php echo !empty($has_ads) ? ' pr-lg-5' : ''; ?>">
 			<?php echo $output[0]; ?>
 			</div>
 		<?php	
