@@ -614,7 +614,6 @@ $li-share: #0077B5;
 	@include font(font_1, bold);
 	font-size: 12px;
 	line-height: 18px;
-	// letter-spacing: 1.2px;
 }
 
 %tagline {
@@ -1198,6 +1197,7 @@ h5 {
 		.section {
 			.date {
 				color: $blue;
+				@extend %tagline;
 			}
 		}
 		#instagram-feed {

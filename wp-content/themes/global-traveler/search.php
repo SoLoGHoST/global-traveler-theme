@@ -6,7 +6,7 @@ get_header();
 $global_site = apply_filters('get_global_site', $global_site);
 
 $has_more = false;
-$ordered_array = array();
+$ordered_array = $ajax_order_pattern = array();
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $posts_per_page = (get_query_var('posts_per_page')) ? (int) get_query_var('posts_per_page') : (int) $wp_query->found_posts;
 
@@ -51,30 +51,43 @@ if (!empty($wp_query->query_vars['s']) && empty($error) && have_posts()):
 				$has_more = true;
 			}
 
-			$order_pattern = array(
-				'first_set' => 2,
-				'second_set' => 2,
-				'third_set' => 3,
-				'last_set' => 3
-			);
+			if ($global_site == 'globalusa') {
+				$ajax_order_pattern = array(3,6,3);
+				$order_pattern = array(
+					'first_set' => 6,
+					'last_set' => 3
+				);
+			}
+			else {
+				$ajax_order_pattern = array(2,2,3,3);
+				$order_pattern = array(
+					'first_set' => 2,
+					'second_set' => 2,
+					'third_set' => 3,
+					'last_set' => 3
+				);
+			}
 
 			foreach($order_pattern as $key => $value)
 			{
 				if (!empty($the_posts))
 					$ordered_array[$key] = array_splice($the_posts, 0, $value);
+
+				tif_get_template('inc/' . $global_site . '/' . $value . 'posts-template.php', array('post_data' => $ordered_array[$key]));
 			}
 
+			/*
 			tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $ordered_array['first_set']));
 			tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $ordered_array['second_set']));
 			tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['third_set']));
-			tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['last_set'])); ?>
+			tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['last_set'])); */ ?>
 
 			<input type="hidden" id="args" value='<?php echo json_encode(array('s' => $wp_query->query_vars['s'])); ?>' />
 		<?php
 		endif; ?>
 		</div>
 		<script>
-			var thePattern = [2,2,3,3];
+			var thePattern = [<?php echo implode(',', $ajax_order_pattern); ?>];
 			var noMoreLeft = <?php echo !empty($has_more) ? 'false' : 'true'; ?>;
 			var theAds = [];
 		</script>

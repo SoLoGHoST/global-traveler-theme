@@ -976,6 +976,11 @@ h5 {
 		}
 	}
 	#content {
+		.section {
+			.date {
+				@extend %font-medium;
+			}
+		}
 		#instagram-feed {
 			background-color: $green;
 			a {
