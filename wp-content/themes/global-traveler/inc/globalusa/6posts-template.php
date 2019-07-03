@@ -46,10 +46,10 @@ if (!empty($post_data)): ?>
 			if (property_exists($data, 'output'))
 				$output = !empty($data->output) ? $data->output : '';
 		}
-		$classes = ' d-none d-md-flex';
+		$classes = $ad_type == 'homepage-skyscraper' ? ' d-none d-md-flex' : ' d-flex';
 	} ?>
 
-	<div class="post-tall post-item col-24 col-sm-12 col-md-8<?php echo $classes; ?> flex-wrap align-content-start px-0 px-sm-2 mb-5 mb-sm-0">
+	<div class="post-tall<?php echo !property_exists($data, 'ad_type') ? ' post-item' : ''; ?> col-24 col-sm-12 col-md-8<?php echo $classes; ?> flex-wrap align-content-start px-0 px-sm-2">
 		<?php 
 		if (!property_exists($data, 'ad_type')): ?>
 		<div class="img-wrapper col-24">
