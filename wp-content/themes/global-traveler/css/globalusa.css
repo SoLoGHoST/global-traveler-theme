@@ -8200,7 +8200,7 @@ body {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto; }
 
-#main-content .hero-header .hero-body .post-wrapper .overlay p, body.site-globalusa .navbar #subnav, body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info p, #fx-excursions .excursions-inner .intro, p, #home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, .recent-posts-wrapper #featured .innerbox .featured-details .date, h5, #home-content #content .section .date, #main-content #content .section .date, #main-content .hero-header .hero-body .post-wrapper .overlay .date, #home-content #content .section .caption p, #main-content #content .section .caption p, #home-content #content #posts-section .caption p, #main-content #content #posts-section .caption p, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, .btn, #mainMenu #main_navigation li a, .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
+#main-content .hero-header .hero-body .post-wrapper .overlay p, body.site-globalusa .navbar #subnav, body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info p, #fx-excursions .excursions-inner .intro, p, #home-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .print-article p, #main-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .print-article p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, .recent-posts-wrapper #featured .innerbox .featured-details .date, h5, #home-content #content .section .date, #main-content #content .section .date, #main-content .hero-header .hero-body .post-wrapper .overlay .date, #home-content #content .section .caption p, #main-content #content .section .caption p, #home-content #content #posts-section .caption p, #main-content #content #posts-section .caption p, #home-content #content .section .print-article p, #main-content #content .section .print-article p, #home-content #content #posts-section .print-article p, #main-content #content #posts-section .print-article p, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, .btn, #mainMenu #main_navigation li a, .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
   font-family: brandon-grotesque, sans-serif;
   font-style: normal; }
 
@@ -8220,7 +8220,7 @@ p {
   font-size: 24px;
   line-height: 36px; }
 
-#home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, .recent-posts-wrapper #featured .innerbox .featured-details .date {
+#home-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .print-article p, #main-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .print-article p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, .recent-posts-wrapper #featured .innerbox .featured-details .date {
   font-weight: 700;
   font-style: normal;
   font-size: 12px;
@@ -8252,6 +8252,29 @@ h5, #home-content #content .section .date, #main-content #content .section .date
     -moz-opacity: 0.8;
     opacity: 0.8;
     filter: alpha(opacity=80) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
+
+#home-content #content .section .print-article, #main-content #content .section .print-article, #home-content #content #posts-section .print-article, #main-content #content #posts-section .print-article {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  color: #FFFFFF;
+  pointer-events: none; }
+  #home-content #content .section .print-article p, #main-content #content .section .print-article p, #home-content #content #posts-section .print-article p, #main-content #content #posts-section .print-article p {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 10px;
+    line-height: 1.1em;
+    letter-spacing: 0.12em;
+    text-shadow: 0 0 3px #000000;
+    -webkit-opacity: 0.8;
+    -moz-opacity: 0.8;
+    opacity: 0.8;
+    filter: alpha(opacity=80) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
+  #home-content #content .section .print-article .circle-highlight, #main-content #content .section .print-article .circle-highlight, #home-content #content #posts-section .print-article .circle-highlight, #main-content #content #posts-section .print-article .circle-highlight {
+    margin-left: -10px;
+    margin-right: 10px; }
 
 h4, #fx-excursions .excursions-inner .excursions-landing-images .image-item a h2 {
   font-weight: 400;
@@ -8513,7 +8536,7 @@ h5.sponsored span {
   color: #FFFFFF; }
 #home-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text, #main-content .hero-header .hero-body #hero-content .image-wrapper:hover + .desc-wrapper a span.text {
   color: #3FA2DA; }
-#home-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .caption p {
+#home-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .print-article p, #main-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .print-article p {
   color: #FFFFFF;
   -webkit-opacity: 0.7;
   -moz-opacity: 0.7;

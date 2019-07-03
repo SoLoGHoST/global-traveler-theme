@@ -748,11 +748,13 @@ function get_primary_category($primary_category, $post_id, $category_slug)
 				$primary_category['id'] = $category[0]->term_id;
 				$primary_category['title'] = $category[0]->name;
 				$primary_category['link'] = $category_slug == 'category' ? get_category_link($category[0]->term_id) : get_term_link($category[0]->term_id);
+				$primary_category['slug'] = $category[0]->slug;
 
 			} else { 
 				$primary_category['id'] = $term->term_id;
 				$primary_category['title'] = $term->name;
 				$primary_category['link'] = $category_slug == 'category' ? get_category_link($term->term_id) : get_term_link($term->term_id);
+				$primary_category['slug'] = $term->slug;
 			}
 		} 
 		else {
@@ -760,6 +762,7 @@ function get_primary_category($primary_category, $post_id, $category_slug)
 			$primary_category['id'] = $category[0]->term_id;
 			$primary_category['title'] = $category[0]->name;
 			$primary_category['link'] = $category_slug == 'category' ? get_category_link($category[0]->term_id) : get_term_link($category[0]->term_id);
+			$primary_category['slug'] = $category[0]->slug;
 		}
 	}
 
@@ -793,7 +796,8 @@ function get_primary_category_with_child($categories, $post_id, $category_slug =
 				$categories['child'] = array(
 					'id' => $category->term_id,
 					'title' => $category->name,
-					'link' => get_category_link($category->term_id) 
+					'link' => get_category_link($category->term_id),
+					'slug' => $category->slug
 				);
 
 				break;
