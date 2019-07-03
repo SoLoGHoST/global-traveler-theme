@@ -36,7 +36,7 @@ if (!empty($post_data)): ?>
 	<div class="post-wide post-item row align-items-center py-sm-3 mt-sm-5 mx-sm-4 px-3 px-sm-2 mb-5 mb-sm-0">
 		<div class="img-wrapper col-10 col-sm">
 			<?php
-			if (isset($categories['primary'], $categories['primary']['slug']) && $categories['primary']['slug'] == 'print-article'): 
+			if (isset($categories, $categories['primary'], $categories['primary']['slug']) && $categories['primary']['slug'] == 'print-article'): 
 				$print_article_image = apply_filters('get_global_site_directory_path_uri', '', 'images', 'print-article.png'); ?>
 			<div class="print-article px-4 py-1 d-flex justify-content-start align-items-center">
 				<?php 

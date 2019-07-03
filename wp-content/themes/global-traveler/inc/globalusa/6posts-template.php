@@ -54,6 +54,20 @@ if (!empty($post_data)): ?>
 		if (!property_exists($data, 'ad_type')): ?>
 		<div class="img-wrapper col-24">
 			<?php
+			if (isset($categories, $categories['primary'], $categories['primary']['slug']) && $categories['primary']['slug'] == 'print-article'): 
+				$print_article_image = apply_filters('get_global_site_directory_path_uri', '', 'images', 'print-article.png'); ?>
+			<div class="print-article px-4 py-1 d-flex justify-content-start align-items-center">
+				<?php 
+				if (!empty($print_article_image)): ?>
+				<div class="circle-highlight">
+					<img src="<?php echo $print_article_image; ?>" alt="Print Article" class="particle-img" />
+				</div>
+				<?php
+				endif; ?>
+				<p class="article-text my-auto"><?php _e('Global Traveler Mag', 'tif_global'); ?></p>
+			</div>
+			<?php
+			endif;
 			if (!empty($image_caption)): ?>
 			<div class="caption px-4">
 				<?php echo apply_filters('the_content', $image_caption); ?>
