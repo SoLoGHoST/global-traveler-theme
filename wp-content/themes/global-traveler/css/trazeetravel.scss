@@ -638,6 +638,27 @@ h1 {
 	font-size: 72px;
 	line-height: 1em;
 	text-transform: uppercase;
+	&.post {
+		display: inline-block;
+		margin: 0;
+		padding: 15px;
+		color: $default;
+
+		span {
+		    padding: 0 1.5rem 0 1.5rem;
+			border: 0;
+			-webkit-box-decoration-break: clone;
+			box-decoration-break: clone;
+			webkit-box-shadow: inset 0 80px 0 $white, 0 0 0 $white;
+			-moz-box-shadow: inset 0 80px 0 $white, 0 0 0 $white;
+			box-shadow: inset 0 80px 0 $white, 0 0 0 $white;
+
+			> span {
+				top: -15px;
+				padding: 0;
+			}
+		}
+	}
 }
 h2 {
 	@extend %font-2;
@@ -1090,6 +1111,7 @@ h5 {
 					p {
 						@extend %font-bold;
 						color: $white;
+						margin: 0;
 					}
 					.date {
 						text-transform: uppercase;
@@ -1105,8 +1127,20 @@ h5 {
 
 .recent-posts-wrapper {
 	#featured {
+		a {
+			&.image-wrapper {
+			    padding-top: 280px;
+			}
+		}
 		.innerbox {
+			margin: 0 auto;
+			top: -40px;
 			@include border-link($white, $green, span, true, null, text, 2px, 94%);
+			.featured-details {
+				.date {
+					@extend %font-medium;
+				}
+			}
 		}
 		.img-wrapper {
 			&:hover {
@@ -1214,6 +1248,11 @@ body {
 		#content {
 			#posts-section {
 				margin-top: -6.5rem;
+				#body-content {
+					p {
+						margin-bottom: 0;
+					}
+				}
 			}
 		}
 		.hero-header {

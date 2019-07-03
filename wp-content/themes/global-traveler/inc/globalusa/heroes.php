@@ -63,7 +63,7 @@ if (!empty($type)): ?>
 							<?php echo apply_filters('the_content', $image_caption); ?>
 						</div>
 						<?php endif; ?>
-						<h5 class="categories highlight">
+						<h5 class="categories highlight-blue">
 							<?php if (!empty($main_categories)): 
 								if (!empty($main_categories['primary'])): ?>
 									<a href="<?php echo esc_url($main_categories['primary']['link']); ?>"><?php echo $main_categories['primary']['title']; ?></a>

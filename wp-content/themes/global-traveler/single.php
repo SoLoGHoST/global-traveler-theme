@@ -125,6 +125,21 @@ $excluded_categories = array(); ?>
 					</div>
 				</div>
 			</div>
+			<?php
+			if ($global_site == 'globalusa'):
+				$cta = array(
+					'cta_image' => get_field('cta_image'),
+					'cta_headline' => get_field('cta_headline'),
+					'cta_buttonurl' => get_field('cta_buttonurl'),
+					'cta_buttontext' => get_field('cta_buttontext')
+				);
+
+				// remove empty values from the array...
+				$cta = array_filter($cta);
+				if (!empty($cta)):
+					tif_get_template('inc/' . $global_site . '/call-to-action.php', $cta); 
+				endif;
+			endif; ?>
 		</div>
 	</div>
 <?php 
@@ -280,6 +295,9 @@ if (!empty($posts_to_get) || !empty($related_posts)):
 		</div>
 	</div>
 	<?php 
+	endif;
+	if ($global_site == 'globalusa'):
+		tif_get_template('inc/' . $global_site . '/fx-excursions.php');
 	endif;
 
 	tif_get_template('inc/instagram-feed.php', array());
