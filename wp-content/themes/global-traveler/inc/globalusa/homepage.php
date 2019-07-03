@@ -104,7 +104,7 @@ if (!empty($second_query->posts)) {
 			if(function_exists('the_ad_placement') && placement_has_ads('homepage-leaderboard_2'))
 			{
 			echo '
-				<div class="container header-ad px-4 mt-2">
+				<div class="ad-home-leaderboard-2 px-4 mt-2 mb-5 mb-sm-0">
 					<div class="row">
 						<div class="d-flex mx-auto">';
 							the_ad_placement('homepage-leaderboard_2');

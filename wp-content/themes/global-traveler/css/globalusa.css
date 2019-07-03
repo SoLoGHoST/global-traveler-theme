@@ -8436,6 +8436,10 @@ h5.sponsored span {
   font-size: 60px;
   border-color: #12222D; }
 
+#home-content .ad-home-leaderboard-2 a img {
+  width: 100%;
+  height: auto; }
+
 #home-content .post-half .copy, #main-content .post-half .copy {
   margin: -45px auto 0; }
   #home-content .post-half .copy a span.text, #main-content .post-half .copy a span.text {
@@ -8729,34 +8733,38 @@ body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details h
   background-size: cover; }
   #fx-excursions .excursions-inner .intro {
     color: #F46E5D; }
-  #fx-excursions .excursions-inner .excursions-landing-images .image-item {
-    max-width: 352px;
-    height: 474px;
-    overflow: hidden; }
-    #fx-excursions .excursions-inner .excursions-landing-images .image-item a {
-      position: relative;
-      display: block;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      height: 100%;
-      width: 100%; }
-      #fx-excursions .excursions-inner .excursions-landing-images .image-item a h2 {
-        background-color: rgba(0, 0, 0, 0.4);
+  #fx-excursions .excursions-inner .excursions-landing-images {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto; }
+    #fx-excursions .excursions-inner .excursions-landing-images .image-item {
+      min-height: 250px;
+      height: auto;
+      overflow: hidden; }
+      #fx-excursions .excursions-inner .excursions-landing-images .image-item a {
+        position: relative;
+        display: block;
         background-repeat: no-repeat;
+        background-position: center center;
         background-size: cover;
-        background-position: 100% 100%;
-        color: #FFFFFF;
-        text-align: center;
-        width: 100%;
-        padding-left: 15px;
-        padding-right: 15px;
-        -webkit-transition: all 0.4s ease;
-        -moz-transition: all 0.4s ease;
-        -ms-transition: all 0.4s ease;
-        -o-transition: all 0.4s ease; }
-      #fx-excursions .excursions-inner .excursions-landing-images .image-item a:hover h2 {
-        background-color: rgba(0, 0, 0, 0); }
+        height: 100%;
+        width: 100%; }
+        #fx-excursions .excursions-inner .excursions-landing-images .image-item a h2 {
+          background-color: rgba(0, 0, 0, 0.4);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: 100% 100%;
+          color: #FFFFFF;
+          text-align: center;
+          width: 100%;
+          padding-left: 15px;
+          padding-right: 15px;
+          -webkit-transition: all 0.4s ease;
+          -moz-transition: all 0.4s ease;
+          -ms-transition: all 0.4s ease;
+          -o-transition: all 0.4s ease; }
+        #fx-excursions .excursions-inner .excursions-landing-images .image-item a:hover h2 {
+          background-color: rgba(0, 0, 0, 0); }
   #fx-excursions .excursions-inner p, #fx-excursions .excursions-inner h1 {
     color: #FFFFFF; }
 
@@ -8887,6 +8895,9 @@ body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details h
       box-shadow: none; }
 
 @media (min-width: 992px) {
+  #fx-excursions .excursions-inner .excursions-landing-images .image-item {
+    height: 474px; }
+
   #cta .cta-inner {
     padding-left: 120px;
     padding-right: 0; }

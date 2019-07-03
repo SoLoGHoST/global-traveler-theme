@@ -18,7 +18,7 @@ global $post, $page_id; ?>
 		if (!empty($posts)) : ?>
 		<div class="excursions-landing-images d-flex justify-content-center align-items-stretch flex-wrap my-2">
 			<?php foreach ($posts as $post) : setup_postdata($post); ?>
-			<div class="image-item col-24 col-md-8 my-2">
+			<div class="image-item col-24 col-sm-8 my-2">
 				<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); ?>
 				<a href="<?php the_permalink($post->ID); ?>" style="background-image: url(<?php echo $image[0]; ?>);" class="d-flex justify-content-center align-items-stretch">
 					<h2 class="my-0 d-flex justify-content-center align-items-center"><span><?php echo $post->post_title; ?></span></h2>
