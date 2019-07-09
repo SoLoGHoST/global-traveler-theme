@@ -8593,6 +8593,12 @@ h5.sponsored span {
   filter: alpha(opacity=70) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
 #home-content .hero-header .headline, #main-content .hero-header .headline {
   background-color: #8A7399; }
+#home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper, #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper {
+  padding: 1.5rem .5rem;
+  border-top: 5px solid #3FA2DA; }
+  #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper h3, #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper h3 {
+    font-size: 48px;
+    line-height: 1em; }
 #home-content #content .section .date, #main-content #content .section .date {
   color: #3FA2DA; }
 #home-content #content #instagram-feed, #main-content #content #instagram-feed {

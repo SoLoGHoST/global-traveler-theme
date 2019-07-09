@@ -1257,6 +1257,20 @@ h5 {
 		}
 	}
 	#content {
+		.single-wrapper {
+			.sidebar {
+				> .newsletter {
+					.gform_wrapper {
+						padding: 1.5rem .5rem;
+						border-top: 5px solid $blue;
+						h3 {
+							font-size: 48px;
+							line-height: 1em;
+						}
+					}
+				}
+			}
+		}
 		.section {
 			.print-article {
 				@extend %print-article;

@@ -117,12 +117,19 @@ $excluded_categories = array(); ?>
 					<?php
 					endif; ?>
 
-					<div class="ad px-sm-5 d-none d-sm-flex justify-content-center">
+					<div class="ad px-sm-5 py-3 d-none d-sm-flex justify-content-center">
 						<?php 
 						if (!empty($the_ad)):
 							echo $the_ad;
 						endif; ?>
 					</div>
+					<?php
+					if ($global_site == 'globalusa'): ?>
+					<div class="newsletter px-sm-5 pt-3 d-sm-flex justify-content-center">
+						<?php echo do_shortcode('[gravityform id=15 title=true description=false ajax=true]'); ?>
+					</div>
+					<?php
+					endif; ?>
 				</div>
 			</div>
 			<?php
