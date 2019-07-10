@@ -9697,7 +9697,7 @@ body.site-globalusa .posts-slider .slide-item {
     opacity: 1;
     filter: alpha(opacity=100) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
 
-#main-content .hero-header .hero-body .post-wrapper {
+#main-content .hero-header .hero-body .post-wrapper, #main-content .hero-header .hero-body .page-wrapper {
   position: absolute;
   height: auto;
   bottom: 5.5rem;
@@ -9705,11 +9705,11 @@ body.site-globalusa .posts-slider .slide-item {
   right: 0;
   margin: auto;
   z-index: 9; }
-  #main-content .hero-header .hero-body .post-wrapper .overlay {
+  #main-content .hero-header .hero-body .post-wrapper .overlay, #main-content .hero-header .hero-body .page-wrapper .overlay {
     text-align: center; }
-    #main-content .hero-header .hero-body .post-wrapper .overlay .date {
+    #main-content .hero-header .hero-body .post-wrapper .overlay .date, #main-content .hero-header .hero-body .page-wrapper .overlay .date {
       display: block; }
-    #main-content .hero-header .hero-body .post-wrapper .overlay .categories {
+    #main-content .hero-header .hero-body .post-wrapper .overlay .categories, #main-content .hero-header .hero-body .page-wrapper .overlay .categories {
       margin-top: 1.5rem; }
 #main-content #content .single-wrapper .sidebar ul.category-group {
   display: inline-block;

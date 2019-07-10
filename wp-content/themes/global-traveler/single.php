@@ -26,6 +26,8 @@ tif_get_template('inc/' . $global_site . '/heroes.php', array('main_post' => $po
 
 $post_id = $post->ID;
 $excluded_categories = array(); ?>
+
+
 <div id="content">
 	<div class="container-fluid no-pad">
 		<div id="posts-section" class="section content py-3<?php echo !empty($hero_type) && $hero_type == 'alternative' ? ' my-0' : ''; ?>">
@@ -126,7 +128,7 @@ $excluded_categories = array(); ?>
 					<?php
 					if ($global_site == 'globalusa'): ?>
 					<div class="newsletter px-sm-5 pt-3 d-sm-flex justify-content-center">
-						<?php echo do_shortcode('[gravityform id=15 title=true description=false ajax=true]'); ?>
+						<?php echo do_shortcode('[gravityform id=15 title=true description=true ajax=true]'); ?>
 					</div>
 					<?php
 					endif; ?>

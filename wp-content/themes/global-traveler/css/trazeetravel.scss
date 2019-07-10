@@ -1274,3 +1274,19 @@ body {
 }
 
 @import "style.scss";
+
+body {
+	&.postid-48601 {
+		#main-content {
+			.hero-header {
+				.hero-body {
+					background-position-y: bottom !important;
+					.post-wrapper {
+						top: 2.5rem;
+						bottom: auto;
+					}
+				}
+			}
+		}
+	}
+}

@@ -805,7 +805,8 @@ function get_primary_category_with_child($categories, $post_id, $category_slug =
 		}
 	}
 
-	return $categories;
+	// Exclude empty strings or arrays from categories array.
+	return array_filter($categories);
 }
 
 add_action('wp_ajax_tif_posts_scroll', 'tif_posts_scroll');

@@ -22,21 +22,6 @@ $global_site = apply_filters('get_global_site', $global_site);
 $hero_type = get_field('hero_type');
 $post_type = get_field('post_type');
 
-tif_get_template('inc/' . $global_site . '/heroes.php', array('main_post' => $post, 'type' => $hero_type)); 
-?>
-
-<div id="content" class="container-fluid no-pad my-5">
-	<div class="section content px-5">
-		<div class="mx-sm-5 px-sm-5">
-<?php
-	// Start the Loop.
-while ( have_posts() ) :
-	the_post();
-	the_content();
-endwhile; ?>
-		</div>
-	</div>
-</div>
-
-<?php
+tif_get_template('inc/' . $global_site . '/heroes.php', array('main_post' => $post, 'type' => $hero_type));
+tif_get_template('inc/' . $global_site . '/default-page.php', array('post_type' => !empty($post_type) ? $post_type : ''));
 get_footer();

@@ -43,7 +43,7 @@ if (!empty($type)): ?>
 			*/ ?>
 			
 			<div class="hero-body" style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(<?php echo $post_image; ?>) no-repeat center center; background-size: cover;">
-				<div class="container-fluid post-wrapper">
+				<div class="container-fluid <?php echo is_page() ? 'page' : 'post'; ?>-wrapper">
 					<div class="overlay">
 						<?php if (!empty($sponsored_post)): ?>
 						<h5 class="sponsored">
@@ -56,25 +56,33 @@ if (!empty($type)): ?>
 						<?php if (!empty($author_name)): ?>
 						<p>by <?php echo $author_name; ?></p>
 						<?php endif; ?>
+						<?php 
+						if (!is_page()): ?>
 						<span class="date mb-5"><?php echo $date; ?></span>
+						<?php
+						endif; ?>
 
-						<?php if (!empty($image_caption)): ?>
+						<?php 
+						if (!empty($image_caption)): ?>
 						<div class="caption-post px-4">
 							<?php echo apply_filters('the_content', $image_caption); ?>
 						</div>
-						<?php endif; ?>
+						<?php 
+						endif;
+						if (!empty($main_categories)): ?>
 						<h5 class="categories highlight-blue">
-							<?php if (!empty($main_categories)): 
-								if (!empty($main_categories['primary'])): ?>
-									<a href="<?php echo esc_url($main_categories['primary']['link']); ?>"><?php echo $main_categories['primary']['title']; ?></a>
-									<?php
-									if (!empty($main_categories['child'])): ?>
-									/ <a href="<?php echo esc_url($main_categories['child']['link']); ?>"><?php echo $main_categories['child']['title']; ?></a>
-									<?php
-									endif;
+							<?php
+							if (!empty($main_categories['primary'])): ?>
+								<a href="<?php echo esc_url($main_categories['primary']['link']); ?>"><?php echo $main_categories['primary']['title']; ?></a>
+								<?php
+								if (!empty($main_categories['child'])): ?>
+								/ <a href="<?php echo esc_url($main_categories['child']['link']); ?>"><?php echo $main_categories['child']['title']; ?></a>
+								<?php
 								endif;
 							endif; ?>
 						</h5>
+						<?php
+						endif; ?>
 					</div>
 				</div>
 			</div>
@@ -104,7 +112,7 @@ if (!empty($type)): ?>
 				$post_image = $post_image['url'];
 			} ?>
 		<div class="hero-body" style="background: url(<?php echo $post_image; ?>) no-repeat center center; background-size: cover;">
-			<div class="container-fluid post-wrapper">
+			<div class="container-fluid <?php echo is_page() ? 'page' : 'post'; ?>-wrapper">
 				<div class="overlay d-flex align-items-center justify-content-center">
 					<?php if (!empty($sponsored_post)): ?>
 					<h5 class="sponsored m-0">
@@ -377,7 +385,7 @@ endif; ?>
 				$post_image = $post_image['url'];
 			} ?>
 		<div class="hero-body" style="background: url(<?php echo $post_image; ?>) no-repeat center center; background-size: cover;">
-			<div class="container-fluid post-wrapper">
+			<div class="container-fluid <?php echo is_page() ? 'page' : 'post'; ?>-wrapper">
 				<div class="overlay d-flex align-items-center justify-content-center">
 					<?php if (!empty($sponsored_post)): ?>
 					<h5 class="sponsored m-0">
