@@ -2,24 +2,143 @@
 
 defined('ABSPATH') || exit;
 
-global $post, $page_id, $global_site; ?>
+global $post, $page_id, $global_site, $wpdb; 
+
+$hero_type = get_field('hero_type');
+
+$post_id = $post->ID;
+$excluded_categories = array();
+
+$posts_group_id = $wpdb->get_var('SELECT term_id FROM ' . $wpdb->terms . ' WHERE name = "Single Post Group" OR slug = "single-post-group" LIMIT 1');
+
+
+if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads($posts_group_id))
+	$the_ad = get_ad_group((int) $posts_group_id); ?>
 
 <div id="content">
 	<div class="container-fluid no-pad">
-		<div id="posts-section" class="section content py-3">
-<?php
-	// output in here is different from the other site default-page.php... refer to single.php for how this should look...
-	// do not want social media links on the left or categories on the right for these pages however...
-	// After finished with the single post template for globalusa, than work on this!
+		<div id="posts-section" class="section content<?php echo !empty($hero_type) && $hero_type == 'alternative' ? ' my-0' : ''; ?>">
+			<div class="single-wrapper no-pad row">
+				<div id="body-content" class="col-22 offset-1 col-sm-17 offset-sm-0 py-2 my-sm-5 px-3 px-md-5">
+					<?php
+					if (!empty($hero_type) && $hero_type == 'alternative'): 
+						$author_name = get_field('post_author', $post_id);
+						$date = get_the_date('M j, Y', $post_id); ?>
+						<h1 class="title my-3">
+						  <span><span class="text"><?php echo get_the_title($post_id); ?></span></span>
+						</h1>
+						<?php if (!empty($author_name)): ?>
+						<p>by <?php echo $author_name; ?></p>
+						<?php endif; ?>
+						<span class="date mb-5"><?php echo $date; ?></span>
+					<?php
+					endif; ?>
+					<?php the_content(); ?>
+				</div>
+				<div class="sidebar col-22 offset-1 col-sm-7 offset-sm-0 py-2 my-sm-5 order-first order-sm-last">
+					<div class="ad px-sm-5 py-3 d-none d-sm-flex justify-content-center">
+						<?php 
+						if (!empty($the_ad)):
+							echo $the_ad;
+						endif; ?>
+					</div>
+					<?php
+					if ($global_site == 'globalusa'): ?>
+					<div class="newsletter px-sm-5 pt-3 d-sm-flex justify-content-center">
+						<?php echo do_shortcode('[gravityform id=15 title=true description=true ajax=true]'); ?>
+					</div>
+					<?php
+					endif; ?>
+				</div>
 
 
-	// Start the Loop.
-while (have_posts()) :
-	the_post();
-	the_content();
-endwhile; ?>
+
+			</div>
 		</div>
 	</div>
 <?php
-	tif_get_template('inc/instagram-feed.php', array()); ?>
+	tif_get_template('inc/instagram-feed.php', array()); 
+
+	$sponsored_posts = $current_sponsored = $initial_posts = array();
+	$total_sponsored = 0;
+	$exclude_sponsored_ids = array();
+	$sponsored_ids = array();
+
+	$sponsored_posts = apply_filters('get_sponsored_posts', array(), array());
+
+	if (!empty($sponsored_posts))
+	{
+		shuffle($sponsored_posts);
+
+		foreach($sponsored_posts as $sponsored)
+			$sponsored_ids[] = $sponsored->ID;
+
+		// get 2 sponsors...
+		$current_sponsored = array_splice($sponsored_posts, 0, 2);
+
+		if (!empty($current_sponsored))
+		{
+			foreach($current_sponsored as $sponsor)
+			{
+				$exclude_sponsored_ids[] = $sponsor->ID;
+				$total_sponsored++;
+			}
+		}
+	}
+
+	$has_more = false;
+	$ordered_array = array();
+	$posts_per_page = 6;
+	$args = array(
+		'post_type' => 'post',
+		'orderby' => 'date',
+		'post_status' => 'publish',
+		'offset' => 0,
+		'posts_per_page' => ($posts_per_page - $total_sponsored)
+	);
+
+	if (!empty($excluded_categories))
+		$args = array_merge($args, array('category__not_in' => $excluded_categories));
+	else
+		$args = array_merge($args, array('post__not_in' => array($post_id)));
+
+	if (!empty($sponsored_ids))
+	{
+		if (!empty($args['post__not_in']))
+			$args['post__not_in'] = array_merge($args['post__not_in'], $sponsored_ids);
+		else
+			$args['post__not_in'] = $sponsored_ids;
+	}
+
+	$the_query = new WP_Query($args);
+
+	if (!empty($the_query->posts))
+	{
+		$total_posts = count($the_query->posts);
+		$half_sponsored = !empty($total_sponsored) ? ceil(1 / $total_sponsored) : 0;
+
+		$order_pattern = array(
+			'first_set' => (3 - $half_sponsored),
+			'last_set' => (3 - ($total_sponsored - $half_sponsored))
+		);
+
+		foreach($order_pattern as $key => $value)
+		{
+			if (!empty($the_query->posts))
+				$ordered_array[$key] = array_splice($the_query->posts, 0, $value);
+
+			if (!empty($ordered_array[$key]) && !empty($current_sponsored))
+				$ordered_array[$key] = array_merge(array_slice($ordered_array[$key], 0, 1), array_splice($current_sponsored, 0, 1), array_slice($ordered_array[$key], 1));
+		}
+	}
+
+	ob_start();
+	tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['first_set']));
+	$initial_posts[] = ob_get_clean();
+
+	ob_start();
+	tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['last_set']));
+	$initial_posts[] = ob_get_clean();
+
+	tif_get_template('inc/' . $global_site . '/base-template.php', array('global_site' => $global_site, 'excluded_categories' => $excluded_categories, 'wrapper_start' => array('<div class="container-fluid mt-5 pt-5 px-0">', '<div class="section content">'), 'wrapper_end' => array('</div>', '</div>'), 'offset' => ($posts_per_page - $total_sponsored), 'sponsors_shown' => $exclude_sponsored_ids, 'initial_posts' => $initial_posts)); ?>
 </div>

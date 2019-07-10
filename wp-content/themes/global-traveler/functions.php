@@ -169,7 +169,7 @@ function tif_scripts() {
     if (!empty($post) && is_object($post))
     	$hero_type = get_field('hero_type', $post->ID);
 
-    if (is_post_type_archive('post') || is_search() || (is_singular() && $post->post_type == 'post') || is_category() || is_author() || (!empty($post) && is_object($post) && ((is_page() && is_front_page()) || ($post->post_type == 'post' && is_tag()))))
+    if (($global_site == 'globalusa' && is_page()) || is_post_type_archive('post') || is_search() || (is_singular() && $post->post_type == 'post') || is_category() || is_author() || (!empty($post) && is_object($post) && ((is_page() && is_front_page()) || ($post->post_type == 'post' && is_tag()))))
 	{
 		$dependants[] = 'ajax-scroll-script';
 		$haspostinhero = is_front_page() || (!empty($hero_type) && $hero_type == 'home');

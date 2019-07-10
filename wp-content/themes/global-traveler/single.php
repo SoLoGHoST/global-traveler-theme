@@ -313,7 +313,6 @@ if (!empty($posts_to_get) || !empty($related_posts)):
 
 	if ($global_site == 'globalusa'):
 
-		// Need to output template 3posts-template.php twice before calling below tif_get_template...
 		$sponsored_posts = $current_sponsored = $initial_posts = array();
 		$total_sponsored = 0;
 		$exclude_sponsored_ids = array();

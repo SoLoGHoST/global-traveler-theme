@@ -8843,10 +8843,10 @@ body.search #main-content .hero-header .headline {
 body.tag #main-content .hero-header .headline {
   background-color: #2CB78F; }
 body.page #main-content #content .content a {
-  color: #2CB78F;
-  border-bottom: 2px solid #2CB78F; }
+  color: #3FA2DA;
+  border-bottom: none; }
   body.page #main-content #content .content a:hover {
-    color: #2CB78F; }
+    color: #2a98d6; }
 body.page.page-template-default #main-content .hero-header .hero-body {
   min-height: 340px; }
 body.site-globalusa .navbar {

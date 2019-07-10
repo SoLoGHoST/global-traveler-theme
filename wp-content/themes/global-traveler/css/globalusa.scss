@@ -1678,11 +1678,10 @@ body {
 			#content {
 				.content {
 					a {
-						color: $green;
-						border-bottom: 2px solid $green;
-
+						color: $blue;
+						border-bottom: none;
 						&:hover {
-							color: $green;
+							color: darken($blue, 5%);
 						}
 					}
 				}
