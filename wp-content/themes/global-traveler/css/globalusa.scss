@@ -1540,7 +1540,7 @@ h5 {
 						@extend %font-regular;
 						color: $white;
 					}
-					h1 {
+					h1, h2, h3 {
 						&.post {
 							color: $white;
 						}
@@ -1566,6 +1566,15 @@ h5 {
 			.page-wrapper {
 				@include translateY(-50%);
 			}
+		}
+	}
+}
+
+.excursion-hero-wrapper {
+	img {
+		&.fx-img {
+			width: auto;
+			max-height: 90px;
 		}
 	}
 }
@@ -1682,6 +1691,12 @@ body {
 						border-bottom: none;
 						&:hover {
 							color: darken($blue, 5%);
+						}
+						&.btn {
+							@extend %btn;
+							&.btn-primary {
+								@extend %btn-primary;
+							}
 						}
 					}
 				}

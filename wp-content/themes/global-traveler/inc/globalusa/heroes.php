@@ -42,7 +42,7 @@ if (!empty($type)): ?>
 				$category_link = get_category_link($categories[0]->term_id); 
 			*/ ?>
 			
-			<div class="hero-body" style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(<?php echo $post_image; ?>) no-repeat center center; background-size: cover;">
+			<div class="hero-body<?php echo !empty($excursion_page) ? ' fx-excursions-hero' : ''; ?>" style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(<?php echo $post_image; ?>) no-repeat center center; background-size: cover;">
 				<div class="container-fluid <?php echo is_page() ? 'page' : 'post'; ?>-wrapper">
 					<div class="overlay">
 						<?php if (!empty($sponsored_post)): ?>
@@ -50,9 +50,21 @@ if (!empty($type)): ?>
 							<span><?php _e('Sponsored Content', 'trazee'); ?></span>
 						</h5>
 						<?php endif; ?>
+						<?php 
+						if (!empty($excursion_page)): ?>
+						<div class="excursion-hero-wrapper">
+							<img src="<?php echo apply_filters('get_global_site_directory_path_uri', '', 'images', 'fx_excursions.png'); ?>" alt="FX Excursions" class="fx-img" />
+							<h3 class="title post">
+								<span><span class="text"><?php echo get_the_title($main_post->ID); ?></span></span>
+							</h3>
+						</div>
+						<?php
+						else: ?>
 						<h1 class="title my-3 post">
 							<span><span class="text"><?php echo get_the_title($main_post->ID); ?></span></span>
 						</h1>
+						<?php
+						endif; ?>
 						<?php if (!empty($author_name)): ?>
 						<p>by <?php echo $author_name; ?></p>
 						<?php endif; ?>

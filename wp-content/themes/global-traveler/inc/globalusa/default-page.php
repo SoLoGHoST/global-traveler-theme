@@ -13,13 +13,44 @@ $posts_group_id = $wpdb->get_var('SELECT term_id FROM ' . $wpdb->terms . ' WHERE
 
 
 if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads($posts_group_id))
-	$the_ad = get_ad_group((int) $posts_group_id); ?>
+	$the_ad = get_ad_group((int) $posts_group_id);
+
+?>
 
 <div id="content">
 	<div class="container-fluid no-pad">
 		<div id="posts-section" class="section content<?php echo !empty($hero_type) && $hero_type == 'alternative' ? ' my-0' : ''; ?>">
+			<?php
+			if (!empty($excursion_page)): ?>
+				<div class="tags py-3 col-22 offset-1">
+					<?php $categories = get_terms(array('taxonomy' => 'excursions_tag_type', 'hide_empty' => false));
+					if ($categories) : ?>
+					<ul class="list-inline text-center">
+						<?php foreach ($categories as $category) : ?>
+						<li class="list-inline-item p-2">
+							<a href="<?php echo get_term_link($category->term_id); ?>" class="btn btn-primary"><?php echo $category->name; ?></a>
+						</li>
+						<?php endforeach; ?>
+					</ul>
+					<?php
+					endif; ?>
+				</div>
+				<?php /*
+				<div class="tags-mobile">
+					<?php $categories = get_terms(array('taxonomy' => 'excursions_tag_type', 'hide_empty' => false));
+					if ($categories) : ?>
+					<select>
+						<option value="" disabled selected>Select tag</option>
+						<?php foreach ($categories as $category) : ?>
+						<option value="<?php echo get_term_link($category->term_id); ?>"><?php echo $category->name; ?></option>
+						<?php endforeach; ?>
+					</select>
+					<?php endif; ?>
+				</div> */ ?>
+			<?php
+			endif; ?>
 			<div class="single-wrapper no-pad row">
-				<div id="body-content" class="col-22 offset-1 col-sm-17 offset-sm-0 py-2 my-sm-5 px-3 px-md-5">
+				<div id="body-content" class="col-22 offset-1 col-sm-17 offset-sm-0 py-2<?php echo !empty($excursion_page) ? ' my-sm-4' : ' my-sm-5'; ?> px-3 px-md-5">
 					<?php
 					if (!empty($hero_type) && $hero_type == 'alternative'): 
 						$author_name = get_field('post_author', $post_id);
@@ -35,8 +66,8 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 					endif; ?>
 					<?php the_content(); ?>
 				</div>
-				<div class="sidebar col-22 offset-1 col-sm-7 offset-sm-0 py-2 my-sm-5 order-first order-sm-last">
-					<div class="ad px-sm-5 py-3 d-none d-sm-flex justify-content-center">
+				<div class="sidebar col-22 offset-1 col-sm-7 offset-sm-0 py-2<?php echo !empty($excursion_page) ? ' my-sm-4' : ' my-sm-5'; ?> order-first order-sm-last">
+					<div class="ad px-md-5 py-3 d-none d-sm-flex justify-content-center">
 						<?php 
 						if (!empty($the_ad)):
 							echo $the_ad;
@@ -44,14 +75,12 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 					</div>
 					<?php
 					if ($global_site == 'globalusa'): ?>
-					<div class="newsletter px-sm-5 pt-3 d-sm-flex justify-content-center">
+					<div class="newsletter px-md-5 pt-3 d-sm-flex justify-content-center">
 						<?php echo do_shortcode('[gravityform id=15 title=true description=true ajax=true]'); ?>
 					</div>
 					<?php
 					endif; ?>
 				</div>
-
-
 
 			</div>
 		</div>
