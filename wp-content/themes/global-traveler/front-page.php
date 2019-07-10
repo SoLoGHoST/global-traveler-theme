@@ -4,7 +4,6 @@ if (!defined('ABSPATH')) exit;
 global $post, $page_id, $wpdb, $hero_type, $home_video, $global_site;
 
 $hero_type = get_field('hero_type');
-$hero_post_type = get_field('post_type');
 $home_video = get_field('video');
 
 /*
@@ -25,9 +24,13 @@ if (empty($global_site)) {
 
 $is_globalusa = !empty($global_site) && $global_site == 'globalusa';
 
+$hero_post_type = empty($is_globalusa) ? get_field('post_type') : '';
+
+/*
 if (!empty($is_globalusa))
 	if (in_array($hero_type, array('hometakeover', 'home')))
 		unset($hero_post_type);
+*/
 
 if ($hero_type != 'hometakeover' && !empty($hero_post_type))
 {

@@ -46,7 +46,7 @@ if (!empty($post_data)): ?>
 			if (property_exists($data, 'output'))
 				$output = !empty($data->output) ? $data->output : '';
 		}
-		$classes = $ad_type == 'homepage-skyscraper' ? ' d-none d-md-flex' : ' d-flex';
+		$classes = !empty($ad_type) && $ad_type == 'homepage-skyscraper' ? ' d-none d-md-flex' : ' d-flex';
 	} ?>
 
 	<div class="post-tall<?php echo !property_exists($data, 'ad_type') ? ' post-item' : ''; ?> col-24 col-sm-12 col-md-8<?php echo $classes; ?> flex-wrap align-content-start px-0 px-sm-2">

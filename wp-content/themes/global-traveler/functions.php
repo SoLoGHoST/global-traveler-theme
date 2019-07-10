@@ -853,13 +853,20 @@ function get_sponsored_posts($return = array(), $excluded_ids = array())
 
 	$return = array();
 
-	$sql = $wpdb->prepare("SELECT p.ID
+	$vars = array(
+		'default' => array('is_sponsored', '1'),
+		'excluded_ids' => !empty($excluded_ids) ? $excluded_ids : array()
+	);
+
+	$sql = "SELECT p.ID
 		FROM {$wpdb->prefix}posts p
 		INNER JOIN {$wpdb->prefix}postmeta pm ON pm.post_id = p.ID AND pm.meta_key = %s AND pm.meta_value = %s
-		WHERE (p.post_status = 'publish' AND p.post_type = 'post')
-		ORDER BY NULL", 'is_sponsored', '1');
+		WHERE (p.post_status = 'publish' AND p.post_type = 'post')" . (!empty($vars['excluded_ids']) ? ' AND p.ID NOT IN (' . implode(',', array_fill(0, count($vars['excluded_ids']), '%d')) . ')' : '') . "
+		ORDER BY NULL";
 
-	$ids = $wpdb->get_col($sql);
+	$sql_query = call_user_func_array(array($wpdb, 'prepare'), array_merge(array($sql), array_merge($vars['default'], $vars['excluded_ids'])));
+
+	$ids = $wpdb->get_col($sql_query);
 
 	if (!empty($ids) && is_array($ids))
     	$return = array_map('get_post', $ids);

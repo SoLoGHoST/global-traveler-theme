@@ -20,8 +20,9 @@ get_header();
 $global_site = apply_filters('get_global_site', $global_site);
 
 $hero_type = get_field('hero_type');
+// @TODO - this setting isn't being used for pages anywhere that I know of, NEED TO CHECK if this ACF FIELD is even needed anymore!
 $post_type = get_field('post_type');
 
 tif_get_template('inc/' . $global_site . '/heroes.php', array('main_post' => $post, 'type' => $hero_type));
-tif_get_template('inc/' . $global_site . '/default-page.php', array('post_type' => !empty($post_type) ? $post_type : ''));
+tif_get_template('inc/' . $global_site . '/default-page.php', array());
 get_footer();

@@ -311,110 +311,200 @@ if (!empty($posts_to_get) || !empty($related_posts)):
 
 	tif_get_template('inc/instagram-feed.php', array());
 
-	$sponsored_posts = $current_sponsored = array();
-	$total_sponsored = 0;
-	$exclude_sponsored_ids = array();
-	$sponsored_ids = array();
+	if ($global_site == 'globalusa'):
 
-	$sponsored_posts = apply_filters('get_sponsored_posts', array(), array());
+		// Need to output template 3posts-template.php twice before calling below tif_get_template...
+		$sponsored_posts = $current_sponsored = $initial_posts = array();
+		$total_sponsored = 0;
+		$exclude_sponsored_ids = array();
+		$sponsored_ids = array();
 
-	if (!empty($sponsored_posts))
-	{
-		shuffle($sponsored_posts);
+		$sponsored_posts = apply_filters('get_sponsored_posts', array(), array());
 
-		foreach($sponsored_posts as $sponsored)
-			$sponsored_ids[] = $sponsored->ID;
-
-		$current_sponsored = array_splice($sponsored_posts, 0, 2);
-
-		if (!empty($current_sponsored))
+		if (!empty($sponsored_posts))
 		{
-			foreach($current_sponsored as $sponsor)
+			shuffle($sponsored_posts);
+
+			foreach($sponsored_posts as $sponsored)
+				$sponsored_ids[] = $sponsored->ID;
+
+			// get 2 sponsors...
+			$current_sponsored = array_splice($sponsored_posts, 0, 2);
+
+			if (!empty($current_sponsored))
 			{
-				$exclude_sponsored_ids[] = $sponsor->ID;
-				$total_sponsored++;
+				foreach($current_sponsored as $sponsor)
+				{
+					$exclude_sponsored_ids[] = $sponsor->ID;
+					$total_sponsored++;
+				}
 			}
 		}
-	}
 
-
-	$has_more = false;
-	$ordered_array = array();
-	$the_ads = array();
-	$posts_per_page = !empty($the_ads) ? 12 : 11;
-	$args = array(
-		'post_type' => 'post',
-		'orderby' => 'date',
-		'post_status' => 'publish',
-		'offset' => 0,
-		'posts_per_page' => ($posts_per_page - $total_sponsored)
-	);
-
-	if (!empty($excluded_categories))
-		$args = array_merge($args, array('category__not_in' => $excluded_categories));
-	else
-		$args = array_merge($args, array('post__not_in' => array($post_id)));
-
-	if (!empty($sponsored_ids))
-	{
-		if (!empty($args['post__not_in']))
-			$args['post__not_in'] = array_merge($args['post__not_in'], $sponsored_ids);
-		else
-			$args['post__not_in'] = $sponsored_ids;
-	}
-
-	$the_query = new WP_Query($args);
-
-	if (!empty($the_query->posts))
-	{
-		$total_posts = count($the_query->posts);
-
-		if ($total_posts > (($posts_per_page - $total_sponsored) - 1))
-		{
-			array_pop($the_query->posts);
-			$has_more = true;
-		}
-
-		$half_sponsored = !empty($total_sponsored) ? ceil(1 / $total_sponsored) : 0;
-
-		$order_pattern = array(
-			'first_set' => 2,
-			'second_set' => 2,
-			'third_set' => (3 - $half_sponsored),
-			'last_set' => (3 - ($total_sponsored - $half_sponsored))
+		$has_more = false;
+		$ordered_array = array();
+		$posts_per_page = 6;
+		$args = array(
+			'post_type' => 'post',
+			'orderby' => 'date',
+			'post_status' => 'publish',
+			'offset' => 0,
+			'posts_per_page' => ($posts_per_page - $total_sponsored)
 		);
 
-		foreach($order_pattern as $key => $value)
-		{
-			if (!empty($the_query->posts))
-				$ordered_array[$key] = array_splice($the_query->posts, 0, $value);
+		if (!empty($excluded_categories))
+			$args = array_merge($args, array('category__not_in' => $excluded_categories));
+		else
+			$args = array_merge($args, array('post__not_in' => array($post_id)));
 
-			if (in_array($key, array('third_set', 'last_set')) && !empty($ordered_array[$key]) && !empty($current_sponsored))
-				$ordered_array[$key] = array_merge(array_slice($ordered_array[$key], 0, 1), array_splice($current_sponsored, 0, 1), array_slice($ordered_array[$key], 1));
+		if (!empty($sponsored_ids))
+		{
+			if (!empty($args['post__not_in']))
+				$args['post__not_in'] = array_merge($args['post__not_in'], $sponsored_ids);
+			else
+				$args['post__not_in'] = $sponsored_ids;
 		}
 
-	} ?>
-	<div class="container-fluid mt-5 pt-5 px-0">
-		<div class="section content">
-			<?php 
-				tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $ordered_array['first_set']));
-				tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $ordered_array['second_set']));
-				tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['third_set']));
-				tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['last_set']));
-			?>
-			<?php if (!empty($excluded_categories)): ?>
-			<input type="hidden" id="args" value='<?php echo json_encode(array('category__not_in' => $excluded_categories)); ?>' />
-			<?php else: ?>
-			<input type="hidden" id="args" value='<?php echo json_encode(array('post__not_in' => array($post_id))); ?>' />
-			<?php endif; ?>
-		</div>
-		<script>
-			var thePattern = [2,2,3,3];
-			var noMoreLeft = <?php echo !empty($has_more) ? 'false' : 'true'; ?>;
-			var excludedSponsors = <?php echo !empty($exclude_sponsored_ids) ? json_encode($exclude_sponsored_ids) : '[]'; ?>;
-			var allSponsors = <?php echo !empty($sponsored_ids) ? json_encode($sponsored_ids) : '[]'; ?>;
-		</script>
-	</div>
-</div>
+		$the_query = new WP_Query($args);
 
-<?php get_footer(); ?>
+		if (!empty($the_query->posts))
+		{
+			$total_posts = count($the_query->posts);
+			$half_sponsored = !empty($total_sponsored) ? ceil(1 / $total_sponsored) : 0;
+
+			$order_pattern = array(
+				'first_set' => (3 - $half_sponsored),
+				'last_set' => (3 - ($total_sponsored - $half_sponsored))
+			);
+
+			foreach($order_pattern as $key => $value)
+			{
+				if (!empty($the_query->posts))
+					$ordered_array[$key] = array_splice($the_query->posts, 0, $value);
+
+				if (!empty($ordered_array[$key]) && !empty($current_sponsored))
+					$ordered_array[$key] = array_merge(array_slice($ordered_array[$key], 0, 1), array_splice($current_sponsored, 0, 1), array_slice($ordered_array[$key], 1));
+			}
+		}
+
+		ob_start();
+		tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['first_set']));
+		$initial_posts[] = ob_get_clean();
+
+		ob_start();
+		tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['last_set']));
+		$initial_posts[] = ob_get_clean();
+
+		tif_get_template('inc/' . $global_site . '/base-template.php', array('global_site' => $global_site, 'excluded_categories' => $excluded_categories, 'wrapper_start' => array('<div class="container-fluid mt-5 pt-5 px-0">', '<div class="section content">'), 'wrapper_end' => array('</div>', '</div>'), 'offset' => ($posts_per_page - $total_sponsored), 'sponsors_shown' => $exclude_sponsored_ids, 'initial_posts' => $initial_posts));
+
+	else:
+
+		$sponsored_posts = $current_sponsored = array();
+		$total_sponsored = 0;
+		$exclude_sponsored_ids = array();
+		$sponsored_ids = array();
+
+		$sponsored_posts = apply_filters('get_sponsored_posts', array(), array());
+
+		if (!empty($sponsored_posts))
+		{
+			shuffle($sponsored_posts);
+
+			foreach($sponsored_posts as $sponsored)
+				$sponsored_ids[] = $sponsored->ID;
+
+			$current_sponsored = array_splice($sponsored_posts, 0, 2);
+
+			if (!empty($current_sponsored))
+			{
+				foreach($current_sponsored as $sponsor)
+				{
+					$exclude_sponsored_ids[] = $sponsor->ID;
+					$total_sponsored++;
+				}
+			}
+		}
+
+
+		$has_more = false;
+		$ordered_array = array();
+		$the_ads = array();
+		$posts_per_page = !empty($the_ads) ? 12 : 11;
+		$args = array(
+			'post_type' => 'post',
+			'orderby' => 'date',
+			'post_status' => 'publish',
+			'offset' => 0,
+			'posts_per_page' => ($posts_per_page - $total_sponsored)
+		);
+
+		if (!empty($excluded_categories))
+			$args = array_merge($args, array('category__not_in' => $excluded_categories));
+		else
+			$args = array_merge($args, array('post__not_in' => array($post_id)));
+
+		if (!empty($sponsored_ids))
+		{
+			if (!empty($args['post__not_in']))
+				$args['post__not_in'] = array_merge($args['post__not_in'], $sponsored_ids);
+			else
+				$args['post__not_in'] = $sponsored_ids;
+		}
+
+		$the_query = new WP_Query($args);
+
+		if (!empty($the_query->posts))
+		{
+			$total_posts = count($the_query->posts);
+
+			if ($total_posts > (($posts_per_page - $total_sponsored) - 1))
+			{
+				array_pop($the_query->posts);
+				$has_more = true;
+			}
+
+			$half_sponsored = !empty($total_sponsored) ? ceil(1 / $total_sponsored) : 0;
+
+			$order_pattern = array(
+				'first_set' => 2,
+				'second_set' => 2,
+				'third_set' => (3 - $half_sponsored),
+				'last_set' => (3 - ($total_sponsored - $half_sponsored))
+			);
+
+			foreach($order_pattern as $key => $value)
+			{
+				if (!empty($the_query->posts))
+					$ordered_array[$key] = array_splice($the_query->posts, 0, $value);
+
+				if (in_array($key, array('third_set', 'last_set')) && !empty($ordered_array[$key]) && !empty($current_sponsored))
+					$ordered_array[$key] = array_merge(array_slice($ordered_array[$key], 0, 1), array_splice($current_sponsored, 0, 1), array_slice($ordered_array[$key], 1));
+			}
+
+		} ?>
+		<div class="container-fluid mt-5 pt-5 px-0">
+			<div class="section content">
+				<?php 
+					tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $ordered_array['first_set']));
+					tif_get_template('inc/' . $global_site . '/2posts-template.php', array('post_data' => $ordered_array['second_set']));
+					tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['third_set']));
+					tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['last_set']));
+				?>
+				<?php if (!empty($excluded_categories)): ?>
+				<input type="hidden" id="args" value='<?php echo json_encode(array('category__not_in' => $excluded_categories)); ?>' />
+				<?php else: ?>
+				<input type="hidden" id="args" value='<?php echo json_encode(array('post__not_in' => array($post_id))); ?>' />
+				<?php endif; ?>
+			</div>
+			<script>
+				var thePattern = [2,2,3,3];
+				var noMoreLeft = <?php echo !empty($has_more) ? 'false' : 'true'; ?>;
+				var excludedSponsors = <?php echo !empty($exclude_sponsored_ids) ? json_encode($exclude_sponsored_ids) : '[]'; ?>;
+				var allSponsors = <?php echo !empty($sponsored_ids) ? json_encode($sponsored_ids) : '[]'; ?>;
+			</script>
+		</div>
+	</div>
+
+<?php 
+	endif;
+get_footer(); ?>
