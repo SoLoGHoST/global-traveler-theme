@@ -21,7 +21,9 @@ if (empty($global_site))
 	$global_site = apply_filters('get_global_site', $global_site);
 
 $hero_type = get_field('hero_type');
+
 // @TODO - this setting isn't being used for pages anywhere that I know of, NEED TO CHECK if this ACF FIELD is even needed anymore!
+// Be sure to check whether the homepage template is using it or not first!
 $post_type = get_field('post_type');
 $excursion_landing_pages = $excursion_page = array();
 

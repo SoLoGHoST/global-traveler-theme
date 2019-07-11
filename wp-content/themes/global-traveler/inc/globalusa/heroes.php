@@ -51,12 +51,25 @@ if (!empty($type)): ?>
 						</h5>
 						<?php endif; ?>
 						<?php 
-						if (!empty($excursion_page)): ?>
+						if (!empty($excursion_page) || !empty($is_excursions_post)): ?>
 						<div class="excursion-hero-wrapper">
 							<img src="<?php echo apply_filters('get_global_site_directory_path_uri', '', 'images', 'fx_excursions.png'); ?>" alt="FX Excursions" class="fx-img" />
+							<?php
+							if (!empty($is_excursions_post)): 
+								$excursions_category = apply_filters('get_the_primary_category', array(), $main_post->ID, 'excursions_category_type');
+								if (!empty($excursions_category)): ?>
+
+							<h3 class="title post">
+								<span><span class="text"><?php echo $excursions_category['title']; ?></span></span>
+							</h3>
+							<?php
+								endif;
+							else: ?>
 							<h3 class="title post">
 								<span><span class="text"><?php echo get_the_title($main_post->ID); ?></span></span>
 							</h3>
+							<?php
+							endif; ?>
 						</div>
 						<?php
 						else: ?>
@@ -65,11 +78,13 @@ if (!empty($type)): ?>
 						</h1>
 						<?php
 						endif; ?>
-						<?php if (!empty($author_name)): ?>
+						<?php
+						if (!empty($author_name)): ?>
 						<p>by <?php echo $author_name; ?></p>
-						<?php endif; ?>
+						<?php
+						endif; ?>
 						<?php 
-						if (!is_page()): ?>
+						if (!is_page() && empty($is_excursions_post)): ?>
 						<span class="date mb-5"><?php echo $date; ?></span>
 						<?php
 						endif; ?>

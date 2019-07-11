@@ -9,7 +9,8 @@ global $post, $page_id, $main_categories, $wpdb, $global_site;
 
 get_header();
 
-$global_site = apply_filters('get_global_site', $global_site);
+if (empty($global_site))
+	$global_site = apply_filters('get_global_site', $global_site);
 
 $posts_group_id = $wpdb->get_var('SELECT term_id FROM ' . $wpdb->terms . ' WHERE name = "Single Post Group" OR slug = "single-post-group" LIMIT 1');
 
