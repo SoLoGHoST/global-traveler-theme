@@ -17,7 +17,8 @@
 global $post, $page_id, $global_site;
 get_header(); 
 
-$global_site = apply_filters('get_global_site', $global_site);
+if (empty($global_site))
+	$global_site = apply_filters('get_global_site', $global_site);
 
 $hero_type = get_field('hero_type');
 // @TODO - this setting isn't being used for pages anywhere that I know of, NEED TO CHECK if this ACF FIELD is even needed anymore!

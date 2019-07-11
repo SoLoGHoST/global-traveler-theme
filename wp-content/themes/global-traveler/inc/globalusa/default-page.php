@@ -126,6 +126,19 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 				</div>
 
 			</div>
+			<?php
+			$cta = array(
+				'cta_image' => get_field('cta_image'),
+				'cta_headline' => get_field('cta_headline'),
+				'cta_buttonurl' => get_field('cta_buttonurl'),
+				'cta_buttontext' => get_field('cta_buttontext')
+			);
+
+			// remove empty values from the array...
+			$cta = array_filter($cta);
+			if (!empty($cta)):
+				tif_get_template('inc/' . $global_site . '/call-to-action.php', $cta);
+			endif; ?>
 		</div>
 	</div>
 <?php
