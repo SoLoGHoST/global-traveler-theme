@@ -5,7 +5,6 @@
 */
 	if (!defined('ABSPATH')) exit();
 
-
 if (!empty($post_data)):
 
 	$post_list_classes = !empty($excursion_page) ? ' col-24' : ' col-24 offset-sm-1 col-sm-22 offset-md-1 col-md-22 offset-lg-2 col-lg-20';
@@ -33,7 +32,13 @@ if (!empty($post_data)):
 	if (empty($is_sponsored))
 	{
 		$date = get_the_date('M j, Y', $data->ID);
-		$categories = apply_filters('get_the_primary_category_with_child', array(), $data->ID);
+		if (!empty($custom_category))
+			$categories = array(
+				'primary' => apply_filters('get_the_primary_category', array(), $data->ID, $custom_category),
+				'child' => array()
+			);
+		else
+			$categories = apply_filters('get_the_primary_category_with_child', array(), $data->ID, '');
 	} ?>
 	
 	<div class="post-wide post-item row<?php echo $post_wide_classes; ?>">
@@ -82,7 +87,12 @@ if (!empty($post_data)):
 						endif;
 					endif; ?>
 				</h5>
+				<?php 
+				$post_type = get_post_type($data->ID);
+				if ($post_type != 'excursions'): ?>
 				<span class="date"><?php echo $date; ?></span>
+				<?php
+				endif; ?>
 			</div>
 			<?php
 			endif; ?>

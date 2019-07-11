@@ -19,9 +19,10 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 <div id="content">
 	<div class="container-fluid no-pad">
 		<div id="posts-section" class="section content">
+			<?php 
+			$tags = get_terms(array('taxonomy' => 'excursions_tag_type', 'hide_empty' => false)); ?>
 			<div class="tags d-none d-sm-block py-3 col-22 offset-1">
 				<?php 
-				$tags = get_terms(array('taxonomy' => 'excursions_tag_type', 'hide_empty' => false));
 				if (!empty($tags)) : ?>
 				<ul class="list-inline text-center">
 					<?php 
@@ -35,10 +36,10 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 				<?php
 				endif; ?>
 			</div>
-			<div class="tags-mobile d-block d-sm-none">
-				<?php $tags = get_terms(array('taxonomy' => 'excursions_tag_type', 'hide_empty' => false));
+			<div class="tags-mobile d-block d-sm-none pt-3 mx-4 px-1">
+				<?php
 				if (!empty($tags)) : ?>
-				<select class="select-excursion-tag">
+				<select class="select-excursion-tag w-100 mt-3">
 					<option value="" disabled selected>Select tag</option>
 					<?php foreach ($tags as $tag) : ?>
 					<option value="<?php echo get_term_link($tag->term_id); ?>" <?php selected($term->term_id, $tag->term_id); ?>><?php echo $tag->name; ?></option>
@@ -75,7 +76,7 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 							$chunked_excursions = array_chunk($excursions_query->posts, 3);
 
 							foreach($chunked_excursions as $chunked_excursion):
-								tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $chunked_excursion, 'excursion_page' => true));
+								tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $chunked_excursion, 'excursion_page' => true, 'custom_category' => 'excursions_category_type'));
 							endforeach; ?>
 						<?php
 						else: ?>

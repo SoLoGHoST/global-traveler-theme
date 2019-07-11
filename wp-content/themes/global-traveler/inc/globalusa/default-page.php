@@ -21,32 +21,32 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 	<div class="container-fluid no-pad">
 		<div id="posts-section" class="section content<?php echo !empty($hero_type) && $hero_type == 'alternative' ? ' my-0' : ''; ?>">
 			<?php
-			if (!empty($excursion_page)): ?>
-				<div class="tags py-3 col-22 offset-1">
-					<?php $categories = get_terms(array('taxonomy' => 'excursions_tag_type', 'hide_empty' => false));
-					if ($categories) : ?>
+			if (!empty($excursion_page)): 
+				$tags = get_terms(array('taxonomy' => 'excursions_tag_type', 'hide_empty' => false)); ?>
+				<div class="tags d-none d-sm-block py-3 col-22 offset-1">
+					<?php 
+					if (!empty($tags)) : ?>
 					<ul class="list-inline text-center">
-						<?php foreach ($categories as $category) : ?>
+						<?php foreach ($tags as $tag) : ?>
 						<li class="list-inline-item p-2">
-							<a href="<?php echo get_term_link($category->term_id); ?>" class="btn btn-primary"><?php echo $category->name; ?></a>
+							<a href="<?php echo get_term_link($tag->term_id); ?>" class="btn btn-primary"><?php echo $tag->name; ?></a>
 						</li>
 						<?php endforeach; ?>
 					</ul>
 					<?php
 					endif; ?>
 				</div>
-				<?php /*
-				<div class="tags-mobile">
-					<?php $categories = get_terms(array('taxonomy' => 'excursions_tag_type', 'hide_empty' => false));
-					if ($categories) : ?>
-					<select>
+				<div class="tags-mobile d-block d-sm-none pt-3 mx-4 px-1">
+					<?php
+					if (!empty($tags)) : ?>
+					<select class="select-excursion-tag w-100 mt-3">
 						<option value="" disabled selected>Select tag</option>
-						<?php foreach ($categories as $category) : ?>
-						<option value="<?php echo get_term_link($category->term_id); ?>"><?php echo $category->name; ?></option>
+						<?php foreach ($tags as $tag) : ?>
+						<option value="<?php echo get_term_link($tag->term_id); ?>"><?php echo $tag->name; ?></option>
 						<?php endforeach; ?>
 					</select>
 					<?php endif; ?>
-				</div> */ ?>
+				</div>
 			<?php
 			endif; ?>
 			<div class="single-wrapper no-pad row">
@@ -98,7 +98,7 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 							$chunked_excursions = array_chunk($excursions_query->posts, 3);
 
 							foreach($chunked_excursions as $chunked_excursion):
-								tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $chunked_excursion, 'excursion_page' => $excursion_page));
+								tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $chunked_excursion, 'excursion_page' => $excursion_page, 'custom_category' => 'excursions_category_type'));
 							endforeach; ?>
 						<?php
 						else: ?>

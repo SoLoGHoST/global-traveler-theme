@@ -28,6 +28,14 @@ jQuery(document).ready(function($) {
 		});
 	}
 
+	$('select.select-excursion-tag').on('change', function(e) {
+		e.preventDefault();
+		var $this = $(this);
+
+		if ($this.val() !== '')
+			document.location.href = $this.val();
+	});
+
 	if ($('.posts-slider').length) {
 		$('.posts-slider').slick({
 			autoplay: false,

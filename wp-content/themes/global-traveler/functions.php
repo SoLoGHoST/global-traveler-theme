@@ -884,7 +884,13 @@ function get_primary_category($primary_category, $post_id, $category_slug)
 				// Default to first category (not Yoast) if an error is returned
 				$primary_category['id'] = $category[0]->term_id;
 				$primary_category['title'] = $category[0]->name;
-				$primary_category['link'] = $category_slug == 'category' ? get_category_link($category[0]->term_id) : get_term_link($category[0]->term_id);
+
+				if ($category_slug == 'excursions_category_type') {
+					$excursions_page = get_page_by_path($category[0]->slug);
+					$primary_category['link'] = get_the_permalink($excursions_page);
+				} else {
+					$primary_category['link'] = $category_slug == 'category' ? get_category_link($category[0]->term_id) : get_term_link($category[0]->term_id);
+				}
 				$primary_category['slug'] = $category[0]->slug;
 
 			} else { 
@@ -898,7 +904,14 @@ function get_primary_category($primary_category, $post_id, $category_slug)
 			// Default, display the first category in WP's list of assigned categories
 			$primary_category['id'] = $category[0]->term_id;
 			$primary_category['title'] = $category[0]->name;
-			$primary_category['link'] = $category_slug == 'category' ? get_category_link($category[0]->term_id) : get_term_link($category[0]->term_id);
+			if ($category_slug == 'excursions_category_type') {
+				$excursions_page = get_page_by_path($category[0]->slug);
+
+				// error_log(var_export($excursions_page, true));
+				$primary_category['link'] = get_the_permalink($excursions_page);
+			} else {
+				$primary_category['link'] = $category_slug == 'category' ? get_category_link($category[0]->term_id) : get_term_link($category[0]->term_id);
+			}
 			$primary_category['slug'] = $category[0]->slug;
 		}
 	}
