@@ -741,7 +741,7 @@ $social-color: $global-gray;
 			&.active, &:active {
 				border: 0;
 				outline: 0;
-				background-color: $red;
+				background-color: darken($red, 15%);
 				color: $white;
 				@include box-shadow(none);
 				&:focus {
@@ -1518,7 +1518,7 @@ h5 {
 #main-content {
 	.hero-header {
 		.hero-body {
-			.post-wrapper, .page-wrapper {
+			.post-wrapper, .page-wrapper, .tag-wrapper {
 				.overlay {
 					p {
 						margin-bottom: .25rem;
@@ -1563,7 +1563,7 @@ h5 {
 					}
 				}
 			}
-			.page-wrapper {
+			.page-wrapper, .tag-wrapper {
 				@include translateY(-50%);
 			}
 		}
@@ -1703,6 +1703,17 @@ body {
 			}
 		}
 		&.page-template-default {
+			#main-content {
+				.hero-header {
+					.hero-body {
+						min-height: 340px;
+					}
+				}
+			}
+		}
+	}
+	&.archive {
+		&.tax-excursions_tag_type {
 			#main-content {
 				.hero-header {
 					.hero-body {
@@ -1980,6 +1991,19 @@ body {
 		#content {
 			#posts-section {
 				margin-top: -6.5rem;
+			}
+		}
+	}
+	body {
+		&.archive {
+			&.tax-excursions_tag_type {
+				#main-content {
+					#content {
+						#posts-section {
+							margin-top: -6.5rem;
+						}
+					}
+				}
 			}
 		}
 	}

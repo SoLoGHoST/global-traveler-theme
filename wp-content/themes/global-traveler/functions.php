@@ -1524,14 +1524,29 @@ add_action('pre_get_posts', 'trazee_pre_get_posts', 10, 1);
 
 function trazee_pre_get_posts($query)
 {
+	global $global_site;
+
 	if (is_admin())
 		return $query;
+
+	if (empty($global_site))
+		$global_site = apply_filters('get_global_site', 'trazeetravel');
 
 	if ($query->is_search() && $query->is_main_query())
 	{
 		$query->set('posts_per_page', 11);
 		$query->set('orderby', 'date');
 		$query->set('post_status', 'publish');
+	}
+
+	if ($global_site == 'globalusa') {
+		if ($query->is_tax() && $query->is_tax('excursions_tag_type') && $query->is_main_query())
+		{
+			$query->set('posts_per_page', -1);
+			$query->set('orderby', 'date');
+			$query->set('order', 'desc');
+			$query->set('post_status', 'publish');
+		}
 	}
 
 	return $query;

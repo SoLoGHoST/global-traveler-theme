@@ -222,7 +222,30 @@ if (!empty($type)): ?>
 			/*
 			<pre style="min-height: 500px; width: 100%; overflow-y: auto;"><?php echo var_dump($slider_posts); ?></pre>
 			*/ ?>
+		<?php
+		elseif ($type == 'tag'):
+			$image_caption = !empty($tag_image) && !empty($tag_image['caption']) ? $tag_image['caption'] : '';
+			$post_image = !empty($tag_image) && !empty($tag_image['url']) ? $tag_image['url'] : ''; ?>
 
+			<div class="hero-body fx-excursions-hero" style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(<?php echo $post_image; ?>) no-repeat center center; background-size: cover;">
+				<div class="container-fluid tag-wrapper">
+					<div class="overlay">
+						<div class="excursion-hero-wrapper">
+							<img src="<?php echo apply_filters('get_global_site_directory_path_uri', '', 'images', 'fx_excursions.png'); ?>" alt="FX Excursions" class="fx-img" />
+							<h3 class="title post">
+								<span><span class="text"><?php single_term_title(); ?></span></span>
+							</h3>
+						</div>
+						<?php 
+						if (!empty($image_caption)): ?>
+						<div class="caption-post px-4">
+							<?php echo apply_filters('the_content', $image_caption); ?>
+						</div>
+						<?php 
+						endif; ?>
+					</div>
+				</div>
+			</div>
 		<?php 
 		elseif ($type == 'hometakeover'):
 			if(function_exists('the_ad_placement') && placement_has_ads('takeover-ad')): ?>

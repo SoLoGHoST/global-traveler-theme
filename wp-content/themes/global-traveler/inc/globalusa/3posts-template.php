@@ -9,7 +9,7 @@
 if (!empty($post_data)):
 
 	$post_list_classes = !empty($excursion_page) ? ' col-24' : ' col-24 offset-sm-1 col-sm-22 offset-md-1 col-md-22 offset-lg-2 col-lg-20';
-	$post_wide_classes = !empty($excursion_page) ? ' align-items-center py-sm-3 mt-sm-5 px-3 px-sm-2 mb-5 mb-sm-0' : ' align-items-center mx-sm-4 py-sm-3 mt-sm-5 px-3 px-sm-2 mb-5 mb-sm-0'; ?>
+	$post_wide_classes = !empty($excursion_page) ? ' align-items-center py-sm-3 px-3 px-sm-2 mb-5 mb-sm-0' : ' align-items-center mx-sm-4 py-sm-3 mt-sm-5 px-3 px-sm-2 mb-5 mb-sm-0'; ?>
 <div class="post-list<?php echo $post_list_classes; ?>">
 	<?php foreach($post_data as $data):
 

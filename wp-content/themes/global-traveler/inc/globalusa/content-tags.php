@@ -2,12 +2,11 @@
 
 defined('ABSPATH') || exit;
 
-global $post, $page_id, $global_site, $wpdb; 
+// content-tags.php
+// description:  shows the body copy for tag pages of excursions currently...
+// variable included = $term (the tag object)
 
-$hero_type = get_field('hero_type');
-
-$post_id = $post->ID;
-$excluded_categories = array();
+global $post, $page_id, $global_site, $wpdb;
 
 $posts_group_id = $wpdb->get_var('SELECT term_id FROM ' . $wpdb->terms . ' WHERE name = "Single Post Group" OR slug = "single-post-group" LIMIT 1');
 
@@ -19,59 +18,37 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 
 <div id="content">
 	<div class="container-fluid no-pad">
-		<div id="posts-section" class="section content<?php echo !empty($hero_type) && $hero_type == 'alternative' ? ' my-0' : ''; ?>">
-			<?php
-			if (!empty($excursion_page)): ?>
-				<div class="tags py-3 col-22 offset-1">
-					<?php $categories = get_terms(array('taxonomy' => 'excursions_tag_type', 'hide_empty' => false));
-					if ($categories) : ?>
-					<ul class="list-inline text-center">
-						<?php foreach ($categories as $category) : ?>
-						<li class="list-inline-item p-2">
-							<a href="<?php echo get_term_link($category->term_id); ?>" class="btn btn-primary"><?php echo $category->name; ?></a>
-						</li>
-						<?php endforeach; ?>
-					</ul>
-					<?php
-					endif; ?>
-				</div>
-				<?php /*
-				<div class="tags-mobile">
-					<?php $categories = get_terms(array('taxonomy' => 'excursions_tag_type', 'hide_empty' => false));
-					if ($categories) : ?>
-					<select>
-						<option value="" disabled selected>Select tag</option>
-						<?php foreach ($categories as $category) : ?>
-						<option value="<?php echo get_term_link($category->term_id); ?>"><?php echo $category->name; ?></option>
-						<?php endforeach; ?>
-					</select>
-					<?php endif; ?>
-				</div> */ ?>
-			<?php
-			endif; ?>
+		<div id="posts-section" class="section content">
+			<div class="tags d-none d-sm-block py-3 col-22 offset-1">
+				<?php 
+				$tags = get_terms(array('taxonomy' => 'excursions_tag_type', 'hide_empty' => false));
+				if (!empty($tags)) : ?>
+				<ul class="list-inline text-center">
+					<?php 
+					foreach ($tags as $tag) : ?>
+					<li class="list-inline-item p-2">
+						<a href="<?php echo get_term_link($tag->term_id); ?>" class="btn btn-primary<?php echo $term->term_id == $tag->term_id ? ' active' : ''; ?>"><?php echo $tag->name; ?></a>
+					</li>
+					<?php 
+					endforeach; ?>
+				</ul>
+				<?php
+				endif; ?>
+			</div>
+			<div class="tags-mobile d-block d-sm-none">
+				<?php $tags = get_terms(array('taxonomy' => 'excursions_tag_type', 'hide_empty' => false));
+				if (!empty($tags)) : ?>
+				<select class="select-excursion-tag">
+					<option value="" disabled selected>Select tag</option>
+					<?php foreach ($tags as $tag) : ?>
+					<option value="<?php echo get_term_link($tag->term_id); ?>" <?php selected($term->term_id, $tag->term_id); ?>><?php echo $tag->name; ?></option>
+					<?php endforeach; ?>
+				</select>
+				<?php endif; ?>
+			</div>
 			<div class="single-wrapper no-pad row">
 				<div id="body-content" class="col-22 offset-1 col-sm-17 offset-sm-0 py-2<?php echo !empty($excursion_page) ? ' my-sm-4' : ' my-sm-5'; ?> px-3 px-md-5">
-					<?php
-					if (!empty($hero_type) && $hero_type == 'alternative'): 
-						$author_name = get_field('post_author', $post_id);
-						$date = get_the_date('M j, Y', $post_id); ?>
-						<h1 class="title my-3">
-						  <span><span class="text"><?php echo get_the_title($post_id); ?></span></span>
-						</h1>
-						<?php if (!empty($author_name)): ?>
-						<p>by <?php echo $author_name; ?></p>
-						<?php endif; ?>
-						<span class="date mb-5"><?php echo $date; ?></span>
-					<?php
-					endif; ?>
-					<?php 
-					if (!empty($excursion_page)): ?>
-					<h3 class="mb-4"><?php echo apply_filters('the_title', 'FX Excursions: ' . $excursion_page['title']); ?></h3>
-					<?php
-					endif;
-					the_content(); ?>
-					<?php
-					if (!empty($excursion_page)): ?>
+					<h3 class="mb-4"><?php single_term_title('FX Excursions: '); ?></h3>
 					<div id="excursions-wrapper" class="row">
 						<?php
 						// Get all excursions for the current category to be outputted, no need for pagination here... 
@@ -83,9 +60,9 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 						    'posts_per_page' => -1,
 						    'tax_query' => array(
 						        array(
-						            'taxonomy' => 'excursions_category_type',
-						            'field' => 'slug',
-						            'terms' => $excursion_page['slug'] // the page slug matches the category slug, AWESOME!
+						            'taxonomy' => 'excursions_tag_type',
+						            'field' => 'id',
+						            'terms' => $term->term_id
 						        )
 						    )
 						);
@@ -98,33 +75,27 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 							$chunked_excursions = array_chunk($excursions_query->posts, 3);
 
 							foreach($chunked_excursions as $chunked_excursion):
-								tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $chunked_excursion, 'excursion_page' => $excursion_page));
+								tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $chunked_excursion, 'excursion_page' => true));
 							endforeach; ?>
 						<?php
 						else: ?>
-						<p>Sorry, No Excursions exist.</p>
+						<p>Sorry, No Excursions for <?php echo $term->name; ?> exist.</p>
 						<?php
 						endif; ?>
 					</div>
-					<?php
-					endif; ?>
 				</div>
-				<div class="sidebar col-22 offset-1 col-sm-7 offset-sm-0 py-2<?php echo !empty($excursion_page) ? ' my-sm-4' : ' my-sm-5'; ?> order-first order-sm-last">
+				<div class="sidebar col-22 offset-1 col-sm-7 offset-sm-0 py-2 my-sm-4 order-first order-sm-last">
 					<div class="ad px-md-5 py-3 d-none d-sm-flex justify-content-center">
 						<?php 
 						if (!empty($the_ad)):
 							echo $the_ad;
 						endif; ?>
 					</div>
-					<?php
-					if ($global_site == 'globalusa'): ?>
 					<div class="newsletter px-md-5 pt-3 d-sm-flex justify-content-center">
-						<?php echo do_shortcode('[gravityform id=15 title=true description=true ajax=true]'); ?>
+						<?php
+							echo do_shortcode('[gravityform id=15 title=true description=true ajax=true]'); ?>
 					</div>
-					<?php
-					endif; ?>
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -158,7 +129,6 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 		}
 	}
 
-	$has_more = false;
 	$ordered_array = array();
 	$posts_per_page = 6;
 	$args = array(
@@ -169,18 +139,8 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 		'posts_per_page' => ($posts_per_page - $total_sponsored)
 	);
 
-	if (!empty($excluded_categories))
-		$args = array_merge($args, array('category__not_in' => $excluded_categories));
-	else
-		$args = array_merge($args, array('post__not_in' => array($post_id)));
-
 	if (!empty($sponsored_ids))
-	{
-		if (!empty($args['post__not_in']))
-			$args['post__not_in'] = array_merge($args['post__not_in'], $sponsored_ids);
-		else
-			$args['post__not_in'] = $sponsored_ids;
-	}
+		$args['post__not_in'] = $sponsored_ids;
 
 	$the_query = new WP_Query($args);
 
@@ -212,5 +172,7 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 	tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['last_set']));
 	$initial_posts[] = ob_get_clean();
 
-	tif_get_template('inc/' . $global_site . '/base-template.php', array('global_site' => $global_site, 'excluded_categories' => $excluded_categories, 'wrapper_start' => array('<div class="container-fluid mt-5 pt-5 px-0">', '<div class="section content">'), 'wrapper_end' => array('</div>', '</div>'), 'offset' => ($posts_per_page - $total_sponsored), 'sponsors_shown' => $exclude_sponsored_ids, 'initial_posts' => $initial_posts)); ?>
+	tif_get_template('inc/' . $global_site . '/base-template.php', array('global_site' => $global_site, 'wrapper_start' => array('<div class="container-fluid mt-5 pt-5 px-0">', '<div class="section content">'), 'wrapper_end' => array('</div>', '</div>'), 'offset' => ($posts_per_page - $total_sponsored), 'sponsors_shown' => $exclude_sponsored_ids, 'initial_posts' => $initial_posts)); ?>
 </div>
+
+
