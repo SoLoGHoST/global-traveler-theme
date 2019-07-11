@@ -131,7 +131,7 @@ if (!empty($second_query->posts)) {
 		</div>
 	</div>
 	<?php
-	tif_get_template('inc/' . $global_site . '/fx-excursions.php'); 
+	tif_get_template('inc/' . $global_site . '/fx-excursions-cta.php');
 	tif_get_template('inc/instagram-feed.php', array()); 
 
 

@@ -13,6 +13,143 @@ global $instagram_access_token, $all_sites, $global_site;
 
 // https://www.instagram.com/oauth/authorize/?client_id=[Client ID]&redirect_uri=[Redirect URI]&response_type=token&scope=public_content
 
+
+function globalusa_add_local_field_groups()
+{
+	global $global_site;
+
+	// These only get added for the GLOBAL USA Site, so it won't show in ACF anywhere...
+
+	if (empty($global_site))
+		$global_site = apply_filters('get_global_site', 'trazeetravel');
+
+	if ($global_site == 'globalusa')
+	{
+		if(function_exists('acf_add_local_field_group'))
+		{
+			acf_add_local_field_group(array(
+				'key' => 'group_5d274abe98491',
+				'title' => 'Excursions Tag Setup',
+				'fields' => array(
+					array(
+						'key' => 'field_5d274ac74870b',
+						'label' => 'Featured Image',
+						'name' => 'tag_featured_image',
+						'type' => 'image',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'return_format' => 'array',
+						'preview_size' => 'thumbnail',
+						'library' => 'all',
+						'min_width' => '',
+						'min_height' => '',
+						'min_size' => '',
+						'max_width' => '',
+						'max_height' => '',
+						'max_size' => '',
+						'mime_types' => '',
+					),
+				),
+				'location' => array(
+					array(
+						array(
+							'param' => 'taxonomy',
+							'operator' => '==',
+							'value' => 'excursions_tag_type',
+						),
+					),
+				),
+				'menu_order' => 0,
+				'position' => 'side',
+				'style' => 'default',
+				'label_placement' => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen' => '',
+				'active' => true,
+				'description' => '',
+			));
+
+			acf_add_local_field_group(array(
+				'key' => 'group_5d1a5c8a4df3f',
+				'title' => 'FX Excursions Setup',
+				'fields' => array(
+					array(
+						'key' => 'field_5d1a5c9960b7e',
+						'label' => 'FX Landing Header Blurb',
+						'name' => 'fx_landing_header_blurb',
+						'type' => 'textarea',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'maxlength' => '',
+						'rows' => '',
+						'new_lines' => '',
+					),
+					array(
+						'key' => 'field_5d1a5d4c60b7f',
+						'label' => 'FX Landing Child Pages',
+						'name' => 'fx_landing_child_pages',
+						'type' => 'relationship',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'post_type' => array(
+							0 => 'page',
+						),
+						'taxonomy' => '',
+						'filters' => array(
+							0 => 'search',
+						),
+						'elements' => array(
+							0 => 'featured_image',
+						),
+						'min' => '',
+						'max' => 3,
+						'return_format' => 'object',
+					),
+				),
+				'location' => array(
+					array(
+						array(
+							'param' => 'options_page',
+							'operator' => '==',
+							'value' => 'acf-options',
+						),
+					),
+				),
+				'menu_order' => 0,
+				'position' => 'normal',
+				'style' => 'default',
+				'label_placement' => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen' => '',
+				'active' => true,
+				'description' => '',
+			));
+		}
+	}
+}
+
+add_action('acf/init', 'globalusa_add_local_field_groups');
+
 $instagram_access_token = array(
 	'trazeetravel' => '1317793634.c13f70a.408e1346c2c040c397f3220294721747',
 	'whereverfamily' => '5717731839.3a1c106.11d5eb7c72394b7995cd9e1faa516865',

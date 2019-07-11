@@ -32,7 +32,8 @@ if ($global_site == 'globalusa') {
 			if ($excursion_landing_page->ID == $post->ID) {
 				$excursion_page = array(
 					'id' => $excursion_landing_page->ID,
-					'slug' => $excursion_landing_page->post_name
+					'slug' => $excursion_landing_page->post_name,
+					'title' => $excursion_landing_page->post_title
 				);
 				break;
 			}

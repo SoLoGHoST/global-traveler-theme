@@ -64,7 +64,50 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 						<span class="date mb-5"><?php echo $date; ?></span>
 					<?php
 					endif; ?>
-					<?php the_content(); ?>
+					<?php 
+					if (!empty($excursion_page)): ?>
+					<h3 class="mb-4"><?php echo apply_filters('the_title', 'FX Excursions - ' . $excursion_page['title']); ?></h3>
+					<?php
+					endif;
+					the_content(); ?>
+					<?php
+					if (!empty($excursion_page)): ?>
+					<div id="excursions-wrapper" class="row">
+						<?php
+						// Get all excursions for the current category to be outputted, no need for pagination here... 
+						$excursion_args = array(
+						    'post_type' => 'excursions',
+						    'orderby' => 'date',
+						    'order' => 'desc', // not sure how we want these outputted, descending order by date is what we have here
+							'post_status' => 'publish',
+						    'posts_per_page' => -1,
+						    'tax_query' => array(
+						        array(
+						            'taxonomy' => 'excursions_category_type',
+						            'field' => 'slug',
+						            'terms' => $excursion_page['slug'] // the page slug matches the category slug, AWESOME!
+						        )
+						    )
+						);
+
+						$excursions_query = new WP_Query($excursion_args); 
+
+						if (!empty($excursions_query->posts)): ?>
+
+						<?php
+							$chunked_excursions = array_chunk($excursions_query->posts, 3);
+
+							foreach($chunked_excursions as $chunked_excursion):
+								tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $chunked_excursion, 'excursion_page' => $excursion_page));
+							endforeach; ?>
+						<?php
+						else: ?>
+						<p>Sorry, No Excursions exist.</p>
+						<?php
+						endif; ?>
+					</div>
+					<?php
+					endif; ?>
 				</div>
 				<div class="sidebar col-22 offset-1 col-sm-7 offset-sm-0 py-2<?php echo !empty($excursion_page) ? ' my-sm-4' : ' my-sm-5'; ?> order-first order-sm-last">
 					<div class="ad px-md-5 py-3 d-none d-sm-flex justify-content-center">

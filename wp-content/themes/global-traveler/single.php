@@ -306,7 +306,7 @@ if (!empty($posts_to_get) || !empty($related_posts)):
 	<?php 
 	endif;
 	if ($global_site == 'globalusa'):
-		tif_get_template('inc/' . $global_site . '/fx-excursions.php');
+		tif_get_template('inc/' . $global_site . '/fx-excursions-cta.php');
 	endif;
 
 	tif_get_template('inc/instagram-feed.php', array());
