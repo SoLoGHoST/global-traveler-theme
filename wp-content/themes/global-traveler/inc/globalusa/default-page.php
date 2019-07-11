@@ -136,6 +136,10 @@ if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads(
 
 			// remove empty values from the array...
 			$cta = array_filter($cta);
+
+			if (!empty($excursion_page))
+				$cta['wrapper_classes'] = 'pb-5';
+
 			if (!empty($cta)):
 				tif_get_template('inc/' . $global_site . '/call-to-action.php', $cta);
 			endif; ?>
