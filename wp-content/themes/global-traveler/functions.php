@@ -635,7 +635,11 @@ $all_sites = array(
 			'width' => 175,
 			'height' => 55
 		),
-		'url' => 'https://global-traveler-cp.local'
+		'url' => 'https://global-traveler-cp.local',
+		'api_keys' => array(
+			'map' => 'AIzaSyB-2O1yhYU5IX51hplCHmyaNs2jO1-d1sE'
+			// 'map' => 'AIzaSyCnyO53wzqf_VMbByvqVBhbbCOBs7p-9oA'
+		)
 	),
 	'trazeetravel' => array(
 		'title' => __('Trazee Travel', 'tif_global'),
@@ -651,7 +655,8 @@ $all_sites = array(
 			'width' => 208,
 			'height' => 38
 		),
-		'url' => 'https://trazee-travel-cp.local'
+		'url' => 'https://trazee-travel-cp.local',
+		'api_keys' => array()
 	),
 	'whereverfamily' => array(
 		'title' => __('WhereverFamily', 'tif_global'),
@@ -667,7 +672,8 @@ $all_sites = array(
 			'width' => 300,
 			'height' => 26
 		),
-		'url' => 'https://wherever-family.local'
+		'url' => 'https://wherever-family.local',
+		'api_keys' => array()
 	)
 );
 
@@ -748,7 +754,7 @@ add_action('customize_register', 'global_traveler_customize_register');
 //------------------------------------------------//
 function tif_scripts() {
 
-	global $post, $home_video, $global_site;
+	global $post, $home_video, $global_site, $all_sites;
 
 	$dependants = array();
 
@@ -761,6 +767,12 @@ function tif_scripts() {
     wp_register_script('tif-video-script', get_stylesheet_directory_uri() . '/js/tif-video.js', array('jquery'), '0.0.3');
     wp_register_script('script-slick-slider', get_stylesheet_directory_uri() . '/js/slick.min.js', array('jquery'), '1.8.0');
 
+    if (!empty($all_sites[$global_site]['api_keys']) && !empty($all_sites[$global_site]['api_keys']['map']))
+		wp_register_script('map-script', '//maps.googleapis.com/maps/api/js?key=' . $all_sites[$global_site]['api_keys']['map']);
+
+	if ($global_site == 'globalusa' && is_singular('excursions'))
+		$dependants[] = 'map-script';
+
     if (!empty($global_site) && $global_site == 'globalusa' && is_front_page())
 		$dependants[] = 'script-slick-slider';
 
@@ -770,7 +782,7 @@ function tif_scripts() {
     if (!empty($post) && is_object($post))
     	$hero_type = get_field('hero_type', $post->ID);
 
-    if (($global_site == 'globalusa' && is_page()) || is_post_type_archive('post') || is_search() || (is_singular() && $post->post_type == 'post') || is_category() || is_author() || (!empty($post) && is_object($post) && ((is_page() && is_front_page()) || ($post->post_type == 'post' && is_tag()))))
+    if (($global_site == 'globalusa' && is_page()) || is_post_type_archive('post') || is_search() || is_singular(array('post', 'excursions')) || is_category() || is_author() || (!empty($post) && is_object($post) && ((is_page() && is_front_page()) || ($post->post_type == 'post' && is_tag()))))
 	{
 		$dependants[] = 'ajax-scroll-script';
 		$haspostinhero = is_front_page() || (!empty($hero_type) && $hero_type == 'home');
@@ -2171,16 +2183,18 @@ function the_excerpt_max_charlength($post_id, $charlength) {
 
 function tif_global_acf_google_map_api($api)
 {
-	global $global_site;
+	global $global_site, $all_sites;
 
 	if (empty($global_site))
 		$global_site = apply_filters('get_global_site', 'trazeetravel');
 
 	// set the map key for googlemaps for each site (currently only have 1 site that has a map key)
-	if ($global_site == 'globalusa')
-		$api['key'] = 'AIzaSyCnyO53wzqf_VMbByvqVBhbbCOBs7p-9oA';
+	if (!empty($all_sites[$global_site]['api_keys']) && !empty($all_sites[$global_site]['api_keys']['map']))
+		$api['key'] = $all_sites[$global_site]['api_keys']['map'];
 
 	return $api;
 }
 
-add_filter('acf/fields/google_map/api', 'tif_global_acf_google_map_api'); ?>
+add_filter('acf/fields/google_map/api', 'tif_global_acf_google_map_api');
+
+?>

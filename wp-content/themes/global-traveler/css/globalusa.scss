@@ -709,6 +709,10 @@ $social-color: $global-gray;
 	border: 5px solid $blue;
 }
 
+%btn-large {
+	padding: 1.8rem 6rem;
+}
+
 %btn {
 	@extend %button-text;
 	@include border-radius(0);
@@ -754,6 +758,9 @@ $social-color: $global-gray;
 			}
 		}
 	}
+	&.btn-large {
+		@extend %btn-large;
+	}
 }
 
 
@@ -763,6 +770,10 @@ $social-color: $global-gray;
 
 p {
 	@extend %default-p;
+}
+
+hr {
+	border-top: 1px solid $border-gray;
 }
 
 h1 {
@@ -1489,6 +1500,12 @@ h5 {
 			#body-content {
 				a {
 					color: $blue;
+					&.btn {
+						@extend %btn;
+						&.btn-primary {
+							@extend %btn-primary;
+						}
+					}
 				}
 			}
 		}
@@ -1664,6 +1681,7 @@ h5 {
 }
 
 body {
+	color: $default; // Should probably place this in the style.scss, but in here for now!
 	&.search {
 		#main-content {
 			.hero-header {
@@ -1730,6 +1748,61 @@ body {
 					min-height: 340px;
 					.post-wrapper {
 						@include translateY(-50%);
+					}
+				}
+			}
+			#content {
+				#posts-section {
+					#body-content {
+						> * {
+							&:first-child {
+								margin-bottom: .5rem;
+								margin-top: -.5rem;
+							}
+						}
+						p {
+							&.excursion-details {
+								@extend %font-regular;
+								color: $blue;
+							}
+						}
+						.cta {
+							padding: 1.5rem 0;
+							border-top: 5px solid $blue;
+						}
+						.excursions-single-content {
+							p, ul, li {
+								@extend %default-p;
+							}
+						}
+						.day-list {
+							width: 100%;
+							.day-item {
+								overflow-x: hidden;
+								.images {
+									.image-half {
+										.image {
+											height: 430px;
+											background-position: center center;
+											background-repeat: no-repeat;
+											background-size: cover;
+										}
+										span {
+											@extend %tagline;
+											color: $global-gray;
+											text-transform: uppercase;
+										}
+									}
+									.gmap-half {
+										.acf-map {
+											position: relative;
+											overflow: hidden;
+											height: 430px;
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 			}
