@@ -44,6 +44,6 @@ if ($global_site == 'globalusa') {
 	}
 }
 
-tif_get_template('inc/' . $global_site . '/heroes.php', array('main_post' => $post, 'type' => $hero_type, 'excursion_landing_pages' => $excursion_landing_pages, 'excursion_page' => $excursion_page));
+tif_get_template('inc/' . $global_site . '/heroes.php', array('main_post' => $post, 'type' => !empty($hero_type) ? $hero_type : 'post', 'excursion_landing_pages' => $excursion_landing_pages, 'excursion_page' => $excursion_page));
 tif_get_template('inc/' . $global_site . '/default-page.php', array('excursion_landing_pages' => $excursion_landing_pages, 'excursion_page' => $excursion_page));
 get_footer();
