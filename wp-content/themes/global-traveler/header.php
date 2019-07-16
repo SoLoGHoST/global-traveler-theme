@@ -84,7 +84,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	$site_links[] = array(
 		'class' => array('external-link', 'd-none', 'd-sm-inline-block'),
-		'href' => 'http://www.globaltravelerusa.com/fx-excursions/',
+		'href' => $all_sites['globalusa']['url'] . '/fx-excursions/itineraries/',
 		'target' => '_blank',
 		'title' => __('FX Excursions')
 	);
