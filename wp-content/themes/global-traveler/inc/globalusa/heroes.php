@@ -182,18 +182,23 @@ if (!empty($type)): ?>
 					<div class="slide-item">
 						<style>
 							.slider-image-hover-<?php echo $index; ?> .image {
+
 								background: linear-gradient(to bottom, rgba(56, 56, 56, 0.3) 100%, rgba(56, 56, 56, 0.3) 100%), url('<?php echo $post_image[0]; ?>') no-repeat center center !important;
 								background-size: cover !important;
 								background-position: 50% 50% !important;
+								/*
 								width: 100% !important;
 								height: 100vh !important;
+								*/
 								background-repeat: no-repeat !important;
 								-webkit-opacity: 	0.8;
 								-moz-opacity: 		0.8;
 								opacity: 		0.8;
 								filter: alpha(opacity=80) progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+								/*
 								-webkit-transform: perspective(1000px) !important;
 								transform: perspective(1000px) !important;
+								*/
 							}
 						</style>
 						<div class="image"<?php echo !empty($post_image[0]) ?' style="background: linear-gradient(to bottom, rgba(56, 56, 56, 0.5) 100%, rgba(56, 56, 56, 0.5) 100%), url(' . $post_image[0] . ') no-repeat center center; background-size: cover; -webkit-backface-visibility: hidden; backface-visibility: hidden;"' : ''; ?>>

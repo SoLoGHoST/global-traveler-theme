@@ -608,6 +608,57 @@ function globalusa_add_local_field_groups()
 				'active' => true,
 				'description' => '',
 			));
+
+			acf_add_local_field_group(array(
+				'key' => 'group_5d13b9c123f0f',
+				'title' => 'Slider Settings',
+				'fields' => array(
+					array(
+						'key' => 'field_5d13b9e70db54',
+						'label' => 'Select Posts',
+						'name' => 'slider_posts',
+						'type' => 'relationship',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'post_type' => array(
+							0 => 'post',
+						),
+						'taxonomy' => '',
+						'filters' => array(
+							0 => 'search',
+						),
+						'elements' => array(
+							0 => 'featured_image',
+						),
+						'min' => 1,
+						'max' => '',
+						'return_format' => 'object',
+					),
+				),
+				'location' => array(
+					array(
+						array(
+							'param' => 'page_type',
+							'operator' => '==',
+							'value' => 'front_page',
+						),
+					),
+				),
+				'menu_order' => 0,
+				'position' => 'normal',
+				'style' => 'default',
+				'label_placement' => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen' => '',
+				'active' => true,
+				'description' => '',
+			));
 		}
 	}
 }
@@ -635,7 +686,8 @@ $all_sites = array(
 			'width' => 175,
 			'height' => 55
 		),
-		'url' => 'https://global-traveler-cp.local',
+		'url' => 'http://global-cp.flywheelstaging.com',
+		// 'url' => 'https://global-traveler-cp.local',
 		'api_keys' => array(
 			'map' => 'AIzaSyB-2O1yhYU5IX51hplCHmyaNs2jO1-d1sE'
 			// 'map' => 'AIzaSyCnyO53wzqf_VMbByvqVBhbbCOBs7p-9oA'
@@ -655,7 +707,8 @@ $all_sites = array(
 			'width' => 208,
 			'height' => 38
 		),
-		'url' => 'https://trazee-travel-cp.local',
+		'url' => 'http://trazeetravel.flywheelstaging.com',
+		// 'url' => 'https://trazee-travel-cp.local',
 		'api_keys' => array()
 	),
 	'whereverfamily' => array(
@@ -672,7 +725,8 @@ $all_sites = array(
 			'width' => 300,
 			'height' => 26
 		),
-		'url' => 'https://wherever-family.local',
+		'url' => 'http://staging.wherever-family.flywheelsites.com',
+		// 'url' => 'https://wherever-family.local',
 		'api_keys' => array()
 	)
 );
