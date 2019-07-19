@@ -13,10 +13,12 @@ if (empty($global_site))
 	$global_site = apply_filters('get_global_site', $global_site);
 
 $posts_group_id = $wpdb->get_var('SELECT term_id FROM ' . $wpdb->terms . ' WHERE name = "Single Post Group" OR slug = "single-post-group" LIMIT 1');
+$posts_group_id2 = $wpdb->get_var('SELECT term_id FROM ' . $wpdb->terms . ' WHERE name = "Single Post Group 2" OR slug = "single-post-group-2" LIMIT 1');
 
-
-if (!empty($posts_group_id) && function_exists('get_ad_group') && group_has_ads($posts_group_id))
-	$the_ad = get_ad_group((int) $posts_group_id);
+if (function_exists('get_ad_group')) {
+	$the_ad = !empty($posts_group_id) && group_has_ads($posts_group_id) ? get_ad_group((int) $posts_group_id) : '';
+	$the_ad2 = !empty($posts_group_id2) && group_has_ads($posts_group_id2) ? get_ad_group((int) $posts_group_id2) : '';
+}
 
 if (have_posts()): 
 	while (have_posts()): the_post();
@@ -118,18 +120,24 @@ $excluded_categories = array(); ?>
 						endforeach; ?>
 					</div>
 					<?php
-					endif; ?>
-
+					endif; 
+					if (!empty($the_ad)): ?>
 					<div class="ad px-sm-5 py-3 d-none d-sm-flex justify-content-center">
 						<?php 
-						if (!empty($the_ad)):
-							echo $the_ad;
-						endif; ?>
+						echo $the_ad; ?>
 					</div>
 					<?php
+					endif;
 					if ($global_site == 'globalusa'): ?>
 					<div class="newsletter px-sm-5 pt-3 d-sm-flex justify-content-center">
 						<?php echo do_shortcode('[gravityform id=15 title=true description=true ajax=true]'); ?>
+					</div>
+					<?php
+					endif;
+					if (!empty($the_ad2)): ?>
+					<div class="ad px-sm-5 py-3 d-none d-sm-flex justify-content-center">
+						<?php
+						echo $the_ad2; ?>
 					</div>
 					<?php
 					endif; ?>
