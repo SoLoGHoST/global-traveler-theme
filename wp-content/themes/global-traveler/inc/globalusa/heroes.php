@@ -43,7 +43,7 @@ if (!empty($type)): ?>
 			*/ ?>
 			
 			<div class="hero-body<?php echo !empty($excursion_page) ? ' fx-excursions-hero' : ''; ?>" style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(<?php echo $post_image; ?>) no-repeat center center; background-size: cover;">
-				<div class="container-fluid <?php echo is_page() ? 'page' : 'post'; ?>-wrapper">
+				<div class="container-fluid <?php echo is_page() || !empty($page) ? 'page' : 'post'; ?>-wrapper">
 					<div class="overlay">
 						<?php if (!empty($sponsored_post)): ?>
 						<h5 class="sponsored">
@@ -84,7 +84,7 @@ if (!empty($type)): ?>
 						<?php
 						endif; ?>
 						<?php 
-						if (!is_page() && empty($is_excursions_post)): ?>
+						if (!is_page() && empty($is_excursions_post) && empty($page)): ?>
 						<span class="date mb-5"><?php echo $date; ?></span>
 						<?php
 						endif; ?>
@@ -139,7 +139,7 @@ if (!empty($type)): ?>
 				$post_image = $post_image['url'];
 			} ?>
 		<div class="hero-body" style="background: url(<?php echo $post_image; ?>) no-repeat center center; background-size: cover;">
-			<div class="container-fluid <?php echo is_page() ? 'page' : 'post'; ?>-wrapper">
+			<div class="container-fluid <?php echo is_page() || !empty($page) ? 'page' : 'post'; ?>-wrapper">
 				<div class="overlay d-flex align-items-center justify-content-center">
 					<?php if (!empty($sponsored_post)): ?>
 					<h5 class="sponsored m-0">

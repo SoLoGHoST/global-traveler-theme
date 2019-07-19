@@ -12,7 +12,71 @@
 global $instagram_access_token, $all_sites, $global_site;
 
 // https://www.instagram.com/oauth/authorize/?client_id=[Client ID]&redirect_uri=[Redirect URI]&response_type=token&scope=public_content
+$instagram_access_token = array(
+	'trazeetravel' => '1317793634.c13f70a.408e1346c2c040c397f3220294721747',
+	'whereverfamily' => '5717731839.3a1c106.11d5eb7c72394b7995cd9e1faa516865',
+	'globaltravelermag' => '1166366416.436b131.30d4058113894d67b82585059ca34e6f'
+);
 
+$all_sites = array(
+	'globalusa' => array(
+		'title' => __('Global Traveler', 'tif_global'),
+		'search_placeholder' => __('Global Traveler', 'tif_global'),
+		'instagram_tag' => __('globility', 'tif_global'),
+		'logo' => array(
+			'image' => get_stylesheet_directory_uri() . '/images/globalusa-logo.svg',
+			'classes' => array(
+				'link' => 'default-top order-2',
+				'image' => '',
+				'button' => 'order-1',
+			), 
+			'width' => 175,
+			'height' => 55
+		),
+		'url' => 'http://global-cp.flywheelstaging.com',
+		// 'url' => 'https://global-traveler-cp.local',
+		'api_keys' => array(
+			'map' => 'AIzaSyB-2O1yhYU5IX51hplCHmyaNs2jO1-d1sE'
+			// 'map' => 'AIzaSyCnyO53wzqf_VMbByvqVBhbbCOBs7p-9oA'
+		)
+	),
+	'trazeetravel' => array(
+		'title' => __('Trazee Travel', 'tif_global'),
+		'search_placeholder' => __('Trazee', 'tif_global'),
+		'instagram_tag' => __('TrazeeTravel', 'tif_global'),
+		'logo' => array(
+			'image' => get_stylesheet_directory_uri() . '/images/trazee-logo.svg',
+			'classes' => array(
+				'link' => 'default-top order-2',
+				'image' => '',
+				'button' => 'order-1',
+			), 
+			'width' => 208,
+			'height' => 38
+		),
+		'url' => 'http://trazeetravel.flywheelstaging.com',
+		// 'url' => 'https://trazee-travel-cp.local',
+		'api_keys' => array()
+	),
+	'whereverfamily' => array(
+		'title' => __('WhereverFamily', 'tif_global'),
+		'search_placeholder' => __('WhereverFamily', 'tif_global'),
+		'instagram_tag' => __('WhereverFamily', 'tif_global'),
+		'logo' => array(
+			'image' => get_stylesheet_directory_uri() . '/images/wherever-logo.svg',
+			'classes' => array(
+				'link' => 'default-top order-2',
+				'image' => '',
+				'button' => 'order-1',
+			), 
+			'width' => 300,
+			'height' => 26
+		),
+		'url' => 'http://staging.wherever-family.flywheelsites.com',
+		// 'url' => 'https://wherever-family.local',
+		'api_keys' => array()
+	)
+);
 
 function globalusa_add_local_field_groups()
 {
@@ -659,77 +723,59 @@ function globalusa_add_local_field_groups()
 				'active' => true,
 				'description' => '',
 			));
+
+			acf_add_local_field_group(array(
+				'key' => 'group_5d3227666b54c',
+				'title' => 'VC Settings',
+				'fields' => array(
+					array(
+						'key' => 'field_5d32277918f6d',
+						'label' => 'Category ID',
+						'name' => 'vc_category_id',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+					),
+				),
+				'location' => array(
+					array(
+						array(
+							'param' => 'post_type',
+							'operator' => '==',
+							'value' => 'page',
+						),
+						array(
+							'param' => 'page_type',
+							'operator' => '!=',
+							'value' => 'front_page',
+						),
+					),
+				),
+				'menu_order' => 0,
+				'position' => 'side',
+				'style' => 'default',
+				'label_placement' => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen' => '',
+				'active' => true,
+				'description' => '',
+			));
 		}
 	}
 }
 
 add_action('acf/init', 'globalusa_add_local_field_groups');
-
-$instagram_access_token = array(
-	'trazeetravel' => '1317793634.c13f70a.408e1346c2c040c397f3220294721747',
-	'whereverfamily' => '5717731839.3a1c106.11d5eb7c72394b7995cd9e1faa516865',
-	'globaltravelermag' => '1166366416.436b131.30d4058113894d67b82585059ca34e6f'
-);
-
-$all_sites = array(
-	'globalusa' => array(
-		'title' => __('Global Traveler', 'tif_global'),
-		'search_placeholder' => __('Global Traveler', 'tif_global'),
-		'instagram_tag' => __('globility', 'tif_global'),
-		'logo' => array(
-			'image' => get_stylesheet_directory_uri() . '/images/globalusa-logo.svg',
-			'classes' => array(
-				'link' => 'default-top order-2',
-				'image' => '',
-				'button' => 'order-1',
-			), 
-			'width' => 175,
-			'height' => 55
-		),
-		'url' => 'http://global-cp.flywheelstaging.com',
-		// 'url' => 'https://global-traveler-cp.local',
-		'api_keys' => array(
-			'map' => 'AIzaSyB-2O1yhYU5IX51hplCHmyaNs2jO1-d1sE'
-			// 'map' => 'AIzaSyCnyO53wzqf_VMbByvqVBhbbCOBs7p-9oA'
-		)
-	),
-	'trazeetravel' => array(
-		'title' => __('Trazee Travel', 'tif_global'),
-		'search_placeholder' => __('Trazee', 'tif_global'),
-		'instagram_tag' => __('TrazeeTravel', 'tif_global'),
-		'logo' => array(
-			'image' => get_stylesheet_directory_uri() . '/images/trazee-logo.svg',
-			'classes' => array(
-				'link' => 'default-top order-2',
-				'image' => '',
-				'button' => 'order-1',
-			), 
-			'width' => 208,
-			'height' => 38
-		),
-		'url' => 'http://trazeetravel.flywheelstaging.com',
-		// 'url' => 'https://trazee-travel-cp.local',
-		'api_keys' => array()
-	),
-	'whereverfamily' => array(
-		'title' => __('WhereverFamily', 'tif_global'),
-		'search_placeholder' => __('WhereverFamily', 'tif_global'),
-		'instagram_tag' => __('WhereverFamily', 'tif_global'),
-		'logo' => array(
-			'image' => get_stylesheet_directory_uri() . '/images/wherever-logo.svg',
-			'classes' => array(
-				'link' => 'default-top order-2',
-				'image' => '',
-				'button' => 'order-1',
-			), 
-			'width' => 300,
-			'height' => 26
-		),
-		'url' => 'http://staging.wherever-family.flywheelsites.com',
-		// 'url' => 'https://wherever-family.local',
-		'api_keys' => array()
-	)
-);
 
 // This prevents other sites from stealing content that pertains to this site!
 // Disallows frames and iframes stealing site's bandwidth...

@@ -69,7 +69,12 @@ if (function_exists('get_ad_group')) {
 					<h3 class="mb-4"><?php echo apply_filters('the_title', 'FX Excursions: ' . $excursion_page['title']); ?></h3>
 					<?php
 					endif;
-					the_content(); ?>
+					if (empty($content_replace)):
+					the_content();
+					else:
+						// tif_get_template('inc/' . $global_site . '/content-tags.php', array('term' => $content_replace['category']));
+						tif_get_template('inc/' . $global_site . '/content-replace.php', array('global_site' => $global_site, 'cat_id' => $content_replace['cat_id'], 'category' => $content_replace['category']));
+					endif; ?>
 					<?php
 					if (!empty($excursion_page)): ?>
 					<div id="excursions-wrapper" class="row">

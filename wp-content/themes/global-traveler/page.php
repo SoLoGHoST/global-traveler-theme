@@ -21,6 +21,7 @@ if (empty($global_site))
 	$global_site = apply_filters('get_global_site', $global_site);
 
 $hero_type = get_field('hero_type');
+$vc_category_id = get_field('vc_category_id');
 
 // @TODO - this setting isn't being used for pages anywhere that I know of, NEED TO CHECK if this ACF FIELD is even needed anymore!
 // Be sure to check whether the homepage template is using it or not first!
@@ -44,6 +45,18 @@ if ($global_site == 'globalusa') {
 	}
 }
 
-tif_get_template('inc/' . $global_site . '/heroes.php', array('main_post' => $post, 'type' => !empty($hero_type) ? $hero_type : 'post', 'excursion_landing_pages' => $excursion_landing_pages, 'excursion_page' => $excursion_page));
-tif_get_template('inc/' . $global_site . '/default-page.php', array('excursion_landing_pages' => $excursion_landing_pages, 'excursion_page' => $excursion_page));
+$hero_args = array('main_post' => $post, 'type' => !empty($hero_type) ? $hero_type : 'post', 'excursion_landing_pages' => $excursion_landing_pages, 'excursion_page' => $excursion_page);
+	
+$page_args = array('excursion_landing_pages' => $excursion_landing_pages, 'excursion_page' => $excursion_page);
+
+if (!empty($vc_category_id)) {
+	$hero_args['page'] = true;
+	$page_args['content_replace'] = array(
+		'category' => get_category($vc_category_id),
+		'cat_id' => $vc_category_id
+	);
+}
+
+tif_get_template('inc/' . $global_site . '/heroes.php', $hero_args);
+tif_get_template('inc/' . $global_site . '/default-page.php', $page_args);
 get_footer();
