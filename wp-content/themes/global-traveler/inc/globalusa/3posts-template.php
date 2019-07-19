@@ -29,6 +29,10 @@ if (!empty($post_data)):
 		// $post_image = !empty($post_image) && !empty($post_image['url']) ? $post_image['url'] : '';
 	}
 
+	// If post_image is still empty... we are going to grab the default placeholder image instead.
+	if (empty($post_image))
+		$post_image = apply_filters('get_global_site_directory_path_uri', '', 'images', 'default-placeholder-img.jpg');
+
 	if (empty($is_sponsored))
 	{
 		$date = get_the_date('M j, Y', $data->ID);

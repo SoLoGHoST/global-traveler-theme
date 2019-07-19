@@ -27,6 +27,9 @@ if (!empty($post_data)): ?>
 		else
 			$post_image = !empty($post_image) && isset($post_image['sizes'], $post_image['sizes']['thumbnail_2']) ? $post_image['sizes']['thumbnail_2'] : '';
 
+		if (empty($post_image))
+			$post_image = apply_filters('get_global_site_directory_path_uri', '', 'images', 'default-placeholder-img.jpg');
+
 		//$categories = get_the_category($data->ID);
 		$date = get_the_date('M j, Y', $data->ID);
 		$categories = apply_filters('get_the_primary_category_with_child', array(), $data->ID); 
