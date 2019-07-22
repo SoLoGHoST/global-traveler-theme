@@ -8,10 +8,11 @@
 
 if (!defined('ABSPATH')) exit();
 
-
 if (!empty($post_data)): ?>
 <div class="row mx-0 pt-4 px-4">
 	<?php foreach($post_data as $data):
+
+	$has_placeholder_image = false;
 
 	if (!property_exists($data, 'ad_type'))
 	{
@@ -27,8 +28,10 @@ if (!empty($post_data)): ?>
 		else
 			$post_image = !empty($post_image) && isset($post_image['sizes'], $post_image['sizes']['thumbnail_2']) ? $post_image['sizes']['thumbnail_2'] : '';
 
-		if (empty($post_image))
+		if (empty($post_image)) {
 			$post_image = apply_filters('get_global_site_directory_path_uri', '', 'images', 'default-placeholder-img.jpg');
+			$has_placeholder_image = !empty($post_image);
+		}
 
 		//$categories = get_the_category($data->ID);
 		$date = get_the_date('M j, Y', $data->ID);
@@ -49,10 +52,13 @@ if (!empty($post_data)): ?>
 	
 	<div class="post-half post-item col-24 col-sm-12 pt-1 px-0 pt-sm-4 px-sm-4 mb-5 mb-sm-0">
 		<div class="img-wrapper">
+			<?php
+			/*
 			<div class="caption px-4">
 				<p>Caption goes here...</p>
 			</div>
-			<a href="<?php echo $permalink; ?>" class="image d-inline-block"<?php echo !empty($post_image) ? ' style="background-image: url(' . $post_image . ');"' : ''; ?>></a>
+			*/ ?>
+			<a href="<?php echo $permalink; ?>" class="image d-inline-block<?php echo !empty($has_placeholder_image) ? ' placeholder' : ''; ?>"<?php echo !empty($post_image) ? ' style="background-image: url(' . $post_image . ');"' : ''; ?>></a>
 		</div>
 		<?php 
 		if (!property_exists($data, 'ad_type')): ?>

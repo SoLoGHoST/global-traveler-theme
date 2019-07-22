@@ -1314,6 +1314,7 @@ h5 {
 					color: $white;
 					@extend %font-menu;
 					@include opacity(0.7);
+					line-height: 1.3em;
 				}
 			}
 		}
@@ -1472,11 +1473,6 @@ h5 {
 			}
 		}
 		#posts-section {
-			#body-content {
-				p {
-					margin-bottom: 1.5rem;
-				}
-			}
 			.print-article {
 				@extend %print-article;
 			}
@@ -1498,12 +1494,27 @@ h5 {
 				}
 			}
 			#body-content {
+				p {
+					margin-bottom: 1.5rem;
+				}
 				a {
 					color: $blue;
 					&.btn {
 						@extend %btn;
 						&.btn-primary {
 							@extend %btn-primary;
+						}
+					}
+				}
+				.post-list {
+					.post-wide {
+						.image {
+							background-size: auto;
+							background-position: top center;
+							&.placeholder {
+								background-size: cover;
+								background-position: center center;
+							}
 						}
 					}
 				}

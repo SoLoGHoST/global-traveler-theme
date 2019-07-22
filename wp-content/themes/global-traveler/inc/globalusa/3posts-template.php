@@ -12,6 +12,7 @@ if (!empty($post_data)):
 <div class="post-list<?php echo $post_list_classes; ?>">
 	<?php foreach($post_data as $data):
 
+	$has_placeholder_image = false;
 	$is_sponsored = get_field('is_sponsored', $data->ID);
 
 	$post_image = get_field('featured_image', $data->ID); // wp_get_attachment_image_src(get_post_thumbnail_id($data->ID), "full");
@@ -30,8 +31,10 @@ if (!empty($post_data)):
 	}
 
 	// If post_image is still empty... we are going to grab the default placeholder image instead.
-	if (empty($post_image))
+	if (empty($post_image)) {
 		$post_image = apply_filters('get_global_site_directory_path_uri', '', 'images', 'default-placeholder-img.jpg');
+		$has_placeholder_image = !empty($post_image);
+	}
 
 	if (empty($is_sponsored))
 	{
@@ -68,7 +71,7 @@ if (!empty($post_data)):
 			</div>
 			<?php
 			endif; ?>
-			<a href="<?php echo get_the_permalink($data->ID); ?>" class="image"<?php echo !empty($post_image) ? ' style="background-image: url(' . $post_image . ');"' : ''; ?>></a>
+			<a href="<?php echo get_the_permalink($data->ID); ?>" class="image<?php echo !empty($has_placeholder_image) ? ' placeholder' : ''; ?>"<?php echo !empty($post_image) ? ' style="background-image: url(' . $post_image . ');"' : ''; ?>></a>
 		</div>
 		<div class="copy col-14 offset-0 offset-sm-1 col-sm my-2">
 			<?php 

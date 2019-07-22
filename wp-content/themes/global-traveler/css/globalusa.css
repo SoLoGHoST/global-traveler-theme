@@ -8650,7 +8650,8 @@ h5.sponsored span {
   -webkit-opacity: 0.7;
   -moz-opacity: 0.7;
   opacity: 0.7;
-  filter: alpha(opacity=70) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
+  filter: alpha(opacity=70) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity);
+  line-height: 1.3em; }
 #home-content .hero-header .headline, #main-content .hero-header .headline {
   background-color: #8A7399; }
 #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper, #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper {
@@ -8731,8 +8732,6 @@ h5.sponsored span {
     filter: alpha(opacity=80) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
   #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes {
     color: #FFFFFF; }
-#home-content #content #posts-section #body-content p, #main-content #content #posts-section #body-content p {
-  margin-bottom: 1.5rem; }
 #home-content #content #posts-section #social-share, #main-content #content #posts-section #social-share {
   color: #9FACBD; }
   #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title {
@@ -8744,8 +8743,16 @@ h5.sponsored span {
     color: #9FACBD; }
     #home-content #content #posts-section #social-share a:hover, #main-content #content #posts-section #social-share a:hover {
       color: #3FA2DA; }
+#home-content #content #posts-section #body-content p, #main-content #content #posts-section #body-content p {
+  margin-bottom: 1.5rem; }
 #home-content #content #posts-section #body-content a, #main-content #content #posts-section #body-content a {
   color: #3FA2DA; }
+#home-content #content #posts-section #body-content .post-list .post-wide .image, #main-content #content #posts-section #body-content .post-list .post-wide .image {
+  background-size: auto;
+  background-position: top center; }
+  #home-content #content #posts-section #body-content .post-list .post-wide .image.placeholder, #main-content #content #posts-section #body-content .post-list .post-wide .image.placeholder {
+    background-size: cover;
+    background-position: center center; }
 #home-content #content .post-item p, #home-content #content .slide-item p, #main-content #content .post-item p, #main-content #content .slide-item p {
   font-size: 18px;
   line-height: 24px; }
