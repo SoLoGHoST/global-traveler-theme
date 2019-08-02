@@ -194,6 +194,8 @@ jQuery(document).ready(function($) {
 				// Only perform ajax if not already loaded...
 				if (siteapi_loaded.hasOwnProperty(currentSelection) && !siteapi_loaded[currentSelection]) {
 
+					$('.ajax-loader').show();
+
 					// Need to handle the ajax for getting the posts in here...
 					$.ajax({
 						url: Main.ajax_url,
@@ -205,13 +207,16 @@ jQuery(document).ready(function($) {
 						},
 						dataType: 'json'
 					}).done(function(response) {
-						if (response.hasOwnProperty('data') && response['data'] !== '')
+						if (response.hasOwnProperty('data') && response['data'] !== '') {
 							$selected.html(response['data']);
-
+							// Be sure to set this so that we don't keep calling the ajax once loaded
+							siteapi_loaded[currentSelection] = true;
+						}
 						// alert('Successfully got posts from ' + currentSelection + ' site.');
 					}).fail(function(response) {
 						alert('Failed to get api site posts.');
 					}).always(function(response) {
+						$('.ajax-loader').hide();
 						// use Unblock js here...
 					});
 				}
@@ -228,6 +233,7 @@ jQuery(document).ready(function($) {
 			$sections = $('.topline').find('.site-section');
 
 		if (!$is_link && !$is_section && !topline_menu_deactivated) {
+			$('.ajax-loader').hide();
 			$sections.each(function(i, obj) {
 				$(obj).removeClass('in');
 			});

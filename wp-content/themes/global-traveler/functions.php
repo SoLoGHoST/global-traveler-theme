@@ -1943,6 +1943,11 @@ function trazee_before_after_menu($menu, $location = '', $class = '')
 			unset($temp[$global_site]);
 
 		if (!empty($temp)) {
+			echo '
+				<div class="col-24 text-center ajax-loader">
+					<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+				</div>';
+
 			foreach($temp as $site_key => $site) {
 				echo '
 				<div class="site-section py-3 py-sm-5 fade" id="section-' . $site_key . '"></div>';
