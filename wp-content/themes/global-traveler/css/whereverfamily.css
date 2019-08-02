@@ -8780,8 +8780,8 @@ body.page #main-content #content .content a {
         padding-top: 0; }
         #home-content .hero-header .hero-body #hero-content h1 a.hero-post > span > span.text, #main-content .hero-header .hero-body #hero-content h1 a.hero-post > span > span.text {
           color: #FFFFFF; } }
-.lds-ellipsis div {
-  background: #FFFFFF; }
+.ajax-loader .lds-ellipsis div {
+  background: #90C844; }
 
 .site-section {
   min-height: 200px;
@@ -9996,30 +9996,43 @@ body.site-globalusa .posts-slider .slide-item {
           opacity: 1;
           filter: alpha(opacity=100) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
 
-.lds-ellipsis {
-  display: inline-block;
-  position: relative;
-  width: 64px;
-  height: 64px; }
-  .lds-ellipsis div {
+.ajax-loader {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  min-height: 200px;
+  z-index: 99999; }
+  .ajax-loader .lds-ellipsis {
     position: absolute;
-    top: 27px;
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    animation-timing-function: cubic-bezier(0, 1, 1, 0); }
-    .lds-ellipsis div:nth-child(1) {
-      left: 6px;
-      animation: lds-ellipsis1 0.6s infinite; }
-    .lds-ellipsis div:nth-child(2) {
-      left: 6px;
-      animation: lds-ellipsis2 0.6s infinite; }
-    .lds-ellipsis div:nth-child(3) {
-      left: 26px;
-      animation: lds-ellipsis2 0.6s infinite; }
-    .lds-ellipsis div:nth-child(4) {
-      left: 45px;
-      animation: lds-ellipsis3 0.6s infinite; }
+    top: 0;
+    bottom: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+    width: 64px;
+    height: 64px; }
+    .ajax-loader .lds-ellipsis div {
+      position: absolute;
+      top: 27px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      animation-timing-function: cubic-bezier(0, 1, 1, 0); }
+      .ajax-loader .lds-ellipsis div:nth-child(1) {
+        left: 6px;
+        animation: lds-ellipsis1 0.6s infinite; }
+      .ajax-loader .lds-ellipsis div:nth-child(2) {
+        left: 6px;
+        animation: lds-ellipsis2 0.6s infinite; }
+      .ajax-loader .lds-ellipsis div:nth-child(3) {
+        left: 26px;
+        animation: lds-ellipsis2 0.6s infinite; }
+      .ajax-loader .lds-ellipsis div:nth-child(4) {
+        left: 45px;
+        animation: lds-ellipsis3 0.6s infinite; }
 
 @keyframes lds-ellipsis1 {
   0% {

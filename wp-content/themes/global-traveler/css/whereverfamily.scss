@@ -1619,9 +1619,11 @@ body {
 	}
 }
 
-.lds-ellipsis {
-	div {
-		background: $white;
+.ajax-loader {
+	.lds-ellipsis {
+		div {
+			background: $light-green;
+		}
 	}
 }
 

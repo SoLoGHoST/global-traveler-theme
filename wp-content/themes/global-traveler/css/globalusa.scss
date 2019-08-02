@@ -2130,23 +2130,9 @@ body {
 }
 
 .ajax-loader {
-	display: none;
-	position: absolute;
-	width: 100%;
-	left: 0;
-	right: 0;
-	margin: auto;
-	min-height: 200px;
-	z-index: 99999;
 	.lds-ellipsis {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		display: inline-block;
-		vertical-align: middle;
-		margin: auto;
 		div {
-			background: $default;
+			background: $red;
 		}
 	}
 }
