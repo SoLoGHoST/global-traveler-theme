@@ -8743,16 +8743,25 @@ h5.sponsored span {
     color: #9FACBD; }
     #home-content #content #posts-section #social-share a:hover, #main-content #content #posts-section #social-share a:hover {
       color: #3FA2DA; }
-#home-content #content #posts-section #body-content p, #main-content #content #posts-section #body-content p {
-  margin-bottom: 1.5rem; }
-#home-content #content #posts-section #body-content a, #main-content #content #posts-section #body-content a {
-  color: #3FA2DA; }
-#home-content #content #posts-section #body-content .post-list .post-wide .image, #main-content #content #posts-section #body-content .post-list .post-wide .image {
-  background-size: auto;
-  background-position: top center; }
-  #home-content #content #posts-section #body-content .post-list .post-wide .image.placeholder, #main-content #content #posts-section #body-content .post-list .post-wide .image.placeholder {
-    background-size: cover;
-    background-position: center center; }
+#home-content #content #posts-section #body-content, #main-content #content #posts-section #body-content {
+  /*
+  .post-list {
+  	.post-wide {
+  		.image {
+  			background-size: auto;
+  			background-position: top center;
+  			&.placeholder {
+  				background-size: cover;
+  				background-position: center center;
+  			}
+  		}
+  	}
+  }
+  */ }
+  #home-content #content #posts-section #body-content p, #main-content #content #posts-section #body-content p {
+    margin-bottom: 1.5rem; }
+  #home-content #content #posts-section #body-content a, #main-content #content #posts-section #body-content a {
+    color: #3FA2DA; }
 #home-content #content .post-item p, #home-content #content .slide-item p, #main-content #content .post-item p, #main-content #content .slide-item p {
   font-size: 18px;
   line-height: 24px; }

@@ -38,6 +38,32 @@ $all_sites = array(
 		'api_keys' => array(
 			'map' => 'AIzaSyB-2O1yhYU5IX51hplCHmyaNs2jO1-d1sE'
 			// 'map' => 'AIzaSyCnyO53wzqf_VMbByvqVBhbbCOBs7p-9oA'
+		),
+		'api_categories' => array(
+			array(
+				'title' => __('News', 'tif_global'),
+				'url' => '/category/news/'
+			),
+			array(
+				'title' => __('Reviews', 'tif_global'),
+				'url' => '/category/reviews/'
+			),
+			array(
+				'title' => __('Sponsored Content', 'tif_global'),
+				'url' => '/category/sponsored-reviews/'
+			),
+			array(
+				'title' => __('Deals', 'tif_global'),
+				'url' => '/category/deals/'
+			),
+			array(
+				'title' => __('Feature', 'tif_global'),
+				'url' => 'category/features/'
+			),
+			array(
+				'title' => __('Destinations', 'tif_global'),
+				'url' => '/category/destination/'
+			)
 		)
 	),
 	'trazeetravel' => array(
@@ -56,7 +82,33 @@ $all_sites = array(
 		),
 		'url' => 'http://trazeetravel.flywheelstaging.com',
 		// 'url' => 'https://trazee-travel-cp.local',
-		'api_keys' => array()
+		'api_keys' => array(),
+		'api_categories' => array(
+			array(
+				'title' => __('Top 5', 'tif_global'),
+				'url' => '/category/top-5/'
+			),
+			array(
+				'title' => __('Trends', 'tif_global'),
+				'url' => '/category/trends/'
+			),
+			array(
+				'title' => __('Under $100', 'tif_global'),
+				'url' => '/category/under-100/'
+			),
+			array(
+				'title' => __('Tips', 'tif_global'),
+				'url' => '/category/tips/'
+			),
+			array(
+				'title' => __('Reviews', 'tif_global'),
+				'url' => '/category/reviews/'
+			),
+			array(
+				'title' => __('Products', 'tif_global'),
+				'url' => '/category/products/'
+			)
+		)
 	),
 	'whereverfamily' => array(
 		'title' => __('WhereverFamily', 'tif_global'),
@@ -74,7 +126,33 @@ $all_sites = array(
 		),
 		'url' => 'http://staging.wherever-family.flywheelsites.com',
 		// 'url' => 'https://wherever-family.local',
-		'api_keys' => array()
+		'api_keys' => array(),
+		'api_categories' => array(
+			array(
+				'title' => __('Tips', 'tif_global'),
+				'url' => '/category/tips/'
+			),
+			array(
+				'title' => __('Listicles', 'tif_global'),
+				'url' => '/category/listicles/'
+			),
+			array(
+				'title' => __('Luxury', 'tif_global'),
+				'url' => '/category/luxury/'
+			),
+			array(
+				'title' => __('Budget', 'tif_global'),
+				'url' => '/category/budget/'
+			),
+			array(
+				'title' => __('Cruising', 'tif_global'),
+				'url' => '/category/cruising/'
+			),
+			array(
+				'title' => __('Destinations', 'tif_global'),
+				'url' => '/category/destinations/'
+			)
+		)
 	)
 );
 
@@ -1564,7 +1642,7 @@ function load_site_posts()
 
 		if (!empty($site_posts)) {
 			ob_start();
-			tif_get_template('inc/api_posts.php', array('site' => $site, 'site_posts' => $site_posts));
+			tif_get_template('inc/api_posts.php', array('site' => $site, 'categories' => array_map('tif_global_api_site_categories', $all_sites[$site]['api_categories'], array_fill(0, count($all_sites[$site]['api_categories']), $all_sites[$site]['url'])), 'site_posts' => $site_posts));
 			$return['data'] = ob_get_contents();
 			ob_end_clean();
 		}
@@ -1574,6 +1652,13 @@ function load_site_posts()
 	wp_send_json($return);
 }
 
+function tif_global_api_site_categories($site, $url)
+{
+	return array(
+		'title' => $site['title'],
+		'url' => untrailingslashit($url) . $site['url']
+	);
+}
 
 add_filter('get_sponsored_posts', 'get_sponsored_posts', 10, 2);
 
