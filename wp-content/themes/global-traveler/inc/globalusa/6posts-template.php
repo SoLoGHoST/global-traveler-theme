@@ -15,6 +15,7 @@ if (!empty($post_data)): ?>
 
 	if (!property_exists($data, 'ad_type'))
 	{
+		$category_slugs = wp_get_post_categories($data->ID, array('fields' => 'id=>slug'));
 		$permalink = get_the_permalink($data->ID);
 		$post_image = get_field('featured_image', $data->ID); // wp_get_attachment_image_src(get_post_thumbnail_id($data->ID), "full");
 		$is_sponsored = get_field('is_sponsored', $data->ID);
@@ -57,7 +58,7 @@ if (!empty($post_data)): ?>
 		if (!property_exists($data, 'ad_type')): ?>
 		<div class="img-wrapper col-24">
 			<?php
-			if (isset($categories, $categories['primary'], $categories['primary']['slug']) && $categories['primary']['slug'] == 'print-article'): 
+			if (!empty($category_slugs) && in_array('print-article', $category_slugs)): 
 				$print_article_image = apply_filters('get_global_site_directory_path_uri', '', 'images', 'print-article.png'); ?>
 			<div class="print-article px-4 py-1 d-flex justify-content-start align-items-center">
 				<?php 

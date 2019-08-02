@@ -12,6 +12,8 @@ if (!empty($post_data)):
 <div class="post-list<?php echo $post_list_classes; ?>">
 	<?php foreach($post_data as $data):
 
+	$category_slugs = wp_get_post_categories($data->ID, array('fields' => 'id=>slug'));
+
 	$has_placeholder_image = false;
 	$is_sponsored = get_field('is_sponsored', $data->ID);
 
@@ -51,7 +53,7 @@ if (!empty($post_data)):
 	<div class="post-wide post-item row<?php echo $post_wide_classes; ?>">
 		<div class="img-wrapper col-10 col-sm">
 			<?php
-			if (isset($categories, $categories['primary'], $categories['primary']['slug']) && $categories['primary']['slug'] == 'print-article'): 
+			if (!empty($category_slugs) && in_array('print-article', $category_slugs)): 
 				$print_article_image = apply_filters('get_global_site_directory_path_uri', '', 'images', 'print-article.png'); ?>
 			<div class="print-article px-4 py-1 d-flex justify-content-start align-items-center">
 				<?php 
