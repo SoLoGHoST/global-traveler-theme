@@ -2129,4 +2129,10 @@ body {
 	}
 }
 
+.lds-ellipsis {
+	div {
+		background: $white;
+	}
+}
+
 @import "style.scss";
