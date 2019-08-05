@@ -6,7 +6,7 @@
 */
 if (!defined('ABSPATH')) exit(0); 
 
-global $main_categories;
+global $main_categories, $global_site;
 
 if (!empty($type)): ?>
 
@@ -14,7 +14,7 @@ if (!empty($type)): ?>
 
 	<?php if ($type == 'post'):
 
-		$author_name = get_field('post_author', $main_post->ID);
+		$author = apply_filters('get_the_post_author_info', array(), $main_post);
 		$post_image = get_field('featured_image', $main_post->ID);
 		$date = get_the_date('M j, Y', $main_post->ID);
 		$main_categories = apply_filters('get_the_primary_category_with_child', array(), $main_post->ID);
@@ -50,9 +50,11 @@ if (!empty($type)): ?>
 					<h1 class="title my-3 hero-post">
 						<span><span class="text"><?php echo get_the_title($main_post->ID); ?></span></span>
 					</h1>
-					<?php if (!empty($author_name)): ?>
-					<p>by <?php echo $author_name; ?></p>
-					<?php endif; ?>
+					<?php
+					if (!empty($author['name'])): ?>
+							<p>by <?php echo !empty($author['link']) ? '<a href="' . $author['link'] . '" class="author-link"><span>' . $author['name'] . '</span></a>' : $author['name']; ?></p>
+					<?php
+					endif; ?>
 					<span class="date mb-5"><?php echo $date; ?></span>
 
 					<?php if (!empty($image_caption)): ?>
@@ -79,7 +81,7 @@ if (!empty($type)): ?>
 
 	<?php elseif ($type == 'home'):
 		$post_image = get_field('featured_image', $main_post->ID);
-		$author_name = get_field('post_author', $main_post->ID);
+		$author_name = $global_site == 'globalusa' ? get_field('post_author', $main_post->ID) : '';
 
 		if (empty($post_image))
 		{
@@ -210,7 +212,7 @@ if (!empty($type)): ?>
 	<?php 
 		endif; ?>
 	<?php 
-	elseif ($type == 'category'): 
+	elseif ($type == 'category' || $type == 'author'): 
 		if (!empty($title)): ?>
 		<div class="headline pt-4">
 			<h1><?php echo $title; ?></h1>

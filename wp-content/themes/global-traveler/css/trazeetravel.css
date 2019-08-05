@@ -9367,15 +9367,15 @@ h5 {
         -moz-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%); }
-    #home-content .hero-header.header-type-category, #main-content .hero-header.header-type-category {
+    #home-content .hero-header.header-type-category, #home-content .hero-header.header-type-author, #main-content .hero-header.header-type-category, #main-content .hero-header.header-type-author {
       position: relative;
       overflow: hidden;
       max-height: 80px;
       min-height: 50px; }
-      #home-content .hero-header.header-type-category .headline, #main-content .hero-header.header-type-category .headline {
+      #home-content .hero-header.header-type-category .headline, #home-content .hero-header.header-type-author .headline, #main-content .hero-header.header-type-category .headline, #main-content .hero-header.header-type-author .headline {
         height: 100%;
         padding: 6vw 0; }
-        #home-content .hero-header.header-type-category .headline h1, #main-content .hero-header.header-type-category .headline h1 {
+        #home-content .hero-header.header-type-category .headline h1, #home-content .hero-header.header-type-author .headline h1, #main-content .hero-header.header-type-category .headline h1, #main-content .hero-header.header-type-author .headline h1 {
           position: absolute;
           left: 0;
           right: 0;

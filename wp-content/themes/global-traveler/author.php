@@ -3,6 +3,26 @@
 if (!defined('ABSPATH')) exit;
 global $post, $page_id, $is_home, $homepage_id, $global_site;
 
+$author_id = (int) get_query_var('author');
+$author = apply_filters('get_the_post_author_info', array(), $post);
+
+// $cat_id = $category->cat_ID;
+get_header(); ?>
+
+<?php 
+
+if (empty($global_site))
+	$global_site = apply_filters('get_global_site', $global_site);
+
+tif_get_template('inc/' . $global_site . '/heroes.php', array('type' => 'author', 'title' => $author['name']));
+tif_get_template('inc/' . $global_site . '/base-template.php', array('global_site' => $global_site, 'author_id' => $author_id, 'author' => $author));
+
+get_footer();
+
+
+
+
+/*
 $author = get_the_author();
 
 $hero_type = "basic";
@@ -91,6 +111,6 @@ if (!empty($the_query->posts))
 	<script>
 		var noMoreLeft = <?php echo !empty($has_more) ? 'false' : 'true'; ?>;
 	</script>
-</div>
+</div> */ ?>
 
 <?php get_footer(); ?>

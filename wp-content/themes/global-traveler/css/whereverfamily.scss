@@ -1283,11 +1283,43 @@ h5 {
 						line-height: 2em;
 						color: $white;
 						margin: 0;
+						> a {
+							&.author-link {
+								@extend %font-regular;
+								font-weight: 600;
+								color: $white;
+								line-height: 1.1em;
+								margin: 0;
+								span {
+									position: relative;
+									display: inline-block;
+									color: $white;
+									&:before {
+										content: "";
+										position: absolute;
+										background-color: $white;
+										width: 0;
+										height: 1px;
+										bottom: 0;
+										left: 0;
+									}
+								}
+								&:hover {
+									span {
+										&:before {
+											width: 100%;
+											@include transition(all 0.2s ease);
+										}
+									}
+								}
+							}
+						}
 					}
 					.date {
 						text-transform: uppercase;
 						@extend %font-medium;
 						color: $white;
+						font-weight: 400;
 					}
 
 					a {

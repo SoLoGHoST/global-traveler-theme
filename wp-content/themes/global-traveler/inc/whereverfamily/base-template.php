@@ -23,7 +23,7 @@ if (!empty($sponsored_posts))
 	{
 		$sponsored_ids[] = $sponsored->ID;
 
-		if (has_category($cat_id, $sponsored))
+		if (!empty($cat_id) && has_category($cat_id, $sponsored))
 		{
 			if (!empty($sponsored_category_posts))
 				$sponsored_category_posts = array_merge($sponsored_category_posts, array_splice($sponsored_posts, $sponsored_key, 1));
@@ -66,7 +66,6 @@ if (!empty($sponsored_posts))
 	$current_sponsored = array_merge($random_category_sponsored, $random_sponsors);
 }
 
-
 $has_more = false;
 $ordered_array = array();
 $the_ads = array();
@@ -74,12 +73,19 @@ $posts_per_page = !empty($the_ads) ? 12 : 11;
 $args = array(
 	'post_type' => 'post',
 	'orderby' => 'date',
-	'cat' => $cat_id,
 	'post__not_in' => $sponsored_ids,
 	'post_status' => 'publish',
 	'offset' => 0,
 	'posts_per_page' => ($posts_per_page - $total_sponsored)
 );
+
+if (!empty($cat_id)) {
+	$args['cat'] = $cat_id;
+}
+
+if (!empty($author_id)) {
+	$args['author'] = $author_id;
+}
 
 
 $the_query = new WP_Query($args);
@@ -134,7 +140,7 @@ if (!empty($the_query->posts))
 				tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['last_set']));
 			endif;
 		?>
-		<input type="hidden" id="args" value='<?php echo json_encode(array('cat' => $cat_id)); ?>' />
+		<input type="hidden" id="args" value='<?php echo !empty($cat_id) ? json_encode(array('cat' => $cat_id)) : json_encode(array('author' => $author_id)); ?>' />
 		<?php
 		else: ?>
 		<p>Sorry, No results exist for this category.</p>

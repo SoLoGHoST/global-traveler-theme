@@ -2413,4 +2413,35 @@ function tif_global_acf_google_map_api($api)
 
 add_filter('acf/fields/google_map/api', 'tif_global_acf_google_map_api');
 
+add_filter('get_the_post_author_info', 'tif_global_get_the_post_author_info', 10, 2);
+
+function tif_global_get_the_post_author_info($author = array(), $post)
+{
+	global $global_site;
+
+	if (!empty($post)) {
+
+		if ($global_site == 'trazeetravel') {
+			$author = array(
+				'name' => get_field('post_author', $post_id),
+				'link' => ''
+			);
+		} else if ($global_site == 'whereverfamily') {
+			$author = array(
+				'name' => get_the_author_meta('display_name', $post->post_author),
+				'link' => get_author_posts_url($post->post_author)
+			);
+		} else if ($global_site == 'globalusa') {
+			$author = array(
+				'name' => '',
+				'link' => ''
+			);
+		}
+
+		$author = array_filter($author);
+	}
+
+	return $author;
+}
+
 ?>
