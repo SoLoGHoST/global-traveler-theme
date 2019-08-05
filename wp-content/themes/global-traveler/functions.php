@@ -2253,7 +2253,7 @@ function trazee_pre_get_posts($query)
 		// Do not show any eflyer- posts anywhere for now!
 		if (!$query->is_main_query()) {
 			$eflyer_ids = apply_filters('get_eflyer_category_ids', array());
-			error_log(var_export($eflyer_ids, true));
+			// error_log(var_export($eflyer_ids, true));
 			$query->set('category__not_in', $eflyer_ids);
 		}
 	}
