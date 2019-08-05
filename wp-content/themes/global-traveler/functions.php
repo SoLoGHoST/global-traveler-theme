@@ -850,6 +850,74 @@ function globalusa_add_local_field_groups()
 				'description' => '',
 			));
 		}
+	} else if ($global_site == 'trazeetravel') {
+		if (function_exists('acf_add_local_field_group')) {
+			acf_add_local_field_group(array(
+				'key' => 'group_53ee5445879e7',
+				'title' => 'Post Author Link',
+				'fields' => array(
+					array(
+						'key' => 'field_53ee54a7912bb',
+						'label' => 'Post Author',
+						'name' => 'post_author',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+						'readonly' => 0,
+						'disabled' => 0,
+					),
+					array(
+						'key' => 'field_53ee546fba7fd',
+						'label' => 'Post Author Link',
+						'name' => 'post_author_link',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+						'readonly' => 0,
+						'disabled' => 0,
+					),
+				),
+				'location' => array(
+					array(
+						array(
+							'param' => 'post_type',
+							'operator' => '==',
+							'value' => 'post',
+						),
+					),
+				),
+				'menu_order' => 0,
+				'position' => 'normal',
+				'style' => 'default',
+				'label_placement' => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen' => '',
+				'active' => 1,
+				'description' => '',
+			));
+		}
 	}
 }
 
