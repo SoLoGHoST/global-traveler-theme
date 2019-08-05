@@ -1919,6 +1919,25 @@ function trazee_head()
 	*/
 }
 
+add_filter('get_eflyer_category_ids', 'tif_global_get_eflyer_category_ids', 10, 1);
+
+function tif_global_get_eflyer_category_ids($category_ids = array())
+{
+	global $wpdb;
+
+	$eflyer_ids = $wpdb->get_col($wpdb->prepare(
+	    "SELECT
+	        term_id
+	    FROM
+	        $wpdb->terms
+	    WHERE
+	        slug LIKE %s;",
+	    $wpdb->esc_like('eflyer-') . '%'
+	));
+
+	return !empty($eflyer_ids) ? array_map('intval', $eflyer_ids) : $category_ids;
+}
+
 add_action('header1_before_after_menu', 'trazee_before_after_menu', 10, 3);
 
 function trazee_before_after_menu($menu, $location = '', $class = '')
@@ -2229,6 +2248,13 @@ function trazee_pre_get_posts($query)
 			$query->set('orderby', 'date');
 			$query->set('order', 'desc');
 			$query->set('post_status', 'publish');
+		}
+
+		// Do not show any eflyer- posts anywhere for now!
+		if (!$query->is_main_query()) {
+			$eflyer_ids = apply_filters('get_eflyer_category_ids', array());
+			error_log(var_export($eflyer_ids, true));
+			$query->set('category__not_in', $eflyer_ids);
 		}
 	}
 
