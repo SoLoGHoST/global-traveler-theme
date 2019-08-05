@@ -43,7 +43,7 @@ $excluded_categories = array(); ?>
 				</div>
 				<div id="body-content" class="col-22 offset-1 col-sm-15 offset-sm-0 py-2 my-sm-5 px-3 px-md-5">
 					<?php
-					if (!empty($hero_type) && $hero_type == 'alternative'): 
+					if (!empty($hero_type) && $hero_type == 'alternative'):
 						$author_name = $global_site == 'globalusa' ? get_field('post_author', $post_id) : '';
 						$date = get_the_date('M j, Y', $post_id); ?>
 						<h1 class="title my-3">

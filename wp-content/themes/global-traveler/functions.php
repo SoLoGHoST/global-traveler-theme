@@ -1184,6 +1184,51 @@ function tif_register_setup()
 		);
 		
 		register_post_type('excursions', $args);
+
+		register_post_type('authors', array(
+			'label' => __('authors'),
+			'description' => __('Authors'),
+			'labels' => array(
+				'name'					=> _x('Authors', 'Post Type General Name'),
+				'singular_name'			=> _x('Author', 'Post Type Singular Name'),
+				'menu_name'				=> __('Authors'),
+				'parent_item_colon' 	=> __('Parent Author'),
+				'all_items'				=> __('All Authors'),
+				'view_item'				=> __('View Author'),
+				'add_new_item'			=> __('Add New Author'),
+				'add_new'				=> __('Add New'),
+				'edit_item'				=> __('Edit Author'),
+				'update_item'			=> __('Update Author'),
+				'search_items'			=> __('Search Authors'),
+				'not_found'				=> __('No Authors found'),
+				'not_found_in_trash'	=> __('No Authors found in Trash')
+			),
+			//Features this CPT supports in Post Editor
+			'supports'				=> array('title', 'editor', 'thumbnail', 'page-attributes'),
+			//You can associate this CPT with a taxonomy or custom taxonomy.
+			'taxonomies'			=> array(),
+			/* A hierarchical CPT is like Pages and can have
+			 * Parent and child items. A non-hierarchical CPT
+			 * is like Posts.
+			*/
+			'hierarchical'			=> false,
+			'public'				=> true,
+			'publicly_queriable'	=> true,
+			'show_ui'				=> true,
+			'show_in_menu'			=> true,
+			'show_in_nav_menus'		=> true,
+			'show_in_admin_bar'		=> true,
+			'menu_position'			=> 8,
+			'menu_icon'				=> 'dashicons-admin-post',
+			'can_export'			=> true,
+			'has_archive'			=> false,
+			'exclude_from_search'	=> false,
+			'publicly_queryable'	=> true,
+			'rewrite'				=> array('slug' => 'authors'),
+			'query_var' 			=> true,
+			'capability_type'		=> 'page'
+		));
+
 	}
 
 }
@@ -2483,30 +2528,31 @@ add_filter('acf/fields/google_map/api', 'tif_global_acf_google_map_api');
 
 add_filter('get_the_post_author_info', 'tif_global_get_the_post_author_info', 10, 2);
 
-function tif_global_get_the_post_author_info($author = array(), $post)
+function tif_global_get_the_post_author_info($author = array(), $post_data)
 {
 	global $global_site;
 
-	if (!empty($post)) {
+	if (!empty($post_data)) {
 
 		if ($global_site == 'trazeetravel') {
 			$author = array(
-				'name' => get_field('post_author', $post_id),
+				'name' => get_field('post_author', $post_data->ID),
 				'link' => ''
 			);
 		} else if ($global_site == 'whereverfamily') {
 			$author = array(
-				'name' => get_the_author_meta('display_name', $post->post_author),
-				'link' => get_author_posts_url($post->post_author)
+				'name' => get_the_author_meta('display_name', $post_data->post_author),
+				'link' => get_author_posts_url($post_data->post_author)
 			);
 		} else if ($global_site == 'globalusa') {
+			error_log($post_data);
 			$author = array(
-				'name' => '',
-				'link' => ''
+				'name' => get_the_title($post_data),
+				'link' => get_the_permalink($post_data)
 			);
 		}
 
-		$author = array_filter($author);
+		$author = !empty($author) ? array_filter($author) : array();
 	}
 
 	return $author;

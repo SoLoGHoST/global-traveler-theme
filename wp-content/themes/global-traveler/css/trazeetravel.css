@@ -10530,7 +10530,7 @@ body.site-globalusa .posts-slider .slide-item {
   #home-content .hero-header .next, #main-content .hero-header .next {
     width: 24vw; }
 
-  body.archive #main-content #content #posts-section {
+  body.archive #main-content #content #posts-section, body.single-authors #main-content #content #posts-section {
     margin-top: auto; }
   body.site-globalusa .posts-slider .slide-item {
     width: 75vw;

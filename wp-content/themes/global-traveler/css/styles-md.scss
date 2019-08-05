@@ -16,7 +16,7 @@
 	}
 
 	body {
-		&.archive {
+		&.archive, &.single-authors {
 			#main-content {
 				#content {
 					#posts-section {

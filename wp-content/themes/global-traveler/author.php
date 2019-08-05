@@ -7,9 +7,7 @@ $author_id = (int) get_query_var('author');
 $author = apply_filters('get_the_post_author_info', array(), $post);
 
 // $cat_id = $category->cat_ID;
-get_header(); ?>
-
-<?php 
+get_header();
 
 if (empty($global_site))
 	$global_site = apply_filters('get_global_site', $global_site);

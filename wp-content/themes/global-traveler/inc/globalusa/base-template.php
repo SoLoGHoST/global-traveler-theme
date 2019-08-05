@@ -97,6 +97,16 @@ if (!empty($cat_id)) {
 	$args['cat'] = $cat_id;
 }
 
+if (!empty($author_id)) {
+	$args['meta_query'] = array(
+		array(
+			'key' => 'article_author',
+			'value' => $author_id,
+			'compare' => '='
+		)
+	);
+}
+
 if (is_singular('post')) {
 	if (!empty($excluded_categories))
 		$args = array_merge($args, array('category__not_in' => $excluded_categories));
@@ -182,6 +192,16 @@ endif; ?>
 
 		if (!empty($cat_id)):
 			$ajax_args['cat'] = $cat_id;
+		endif;
+
+		if (!empty($author_id)):
+			$ajax_args['meta_query'] = array(
+				array(
+					'key' => 'article_author',
+					'value' => $author_id,
+					'compare' => '='
+				)
+			);
 		endif;
 
 		if (is_singular('post')):
