@@ -2537,7 +2537,7 @@ function tif_global_get_the_post_author_info($author = array(), $post_data)
 		if ($global_site == 'trazeetravel') {
 			$author = array(
 				'name' => get_field('post_author', $post_data->ID),
-				'link' => ''
+				'link' => '' // No link used for TrazeeTravel, so we'll just leave this empty!
 			);
 		} else if ($global_site == 'whereverfamily') {
 			$author = array(
@@ -2545,13 +2545,13 @@ function tif_global_get_the_post_author_info($author = array(), $post_data)
 				'link' => get_author_posts_url($post_data->post_author)
 			);
 		} else if ($global_site == 'globalusa') {
-			error_log(var_export($post_data, true));
 			$author = array(
 				'name' => get_the_title($post_data),
 				'link' => get_the_permalink($post_data)
 			);
 		}
 
+		// Filter out any empty values
 		$author = !empty($author) ? array_filter($author) : array();
 	}
 
