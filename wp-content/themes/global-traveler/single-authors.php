@@ -6,11 +6,8 @@ defined('ABSPATH') || exit;
 
 global $post, $page_id, $is_home, $homepage_id, $global_site;
 
-// If empty show 404 page...
-
 $author_id = $post->ID;
 $author = apply_filters('get_the_post_author_info', array(), $post);
-error_log(var_export($author, true));
 get_header();
 
 if (empty($global_site))
