@@ -9153,7 +9153,7 @@ body {
     -moz-opacity: 1;
     opacity: 1;
     filter: alpha(opacity=100) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity);
-    z-index: 9; }
+    z-index: 9999; }
 
 .full-width {
   clear: both; }
