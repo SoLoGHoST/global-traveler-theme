@@ -170,6 +170,52 @@ function globalusa_add_local_field_groups()
 		if(function_exists('acf_add_local_field_group'))
 		{
 			acf_add_local_field_group(array(
+				'key' => 'group_5d4882d243d70',
+				'title' => 'Article Author',
+				'fields' => array(
+					array(
+						'key' => 'field_5d4882db7f21f',
+						'label' => 'Author',
+						'name' => 'article_author',
+						'type' => 'post_object',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'post_type' => array(
+							0 => 'authors',
+						),
+						'taxonomy' => '',
+						'allow_null' => 0,
+						'multiple' => 0,
+						'return_format' => 'id',
+						'ui' => 1,
+					),
+				),
+				'location' => array(
+					array(
+						array(
+							'param' => 'post_type',
+							'operator' => '==',
+							'value' => 'post',
+						),
+					),
+				),
+				'menu_order' => 0,
+				'position' => 'side',
+				'style' => 'default',
+				'label_placement' => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen' => '',
+				'active' => true,
+				'description' => '',
+			));
+			
+			acf_add_local_field_group(array(
 				'key' => 'group_5d274abe98491',
 				'title' => 'Excursions Tag Setup',
 				'fields' => array(
