@@ -8794,6 +8794,27 @@ h5.sponsored span {
 
 #main-content .hero-header .hero-body .post-wrapper .overlay p, #main-content .hero-header .hero-body .page-wrapper .overlay p, #main-content .hero-header .hero-body .tag-wrapper .overlay p {
   margin-bottom: .25rem; }
+  #main-content .hero-header .hero-body .post-wrapper .overlay p > a.author-link, #main-content .hero-header .hero-body .page-wrapper .overlay p > a.author-link, #main-content .hero-header .hero-body .tag-wrapper .overlay p > a.author-link {
+    color: #FFFFFF;
+    margin: 0; }
+    #main-content .hero-header .hero-body .post-wrapper .overlay p > a.author-link span, #main-content .hero-header .hero-body .page-wrapper .overlay p > a.author-link span, #main-content .hero-header .hero-body .tag-wrapper .overlay p > a.author-link span {
+      position: relative;
+      display: inline-block;
+      color: #FFFFFF; }
+      #main-content .hero-header .hero-body .post-wrapper .overlay p > a.author-link span:before, #main-content .hero-header .hero-body .page-wrapper .overlay p > a.author-link span:before, #main-content .hero-header .hero-body .tag-wrapper .overlay p > a.author-link span:before {
+        content: "";
+        position: absolute;
+        background-color: #FFFFFF;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0; }
+    #main-content .hero-header .hero-body .post-wrapper .overlay p > a.author-link:hover span:before, #main-content .hero-header .hero-body .page-wrapper .overlay p > a.author-link:hover span:before, #main-content .hero-header .hero-body .tag-wrapper .overlay p > a.author-link:hover span:before {
+      width: 100%;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease; }
 #main-content .hero-header .hero-body .post-wrapper .overlay > p, #main-content .hero-header .hero-body .page-wrapper .overlay > p, #main-content .hero-header .hero-body .tag-wrapper .overlay > p {
   color: #FFFFFF;
   text-transform: capitalize;

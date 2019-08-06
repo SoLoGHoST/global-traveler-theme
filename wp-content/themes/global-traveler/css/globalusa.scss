@@ -1553,6 +1553,34 @@ h5 {
 					p {
 						margin-bottom: .25rem;
 						@extend %font-menu;
+						> a {
+							&.author-link {
+								color: $white;
+								margin: 0;
+								span {
+									position: relative;
+									display: inline-block;
+									color: $white;
+									&:before {
+										content: "";
+										position: absolute;
+										background-color: $white;
+										width: 0;
+										height: 1px;
+										bottom: 0;
+										left: 0;
+									}
+								}
+								&:hover {
+									span {
+										&:before {
+											width: 100%;
+											@include transition(all 0.2s ease);
+										}
+									}
+								}
+							}
+						}
 					}
 					> p {
 						@extend %font-bold;

@@ -1028,7 +1028,7 @@ function tif_scripts() {
     if (!empty($post) && is_object($post))
     	$hero_type = get_field('hero_type', $post->ID);
 
-    if (($global_site == 'globalusa' && is_page()) || is_post_type_archive('post') || is_search() || is_singular(array('post', 'excursions')) || is_category() || is_author() || (!empty($post) && is_object($post) && ((is_page() && is_front_page()) || ($post->post_type == 'post' && is_tag()))))
+    if (($global_site == 'globalusa' && is_page()) || ($global_site == 'globalusa' && is_singular('authors')) || is_post_type_archive('post') || is_search() || is_singular(array('post', 'excursions')) || is_category() || is_author() || (!empty($post) && is_object($post) && ((is_page() && is_front_page()) || ($post->post_type == 'post' && is_tag()))))
 	{
 		$dependants[] = 'ajax-scroll-script';
 		$haspostinhero = is_front_page() || (!empty($hero_type) && $hero_type == 'home');
@@ -2545,7 +2545,7 @@ function tif_global_get_the_post_author_info($author = array(), $post_data)
 				'link' => get_author_posts_url($post_data->post_author)
 			);
 		} else if ($global_site == 'globalusa') {
-			error_log($post_data);
+			error_log(var_export($post_data, true));
 			$author = array(
 				'name' => get_the_title($post_data),
 				'link' => get_the_permalink($post_data)
