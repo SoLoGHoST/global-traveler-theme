@@ -6,7 +6,6 @@ global $post, $page_id, $wpdb, $the_ads;
 
 $sponsored_posts = $current_sponsored = array();
 $featured_post_id = 0;
-$offset = 0;
 
 // Grab a Random Sponsored Post
 $total_sponsored = 0;

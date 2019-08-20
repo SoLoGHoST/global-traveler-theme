@@ -998,6 +998,12 @@ h5 {
 	}
 	#content {
 		.section {
+			.caption-wrap {
+				.caption {
+					position: static;
+					margin-top: auto;
+				}
+			}
 			.date {
 				@extend %font-medium;
 			}
@@ -1033,6 +1039,14 @@ h5 {
 			}
 		}
 		#posts-section {
+
+			.caption-wrap {
+				.caption {
+					position: static;
+					margin-top: auto;
+				}
+			}
+
 			#social-share {
 				color: $social-color;
 

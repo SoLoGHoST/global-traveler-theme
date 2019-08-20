@@ -75,8 +75,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		foreach($temp as $site_key => $site) {
 			$site_links[] = array(
 				'attrs' => 'id="link-' . $site_key . '" data-site="' . $site_key . '"',
-				'class' => array('external-link', 'd-none', 'd-sm-inline-block', 'api-link'),
-				'href' => '#',
+				'class' => array('external-link', 'd-none', 'd-sm-inline-block'),
+				'href' => $site['url'],
 				'title' => $site['title']
 			);
 		}

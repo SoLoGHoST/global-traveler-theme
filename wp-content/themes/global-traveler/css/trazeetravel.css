@@ -8558,6 +8558,9 @@ h5.sponsored span {
   filter: alpha(opacity=70) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
 #home-content .hero-header .headline, #main-content .hero-header .headline {
   background-color: #8A7399; }
+#home-content #content .section .caption-wrap .caption, #main-content #content .section .caption-wrap .caption {
+  position: static;
+  margin-top: auto; }
 #home-content #content #instagram-feed, #main-content #content #instagram-feed {
   background-color: #2CB78F; }
   #home-content #content #instagram-feed a.insta-feed, #main-content #content #instagram-feed a.insta-feed {
@@ -8585,6 +8588,9 @@ h5.sponsored span {
     filter: alpha(opacity=80) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
   #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes {
     color: #FFFFFF; }
+#home-content #content #posts-section .caption-wrap .caption, #main-content #content #posts-section .caption-wrap .caption {
+  position: static;
+  margin-top: auto; }
 #home-content #content #posts-section #social-share, #main-content #content #posts-section #social-share {
   color: #D0D2D3; }
   #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title {

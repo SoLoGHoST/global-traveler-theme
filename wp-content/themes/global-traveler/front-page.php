@@ -5,6 +5,7 @@ global $post, $page_id, $wpdb, $hero_type, $home_video, $global_site;
 
 $hero_type = get_field('hero_type');
 $home_video = get_field('video');
+$offset = 0;
 
 /*
 if (!empty($home_video))
@@ -52,5 +53,5 @@ if ($hero_type != 'hometakeover' && !empty($hero_post_type))
 
 $global_site = apply_filters('get_global_site', $global_site);
 tif_get_template('inc/' . $global_site . '/heroes.php', $template_args);
-tif_get_template('inc/' . $global_site . '/homepage.php', array('global_site' => $global_site));
+tif_get_template('inc/' . $global_site . '/homepage.php', array('global_site' => $global_site, 'offset' => $offset));
 get_footer(); ?>
