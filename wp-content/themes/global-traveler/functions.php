@@ -2608,4 +2608,8 @@ function tif_global_get_the_post_author_info($author = array(), $post_data)
 	return $author;
 }
 
+
+require_once('wp-updates-theme.php');
+new WPUpdatesThemeUpdater_2641( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
+
 ?>
