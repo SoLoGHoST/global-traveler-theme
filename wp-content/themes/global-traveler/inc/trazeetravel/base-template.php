@@ -81,7 +81,7 @@ $args = array(
 );
 
 if (!empty($cat_id))
-	$args['cat_id'] = $cat_id;
+	$args['cat'] = $cat_id;
 
 if (!empty($author_id))
 	$args['author'] = $author_id;
