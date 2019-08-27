@@ -9460,6 +9460,7 @@ h5 {
       position: relative;
       width: 100%;
       text-align: center;
+      margin-bottom: 20px;
       text-transform: uppercase;
       -webkit-transition: all 0.2s ease;
       -moz-transition: all 0.2s ease;
@@ -10534,7 +10535,8 @@ body.site-globalusa .posts-slider .slide-item {
     float: right;
     text-align: right;
     top: -65px;
-    width: auto; } }
+    width: auto;
+    margin-bottom: auto; } }
 @media (min-width: 992px) {
   #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p {
     text-shadow: 1px 1px 0 black; }
