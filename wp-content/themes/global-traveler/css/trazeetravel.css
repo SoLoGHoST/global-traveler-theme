@@ -9458,9 +9458,8 @@ h5 {
     #home-content #content #instagram-feed a.insta-feed, #main-content #content #instagram-feed a.insta-feed {
       display: inline-block;
       position: relative;
-      float: right;
-      text-align: right;
-      top: -65px;
+      width: 100%;
+      text-align: center;
       text-transform: uppercase;
       -webkit-transition: all 0.2s ease;
       -moz-transition: all 0.2s ease;
@@ -10530,6 +10529,12 @@ body.site-globalusa .posts-slider .slide-item {
 
   .traze-mobile-footer.advads-sticky, .traze-mobile-footer_2.advads-sticky {
     display: none; } }
+@media (min-width: 900px) {
+  #home-content #content #instagram-feed a.insta-feed, #main-content #content #instagram-feed a.insta-feed {
+    float: right;
+    text-align: right;
+    top: -65px;
+    width: auto; } }
 @media (min-width: 992px) {
   #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p {
     text-shadow: 1px 1px 0 black; }

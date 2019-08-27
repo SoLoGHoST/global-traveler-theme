@@ -54,3 +54,20 @@
 		}
 	}
 }
+
+@media (min-width: 900px) {
+	#home-content, #main-content {
+		#content {
+			#instagram-feed {
+				a {
+					&.insta-feed {
+						float: right;
+						text-align: right;
+	    				top: -65px;
+	    				width: auto;
+					}
+				}
+			}
+		}
+	}
+}

@@ -858,9 +858,8 @@ h5 {
 				&.insta-feed {
 					display: inline-block;
 					position: relative;
-					float: right;
-					text-align: right;
-    				top: -65px;
+					width: 100%;
+					text-align: center;
 					text-transform: uppercase;
 					@include transition(all .2s ease);
 					i {
