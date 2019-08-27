@@ -9452,6 +9452,8 @@ h5 {
         webkit-box-shadow: inset 0 25px 0 #046D41, 0 -15px 0 #046D41;
         -moz-box-shadow: inset 0 25px 0 #046D41, 0 -15px 0 #046D41;
         box-shadow: inset 0 25px 0 #046D41, 0 -15px 0 #046D41; }
+        #home-content #content #instagram-feed h4.title span > span, #main-content #content #instagram-feed h4.title span > span {
+          box-shadow: none; }
     #home-content #content #instagram-feed a.insta-feed, #main-content #content #instagram-feed a.insta-feed {
       display: inline-block;
       position: relative;
@@ -10516,7 +10518,9 @@ body.site-globalusa .posts-slider .slide-item {
     #home-content #content #instagram-feed h4.title span, #main-content #content #instagram-feed h4.title span {
       webkit-box-shadow: inset 0 40px 0 #046D41, 0 -15px 0 #046D41;
       -moz-box-shadow: inset 0 40px 0 #046D41, 0 -15px 0 #046D41;
-      box-shadow: inset 0 40px 0 #046D41, 0 -15px 0 #046D41; } }
+      box-shadow: inset 0 40px 0 #046D41, 0 -15px 0 #046D41; }
+      #home-content #content #instagram-feed h4.title span > span, #main-content #content #instagram-feed h4.title span > span {
+        box-shadow: none; } }
 @media (min-width: 768px) {
   #home-content .hero-header .next, #main-content .hero-header .next {
     display: block; }

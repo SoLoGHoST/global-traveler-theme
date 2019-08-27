@@ -9461,6 +9461,12 @@ h5 {
       font-weight: 800;
       font-size: 30px;
       text-transform: uppercase; }
+      #home-content #content #instagram-feed h4.title span, #main-content #content #instagram-feed h4.title span {
+        webkit-box-shadow: inset 0 31px 0 #EEB538, 0 0 0 #EEB538;
+        -moz-box-shadow: inset 0 31px 0 #EEB538, 0 0 0 #EEB538;
+        box-shadow: inset 0 31px 0 #EEB538, 0 0 0 #EEB538; }
+        #home-content #content #instagram-feed h4.title span > span, #main-content #content #instagram-feed h4.title span > span {
+          box-shadow: none; }
     #home-content #content #instagram-feed a.insta-feed, #main-content #content #instagram-feed a.insta-feed {
       display: inline-block;
       position: relative;
@@ -10521,7 +10527,13 @@ body.site-globalusa .posts-slider .slide-item {
     font-style: normal;
     font-weight: 800;
     font-size: 48px;
-    text-transform: uppercase; } }
+    text-transform: uppercase; }
+    #home-content #content #instagram-feed h4.title span, #main-content #content #instagram-feed h4.title span {
+      webkit-box-shadow: inset 0 60px 0 #EEB538, 0 0 0 #EEB538;
+      -moz-box-shadow: inset 0 60px 0 #EEB538, 0 0 0 #EEB538;
+      box-shadow: inset 0 60px 0 #EEB538, 0 0 0 #EEB538; }
+      #home-content #content #instagram-feed h4.title span > span, #main-content #content #instagram-feed h4.title span > span {
+        box-shadow: none; } }
 @media (min-width: 768px) {
   #home-content .hero-header .next, #main-content .hero-header .next {
     display: block; }

@@ -95,6 +95,9 @@ $social-color: $taglink;
 				webkit-box-shadow: inset 0 40px 0 $green, 0 -15px 0 $green;
 				-moz-box-shadow: inset 0 40px 0 $green, 0 -15px 0 $green;
 				box-shadow: inset 0 40px 0 $green, 0 -15px 0 $green;
+				> span {
+					box-shadow: none;
+				}
 			}
 		}
 	} @else {
@@ -104,6 +107,9 @@ $social-color: $taglink;
 				webkit-box-shadow: inset 0 25px 0 $green, 0 -15px 0 $green;
 				-moz-box-shadow: inset 0 25px 0 $green, 0 -15px 0 $green;
 				box-shadow: inset 0 25px 0 $green, 0 -15px 0 $green;
+				> span {
+					box-shadow: none;
+				}
 			}
 		}
 	}

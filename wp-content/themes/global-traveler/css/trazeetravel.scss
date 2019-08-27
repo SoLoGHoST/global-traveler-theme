@@ -87,8 +87,28 @@ $burgermenu-color: $purple;
 	font-weight: 800;
 	@if ($type == sm) {
 		font-size: 48px;
+		&.title {
+			span {
+				webkit-box-shadow: inset 0 60px 0 $orange, 0 0 0 $orange;
+				-moz-box-shadow: inset 0 60px 0 $orange, 0 0 0 $orange;
+				box-shadow: inset 0 60px 0 $orange, 0 0 0 $orange;
+				> span {
+					box-shadow: none;
+				}
+			}
+		}
 	} @else {
 		font-size: 30px;
+		&.title {
+			span {
+				webkit-box-shadow: inset 0 31px 0 $orange, 0 0 0 $orange;
+				-moz-box-shadow: inset 0 31px 0 $orange, 0 0 0 $orange;
+				box-shadow: inset 0 31px 0 $orange, 0 0 0 $orange;
+				> span {
+					box-shadow: none;
+				}
+			}
+		}
 	}
 	text-transform: uppercase;
 }
