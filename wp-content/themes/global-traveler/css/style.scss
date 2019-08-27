@@ -854,6 +854,9 @@ h5 {
 		#instagram-feed {
 			width: 100%;
 			position: relative;
+			h4 {
+				@include instagram-feed-title(xs);
+			}
 			a {
 				&.insta-feed {
 					display: inline-block;

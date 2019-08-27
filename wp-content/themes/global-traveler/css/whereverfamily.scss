@@ -84,6 +84,32 @@ $social-color: $taglink;
 	@include font(font_1, bold);
 }
 
+@mixin instagram-feed-title($type: xs) {
+	font-family: canada-type-gibson, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	@if ($type == sm) {
+		font-size: 48px;
+		&.title {
+			span {
+				webkit-box-shadow: inset 0 40px 0 $green, 0 -15px 0 $green;
+				-moz-box-shadow: inset 0 40px 0 $green, 0 -15px 0 $green;
+				box-shadow: inset 0 40px 0 $green, 0 -15px 0 $green;
+			}
+		}
+	} @else {
+		font-size: 30px;
+		&.title {
+			span {
+				webkit-box-shadow: inset 0 25px 0 $green, 0 -15px 0 $green;
+				-moz-box-shadow: inset 0 25px 0 $green, 0 -15px 0 $green;
+				box-shadow: inset 0 25px 0 $green, 0 -15px 0 $green;
+			}
+		}
+	}
+	text-transform: uppercase;
+}
+
 %font-regular {
 	@include font(font_1, regular);
 	font-size: 16px;
@@ -1179,9 +1205,6 @@ h5 {
 						border: 0;
 						-webkit-box-decoration-break: clone;
 						box-decoration-break: clone;
-						webkit-box-shadow: inset 0 40px 0 $green, 0 -15px 0 $green;
-						-moz-box-shadow: inset 0 40px 0 $green, 0 -15px 0 $green;
-						box-shadow: inset 0 40px 0 $green, 0 -15px 0 $green;
 
 						> span {
 							background: transparent;

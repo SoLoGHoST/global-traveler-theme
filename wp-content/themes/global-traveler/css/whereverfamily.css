@@ -8507,10 +8507,7 @@ h5 {
       padding: 0 15px;
       border: 0;
       -webkit-box-decoration-break: clone;
-      box-decoration-break: clone;
-      webkit-box-shadow: inset 0 40px 0 #046D41, 0 -15px 0 #046D41;
-      -moz-box-shadow: inset 0 40px 0 #046D41, 0 -15px 0 #046D41;
-      box-shadow: inset 0 40px 0 #046D41, 0 -15px 0 #046D41; }
+      box-decoration-break: clone; }
       #home-content #content #instagram-feed h4.title span > span, #main-content #content #instagram-feed h4.title span > span {
         background: transparent;
         box-shadow: none;
@@ -9445,6 +9442,16 @@ h5 {
   #home-content #content #instagram-feed, #main-content #content #instagram-feed {
     width: 100%;
     position: relative; }
+    #home-content #content #instagram-feed h4, #main-content #content #instagram-feed h4 {
+      font-family: canada-type-gibson, sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 30px;
+      text-transform: uppercase; }
+      #home-content #content #instagram-feed h4.title span, #main-content #content #instagram-feed h4.title span {
+        webkit-box-shadow: inset 0 25px 0 #046D41, 0 -15px 0 #046D41;
+        -moz-box-shadow: inset 0 25px 0 #046D41, 0 -15px 0 #046D41;
+        box-shadow: inset 0 25px 0 #046D41, 0 -15px 0 #046D41; }
     #home-content #content #instagram-feed a.insta-feed, #main-content #content #instagram-feed a.insta-feed {
       display: inline-block;
       position: relative;
@@ -10499,6 +10506,17 @@ body.site-globalusa .posts-slider .slide-item {
 .modal-backdrop {
   background-color: #202433; }
 
+@media (min-width: 640px) {
+  #home-content #content #instagram-feed h4, #main-content #content #instagram-feed h4 {
+    font-family: canada-type-gibson, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    text-transform: uppercase; }
+    #home-content #content #instagram-feed h4.title span, #main-content #content #instagram-feed h4.title span {
+      webkit-box-shadow: inset 0 40px 0 #046D41, 0 -15px 0 #046D41;
+      -moz-box-shadow: inset 0 40px 0 #046D41, 0 -15px 0 #046D41;
+      box-shadow: inset 0 40px 0 #046D41, 0 -15px 0 #046D41; } }
 @media (min-width: 768px) {
   #home-content .hero-header .next, #main-content .hero-header .next {
     display: block; }

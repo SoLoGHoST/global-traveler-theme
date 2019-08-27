@@ -1,3 +1,15 @@
+@media (min-width: 640px) {
+	#home-content, #main-content {
+		#content {
+			#instagram-feed {
+				h4 {
+					@include instagram-feed-title(sm);
+				}
+			}
+		}
+	}
+}
+
 @media (min-width: 768px) {
 	
 	#home-content, #main-content {
