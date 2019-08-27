@@ -23,13 +23,15 @@ if (!empty($type)): ?>
 		if (empty($post_image))
 		{
 			$image_id = get_post_thumbnail_id($main_post->ID);
-			$image_caption = wp_get_attachment_caption($image_id);
+			$image_caption = get_post_meta($image_id, 'mga_photo_credit', true);
 			$thumbnail_image = wp_get_attachment_image_src($image_id, "full");
 			$post_image = !empty($thumbnail_image) ? $thumbnail_image[0] : '';
 		}
 		else
 		{
-			$image_caption = $post_image['caption'];
+			error_log(var_export($post_image, true));
+			$image_caption = get_post_meta($post_image['id'], 'mga_photo_credit', true);
+			// $image_caption = $post_image['caption'];
 			$post_image = $post_image['url'];
 		}
 
@@ -86,7 +88,7 @@ if (!empty($type)): ?>
 		if (empty($post_image))
 		{
 			$image_id = get_post_thumbnail_id($main_post->ID);
-			$image_caption = wp_get_attachment_caption($image_id);
+			$image_caption = get_post_meta($image_id, 'mga_photo_credit', true);
 			$thumbnail_image = wp_get_attachment_image_src($image_id, "full");
 			$image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
 			$post_image = !empty($thumbnail_image) ? $thumbnail_image[0] : '';
@@ -94,7 +96,7 @@ if (!empty($type)): ?>
 		else
 		{
 			$image_alt = $post_image['alt'];
-			$image_caption = $post_image['caption'];
+			$image_caption = get_post_meta($post_image['id'], 'mga_photo_credit', true);
 			$post_image = $post_image['url'];
 		}
 
@@ -109,7 +111,7 @@ if (!empty($type)): ?>
 			top: -20px;
 			width: calc(100% + 40px);
 			height: calc(100% + 40px);
-			background: linear-gradient(to bottom, rgba(56, 56, 56, 0.5) 100%, rgba(56, 56, 56, 0.5) 100%), url(<?php echo $post_image; ?>) no-repeat center center;
+			background: linear-gradient(to bottom, rgba(56, 56, 56, 0.25) 100%, rgba(56, 56, 56, 0.25) 100%), url(<?php echo $post_image; ?>) no-repeat center center;
 			background-size: cover;
 		}
 		body.home .hero-body a.pic-link:before {
@@ -123,7 +125,7 @@ if (!empty($type)): ?>
 			top: -20px;
 			width: calc(100% + 40px);
 			height: calc(100% + 40px);
-			background: linear-gradient(to bottom, rgba(56, 56, 56, 0.5) 100%, rgba(56, 56, 56, 0.5) 100%), url(<?php echo $post_image; ?>) no-repeat center center;
+			background: linear-gradient(to bottom, rgba(56, 56, 56, 0.25) 100%, rgba(56, 56, 56, 0.25) 100%), url(<?php echo $post_image; ?>) no-repeat center center;
 			background-size: cover;
 		}
 		body.home .hero-body a.pic-link::before {
@@ -226,13 +228,13 @@ if (!empty($type)): ?>
 			if (empty($post_image))
 			{
 				$image_id = get_post_thumbnail_id($main_post->ID);
-				$image_caption = wp_get_attachment_caption($image_id);
+				$image_caption = get_post_meta($image_id, 'mga_photo_credit', true);
 				$thumbnail_image = wp_get_attachment_image_src($image_id, "full");
 				$post_image = !empty($thumbnail_image) ? $thumbnail_image[0] : '';
 			}
 			else
 			{
-				$image_caption = $post_image['caption'];
+				$image_caption = get_post_meta($post_image['id'], 'mga_photo_credit', true);
 				$post_image = $post_image['url'];
 			} ?>
 		<div class="hero-body" style="background: url(<?php echo $post_image; ?>) no-repeat center center; background-size: cover;">
