@@ -8319,6 +8319,13 @@ h5 {
   .sponsored h5.categories a {
     color: #90C844; }
 
+.header-1 .navbar > .container, .header-1 .navbar > .container-fluid {
+  flex-wrap: nowrap; }
+.header-1 .navbar-toggler {
+  margin-top: 0 !important; }
+.header-1 .header-ad .where-homepage-leaderboard img {
+  max-width: 100%;
+  height: auto; }
 .header-1 .topline > .inner-wrapper {
   border-bottom: 1px solid #046D41;
   background-color: #046D41; }
@@ -8358,10 +8365,17 @@ h5 {
       .header-1 .topline .site-section .posts-api-wrapper ul.categories li a:hover .title {
         color: #202433; }
 
-.navbar {
+.navbar, .navbar.stick-nav {
   background-color: #FFFFFF; }
-  .navbar.sticky-nav {
+  .navbar.sticky-nav, .navbar.stick-nav.sticky-nav {
     background-color: #FFFFFF; }
+  .navbar .navbar-brand > img, .navbar.stick-nav .navbar-brand > img {
+    width: auto;
+    max-width: 100%; }
+  .navbar > .container, .navbar > .container-fluid, .navbar.stick-nav > .container, .navbar.stick-nav > .container-fluid {
+    flex-wrap: nowrap; }
+  .navbar > .navbar-toggler, .navbar.stick-nav > .navbar-toggler {
+    margin-top: 0 !important; }
 
 #mainMenu {
   background-color: #046D41; }

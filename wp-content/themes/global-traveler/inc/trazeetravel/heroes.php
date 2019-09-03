@@ -151,12 +151,12 @@ if (!empty($type)): ?>
 			if (is_front_page()): ?>
 			<div class="container-fluid px-0 px-md-2">
 				<div id="hero-content" class="row px-md-5 my-md-5 align-items-start">
-					<div class="col-24 col-md-12 px-0 py-md-4 pb-0 px-md-3 image-wrapper">
+					<div class="col-24 col-md-8 px-0 py-md-4 pb-0 px-md-3 image-wrapper">
 						
 						<a href="<?php the_permalink($main_post->ID); ?>"><img src="<?php echo $post_image; ?>" alt="<?php echo $image_alt; ?>" class="img-fluid px-md-2 d-md-none d-lg-none" /></a> 
 						
 					</div>
-					<div class="col-24 col-md-12 py-0 py-md-4 px-4 px-md-3 desc-wrapper">
+					<div class="col-24 col-md-16 py-0 py-md-4 px-4 px-md-3 desc-wrapper">
 						<div class="desc-inner px-2">
 							<h5 class="categories highlight">
 								<?php if (!empty($categories)): 

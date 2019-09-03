@@ -764,11 +764,30 @@ h5 {
 }
 
 .header-1 {
+	.navbar {
+		> {
+			.container, .container-fluid {
+				flex-wrap: nowrap;
+			}
+		}
+	}
+	.navbar-toggler {
+		margin-top: 0 !important;
+	}
+	.header-ad {
+		.where-homepage-leaderboard {
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+		}
+	}
 	.topline {
 		> .inner-wrapper {
     		border-bottom: 1px solid $green;
     		background-color: $green;
     	}
+
 		.site-section {
 			border-top: 1px solid $border-green;
 			background-color: $green;
@@ -849,10 +868,24 @@ h5 {
 	}
 }
 
-.navbar {
+.navbar, .navbar.stick-nav {
 	background-color: $white;
 	&.sticky-nav {
 		background-color: $white;
+	}
+	.navbar-brand {
+		> img {
+			width: auto;
+			max-width: 100%;
+		}
+	}
+	> {
+		.container, .container-fluid {
+			flex-wrap: nowrap;
+		}
+		.navbar-toggler {
+			margin-top: 0 !important;
+		}
 	}
 }
 

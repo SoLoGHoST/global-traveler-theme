@@ -2143,7 +2143,7 @@ function trazee_before_after_menu($menu, $location = '', $class = '')
 		if ($class == 'menu-after')
 		{
 			echo '
-				<div class="social order-last ml-auto mt-3">';
+				<div class="social order-last ml-auto ' . ($global_site == 'whereverfamily' ? 'mt-1' : 'mt-3') . '">';
 
 			$socials = apply_filters('trazee_get_socials', array());
 

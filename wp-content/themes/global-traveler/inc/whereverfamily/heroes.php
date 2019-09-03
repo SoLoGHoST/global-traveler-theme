@@ -153,7 +153,7 @@ if (!empty($type)): ?>
 			if (is_front_page()): ?>
 			<div class="container-fluid px-0 px-md-2">
 				<div id="hero-content" class="row px-md-5 my-md-5 align-items-center">
-					<div class="col-24 col-md-12 px-0 py-md-4 pb-0 px-md-3 image-wrapper">
+					<div class="col-24 col-md-16 px-0 py-md-4 pb-0 px-md-3 image-wrapper">
 						
 						<a href="<?php the_permalink($main_post->ID); ?>"><img src="<?php echo $post_image; ?>" alt="<?php echo $image_alt; ?>" class="img-fluid px-md-2 d-md-none d-lg-none" /></a>
 
@@ -187,7 +187,7 @@ if (!empty($type)): ?>
 						</div>
 						
 					</div>
-					<div class="col-24 col-md-12 py-0 py-md-4 px-4 px-md-3">
+					<div class="col-24 col-md-8 py-0 py-md-4 px-4 px-md-3">
 						<p class="d-none d-md-flex mb-0 align-items-center justify-content-end">
 							<a href="<?php the_permalink($main_post->ID); ?>" class="btn btn-white btn-arrow read-more"><?php _e('Read More', 'tif_global'); ?>
 								<span class="caret-arrow"></span>
