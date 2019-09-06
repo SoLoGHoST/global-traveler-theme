@@ -24,6 +24,8 @@ if (!empty($type)): ?>
 			$main_categories = apply_filters('get_the_primary_category_with_child', array(), $main_post->ID);
 			$sponsored_post = get_field('is_sponsored', $main_post->ID); 
 
+			$the_post_type = get_post_type($main_post);
+
 			if (empty($post_image))
 			{
 				$image_id = get_post_thumbnail_id($main_post->ID);
@@ -42,8 +44,8 @@ if (!empty($type)): ?>
 			if (!empty($categories))
 				$category_link = get_category_link($categories[0]->term_id); 
 			*/ ?>
-			
-			<div class="hero-body<?php echo !empty($excursion_page) ? ' fx-excursions-hero' : ''; ?>" style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(<?php echo $post_image; ?>) no-repeat center center; background-size: cover;">
+
+			<div class="hero-body<?php echo !empty($excursion_page) ? ' fx-excursions-hero' : ''; ?>"<?php echo $the_post_type != 'deal' ? ' style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(' . $post_image . ') no-repeat center center; background-size: cover;"' : ''; ?>>
 				<div class="container-fluid <?php echo is_page() || !empty($page) ? 'page' : 'post'; ?>-wrapper">
 					<div class="overlay">
 						<?php if (!empty($sponsored_post)): ?>
@@ -171,7 +173,45 @@ if (!empty($type)): ?>
 		<?php
 		endif; 
 	else: 
-		if ($type == 'home'): 
+		if ($type == 'archive'): ?>
+
+			<div class="hero-body">
+				<div class="container-fluid <?php echo is_archive() ? 'archive' : (is_page() || !empty($page) ? 'page' : 'post'); ?>-wrapper">
+					<div class="overlay">
+						<?php if (!empty($sponsored_post)): ?>
+						<h5 class="sponsored">
+							<span><?php _e('Sponsored Content', 'trazee'); ?></span>
+						</h5>
+						<?php endif; ?>
+						<div class="short-hero-wrapper">
+							<?php 
+
+							if (!empty($title)): ?>
+								<h3 class="title post">
+									<span><span class="text"><?php echo $title; ?></span></span>
+								</h3>
+							<?php
+							else:
+								$queried_object = get_queried_object();
+								if (!empty($queried_object)):
+									$labels = get_post_type_labels($queried_object);
+
+									if (!empty($labels)): ?>
+										<h1 class="title post">
+											<span><span class="text"><?php echo $labels->name; ?></span></span>
+										</h1>
+								<?php
+									endif;
+								endif;
+							endif; ?>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+	<?php
+		elseif ($type == 'home'): 
 			$slider_posts = get_field('slider_posts');
 			if (!empty($slider_posts)): ?>
 				<div class="posts-slider col-xs-24 no-pad">

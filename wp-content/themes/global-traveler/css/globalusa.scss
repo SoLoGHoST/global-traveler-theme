@@ -1559,7 +1559,7 @@ h5 {
 #main-content {
 	.hero-header {
 		.hero-body {
-			.post-wrapper, .page-wrapper, .tag-wrapper {
+			.post-wrapper, .page-wrapper, .tag-wrapper, .archive-wrapper {
 				.overlay {
 					p {
 						margin-bottom: .25rem;
@@ -1639,7 +1639,7 @@ h5 {
 	}
 }
 
-.excursion-hero-wrapper {
+.excursion-hero-wrapper, .short-hero-wrapper {
 	img {
 		&.fx-img {
 			width: auto;
@@ -1792,14 +1792,99 @@ body {
 				}
 			}
 		}
+		&.post-type-archive-deal {
+			#main-content {
+				.hero-header {
+					.hero-body {
+						background-color: $blue;
+					}
+				}
+			}
+		}
 	}
-	&.single-excursions {
+	&.single-deal {
+		#main-content {
+			.hero-header {
+				.hero-body {
+					background-color: $blue;
+				}
+			}
+		}
+	}
+	&.single-excursions, &.archive.post-type-archive-deal {
 		#main-content {
 			.hero-header {
 				.hero-body {
 					min-height: 340px;
-					.post-wrapper {
+					.post-wrapper, .archive-wrapper {
 						@include translateY(-50%);
+					}
+				}
+			}
+			#content {
+				#posts-section {
+					#body-content {
+						> * {
+							&:first-child {
+								margin-bottom: .5rem;
+								margin-top: -.5rem;
+							}
+						}
+						p {
+							&.excursion-details {
+								@extend %font-regular;
+								color: $blue;
+							}
+						}
+						.cta {
+							padding: 1.5rem 0;
+							border-top: 5px solid $blue;
+						}
+						.excursions-single-content {
+							p, ul, li {
+								@extend %default-p;
+							}
+						}
+						.day-list {
+							width: 100%;
+							.day-item {
+								overflow-x: hidden;
+								.images {
+									.image-half {
+										.image {
+											height: 430px;
+											background-position: center center;
+											background-repeat: no-repeat;
+											background-size: cover;
+										}
+										span {
+											@extend %tagline;
+											color: $global-gray;
+											text-transform: uppercase;
+										}
+									}
+									.gmap-half {
+										.acf-map {
+											position: relative;
+											overflow: hidden;
+											height: 430px;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.single-deal {
+		#main-content {
+			.hero-header {
+				.hero-body {
+					min-height: 340px;
+					.post-wrapper, .archive-wrapper {
+						// @include translateY(-50%);
 					}
 				}
 			}
@@ -2146,7 +2231,7 @@ body {
 				}
 			}
 		}
-		&.single-excursions {
+		&.single-excursions, &.archive.post-type-archive-deal, &.single-deal {
 			#main-content {
 				#content {
 					#posts-section {

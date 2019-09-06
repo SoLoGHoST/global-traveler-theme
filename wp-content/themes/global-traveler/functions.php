@@ -1078,7 +1078,7 @@ function tif_scripts() {
     if (!empty($post) && is_object($post))
     	$hero_type = get_field('hero_type', $post->ID);
 
-    if (($global_site == 'globalusa' && is_page()) || ($global_site == 'globalusa' && is_singular('authors')) || is_post_type_archive('post') || is_search() || is_singular(array('post', 'excursions')) || is_category() || is_author() || (!empty($post) && is_object($post) && ((is_page() && is_front_page()) || ($post->post_type == 'post' && is_tag()))))
+    if (($global_site == 'globalusa' && is_page()) || ($global_site == 'globalusa' && is_post_type_archive('deal')) || ($global_site == 'globalusa' && is_tax('deal_category')) || ($global_site == 'globalusa' && is_singular(array('authors', 'deal'))) || is_post_type_archive('post') || is_search() || is_singular(array('post', 'excursions')) || is_category() || is_author() || (!empty($post) && is_object($post) && ((is_page() && is_front_page()) || ($post->post_type == 'post' && is_tag()))))
 	{
 		$dependants[] = 'ajax-scroll-script';
 		$haspostinhero = is_front_page() || (!empty($hero_type) && $hero_type == 'home');
@@ -1186,28 +1186,80 @@ function tif_register_setup()
 			)
 		);
 
-		//Set UI labels for Custom Post Type
-		$labels = array(
-			'name'					=> _x('Excursions', 'Post Type General Name'),
-			'singular_name'			=> _x('Excursion', 'Post Type Singular Name'),
-			'menu_name'				=> __('Excursions'),
-			'parent_item_colon' 	=> __('Parent Excursion'),
-			'all_items'				=> __('All Excursions'),
-			'view_item'				=> __('View Excursion'),
-			'add_new_item'			=> __('Add New Excursion'),
-			'add_new'				=> __('Add New'),
-			'edit_item'				=> __('Edit Excursion'),
-			'update_item'			=> __('Update Excursion'),
-			'search_items'			=> __('Search Excursions'),
-			'not_found'				=> __('Not Found'),
-			'not_found_in_trash'	=> __('Not Found in Trash')
+		register_taxonomy(
+			'deal_category',
+			'deal',
+			array(
+				'hierarchical' => true,
+				'label' => __('Deal Categories', 'tif_global'),
+				'labels' => array(
+					'singular_name' => __('Deal Category', 'tif_global'),
+				),
+				'public' => true,
+				'show_ui' => true,
+				'query_var' => true,
+				'rewrite' => true,
+				'show_in_nav_menus' => true
+			)
 		);
+
+		register_post_type('deal', array(
+			'label' => __('deal'),
+			'description' => __('Deals'),
+			'labels' => array(
+				'name'					=> _x('Deals', 'Post Type General Name'),
+				'singular_name'			=> _x('Deal', 'Post Type Singular Name'),
+				'menu_name'				=> __('Deals'),
+				'parent_item_colon' 	=> __('Parent Deal'),
+				'all_items'				=> __('All Deals'),
+				'view_item'				=> __('View Deal'),
+				'add_new_item'			=> __('Add New Deal'),
+				'add_new'				=> __('Add New'),
+				'edit_item'				=> __('Edit Deal'),
+				'update_item'			=> __('Update Deal'),
+				'search_items'			=> __('Search Deals'),
+				'not_found'				=> __('Not Found'),
+				'not_found_in_trash'	=> __('Not Found in Trash')
+			),
+			'supports' => array('title', 'editor', 'author', 'thumbnail', 'custom-fields'),
+			'taxonomies' => array('deal_category'),
+			'hierarchical' => false,
+			'public' => true,
+			'publicly_queriable'	=> true,
+			'show_ui'				=> true,
+			'show_in_menu'			=> true,
+			'show_in_nav_menus'		=> true,
+			'show_in_admin_bar'		=> true,
+			'menu_position'			=> 5,
+			'menu_icon'				=> 'dashicons-admin-post',
+			'can_export'			=> true,
+			'has_archive'			=> true,
+			'exclude_from_search'	=> false,
+			'publicly_queryable'	=> true,
+			'capability_type'		=> 'page',
+			'rewrite'				=> array('slug' => 'deal', 'with_front' => true, 'hierarchical' => false, 'ep_mask' => 'EP_PERMALINK')
+		));
 		
 		//Set other options for Custom Post Type
-		$args = array(
+		
+		register_post_type('excursions', array(
 			'label'					=> __('excursions'),
 			'description'			=> __('Excursions'),
-			'labels'				=> $labels,
+			'labels'				=> array(
+				'name'					=> _x('Excursions', 'Post Type General Name'),
+				'singular_name'			=> _x('Excursion', 'Post Type Singular Name'),
+				'menu_name'				=> __('Excursions'),
+				'parent_item_colon' 	=> __('Parent Excursion'),
+				'all_items'				=> __('All Excursions'),
+				'view_item'				=> __('View Excursion'),
+				'add_new_item'			=> __('Add New Excursion'),
+				'add_new'				=> __('Add New'),
+				'edit_item'				=> __('Edit Excursion'),
+				'update_item'			=> __('Update Excursion'),
+				'search_items'			=> __('Search Excursions'),
+				'not_found'				=> __('Not Found'),
+				'not_found_in_trash'	=> __('Not Found in Trash')
+			),
 			//Features this CPT supports in Post Editor
 			'supports'				=> array('title', 'editor', 'thumbnail', 'excerpt'),
 			//You can associate this CPT with a taxonomy or custom taxonomy.
@@ -1231,9 +1283,7 @@ function tif_register_setup()
 			'publicly_queryable'	=> true,
 			'capability_type'		=> 'page',
 			'rewrite'				=> array('slug' => 'excursions')
-		);
-		
-		register_post_type('excursions', $args);
+		));
 
 		register_post_type('authors', array(
 			'label' => __('authors'),
@@ -1278,7 +1328,6 @@ function tif_register_setup()
 			'query_var' 			=> true,
 			'capability_type'		=> 'page'
 		));
-
 	}
 
 }

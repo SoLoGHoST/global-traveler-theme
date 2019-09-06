@@ -8200,7 +8200,7 @@ body {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto; }
 
-#main-content .hero-header .hero-body .post-wrapper .overlay .date, #main-content .hero-header .hero-body .page-wrapper .overlay .date, #main-content .hero-header .hero-body .tag-wrapper .overlay .date, body.single-excursions #main-content #content #posts-section #body-content p.excursion-details, body.site-globalusa .navbar #subnav, body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info p, #fx-excursions .excursions-inner .intro, p, #home-content #content .single-wrapper .sidebar > .newsletter .gform_confirmation_wrapper .gform_confirmation_message, #main-content #content .single-wrapper .sidebar > .newsletter .gform_confirmation_wrapper .gform_confirmation_message, #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_heading span.gform_description, #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_heading span.gform_description, #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper input[type="text"], #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper input[type="text"], #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper textarea, #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper textarea, body.single-excursions #main-content #content #posts-section #body-content .excursions-single-content p, body.single-excursions #main-content #content #posts-section #body-content .excursions-single-content ul, body.single-excursions #main-content #content #posts-section #body-content .excursions-single-content li, #home-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .print-article p, #main-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .print-article p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, h5, #home-content #content .section .date, #main-content #content .section .date, .recent-posts-wrapper #featured .innerbox .featured-details .date, body.single-excursions #main-content #content #posts-section #body-content .day-list .day-item .images .image-half span, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #home-content #content .section .caption p, #main-content #content .section .caption p, #home-content #content #posts-section .caption p, #main-content #content #posts-section .caption p, #home-content #content .section .print-article p, #main-content #content .section .print-article p, #home-content #content #posts-section .print-article p, #main-content #content #posts-section .print-article p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .post-wrapper .overlay p, #main-content .hero-header .hero-body .page-wrapper .overlay p, #main-content .hero-header .hero-body .tag-wrapper .overlay p, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a, #main-content .hero-header .hero-body .post-wrapper .overlay > p > a, #main-content .hero-header .hero-body .page-wrapper .overlay > p > a, #main-content .hero-header .hero-body .tag-wrapper .overlay > p > a, #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_footer input.button, #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_footer input[type="submit"], #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_page_footer input.button, #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_page_footer input[type="submit"], #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_footer input.button, #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_footer input[type="submit"], #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_page_footer input.button, #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_page_footer input[type="submit"], #home-content #content #posts-section #body-content a.btn, #main-content #content #posts-section #body-content a.btn, body.page #main-content #content .content a.btn, .btn, #mainMenu #main_navigation li a, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
+#main-content .hero-header .hero-body .post-wrapper .overlay .date, #main-content .hero-header .hero-body .page-wrapper .overlay .date, #main-content .hero-header .hero-body .tag-wrapper .overlay .date, #main-content .hero-header .hero-body .archive-wrapper .overlay .date, body.single-excursions #main-content #content #posts-section #body-content p.excursion-details, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content p.excursion-details, body.single-deal #main-content #content #posts-section #body-content p.excursion-details, body.site-globalusa .navbar #subnav, body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info p, #fx-excursions .excursions-inner .intro, p, #home-content #content .single-wrapper .sidebar > .newsletter .gform_confirmation_wrapper .gform_confirmation_message, #main-content #content .single-wrapper .sidebar > .newsletter .gform_confirmation_wrapper .gform_confirmation_message, #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_heading span.gform_description, #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_heading span.gform_description, #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper input[type="text"], #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper input[type="text"], #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper textarea, #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper textarea, body.single-excursions #main-content #content #posts-section #body-content .excursions-single-content p, body.single-excursions #main-content #content #posts-section #body-content .excursions-single-content ul, body.single-excursions #main-content #content #posts-section #body-content .excursions-single-content li, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content .excursions-single-content p, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content .excursions-single-content ul, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content .excursions-single-content li, body.single-deal #main-content #content #posts-section #body-content .excursions-single-content p, body.single-deal #main-content #content #posts-section #body-content .excursions-single-content ul, body.single-deal #main-content #content #posts-section #body-content .excursions-single-content li, #home-content .hero-header .hero-body .caption p, #home-content .hero-header .hero-body .print-article p, #main-content .hero-header .hero-body .caption p, #main-content .hero-header .hero-body .print-article p, #home-content #content #instagram-feed a.insta-feed span, #main-content #content #instagram-feed a.insta-feed span, #home-content #content #instagram-feed #instagram-inner a.instagram-link .likes, #main-content #content #instagram-feed #instagram-inner a.instagram-link .likes, h5, #home-content #content .section .date, #main-content #content .section .date, .recent-posts-wrapper #featured .innerbox .featured-details .date, body.single-excursions #main-content #content #posts-section #body-content .day-list .day-item .images .image-half span, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content .day-list .day-item .images .image-half span, body.single-deal #main-content #content #posts-section #body-content .day-list .day-item .images .image-half span, #home-content #content #posts-section #social-share .social-title, #main-content #content #posts-section #social-share .social-title, #home-content #content .section .caption p, #main-content #content .section .caption p, #home-content #content #posts-section .caption p, #main-content #content #posts-section .caption p, #home-content #content .section .print-article p, #main-content #content .section .print-article p, #home-content #content #posts-section .print-article p, #main-content #content #posts-section .print-article p, #home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .post-wrapper .overlay p, #main-content .hero-header .hero-body .page-wrapper .overlay p, #main-content .hero-header .hero-body .tag-wrapper .overlay p, #main-content .hero-header .hero-body .archive-wrapper .overlay p, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a, #main-content .hero-header .hero-body .post-wrapper .overlay > p > a, #main-content .hero-header .hero-body .page-wrapper .overlay > p > a, #main-content .hero-header .hero-body .tag-wrapper .overlay > p > a, #main-content .hero-header .hero-body .archive-wrapper .overlay > p > a, #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_footer input.button, #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_footer input[type="submit"], #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_page_footer input.button, #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_page_footer input[type="submit"], #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_footer input.button, #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_footer input[type="submit"], #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_page_footer input.button, #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_page_footer input[type="submit"], #home-content #content #posts-section #body-content a.btn, #main-content #content #posts-section #body-content a.btn, body.page #main-content #content .content a.btn, .btn, #mainMenu #main_navigation li a, #home-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, #main-content .hero-header .hero-body #hero-content .desc-wrapper .desc-inner p, .tif-search-modal .modal-dialog .modal-header #searchform .button-wrapper button {
   font-family: brandon-grotesque, sans-serif;
   font-style: normal; }
 
@@ -8208,13 +8208,13 @@ h4, #fx-excursions .excursions-inner .excursions-landing-images .image-item a h2
   font-family: "Noe Display Bold", sans-serif;
   font-style: normal; }
 
-#main-content .hero-header .hero-body .post-wrapper .overlay .date, #main-content .hero-header .hero-body .page-wrapper .overlay .date, #main-content .hero-header .hero-body .tag-wrapper .overlay .date, body.single-excursions #main-content #content #posts-section #body-content p.excursion-details, body.site-globalusa .navbar #subnav, body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info p, #fx-excursions .excursions-inner .intro {
+#main-content .hero-header .hero-body .post-wrapper .overlay .date, #main-content .hero-header .hero-body .page-wrapper .overlay .date, #main-content .hero-header .hero-body .tag-wrapper .overlay .date, #main-content .hero-header .hero-body .archive-wrapper .overlay .date, body.single-excursions #main-content #content #posts-section #body-content p.excursion-details, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content p.excursion-details, body.single-deal #main-content #content #posts-section #body-content p.excursion-details, body.site-globalusa .navbar #subnav, body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info p, #fx-excursions .excursions-inner .intro {
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
   line-height: 1.38em; }
 
-p, #home-content #content .single-wrapper .sidebar > .newsletter .gform_confirmation_wrapper .gform_confirmation_message, #main-content #content .single-wrapper .sidebar > .newsletter .gform_confirmation_wrapper .gform_confirmation_message, #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_heading span.gform_description, #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_heading span.gform_description, #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper input[type="text"], #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper input[type="text"], #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper textarea, #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper textarea, body.single-excursions #main-content #content #posts-section #body-content .excursions-single-content p, body.single-excursions #main-content #content #posts-section #body-content .excursions-single-content ul, body.single-excursions #main-content #content #posts-section #body-content .excursions-single-content li {
+p, #home-content #content .single-wrapper .sidebar > .newsletter .gform_confirmation_wrapper .gform_confirmation_message, #main-content #content .single-wrapper .sidebar > .newsletter .gform_confirmation_wrapper .gform_confirmation_message, #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_heading span.gform_description, #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper .gform_heading span.gform_description, #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper input[type="text"], #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper input[type="text"], #home-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper textarea, #main-content #content .single-wrapper .sidebar > .newsletter .gform_wrapper textarea, body.single-excursions #main-content #content #posts-section #body-content .excursions-single-content p, body.single-excursions #main-content #content #posts-section #body-content .excursions-single-content ul, body.single-excursions #main-content #content #posts-section #body-content .excursions-single-content li, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content .excursions-single-content p, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content .excursions-single-content ul, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content .excursions-single-content li, body.single-deal #main-content #content #posts-section #body-content .excursions-single-content p, body.single-deal #main-content #content #posts-section #body-content .excursions-single-content ul, body.single-deal #main-content #content #posts-section #body-content .excursions-single-content li {
   font-weight: 400;
   font-style: normal;
   font-size: 24px;
@@ -8226,7 +8226,7 @@ p, #home-content #content .single-wrapper .sidebar > .newsletter .gform_confirma
   font-size: 12px;
   line-height: 18px; }
 
-h5, #home-content #content .section .date, #main-content #content .section .date, .recent-posts-wrapper #featured .innerbox .featured-details .date, body.single-excursions #main-content #content #posts-section #body-content .day-list .day-item .images .image-half span {
+h5, #home-content #content .section .date, #main-content #content .section .date, .recent-posts-wrapper #featured .innerbox .featured-details .date, body.single-excursions #main-content #content #posts-section #body-content .day-list .day-item .images .image-half span, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content .day-list .day-item .images .image-half span, body.single-deal #main-content #content #posts-section #body-content .day-list .day-item .images .image-half span {
   font-weight: 700;
   font-style: normal;
   font-size: 10px;
@@ -8289,14 +8289,14 @@ h4, #fx-excursions .excursions-inner .excursions-landing-images .image-item a h2
   font-size: 24px;
   line-height: 1.38em; }
 
-#home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .post-wrapper .overlay p, #main-content .hero-header .hero-body .page-wrapper .overlay p, #main-content .hero-header .hero-body .tag-wrapper .overlay p, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a {
+#home-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .caption-post p, #main-content .hero-header .hero-body .post-wrapper .overlay p, #main-content .hero-header .hero-body .page-wrapper .overlay p, #main-content .hero-header .hero-body .tag-wrapper .overlay p, #main-content .hero-header .hero-body .archive-wrapper .overlay p, .header-1 .topline li.tagline, .header-1 .topline a, #videoModal .modal-dialog .skip-this a {
   font-weight: 700;
   font-style: normal;
   letter-spacing: .1em;
   font-size: 10px;
   text-transform: uppercase; }
 
-#main-content .hero-header .hero-body .post-wrapper .overlay > p, #main-content .hero-header .hero-body .page-wrapper .overlay > p, #main-content .hero-header .hero-body .tag-wrapper .overlay > p, #main-content .hero-header .hero-body .post-wrapper .overlay > p > a, #main-content .hero-header .hero-body .page-wrapper .overlay > p > a, #main-content .hero-header .hero-body .tag-wrapper .overlay > p > a {
+#main-content .hero-header .hero-body .post-wrapper .overlay > p, #main-content .hero-header .hero-body .page-wrapper .overlay > p, #main-content .hero-header .hero-body .tag-wrapper .overlay > p, #main-content .hero-header .hero-body .archive-wrapper .overlay > p, #main-content .hero-header .hero-body .post-wrapper .overlay > p > a, #main-content .hero-header .hero-body .page-wrapper .overlay > p > a, #main-content .hero-header .hero-body .tag-wrapper .overlay > p > a, #main-content .hero-header .hero-body .archive-wrapper .overlay > p > a {
   font-weight: 700;
   font-style: normal;
   font-size: 18px;
@@ -8792,16 +8792,16 @@ h5.sponsored span {
   #home-content #content .post-item .copy .content a:hover, #home-content #content .slide-item .copy .content a:hover, #main-content #content .post-item .copy .content a:hover, #main-content #content .slide-item .copy .content a:hover {
     color: #2a98d6; }
 
-#main-content .hero-header .hero-body .post-wrapper .overlay p, #main-content .hero-header .hero-body .page-wrapper .overlay p, #main-content .hero-header .hero-body .tag-wrapper .overlay p {
+#main-content .hero-header .hero-body .post-wrapper .overlay p, #main-content .hero-header .hero-body .page-wrapper .overlay p, #main-content .hero-header .hero-body .tag-wrapper .overlay p, #main-content .hero-header .hero-body .archive-wrapper .overlay p {
   margin-bottom: .25rem; }
-  #main-content .hero-header .hero-body .post-wrapper .overlay p > a.author-link, #main-content .hero-header .hero-body .page-wrapper .overlay p > a.author-link, #main-content .hero-header .hero-body .tag-wrapper .overlay p > a.author-link {
+  #main-content .hero-header .hero-body .post-wrapper .overlay p > a.author-link, #main-content .hero-header .hero-body .page-wrapper .overlay p > a.author-link, #main-content .hero-header .hero-body .tag-wrapper .overlay p > a.author-link, #main-content .hero-header .hero-body .archive-wrapper .overlay p > a.author-link {
     color: #FFFFFF;
     margin: 0; }
-    #main-content .hero-header .hero-body .post-wrapper .overlay p > a.author-link span, #main-content .hero-header .hero-body .page-wrapper .overlay p > a.author-link span, #main-content .hero-header .hero-body .tag-wrapper .overlay p > a.author-link span {
+    #main-content .hero-header .hero-body .post-wrapper .overlay p > a.author-link span, #main-content .hero-header .hero-body .page-wrapper .overlay p > a.author-link span, #main-content .hero-header .hero-body .tag-wrapper .overlay p > a.author-link span, #main-content .hero-header .hero-body .archive-wrapper .overlay p > a.author-link span {
       position: relative;
       display: inline-block;
       color: #FFFFFF; }
-      #main-content .hero-header .hero-body .post-wrapper .overlay p > a.author-link span:before, #main-content .hero-header .hero-body .page-wrapper .overlay p > a.author-link span:before, #main-content .hero-header .hero-body .tag-wrapper .overlay p > a.author-link span:before {
+      #main-content .hero-header .hero-body .post-wrapper .overlay p > a.author-link span:before, #main-content .hero-header .hero-body .page-wrapper .overlay p > a.author-link span:before, #main-content .hero-header .hero-body .tag-wrapper .overlay p > a.author-link span:before, #main-content .hero-header .hero-body .archive-wrapper .overlay p > a.author-link span:before {
         content: "";
         position: absolute;
         background-color: #FFFFFF;
@@ -8809,31 +8809,31 @@ h5.sponsored span {
         height: 1px;
         bottom: 0;
         left: 0; }
-    #main-content .hero-header .hero-body .post-wrapper .overlay p > a.author-link:hover span:before, #main-content .hero-header .hero-body .page-wrapper .overlay p > a.author-link:hover span:before, #main-content .hero-header .hero-body .tag-wrapper .overlay p > a.author-link:hover span:before {
+    #main-content .hero-header .hero-body .post-wrapper .overlay p > a.author-link:hover span:before, #main-content .hero-header .hero-body .page-wrapper .overlay p > a.author-link:hover span:before, #main-content .hero-header .hero-body .tag-wrapper .overlay p > a.author-link:hover span:before, #main-content .hero-header .hero-body .archive-wrapper .overlay p > a.author-link:hover span:before {
       width: 100%;
       -webkit-transition: all 0.2s ease;
       -moz-transition: all 0.2s ease;
       -ms-transition: all 0.2s ease;
       -o-transition: all 0.2s ease; }
-#main-content .hero-header .hero-body .post-wrapper .overlay > p, #main-content .hero-header .hero-body .page-wrapper .overlay > p, #main-content .hero-header .hero-body .tag-wrapper .overlay > p {
+#main-content .hero-header .hero-body .post-wrapper .overlay > p, #main-content .hero-header .hero-body .page-wrapper .overlay > p, #main-content .hero-header .hero-body .tag-wrapper .overlay > p, #main-content .hero-header .hero-body .archive-wrapper .overlay > p {
   color: #FFFFFF;
   text-transform: capitalize;
   display: block; }
-  #main-content .hero-header .hero-body .post-wrapper .overlay > p > a, #main-content .hero-header .hero-body .page-wrapper .overlay > p > a, #main-content .hero-header .hero-body .tag-wrapper .overlay > p > a {
+  #main-content .hero-header .hero-body .post-wrapper .overlay > p > a, #main-content .hero-header .hero-body .page-wrapper .overlay > p > a, #main-content .hero-header .hero-body .tag-wrapper .overlay > p > a, #main-content .hero-header .hero-body .archive-wrapper .overlay > p > a {
     text-tranform: capitalize;
     color: #FFFFFF; }
-#main-content .hero-header .hero-body .post-wrapper .overlay .date, #main-content .hero-header .hero-body .page-wrapper .overlay .date, #main-content .hero-header .hero-body .tag-wrapper .overlay .date {
+#main-content .hero-header .hero-body .post-wrapper .overlay .date, #main-content .hero-header .hero-body .page-wrapper .overlay .date, #main-content .hero-header .hero-body .tag-wrapper .overlay .date, #main-content .hero-header .hero-body .archive-wrapper .overlay .date {
   text-transform: initial;
   color: #FFFFFF; }
-#main-content .hero-header .hero-body .post-wrapper .overlay h1.post, #main-content .hero-header .hero-body .post-wrapper .overlay h2.post, #main-content .hero-header .hero-body .post-wrapper .overlay h3.post, #main-content .hero-header .hero-body .page-wrapper .overlay h1.post, #main-content .hero-header .hero-body .page-wrapper .overlay h2.post, #main-content .hero-header .hero-body .page-wrapper .overlay h3.post, #main-content .hero-header .hero-body .tag-wrapper .overlay h1.post, #main-content .hero-header .hero-body .tag-wrapper .overlay h2.post, #main-content .hero-header .hero-body .tag-wrapper .overlay h3.post {
+#main-content .hero-header .hero-body .post-wrapper .overlay h1.post, #main-content .hero-header .hero-body .post-wrapper .overlay h2.post, #main-content .hero-header .hero-body .post-wrapper .overlay h3.post, #main-content .hero-header .hero-body .page-wrapper .overlay h1.post, #main-content .hero-header .hero-body .page-wrapper .overlay h2.post, #main-content .hero-header .hero-body .page-wrapper .overlay h3.post, #main-content .hero-header .hero-body .tag-wrapper .overlay h1.post, #main-content .hero-header .hero-body .tag-wrapper .overlay h2.post, #main-content .hero-header .hero-body .tag-wrapper .overlay h3.post, #main-content .hero-header .hero-body .archive-wrapper .overlay h1.post, #main-content .hero-header .hero-body .archive-wrapper .overlay h2.post, #main-content .hero-header .hero-body .archive-wrapper .overlay h3.post {
   color: #FFFFFF; }
-#main-content .hero-header .hero-body .post-wrapper .overlay a span.text, #main-content .hero-header .hero-body .page-wrapper .overlay a span.text, #main-content .hero-header .hero-body .tag-wrapper .overlay a span.text {
+#main-content .hero-header .hero-body .post-wrapper .overlay a span.text, #main-content .hero-header .hero-body .page-wrapper .overlay a span.text, #main-content .hero-header .hero-body .tag-wrapper .overlay a span.text, #main-content .hero-header .hero-body .archive-wrapper .overlay a span.text {
   color: #12222D;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease; }
-#main-content .hero-header .hero-body .post-wrapper .overlay a:hover span.text, #main-content .hero-header .hero-body .page-wrapper .overlay a:hover span.text, #main-content .hero-header .hero-body .tag-wrapper .overlay a:hover span.text {
+#main-content .hero-header .hero-body .post-wrapper .overlay a:hover span.text, #main-content .hero-header .hero-body .page-wrapper .overlay a:hover span.text, #main-content .hero-header .hero-body .tag-wrapper .overlay a:hover span.text, #main-content .hero-header .hero-body .archive-wrapper .overlay a:hover span.text {
   color: #3FA2DA; }
 #main-content .hero-header .hero-body .page-wrapper, #main-content .hero-header .hero-body .tag-wrapper {
   -webkit-transform: translateY(-50%);
@@ -8841,7 +8841,7 @@ h5.sponsored span {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
 
-.excursion-hero-wrapper img.fx-img {
+.excursion-hero-wrapper img.fx-img, .short-hero-wrapper img.fx-img {
   width: auto;
   max-height: 90px; }
 
@@ -8900,34 +8900,64 @@ body {
     min-height: 340px; }
   body.archive.tax-excursions_tag_type #main-content .hero-header .hero-body {
     min-height: 340px; }
-  body.single-excursions #main-content .hero-header .hero-body {
+  body.archive.post-type-archive-deal #main-content .hero-header .hero-body {
+    background-color: #3FA2DA; }
+  body.single-deal #main-content .hero-header .hero-body {
+    background-color: #3FA2DA; }
+  body.single-excursions #main-content .hero-header .hero-body, body.archive.post-type-archive-deal #main-content .hero-header .hero-body {
     min-height: 340px; }
-    body.single-excursions #main-content .hero-header .hero-body .post-wrapper {
+    body.single-excursions #main-content .hero-header .hero-body .post-wrapper, body.single-excursions #main-content .hero-header .hero-body .archive-wrapper, body.archive.post-type-archive-deal #main-content .hero-header .hero-body .post-wrapper, body.archive.post-type-archive-deal #main-content .hero-header .hero-body .archive-wrapper {
       -webkit-transform: translateY(-50%);
       -moz-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       transform: translateY(-50%); }
-  body.single-excursions #main-content #content #posts-section #body-content > *:first-child {
+  body.single-excursions #main-content #content #posts-section #body-content > *:first-child, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content > *:first-child {
     margin-bottom: .5rem;
     margin-top: -.5rem; }
-  body.single-excursions #main-content #content #posts-section #body-content p.excursion-details {
+  body.single-excursions #main-content #content #posts-section #body-content p.excursion-details, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content p.excursion-details {
     color: #3FA2DA; }
-  body.single-excursions #main-content #content #posts-section #body-content .cta {
+  body.single-excursions #main-content #content #posts-section #body-content .cta, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content .cta {
     padding: 1.5rem 0;
     border-top: 5px solid #3FA2DA; }
-  body.single-excursions #main-content #content #posts-section #body-content .day-list {
+  body.single-excursions #main-content #content #posts-section #body-content .day-list, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content .day-list {
     width: 100%; }
-    body.single-excursions #main-content #content #posts-section #body-content .day-list .day-item {
+    body.single-excursions #main-content #content #posts-section #body-content .day-list .day-item, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content .day-list .day-item {
       overflow-x: hidden; }
-      body.single-excursions #main-content #content #posts-section #body-content .day-list .day-item .images .image-half .image {
+      body.single-excursions #main-content #content #posts-section #body-content .day-list .day-item .images .image-half .image, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content .day-list .day-item .images .image-half .image {
         height: 430px;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover; }
-      body.single-excursions #main-content #content #posts-section #body-content .day-list .day-item .images .image-half span {
+      body.single-excursions #main-content #content #posts-section #body-content .day-list .day-item .images .image-half span, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content .day-list .day-item .images .image-half span {
         color: #9FACBD;
         text-transform: uppercase; }
-      body.single-excursions #main-content #content #posts-section #body-content .day-list .day-item .images .gmap-half .acf-map {
+      body.single-excursions #main-content #content #posts-section #body-content .day-list .day-item .images .gmap-half .acf-map, body.archive.post-type-archive-deal #main-content #content #posts-section #body-content .day-list .day-item .images .gmap-half .acf-map {
+        position: relative;
+        overflow: hidden;
+        height: 430px; }
+  body.single-deal #main-content .hero-header .hero-body {
+    min-height: 340px; }
+  body.single-deal #main-content #content #posts-section #body-content > *:first-child {
+    margin-bottom: .5rem;
+    margin-top: -.5rem; }
+  body.single-deal #main-content #content #posts-section #body-content p.excursion-details {
+    color: #3FA2DA; }
+  body.single-deal #main-content #content #posts-section #body-content .cta {
+    padding: 1.5rem 0;
+    border-top: 5px solid #3FA2DA; }
+  body.single-deal #main-content #content #posts-section #body-content .day-list {
+    width: 100%; }
+    body.single-deal #main-content #content #posts-section #body-content .day-list .day-item {
+      overflow-x: hidden; }
+      body.single-deal #main-content #content #posts-section #body-content .day-list .day-item .images .image-half .image {
+        height: 430px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover; }
+      body.single-deal #main-content #content #posts-section #body-content .day-list .day-item .images .image-half span {
+        color: #9FACBD;
+        text-transform: uppercase; }
+      body.single-deal #main-content #content #posts-section #body-content .day-list .day-item .images .gmap-half .acf-map {
         position: relative;
         overflow: hidden;
         height: 430px; }
@@ -9128,7 +9158,7 @@ body {
 
   body.archive.tax-excursions_tag_type #main-content #content #posts-section {
     margin-top: -6.5rem; }
-  body.single-excursions #main-content #content #posts-section {
+  body.single-excursions #main-content #content #posts-section, body.archive.post-type-archive-deal #main-content #content #posts-section, body.single-deal #main-content #content #posts-section {
     margin-top: -6.5rem; } }
 @media (min-width: 1280px) {
   #home-content #content #posts-section {
@@ -10031,7 +10061,7 @@ body.site-globalusa .posts-slider .slide-item {
     opacity: 1;
     filter: alpha(opacity=100) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity); }
 
-#main-content .hero-header .hero-body .post-wrapper, #main-content .hero-header .hero-body .page-wrapper, #main-content .hero-header .hero-body .tag-wrapper {
+#main-content .hero-header .hero-body .post-wrapper, #main-content .hero-header .hero-body .page-wrapper, #main-content .hero-header .hero-body .tag-wrapper, #main-content .hero-header .hero-body .archive-wrapper {
   position: absolute;
   height: auto;
   bottom: 5.5rem;
@@ -10039,11 +10069,11 @@ body.site-globalusa .posts-slider .slide-item {
   right: 0;
   margin: auto;
   z-index: 9; }
-  #main-content .hero-header .hero-body .post-wrapper .overlay, #main-content .hero-header .hero-body .page-wrapper .overlay, #main-content .hero-header .hero-body .tag-wrapper .overlay {
+  #main-content .hero-header .hero-body .post-wrapper .overlay, #main-content .hero-header .hero-body .page-wrapper .overlay, #main-content .hero-header .hero-body .tag-wrapper .overlay, #main-content .hero-header .hero-body .archive-wrapper .overlay {
     text-align: center; }
-    #main-content .hero-header .hero-body .post-wrapper .overlay .date, #main-content .hero-header .hero-body .page-wrapper .overlay .date, #main-content .hero-header .hero-body .tag-wrapper .overlay .date {
+    #main-content .hero-header .hero-body .post-wrapper .overlay .date, #main-content .hero-header .hero-body .page-wrapper .overlay .date, #main-content .hero-header .hero-body .tag-wrapper .overlay .date, #main-content .hero-header .hero-body .archive-wrapper .overlay .date {
       display: block; }
-    #main-content .hero-header .hero-body .post-wrapper .overlay .categories, #main-content .hero-header .hero-body .page-wrapper .overlay .categories, #main-content .hero-header .hero-body .tag-wrapper .overlay .categories {
+    #main-content .hero-header .hero-body .post-wrapper .overlay .categories, #main-content .hero-header .hero-body .page-wrapper .overlay .categories, #main-content .hero-header .hero-body .tag-wrapper .overlay .categories, #main-content .hero-header .hero-body .archive-wrapper .overlay .categories {
       margin-top: 1.5rem; }
 #main-content #content .single-wrapper .sidebar ul.category-group {
   display: inline-block;

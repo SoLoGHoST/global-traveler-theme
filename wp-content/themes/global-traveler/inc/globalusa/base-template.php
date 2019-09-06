@@ -86,7 +86,7 @@ $ordered_array = array();
 $posts_per_page = !empty($the_ads) ? 11 : 10;
 
 $args = array(
-	'post_type' => 'post',
+	'post_type' => !empty($post_type) ? $post_type : 'post',
 	'orderby' => 'date',
 	'post_status' => 'publish',
 	'offset' => !empty($offset) ? (int) $offset : 0, // setting the initial offset, if defined...
@@ -95,6 +95,16 @@ $args = array(
 
 if (!empty($cat_id)) {
 	$args['cat'] = $cat_id;
+}
+
+if (!empty($term) && !empty($taxonomy)) {
+	$args['tax_query'] = array(
+        array(
+            'taxonomy' => $taxonomy,
+            'field' => 'id',
+            'terms' => $term->term_id
+        )
+    );
 }
 
 if (!empty($author_id)) {
@@ -202,6 +212,19 @@ endif; ?>
 					'compare' => '='
 				)
 			);
+		endif;
+
+		if (!empty($term) && !empty($taxonomy)):
+			$ajax_args['tax_query'] = array(
+		        array(
+		            'taxonomy' => $taxonomy,
+		            'field' => 'id',
+		            'terms' => $term->term_id
+		        )
+		    );
+			if (!empty($post_type)):
+				$ajax_args['post_type'] = 'deal';
+			endif;
 		endif;
 
 		if (is_singular('post')):
