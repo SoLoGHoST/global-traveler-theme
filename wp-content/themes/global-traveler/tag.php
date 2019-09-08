@@ -5,7 +5,6 @@
 if (!defined('ABSPATH')) exit;
 global $post, $page_id, $homepage_id, $wp_query, $global_site;
 
-
 $tag_title = get_query_var('tag');
 $tag_id = get_query_var('tag_id');
 $tag = get_tag($tag_id);
@@ -83,7 +82,7 @@ $ordered_array = array();
 $the_ads = array();
 $posts_per_page = !empty($the_ads) ? 12 : 11;
 $args = array(
-	'post_type' => 'post',
+	'post_type' => $global_site == 'globalusa' ? array('blog', 'post') : 'post',
 	'orderby' => 'date',
 	'tag_id' => $tag_id,
 	'post__not_in' => $sponsored_ids,
@@ -145,7 +144,7 @@ if (!empty($the_query->posts))
 				tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $ordered_array['last_set']));
 			endif;
 		?>
-		<input type="hidden" id="args" value='<?php echo json_encode(array('tag_id' => $tag_id)); ?>' />
+		<input type="hidden" id="args" value='<?php echo json_encode(array('post_type' => $global_site == 'globalusa' ? array('blog', 'post') : 'post', 'tag_id' => $tag_id)); ?>' />
 	<?php 
 		else: ?>
 		<p>Sorry, No results exist for this tag.</p>

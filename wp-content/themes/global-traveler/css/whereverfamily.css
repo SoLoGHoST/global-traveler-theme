@@ -8459,6 +8459,9 @@ h5 {
     padding: 6px 0 2px; }
 #home-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text, #main-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text {
   color: #90C844; }
+#home-content .post-list .post-wide .copy .tagline h5.categories, #main-content .post-list .post-wide .copy .tagline h5.categories {
+  padding-left: 15px;
+  padding-right: 15px; }
 #home-content .post-list .post-wide .copy a span.text, #main-content .post-list .post-wide .copy a span.text {
   color: #202433;
   -webkit-transition: all 0.3s ease;
@@ -9557,9 +9560,6 @@ h5 {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover; }
-  #home-content .post-list .post-wide .copy .tagline h5.categories, #main-content .post-list .post-wide .copy .tagline h5.categories {
-    padding-left: 15px;
-    padding-right: 15px; }
   #home-content .post-list .post-wide .copy a.post, #main-content .post-list .post-wide .copy a.post {
     padding-top: 5px; }
     #home-content .post-list .post-wide .copy a.post span, #main-content .post-list .post-wide .copy a.post span {

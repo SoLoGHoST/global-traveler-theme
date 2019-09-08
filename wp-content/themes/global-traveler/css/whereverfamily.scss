@@ -1104,6 +1104,14 @@ h5 {
 	.post-list {
 		.post-wide {
 			.copy {
+				.tagline {
+					h5 {
+						&.categories {
+							padding-left: 15px;
+							padding-right: 15px;
+						}
+					}
+				}
 				a {
 					span {
 						&.text {

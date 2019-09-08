@@ -84,19 +84,21 @@ if (!empty($post_data)):
 			<?php
 			else: ?>
 			<div class="tagline">
+				<?php 
+				if (!empty($categories)): ?>
 				<h5 class="categories">
-					<?php if (!empty($categories)): 
-						if (!empty($categories['primary'])): ?>
-							<a href="<?php echo esc_url($categories['primary']['link']); ?>"><?php echo $categories['primary']['title']; ?></a>
-							<?php
-							if (!empty($categories['child'])): ?>
-							/ <a href="<?php echo esc_url($categories['child']['link']); ?>"><?php echo $categories['child']['title']; ?></a>
-							<?php
-							endif;
+				<?php
+					if (!empty($categories['primary'])): ?>
+						<a href="<?php echo esc_url($categories['primary']['link']); ?>"><?php echo $categories['primary']['title']; ?></a>
+						<?php
+						if (!empty($categories['child'])): ?>
+						/ <a href="<?php echo esc_url($categories['child']['link']); ?>"><?php echo $categories['child']['title']; ?></a>
+						<?php
 						endif;
 					endif; ?>
 				</h5>
-				<?php 
+				<?php
+				endif;
 				$post_type = get_post_type($data->ID);
 				if ($post_type != 'excursions'): ?>
 				<span class="date"><?php echo $date; ?></span>

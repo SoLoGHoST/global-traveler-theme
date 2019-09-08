@@ -43,9 +43,19 @@ if (!empty($type)): ?>
 			/*
 			if (!empty($categories))
 				$category_link = get_category_link($categories[0]->term_id); 
-			*/ ?>
-
-			<div class="hero-body<?php echo !empty($excursion_page) ? ' fx-excursions-hero' : ''; ?>"<?php echo $the_post_type != 'deal' ? ' style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(' . $post_image . ') no-repeat center center; background-size: cover;"' : ''; ?>>
+			*/
+			$style = '';
+			if ($the_post_type != 'deal') {
+				$style = ' style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(' . $post_image . ') no-repeat center center; background-size: cover;"';
+				/*
+				if ($the_post_type == 'blog' && !empty($post_image)) {
+					$style = ' style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(' . $post_image . ') no-repeat center center; background-size: cover;"';
+				} else if ($the_post_type != 'blog') {
+					$style = ' style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(' . $post_image . ') no-repeat center center; background-size: cover;"';
+				}
+				*/
+			} ?>
+			<div class="hero-body<?php echo !empty($excursion_page) ? ' fx-excursions-hero' : ''; ?><?php echo $the_post_type == 'blog' && empty($post_image) ? ' small-hero' : ''; ?>"<?php echo $style; ?>>
 				<div class="container-fluid <?php echo is_page() || !empty($page) ? 'page' : 'post'; ?>-wrapper">
 					<div class="overlay">
 						<?php if (!empty($sponsored_post)): ?>

@@ -41,7 +41,16 @@ if (function_exists('get_ad_group')) {
 							$chunked_archives = array_chunk($archive_query->posts, 3);
 
 							foreach($chunked_archives as $chunked_archive):
-								tif_get_template('inc/' . $global_site . '/3posts-template.php', array('post_data' => $chunked_archive, 'excursion_page' => true, 'custom_category' => 'deal_category'));
+
+								$template_args = array(
+									'post_data' => $chunked_archive,
+									'excursion_page' => true
+								);
+
+								if (!empty($custom_category))
+									$template_args['custom_category'] = $custom_category;
+
+								tif_get_template('inc/' . $global_site . '/3posts-template.php', $template_args);
 							endforeach; ?>
 						<?php
 						else: 

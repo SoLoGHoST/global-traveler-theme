@@ -8498,6 +8498,9 @@ h5.sponsored span {
   -moz-transition: background-size 0.3s;
   -ms-transition: background-size 0.3s;
   -o-transition: background-size 0.3s; }
+#home-content .post-list .post-wide .copy .tagline h5.categories, #main-content .post-list .post-wide .copy .tagline h5.categories {
+  padding-left: 15px;
+  padding-right: 15px; }
 #home-content .post-list .post-wide .img-wrapper:hover + .copy a span.text, #main-content .post-list .post-wide .img-wrapper:hover + .copy a span.text {
   background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#2CB78F), to(#2CB78F));
   background: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#2CB78F, #2CB78F);
@@ -9556,9 +9559,6 @@ h5 {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover; }
-  #home-content .post-list .post-wide .copy .tagline h5.categories, #main-content .post-list .post-wide .copy .tagline h5.categories {
-    padding-left: 15px;
-    padding-right: 15px; }
   #home-content .post-list .post-wide .copy a.post, #main-content .post-list .post-wide .copy a.post {
     padding-top: 5px; }
     #home-content .post-list .post-wide .copy a.post span, #main-content .post-list .post-wide .copy a.post span {

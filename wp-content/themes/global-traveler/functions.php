@@ -1078,7 +1078,18 @@ function tif_scripts() {
     if (!empty($post) && is_object($post))
     	$hero_type = get_field('hero_type', $post->ID);
 
-    if (($global_site == 'globalusa' && is_page()) || ($global_site == 'globalusa' && is_post_type_archive('deal')) || ($global_site == 'globalusa' && is_tax('deal_category')) || ($global_site == 'globalusa' && is_singular(array('authors', 'deal'))) || is_post_type_archive('post') || is_search() || is_singular(array('post', 'excursions')) || is_category() || is_author() || (!empty($post) && is_object($post) && ((is_page() && is_front_page()) || ($post->post_type == 'post' && is_tag()))))
+
+    $load_ajax_scroll = false;
+
+    if ($global_site == 'globalusa') {
+    	$load_ajax_scroll = is_page() || is_post_type_archive(array('deal', 'blog')) || is_tax('deal_category') || is_tag() || is_singular(array('authors', 'deal'));
+    }
+
+    if (empty($load_ajax_scroll)) {
+    	$load_ajax_scroll = is_post_type_archive('post') || is_search() || is_singular(array('post', 'blog', 'excursions')) || is_category() || is_author() || (!empty($post) && is_object($post) && ((is_page() && is_front_page()) || ($post->post_type == 'post' && is_tag())));
+    }
+
+    if (!empty($load_ajax_scroll))
 	{
 		$dependants[] = 'ajax-scroll-script';
 		$haspostinhero = is_front_page() || (!empty($hero_type) && $hero_type == 'home');
@@ -1240,7 +1251,42 @@ function tif_register_setup()
 			'rewrite'				=> array('slug' => 'deal', 'with_front' => true, 'hierarchical' => false, 'ep_mask' => 'EP_PERMALINK')
 		));
 		
-		//Set other options for Custom Post Type
+		register_post_type('blog', array(
+			'label' => __('blog'),
+			'description' => __('Blogs'),
+			'labels' => array(
+				'name'					=> _x('Blogs', 'Post Type General Name'),
+				'singular_name'			=> _x('Blog', 'Post Type Singular Name'),
+				'menu_name'				=> __('Blogs'),
+				'parent_item_colon' 	=> __('Parent Blog'),
+				'all_items'				=> __('All Blogs'),
+				'view_item'				=> __('View Blog'),
+				'add_new_item'			=> __('Add New Blog'),
+				'add_new'				=> __('Add New'),
+				'edit_item'				=> __('Edit Blog'),
+				'update_item'			=> __('Update Blog'),
+				'search_items'			=> __('Search Blogs'),
+				'not_found'				=> __('Not Found'),
+				'not_found_in_trash'	=> __('Not Found in Trash')
+			),
+			'supports' => array('title', 'editor', 'author', 'thumbnail'),
+			'taxonomies' => array('post_tag'),
+			'hierarchical' => false,
+			'public' => true,
+			'publicly_queriable'	=> true,
+			'show_ui'				=> true,
+			'show_in_menu'			=> true,
+			'show_in_menu_page'		=> false,
+			'show_in_nav_menus'		=> true,
+			'show_in_admin_bar'		=> true,
+			'menu_icon'				=> 'dashicons-admin-post',
+			'can_export'			=> true,
+			'has_archive'			=> true,
+			'exclude_from_search'	=> false,
+			'publicly_queryable'	=> true,
+			'capability_type'		=> 'page',
+			'rewrite'				=> array('slug' => 'blog', 'with_front' => true, 'hierarchical' => false, 'ep_mask' => 'EP_PERMALINK')
+		));
 		
 		register_post_type('excursions', array(
 			'label'					=> __('excursions'),
@@ -1965,6 +2011,8 @@ function tif_posts_scroll()
 
 	if (!empty($start))
 		$args['offset'] = $start;
+
+	error_log(var_export($args, true));
 
 	$the_query = new WP_Query($args);
 

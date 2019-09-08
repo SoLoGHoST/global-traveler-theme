@@ -1216,6 +1216,10 @@ h5 {
 	.post-list {
 		.post-wide {
 			.copy {
+				.tagline {
+					padding-left: 15px;
+					padding-right: 15px;
+				}
 				a {
 					span {
 						&.text {
@@ -1562,7 +1566,7 @@ h5 {
 			.post-wrapper, .page-wrapper, .tag-wrapper, .archive-wrapper {
 				.overlay {
 					p {
-						margin-bottom: .25rem;
+						// margin-bottom: .25rem;
 						@extend %font-menu;
 						> a {
 							&.author-link {
@@ -1594,6 +1598,7 @@ h5 {
 						}
 					}
 					> p {
+						margin-bottom: .25rem;
 						@extend %font-bold;
 						color: $white;
 						text-transform: capitalize;
@@ -1792,7 +1797,7 @@ body {
 				}
 			}
 		}
-		&.post-type-archive-deal {
+		&.post-type-archive-deal, &.post-type-archive-blog {
 			#main-content {
 				.hero-header {
 					.hero-body {
@@ -1811,7 +1816,7 @@ body {
 			}
 		}
 	}
-	&.single-excursions, &.archive.post-type-archive-deal {
+	&.single-excursions, &.archive.post-type-archive-deal, &.archive.post-type-archive-blog {
 		#main-content {
 			.hero-header {
 				.hero-body {
@@ -2231,7 +2236,7 @@ body {
 				}
 			}
 		}
-		&.single-excursions, &.archive.post-type-archive-deal, &.single-deal {
+		&.single-excursions, &.archive.post-type-archive-deal, &.archive.post-type-archive-blog, &.single-deal {
 			#main-content {
 				#content {
 					#posts-section {

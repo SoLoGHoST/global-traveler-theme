@@ -979,6 +979,14 @@ h5 {
 		.post-wide {
 			.copy {
 				@include border-link($white, $green, span, true, null, text, 2px, 98%);
+				.tagline {
+					h5 {
+						&.categories {
+							padding-left: 15px;
+							padding-right: 15px;
+						}
+					}
+				}
 			}
 			.img-wrapper {
 				&:hover {
