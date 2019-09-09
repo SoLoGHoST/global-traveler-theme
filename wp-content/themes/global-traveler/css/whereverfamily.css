@@ -8767,6 +8767,11 @@ body.page #main-content #content .content a {
       box-shadow: none; }
 
 @media (max-width: 768px) {
+  .metaslider .caption-wrap {
+    position: relative !important;
+    display: inline-block !important;
+    padding: 30px !important; }
+
   h1.hero-post span > span {
     top: -5px; } }
 @media (max-width: 991px) {
@@ -9899,11 +9904,6 @@ body.site-globalusa .posts-slider .slide-item {
 @media (max-width: 768px) {
   #videoWrapper .video-inner .skip-video {
     display: none; }
-
-  .metaslider .caption-wrap {
-    position: relative !important;
-    display: inline-block !important;
-    padding: 30px !important; }
 
   h1 {
     font-size: 46px; }

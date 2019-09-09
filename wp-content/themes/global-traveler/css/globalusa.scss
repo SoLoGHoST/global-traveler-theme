@@ -1277,6 +1277,10 @@ h5 {
 			}
 		}
 		.hero-body {
+			background-color: $blue;
+			&.small-hero {
+				min-height: 410px;
+			}
 			#hero-content {
 				.desc-wrapper {
 					a {
@@ -1781,7 +1785,7 @@ body {
 			#main-content {
 				.hero-header {
 					.hero-body {
-						min-height: 340px;
+						min-height: 410px;
 					}
 				}
 			}
@@ -1792,7 +1796,7 @@ body {
 			#main-content {
 				.hero-header {
 					.hero-body {
-						min-height: 340px;
+						min-height: 410px;
 					}
 				}
 			}
@@ -1820,7 +1824,7 @@ body {
 		#main-content {
 			.hero-header {
 				.hero-body {
-					min-height: 340px;
+					min-height: 410px;
 					.post-wrapper, .archive-wrapper {
 						@include translateY(-50%);
 					}
@@ -1887,7 +1891,7 @@ body {
 		#main-content {
 			.hero-header {
 				.hero-body {
-					min-height: 340px;
+					min-height: 410px;
 					.post-wrapper, .archive-wrapper {
 						// @include translateY(-50%);
 					}
@@ -2151,6 +2155,17 @@ body {
 	}
 }
 
+.metaslider {
+	.caption-wrap {
+		position: relative !important;
+    	padding: 5px !important;
+    	opacity: 1 !important;
+    	> .caption {
+    		position: relative !important;
+    	}
+  }
+}
+
 @media (min-width: 768px) {
 	#home-content, #main-content {
 		.post-grid {
@@ -2167,6 +2182,12 @@ body {
 }
 
 @media (min-width: 992px) {
+	.metaslider {
+		.caption-wrap {
+			position: absolute !important;
+			opacity: 0.7 !important;
+		}
+	}
 	.recent-posts-wrapper {
 		.right-side {
 			margin-top: 0;

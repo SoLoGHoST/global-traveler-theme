@@ -19,6 +19,7 @@ if (!empty($type)): ?>
 		if ($type == 'post'):
 
 			$author = apply_filters('get_the_post_author_info', array(), get_field('article_author', $main_post->ID));
+
 			$post_image = get_field('featured_image', $main_post->ID);
 			$date = get_the_date('M j, Y', $main_post->ID);
 			$main_categories = apply_filters('get_the_primary_category_with_child', array(), $main_post->ID);
@@ -46,7 +47,8 @@ if (!empty($type)): ?>
 			*/
 			$style = '';
 			if ($the_post_type != 'deal') {
-				$style = ' style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(' . $post_image . ') no-repeat center center; background-size: cover;"';
+				if (!empty($post_image))
+					$style = ' style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(' . $post_image . ') no-repeat center center; background-size: cover;"';
 				/*
 				if ($the_post_type == 'blog' && !empty($post_image)) {
 					$style = ' style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(' . $post_image . ') no-repeat center center; background-size: cover;"';
@@ -55,7 +57,7 @@ if (!empty($type)): ?>
 				}
 				*/
 			} ?>
-			<div class="hero-body<?php echo !empty($excursion_page) ? ' fx-excursions-hero' : ''; ?><?php echo $the_post_type == 'blog' && empty($post_image) ? ' small-hero' : ''; ?>"<?php echo $style; ?>>
+			<div class="hero-body<?php echo !empty($excursion_page) ? ' fx-excursions-hero' : ''; ?><?php echo $the_post_type != 'deal' && empty($post_image) ? ' small-hero' : ''; ?>"<?php echo $style; ?>>
 				<div class="container-fluid <?php echo is_page() || !empty($page) ? 'page' : 'post'; ?>-wrapper">
 					<div class="overlay">
 						<?php if (!empty($sponsored_post)): ?>
@@ -92,6 +94,7 @@ if (!empty($type)): ?>
 						<?php
 						endif; ?>
 						<?php
+
 						if (!empty($author['name'])): ?>
 							<p>by <?php echo !empty($author['link']) ? '<a href="' . $author['link'] . '" class="author-link"><span>' . $author['name'] . '</span></a>' : $author['name']; ?></p>
 						<?php

@@ -15,7 +15,7 @@ global $instagram_access_token, $all_sites, $global_site;
 $instagram_access_token = array(
 	'trazeetravel' => '1317793634.c13f70a.7b7ca65170214454b5e1c572f3123533',
 	'whereverfamily' => '5717731839.3a1c106.a32ac0b3fd7a42fe87f30e5df40c0fa9',
-	'globaltravelermag' => '1166366416.436b131.30d4058113894d67b82585059ca34e6f'
+	'globaltravelermag' => '1166366416.436b131.0ec502d90d1b49779a7201c6ae37b3b9'
 );
 
 $all_sites = array(
@@ -215,6 +215,60 @@ function globalusa_add_local_field_groups()
 				'label_placement' => 'top',
 				'instruction_placement' => 'label',
 				'hide_on_screen' => '',
+				'active' => true,
+				'description' => '',
+			));
+
+			// Blog Article Authors Custom Field:
+			acf_add_local_field_group(array(
+				'key' => 'group_5bb252548312d',
+				'title' => 'Blog Article Details',
+				'fields' => array(
+					array(
+						'key' => 'field_14',
+						'label' => 'Blog Article Author',
+						'name' => 'article_author',
+						'type' => 'relationship',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'post_type' => array(
+							0 => 'authors',
+						),
+						'taxonomy' => array(
+						),
+						'max' => 1,
+						'min' => 0,
+						'filters' => array(
+							0 => 'search'
+						),
+						'elements' => array(
+						),
+						'return_format' => 'object',
+					),
+				),
+				'location' => array(
+					array(
+						array(
+							'param' => 'post_type',
+							'operator' => '==',
+							'value' => 'blog',
+						),
+					),
+				),
+				'menu_order' => 0,
+				'position' => 'normal',
+				'style' => 'default',
+				'label_placement' => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen' => array(
+					0 => 'custom_fields',
+				),
 				'active' => true,
 				'description' => '',
 			));
@@ -1366,7 +1420,7 @@ function tif_register_setup()
 			'show_in_nav_menus'		=> true,
 			'show_in_admin_bar'		=> true,
 			'menu_position'			=> 8,
-			'menu_icon'				=> 'dashicons-admin-post',
+			'menu_icon'				=> 'dashicons-align-left',
 			'can_export'			=> true,
 			'has_archive'			=> false,
 			'exclude_from_search'	=> false,
@@ -2765,6 +2819,11 @@ function tif_global_get_the_post_author_info($author = array(), $post_data)
 				'link' => get_author_posts_url($post_data->post_author)
 			);
 		} else if ($global_site == 'globalusa') {
+
+			if (!empty($post_data) && is_array($post_data)) {
+				$post_data = reset($post_data);
+			}
+
 			$author = array(
 				'name' => get_the_title($post_data),
 				'link' => get_the_permalink($post_data)

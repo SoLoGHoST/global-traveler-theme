@@ -109,11 +109,17 @@ if (!empty($term) && !empty($taxonomy)) {
 
 if (!empty($author_id)) {
 	$args['meta_query'] = array(
+		'relation' => 'OR',
 		array(
 			'key' => 'article_author',
 			'value' => $author_id,
 			'compare' => '='
-		)
+		),
+		array(
+            'key' => 'article_author',
+            'value' => sprintf(':"%s";', $author_id),
+            'compare' => 'LIKE'
+        )
 	);
 }
 
@@ -206,11 +212,17 @@ endif; ?>
 
 		if (!empty($author_id)):
 			$ajax_args['meta_query'] = array(
+				'relation' => 'OR',
 				array(
 					'key' => 'article_author',
 					'value' => $author_id,
 					'compare' => '='
-				)
+				),
+				array(
+		            'key' => 'article_author',
+		            'value' => sprintf(':"%s";', $author_id),
+		            'compare' => 'LIKE'
+		        )
 			);
 		endif;
 
@@ -222,9 +234,10 @@ endif; ?>
 		            'terms' => $term->term_id
 		        )
 		    );
-			if (!empty($post_type)):
-				$ajax_args['post_type'] = 'deal';
-			endif;
+		endif;
+
+		if (!empty($post_type)):
+			$ajax_args['post_type'] = $post_type;
 		endif;
 
 		if (is_singular('post')):

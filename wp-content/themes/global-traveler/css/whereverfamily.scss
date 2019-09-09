@@ -1600,6 +1600,13 @@ body {
 }
 
 @media (max-width: 768px) {
+	.metaslider {
+		.caption-wrap {
+			position: relative !important;
+	    display: inline-block !important;
+	    padding: 30px !important;
+	  }
+	}
 	h1 {
 		&.hero-post {
 			span {
