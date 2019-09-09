@@ -18,7 +18,7 @@ if (!empty($cat_id))
 
 $content_query = new WP_Query($content_args); ?>
 
-<div id="content" class="container-fluid no-pad my-2">
+<div id="content" class="container-fluid my-2">
 	<div class="section content">
 <?php
 if (!empty($content_query->posts)): ?>

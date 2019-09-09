@@ -8769,6 +8769,8 @@ h5.sponsored span {
     margin-bottom: 1.5rem; }
   #home-content #content #posts-section #body-content a, #main-content #content #posts-section #body-content a {
     color: #3FA2DA; }
+  #home-content #content #posts-section #body-content iframe, #main-content #content #posts-section #body-content iframe {
+    max-width: 100%; }
 #home-content #content .post-item p, #home-content #content .slide-item p, #main-content #content .post-item p, #main-content #content .slide-item p {
   font-size: 18px;
   line-height: 24px; }

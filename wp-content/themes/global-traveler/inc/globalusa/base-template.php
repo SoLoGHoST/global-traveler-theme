@@ -184,7 +184,7 @@ if (!empty($the_query->posts))
 if (!empty($wrapper_start)):
 	echo implode('', $wrapper_start);
 else: ?>
-<div id="content" class="container-fluid no-pad my-2">
+<div id="content" class="container-fluid my-2">
 	<div id="posts-section" class="section content">
 <?php
 endif; ?>

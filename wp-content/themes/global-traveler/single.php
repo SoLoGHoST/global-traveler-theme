@@ -32,7 +32,7 @@ $excluded_categories = array(); ?>
 
 
 <div id="content">
-	<div class="container-fluid no-pad">
+	<div class="container-fluid<?php echo $global_site != 'globalusa' ? ' no-pad' : ''; ?>">
 		<div id="posts-section" class="section content py-3<?php echo !empty($hero_type) && $hero_type == 'alternative' ? ' my-0' : ''; ?>">
 			<div class="single-wrapper no-pad row">
 
@@ -217,7 +217,7 @@ if (!empty($posts_to_get) || !empty($related_posts)):
 
 	$featured_post = array_shift($related_posts); ?>
 	<div class="home-news-section home-section">
-		<div class="container-fluid no-pad">
+		<div class="container-fluid<?php echo $global_site !== 'globalusa' ? ' no-pad' : ''; ?>">
 			<div class="recent-posts-wrapper">
 				<div class="row d-md-flex justify-content-md-between align-items-md-stretch mb-5 my-sm-5 py-sm-5 px-sm-5">
 					<div class="col-24 col-md px-4 left-side">

@@ -17,7 +17,7 @@ if (function_exists('get_ad_group')) {
 	$the_ad2 = !empty($posts_group_id2) && group_has_ads($posts_group_id2) ? get_ad_group((int) $posts_group_id2) : '';
 } ?>
 <div id="content">
-	<div class="container-fluid no-pad">
+	<div class="container-fluid">
 		<div id="posts-section" class="section content">
 			<div class="single-wrapper no-pad row">
 				<div id="body-content" class="col-22 offset-1 col-sm-17 offset-sm-0 py-2 my-sm-5 px-3 px-md-5">

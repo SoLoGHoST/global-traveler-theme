@@ -21,7 +21,7 @@ $has_more_archive_posts = false;
 ?>
 
 <div id="content">
-	<div class="container-fluid no-pad">
+	<div class="container-fluid">
 		<div id="posts-section" class="section content">
 			<div class="single-wrapper no-pad row">
 				<div id="body-content" class="col-22 offset-1 col-sm-17 offset-sm-0 py-2  my-sm-4 px-3 px-md-5">

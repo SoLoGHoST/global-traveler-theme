@@ -17,7 +17,7 @@ if (function_exists('get_ad_group')) {
 } ?>
 
 <div id="content">
-	<div class="container-fluid no-pad">
+	<div class="container-fluid">
 		<div id="posts-section" class="section content">
 			<?php 
 			$tags = get_terms(array('taxonomy' => 'excursions_tag_type', 'hide_empty' => false)); ?>

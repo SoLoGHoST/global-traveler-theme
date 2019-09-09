@@ -18,7 +18,7 @@ if (function_exists('get_ad_group')) {
 } ?>
 
 <div id="content">
-	<div class="container-fluid no-pad">
+	<div class="container-fluid">
 		<div id="posts-section" class="section content<?php echo !empty($hero_type) && $hero_type == 'alternative' ? ' my-0' : ''; ?>">
 			<?php
 			if (!empty($excursion_page)): 
