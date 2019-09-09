@@ -58,6 +58,7 @@ if (!empty($post_data)): ?>
 		if (!property_exists($data, 'ad_type')): ?>
 		<div class="img-wrapper col-24">
 			<?php
+			/*
 			if (!empty($category_slugs) && in_array('print-article', $category_slugs)): 
 				$print_article_image = apply_filters('get_global_site_directory_path_uri', '', 'images', 'print-article.png'); ?>
 			<div class="print-article px-4 py-1 d-flex justify-content-start align-items-center">
@@ -72,6 +73,7 @@ if (!empty($post_data)): ?>
 			</div>
 			<?php
 			endif;
+			*/
 			if (!empty($image_caption)): ?>
 			<div class="caption px-4">
 				<?php echo apply_filters('the_content', $image_caption); ?>

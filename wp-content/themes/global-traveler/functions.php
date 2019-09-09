@@ -855,6 +855,7 @@ function globalusa_add_local_field_groups()
 				'description' => '',
 			));
 
+			/*
 			acf_add_local_field_group(array(
 				'key' => 'group_5d13b9c123f0f',
 				'title' => 'Slider Settings',
@@ -905,6 +906,7 @@ function globalusa_add_local_field_groups()
 				'active' => true,
 				'description' => '',
 			));
+			*/
 
 			acf_add_local_field_group(array(
 				'key' => 'group_5d3227666b54c',

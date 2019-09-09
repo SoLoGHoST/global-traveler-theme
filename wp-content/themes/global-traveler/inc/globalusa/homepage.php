@@ -6,7 +6,7 @@ global $post, $page_id, $wpdb, $the_ads, $global_site;
 
 $sponsored_posts = $current_sponsored = $the_ads = array();
 $featured_post_id = 0;
-$offset = 0;
+// $offset = 0;
 
 // Grab a Random Sponsored Post
 $total_sponsored = 0;
@@ -40,11 +40,11 @@ if (!empty($sponsored_posts))
 $first_set_adgroup_id = $wpdb->get_var('SELECT term_id FROM ' . $wpdb->terms . ' WHERE name = "Homepage Skyscraper" OR slug = "homepage-skyscraper" LIMIT 1');
 
 if (!empty($first_set_adgroup_id) && function_exists('get_ad_group') && group_has_ads($first_set_adgroup_id)) {
-	$offset = 2;
+	$per_page = 2;
 	$first_set_ads[] = get_ad_group($first_set_adgroup_id);
 }
 else {
-	$offset = 3;
+	$per_page = 3;
 }
 
 $first_set = $second_set = array();
@@ -53,9 +53,9 @@ $args = array(
 	'post_type' => 'post',
 	'orderby' => 'date',
 	'post_status' => 'publish',
-	'offset' => 0,
+	'offset' => $offset,
 	'post__not_in' => $sponsored_ids,
-	'posts_per_page' => $offset,
+	'posts_per_page' => $per_page,
 );
 
 $the_query = new WP_Query($args);
@@ -72,6 +72,8 @@ if (!empty($first_set_ads))
 		'output' => array_slice($first_set_ads, $random_ad, 1)
 	];
 } 
+
+$offset = $offset + $per_page;
 
 $args = array(
 	'post_type' => 'post',

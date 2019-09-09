@@ -1116,6 +1116,7 @@ body {
 					background-size: cover;
 					background-position: center center;
 					@include transition(all 0.7s ease);
+					@include opacity(0.9);
 					-webkit-transform: perspective(1000px) !important;
 					transform: perspective(1000px) !important;
 					-webkit-backface-visibility: hidden;
@@ -1174,7 +1175,7 @@ body {
 						left: 0;
 						top: 0;
 						pointer-events: none;
-						@include opacity(.6);
+						@include opacity(.3);
 						background: $black;
 						@include transition(all 0.3s ease);
 					}

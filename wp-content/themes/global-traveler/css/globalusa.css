@@ -9998,6 +9998,10 @@ body.site-globalusa .posts-slider .slide-item {
     -moz-transition: all 0.7s ease;
     -ms-transition: all 0.7s ease;
     -o-transition: all 0.7s ease;
+    -webkit-opacity: 0.9;
+    -moz-opacity: 0.9;
+    opacity: 0.9;
+    filter: alpha(opacity=90) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity);
     -webkit-transform: perspective(1000px) !important;
     transform: perspective(1000px) !important;
     -webkit-backface-visibility: hidden; }
@@ -10052,10 +10056,10 @@ body.site-globalusa .posts-slider .slide-item {
     left: 0;
     top: 0;
     pointer-events: none;
-    -webkit-opacity: 0.6;
-    -moz-opacity: 0.6;
-    opacity: 0.6;
-    filter: alpha(opacity=60) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity);
+    -webkit-opacity: 0.3;
+    -moz-opacity: 0.3;
+    opacity: 0.3;
+    filter: alpha(opacity=30) progid:DXImageTransform.Microsoft.Alpha(opacity=$msopacity);
     background: #000000;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;

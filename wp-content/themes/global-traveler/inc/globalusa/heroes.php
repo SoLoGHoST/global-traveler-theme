@@ -225,7 +225,7 @@ if (!empty($type)): ?>
 
 	<?php
 		elseif ($type == 'home'): 
-			$slider_posts = get_field('slider_posts');
+			// $slider_posts = get_field('slider_posts');
 			if (!empty($slider_posts)): ?>
 				<div class="posts-slider col-xs-24 no-pad">
 				<?php
@@ -234,7 +234,8 @@ if (!empty($type)): ?>
 					$index = ($post_index + 1); ?>
 					<div class="slide-item">
 						<style>
-							.slider-image-hover-<?php echo $index; ?> .image {
+
+							body.site-globalusa .posts-slider .slide-item.slider-image-hover-<?php echo $index; ?> .image {
 
 								background: linear-gradient(to bottom, rgba(56, 56, 56, 0.3) 100%, rgba(56, 56, 56, 0.3) 100%), url('<?php echo $post_image[0]; ?>') no-repeat center center !important;
 								background-size: cover !important;
@@ -254,7 +255,7 @@ if (!empty($type)): ?>
 								*/
 							}
 						</style>
-						<div class="image"<?php echo !empty($post_image[0]) ?' style="background: linear-gradient(to bottom, rgba(56, 56, 56, 0.5) 100%, rgba(56, 56, 56, 0.5) 100%), url(' . $post_image[0] . ') no-repeat center center; background-size: cover; -webkit-backface-visibility: hidden; backface-visibility: hidden;"' : ''; ?>>
+						<div class="image"<?php echo !empty($post_image[0]) ?' style="background: linear-gradient(to bottom, rgba(56, 56, 56, 0.4) 100%, rgba(56, 56, 56, 0.4) 100%), url(' . $post_image[0] . ') no-repeat center center; background-size: cover; -webkit-backface-visibility: hidden; backface-visibility: hidden;"' : ''; ?>>
 							<a href="<?php the_permalink(); ?>" class="post-link" target="_blank"></a>
 							<div class="details-wrapper">
 								<a href="<?php the_permalink(); ?>" class="post-link" target="_blank"></a>
