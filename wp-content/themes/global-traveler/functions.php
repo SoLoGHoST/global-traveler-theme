@@ -55,7 +55,7 @@ $all_sites = array(
 			),
 			array(
 				'title' => __('Deals', 'tif_global'),
-				'url' => '/category/deals/'
+				'url' => '/deal/'
 			),
 			array(
 				'title' => __('Feature', 'tif_global'),

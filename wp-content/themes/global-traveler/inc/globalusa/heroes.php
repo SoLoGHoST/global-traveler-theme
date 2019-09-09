@@ -230,14 +230,30 @@ if (!empty($type)): ?>
 				<div class="posts-slider col-xs-24 no-pad">
 				<?php
 				foreach($slider_posts as $post_index => $post): setup_postdata($post); 
-					$post_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "full");
+
+					$post_image = get_field('featured_image', $post->ID);
+
+
+					if (empty($post_image))
+					{
+						$image_id = get_post_thumbnail_id($post->ID);
+						$image_caption = wp_get_attachment_caption($image_id);
+						$thumbnail_image = wp_get_attachment_image_src($image_id, "full");
+						$post_image = !empty($thumbnail_image) ? $thumbnail_image[0] : '';
+					}
+					else
+					{
+						$image_caption = $post_image['caption'];
+						$post_image = $post_image['url'];
+					}
+
 					$index = ($post_index + 1); ?>
 					<div class="slide-item">
 						<style>
 
 							body.site-globalusa .posts-slider .slide-item.slider-image-hover-<?php echo $index; ?> .image {
 
-								background: linear-gradient(to bottom, rgba(56, 56, 56, 0.3) 100%, rgba(56, 56, 56, 0.3) 100%), url('<?php echo $post_image[0]; ?>') no-repeat center center !important;
+								background: linear-gradient(to bottom, rgba(56, 56, 56, 0.3) 100%, rgba(56, 56, 56, 0.3) 100%), url('<?php echo $post_image; ?>') no-repeat center center !important;
 								background-size: cover !important;
 								background-position: 50% 50% !important;
 								/*
@@ -255,7 +271,7 @@ if (!empty($type)): ?>
 								*/
 							}
 						</style>
-						<div class="image"<?php echo !empty($post_image[0]) ?' style="background: linear-gradient(to bottom, rgba(56, 56, 56, 0.4) 100%, rgba(56, 56, 56, 0.4) 100%), url(' . $post_image[0] . ') no-repeat center center; background-size: cover; -webkit-backface-visibility: hidden; backface-visibility: hidden;"' : ''; ?>>
+						<div class="image"<?php echo !empty($post_image) ?' style="background: linear-gradient(to bottom, rgba(56, 56, 56, 0.4) 100%, rgba(56, 56, 56, 0.4) 100%), url(' . $post_image . ') no-repeat center center; background-size: cover; -webkit-backface-visibility: hidden; backface-visibility: hidden;"' : ''; ?>>
 							<a href="<?php the_permalink(); ?>" class="post-link" target="_blank"></a>
 							<div class="details-wrapper">
 								<a href="<?php the_permalink(); ?>" class="post-link" target="_blank"></a>
