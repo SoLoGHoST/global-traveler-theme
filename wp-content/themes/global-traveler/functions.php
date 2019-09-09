@@ -59,7 +59,7 @@ $all_sites = array(
 			),
 			array(
 				'title' => __('Feature', 'tif_global'),
-				'url' => 'category/features/'
+				'url' => '/category/features/'
 			),
 			array(
 				'title' => __('Destinations', 'tif_global'),
