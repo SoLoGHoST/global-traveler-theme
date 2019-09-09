@@ -14,9 +14,6 @@ $term = get_queried_object();
 get_header();
 
 tif_get_template('inc/' . $global_site . '/heroes.php', array('type' => 'category', 'title' => single_term_title('', false)));
-tif_get_template('inc/' . $global_site . '/base-template.php', array('global_site' => $global_site, 'taxonomy' => 'deal_category', 'term' => $term, 'post_type' => 'deal'));
-/*
-tif_get_template('inc/' . $global_site . '/heroes.php', array('type' => 'tag'));
-tif_get_template('inc/' . $global_site . '/content-tags.php', array('term' => $term)); */ ?>
+tif_get_template('inc/' . $global_site . '/base-template.php', array('global_site' => $global_site, 'taxonomy' => 'deal_category', 'term' => $term, 'post_type' => 'deal')); ?>
 <?php
 get_footer(); ?>

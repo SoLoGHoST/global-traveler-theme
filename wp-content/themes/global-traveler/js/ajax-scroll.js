@@ -9,7 +9,6 @@ jQuery(document).ready(function($) {
 	// AJAX Scroll...
 	$(window).scroll(function() {
 
-		// if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight)
 	    scrollDistance = $(window).scrollTop() + $(window).innerHeight();
 	    footerDistance = footer_offset - 200; // $('#bottom').offset().top;
 
@@ -43,16 +42,6 @@ jQuery(document).ready(function($) {
 						alert(response['error']);
 					else if (response.hasOwnProperty('posts')) {
 
-						/*
-						var $divWrap = $('<div />').addClass('container-fluid').addClass('no-pad').addClass('d-flex'),
-							$divInner = $('<div />').addClass('section').addClass('content');
-
-						if (!Scroll.is_home)
-							$divInner.addClass('py-4');
-
-						$divInner.append(response['posts']);
-						$divWrap.append($divInner);
-						*/
 						$aWrapper.append(response['posts']);
 
 						// reset the footer_offset...
@@ -62,9 +51,6 @@ jQuery(document).ready(function($) {
 				}).fail(function(response) {
 					alert('An Error Occurred.');
 				});
-
-
-
 		    }
 		}
 

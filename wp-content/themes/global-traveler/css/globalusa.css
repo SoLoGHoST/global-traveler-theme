@@ -8409,7 +8409,7 @@ h4.white {
 
 h5.categories {
   color: #3FA2DA;
-  padding: 6px 18px 2px; }
+  padding: 6px 18px 2px 0; }
   h5.categories.highlight a {
     display: inline-block;
     color: #12222D; }
@@ -8595,7 +8595,7 @@ h5.sponsored span {
       padding: 6px 0 2px; }
   #home-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text, #main-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text {
     color: #3FA2DA; }
-#home-content .post-list .post-wide .copy .tagline, #main-content .post-list .post-wide .copy .tagline {
+#home-content .post-list .post-wide .copy .tagline, #home-content .post-list .post-wide .copy .sponsored, #main-content .post-list .post-wide .copy .tagline, #main-content .post-list .post-wide .copy .sponsored {
   padding-left: 15px;
   padding-right: 15px; }
 #home-content .post-list .post-wide .copy a span.text, #main-content .post-list .post-wide .copy a span.text {

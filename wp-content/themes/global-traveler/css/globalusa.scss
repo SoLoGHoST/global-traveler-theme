@@ -829,7 +829,7 @@ h5 {
 	@extend %tagline;
 	&.categories {
 		color: $tagline;
-		padding: 6px 18px 2px;
+		padding: 6px 18px 2px 0;
 		&.highlight {
 			// background-color: $purple;
 			a {
@@ -1216,7 +1216,7 @@ h5 {
 	.post-list {
 		.post-wide {
 			.copy {
-				.tagline {
+				.tagline, .sponsored {
 					padding-left: 15px;
 					padding-right: 15px;
 				}
