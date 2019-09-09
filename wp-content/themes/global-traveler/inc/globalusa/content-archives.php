@@ -14,7 +14,11 @@ $posts_group_id2 = $wpdb->get_var('SELECT term_id FROM ' . $wpdb->terms . ' WHER
 if (function_exists('get_ad_group')) {
 	$the_ad = !empty($posts_group_id) && group_has_ads($posts_group_id) ? get_ad_group((int) $posts_group_id) : '';
 	$the_ad2 = !empty($posts_group_id2) && group_has_ads($posts_group_id2) ? get_ad_group((int) $posts_group_id2) : '';
-} ?>
+} 
+
+$archive_posts_per_page = 9;
+$has_more_archive_posts = false;
+?>
 
 <div id="content">
 	<div class="container-fluid no-pad">
@@ -22,7 +26,7 @@ if (function_exists('get_ad_group')) {
 			<div class="single-wrapper no-pad row">
 				<div id="body-content" class="col-22 offset-1 col-sm-17 offset-sm-0 py-2  my-sm-4 px-3 px-md-5">
 
-					<div id="excursions-wrapper" class="row">
+					<div id="archive-posts-wrapper" class="row">
 						<?php
 						// Get all excursions for the current category to be outputted, no need for pagination here... 
 						$archive_args = array(
@@ -30,20 +34,27 @@ if (function_exists('get_ad_group')) {
 						    'orderby' => 'date',
 						    'order' => 'desc', // not sure how we want these outputted, descending order by date is what we have here
 							'post_status' => 'publish',
-						    'posts_per_page' => -1
+						    'posts_per_page' => $archive_posts_per_page + 1
 						);
 
 						$archive_query = new WP_Query($archive_args); 
 
-						if (!empty($archive_query->posts)): ?>
+						if (!empty($archive_query->posts)): 
 
-						<?php
+							$total_posts = count($archive_query->posts);
+
+							if ($total_posts > ($archive_posts_per_page)) {
+								array_pop($archive_query->posts);
+								$has_more_archive_posts = true;
+							}
+
 							$chunked_archives = array_chunk($archive_query->posts, 3);
 
 							foreach($chunked_archives as $chunked_archive):
 
 								$template_args = array(
 									'post_data' => $chunked_archive,
+									'post_item_class' => 'archive-post',
 									'excursion_page' => true
 								);
 
@@ -61,6 +72,12 @@ if (function_exists('get_ad_group')) {
 						<p>Sorry, No <?php echo $labels->name; ?> currently exist.</p>
 						<?php
 						endif; ?>
+						<script>
+						var noMoreArchivePostsLeft = <?php echo !empty($has_more_archive_posts) ? 'false' : 'true'; ?>;
+						var archivePostType = '<?php echo get_post_type(); ?>';
+						var archivePostsPerPage = <?php echo $archive_posts_per_page; ?>;
+						var customCategory = '<?php echo !empty($custom_category) ? $custom_category : ''; ?>';
+						</script>
 					</div>
 				</div>
 				<div class="sidebar col-22 offset-1 col-sm-7 offset-sm-0 py-2 my-sm-4 order-first order-sm-last">

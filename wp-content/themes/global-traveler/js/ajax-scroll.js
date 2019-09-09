@@ -1,6 +1,7 @@
 jQuery(document).ready(function($) {
 
 	var footer_offset = $('footer').length ? $('footer').offset().top : $('#content')[0].scrollHeight;
+	var archive_footer_offset = $('#archive-posts-wrapper').length ? $('#archive-posts-wrapper')[0].scrollHeight : null;
 
 	// console.log(noMoreLeft);
 	// console.log(footer_offset);
@@ -12,6 +13,61 @@ jQuery(document).ready(function($) {
 	    scrollDistance = $(window).scrollTop() + $(window).innerHeight();
 	    footerDistance = footer_offset - 200; // $('#bottom').offset().top;
 
+	    if (archive_footer_offset) {
+		    archiveFooterDistance = archive_footer_offset - 200;
+
+		    if (scrollDistance >= archiveFooterDistance && !noMoreArchivePostsLeft) {
+		    	noMoreArchivePostsLeft = true;
+
+		    	var $aWrapper = $('#archive-posts-wrapper'),
+		    		$aStart = $('.archive-post').length,
+		    		$aArgs = $('input#archive_args').length ? JSON.parse(JSON.stringify($('input#archive_args').val())) : {};
+
+
+		    	$.ajax({
+					url: Scroll.ajax_url,
+					type: 'post',
+					data: {
+						action: 'tif_archive_posts_scroll',
+						security: Scroll.scroll_archive_posts_nonce,
+						start: $aStart,
+						args: $aArgs,
+						post_type: archivePostType,
+						posts_per_page: archivePostsPerPage,
+						custom_category: customCategory
+					},
+					dataType: 'json'
+				}).done(function(response) {
+
+					if (response.hasOwnProperty('error'))
+						alert(response['error']);
+					else if (response.hasOwnProperty('posts')) {
+
+						/*
+						var $divWrap = $('<div />').addClass('container-fluid').addClass('no-pad').addClass('d-flex'),
+							$divInner = $('<div />').addClass('section').addClass('content');
+
+						if (!Scroll.is_home)
+							$divInner.addClass('py-4');
+
+						$divInner.append(response['posts']);
+						$divWrap.append($divInner);
+						*/
+						$aWrapper.append(response['posts']);
+
+						// reset the footer_offset...
+						archive_footer_offset = $('#archive-posts-wrapper').length ? $('#archive-posts-wrapper')[0].scrollHeight : null;
+						noMoreArchivePostsLeft = !response['has_more'];
+					}
+				}).fail(function(response) {
+					alert('An Error Occurred.');
+				});
+
+
+
+		    }
+		}
+
 	    // console.log(scrollDistance + ' = ' + footerDistance);
 
 	    if (scrollDistance >= footerDistance && !noMoreLeft) {
@@ -19,7 +75,7 @@ jQuery(document).ready(function($) {
 	        noMoreLeft = true;
 
 	        var $wrapper = $('#content'),
-	        	$start = $('.post-item').length + (Scroll.haspostinhero ? 1 : 0),
+	        	$start = $('.post-item').not('.archive-post').length + (Scroll.haspostinhero ? 1 : 0),
 	        	$args = $('input#args').length ? JSON.parse(JSON.stringify($('input#args').val())) : {},
 	        	randomSponsor = 0,
 	        	sponsors = [],

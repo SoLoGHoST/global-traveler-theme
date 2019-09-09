@@ -1103,7 +1103,8 @@ function tif_scripts() {
 			'global_site' => $global_site,
 			'reversePattern' => is_front_page() && $global_site != 'globalusa' ? true : false,
 			'is_home' => is_front_page() ? true : false,
-			'scroll_posts_nonce' => wp_create_nonce('scroll-posts')
+			'scroll_posts_nonce' => wp_create_nonce('scroll-posts'),
+			'scroll_archive_posts_nonce' => wp_create_nonce('scroll-archive-posts')
 		));
 	}
 
@@ -1878,6 +1879,9 @@ function get_primary_category_with_child($categories, $post_id, $category_slug =
 add_action('wp_ajax_tif_posts_scroll', 'tif_posts_scroll');
 add_action('wp_ajax_nopriv_tif_posts_scroll', 'tif_posts_scroll');
 
+add_action('wp_ajax_tif_archive_posts_scroll', 'tif_archive_posts_scroll');
+add_action('wp_ajax_nopriv_tif_archive_posts_scroll', 'tif_archive_posts_scroll');
+
 add_action('wp_ajax_load_site_posts', 'load_site_posts');
 add_action('wp_ajax_nopriv_load_site_posts', 'load_site_posts');
 
@@ -1962,6 +1966,72 @@ function get_unsponsored_posts($return = array(), $args = array(), $start = 0, $
 		WHERE ((pm.meta_key = %s AND pm.meta_value = %s) OR (pm.meta_key")
 }
 */
+
+function tif_archive_posts_scroll()
+{
+	check_ajax_referer('scroll-archive-posts', 'security');
+
+	$result = array(
+		'error' => __('Sorry, An Error Occurred. Please try again later.', 'tif_global'),
+		'has_more' => false
+	);
+
+	$global_site = apply_filters('get_global_site', '');
+
+	$start = !empty($_POST['start']) ? (int) $_POST['start'] : 0;
+	$posts_per_page = !empty($_POST['posts_per_page']) ? (int) $_POST['posts_per_page'] : 9;
+	$post_type = !empty($_POST['post_type']) ? $_POST['post_type'] : 'post';
+	$added_args = !empty($_POST['args']) ? json_decode(stripslashes_deep($_POST['args']), true) : array();
+	$custom_category = !empty($_POST['custom_category']) ? $_POST['custom_category'] : '';
+
+	$args = array(
+		'post_type' => $post_type,
+		'orderby' => 'date',
+		'order' => 'desc',
+		'post_status' => 'publish',
+		'posts_per_page' => $posts_per_page + 1
+	);
+
+	if (!empty($added_args))
+		$args = array_merge($args, $added_args);
+
+	if (!empty($start))
+		$args['offset'] = $start;
+
+	$the_query = new WP_Query($args);
+
+	if (!empty($the_query->posts))
+	{
+		$total_posts = count($the_query->posts);
+
+		if ($total_posts > $posts_per_page)
+		{
+			array_pop($the_query->posts);
+			$result['has_more'] = true;
+		}
+
+		$chunked_archives = array_chunk($the_query->posts, 3);
+
+		ob_start();
+		foreach($chunked_archives as $chunked_archive) {
+			$template_args = array(
+				'post_data' => $chunked_archive,
+				'post_item_class' => 'archive-post',
+				'excursion_page' => true
+			);
+
+			if (!empty($custom_category))
+				$template_args['custom_category'] = $custom_category;
+
+			tif_get_template('inc/' . $global_site . '/3posts-template.php', $template_args);
+		}
+		$result['posts'] = ob_get_contents();
+		ob_end_clean();
+
+		unset($result['error']);
+	}
+	wp_send_json($result);
+}
 
 function tif_posts_scroll()
 {
@@ -2461,6 +2531,11 @@ add_filter('get_post_first_paragraph', 'get_post_first_paragraph', 10, 2);
 
 function get_post_first_paragraph($return, $post_id)
 {
+	$wrap = array(
+		'start' => '',
+		'end' => ''
+	);
+
 	if (empty($post_id))
 	{
 		global $post;
@@ -2476,7 +2551,7 @@ function get_post_first_paragraph($return, $post_id)
 	$str = wpautop($str);
 	$str = substr($str, 0, strpos($str, '</p>') + 4);
 	$str = strip_tags($str, '<a><strong><em><script><style>');
-	return '<p class="d-none d-sm-block content block-with-text">' . $str . '</p>';
+	return '<p class="d-none d-sm-block content block-with-text">' . $wrap['start'] . $str . $wrap['end'] . '</p>';
 }
 
 

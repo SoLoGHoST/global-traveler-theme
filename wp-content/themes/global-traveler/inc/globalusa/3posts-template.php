@@ -50,7 +50,7 @@ if (!empty($post_data)):
 			$categories = apply_filters('get_the_primary_category_with_child', array(), $data->ID, '');
 	} ?>
 	
-	<div class="post-wide post-item row<?php echo $post_wide_classes; ?>">
+	<div class="post-wide post-item<?php echo !empty($post_item_class) ? ' ' . $post_item_class : ''; ?> row<?php echo $post_wide_classes; ?>">
 		<div class="img-wrapper col-10 col-sm">
 			<?php
 			if (!empty($category_slugs) && in_array('print-article', $category_slugs)): 
