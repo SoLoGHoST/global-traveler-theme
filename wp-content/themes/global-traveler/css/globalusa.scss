@@ -1993,6 +1993,7 @@ body {
 								@extend %border-line;
 								color: $white;
 								h1 {
+									font-size: 7vw;
 									p, a, span {
 										color: $white;
 									}
@@ -2179,6 +2180,25 @@ body {
 			}
 		}
 	}
+	body {
+		&.site-globalusa {
+			.posts-slider {
+				.slide-item {
+					.image {
+						.details-wrapper {
+							.details {
+								.info {
+									h1 {
+										font-size: 46px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @media (min-width: 992px) {
@@ -2262,6 +2282,23 @@ body {
 				#content {
 					#posts-section {
 						margin-top: -6.5rem;
+					}
+				}
+			}
+		}
+		&.site-globalusa {
+			.posts-slider {
+				.slide-item {
+					.image {
+						.details-wrapper {
+							.details {
+								.info {
+									h1 {
+										font-size: 60px;
+									}
+								}
+							}
+						}
 					}
 				}
 			}

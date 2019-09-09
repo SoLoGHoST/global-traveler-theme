@@ -2402,7 +2402,7 @@ function trazee_before_after_menu($menu, $location = '', $class = '')
 						if (!empty($submenu_items)) {
 							echo '
 								<div id="subnav" class="d-flex justify-content-center align-items-center pt-3 pb-2 w-100">
-									<ul class="list-inline my-auto">';
+									<ul class="list-inline my-auto d-none d-sm-block">';
 
 							foreach($submenu_items as $submenu_item) {
 								$is_active = untrailingslashit(home_url(add_query_arg(array(), $wp->request))) == untrailingslashit($submenu_item->url);
@@ -2413,7 +2413,18 @@ function trazee_before_after_menu($menu, $location = '', $class = '')
 							}
 							echo '
 									</ul>
+									<select class="select-destination w-100 mx-3 d-block d-sm-none">
+										<option value="" disabled selected>Select Destination</option>';
+							foreach($submenu_items as $submenu_item) {
+								$is_checked = untrailingslashit(home_url(add_query_arg(array(), $wp->request))) == untrailingslashit($submenu_item->url);
+								echo '
+										<option value="' . $submenu_item->url . '" ' . selected($is_checked, true, false) . '>' . $submenu_item->title . '</option>';
+							}
+							echo '
+									</select>
 								</div>';
+
+
 						}
 					}
 				}

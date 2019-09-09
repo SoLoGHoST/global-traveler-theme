@@ -8986,16 +8986,18 @@ body {
     height: 100%; }
   body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info {
     color: #FFFFFF; }
-    body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info h1 p, body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info h1 a, body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info h1 span {
-      color: #FFFFFF; }
-    body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info h1 a {
-      font-weight: 700;
-      font-style: normal;
-      outline: none;
-      -webkit-transition: color 0.15s ease-in-out;
-      -moz-transition: color 0.15s ease-in-out;
-      -ms-transition: color 0.15s ease-in-out;
-      -o-transition: color 0.15s ease-in-out; }
+    body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info h1 {
+      font-size: 7vw; }
+      body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info h1 p, body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info h1 a, body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info h1 span {
+        color: #FFFFFF; }
+      body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info h1 a {
+        font-weight: 700;
+        font-style: normal;
+        outline: none;
+        -webkit-transition: color 0.15s ease-in-out;
+        -moz-transition: color 0.15s ease-in-out;
+        -ms-transition: color 0.15s ease-in-out;
+        -o-transition: color 0.15s ease-in-out; }
   body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details h5.categories {
     color: #FFFFFF; }
     body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details h5.categories.highlight a {
@@ -9138,7 +9140,10 @@ body {
   #home-content .post-grid.row .post-tall, #main-content .post-grid.row .post-tall {
     margin-bottom: 0; }
     #home-content .post-grid.row .post-tall:nth-child(-n+4), #main-content .post-grid.row .post-tall:nth-child(-n+4) {
-      margin-bottom: 2rem; } }
+      margin-bottom: 2rem; }
+
+  body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info h1 {
+    font-size: 46px; } }
 @media (min-width: 992px) {
   .metaslider .caption-wrap {
     position: absolute !important;
@@ -9176,7 +9181,9 @@ body {
   body.archive.tax-excursions_tag_type #main-content #content #posts-section {
     margin-top: -6.5rem; }
   body.single-excursions #main-content #content #posts-section, body.archive.post-type-archive-deal #main-content #content #posts-section, body.archive.post-type-archive-blog #main-content #content #posts-section, body.single-deal #main-content #content #posts-section {
-    margin-top: -6.5rem; } }
+    margin-top: -6.5rem; }
+  body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info h1 {
+    font-size: 60px; } }
 @media (min-width: 1280px) {
   #home-content #content #posts-section {
     margin-top: -6.5rem; } }

@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
 		});
 	}
 
-	$('select.select-excursion-tag').on('change', function(e) {
+	$('select.select-excursion-tag, select.select-destination').on('change', function(e) {
 		e.preventDefault();
 		var $this = $(this);
 
