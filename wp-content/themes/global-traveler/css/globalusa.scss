@@ -1217,8 +1217,8 @@ h5 {
 		.post-wide {
 			.copy {
 				.tagline, .sponsored {
-					padding-left: 15px;
-					padding-right: 15px;
+					padding-left: 0;
+					padding-right: 0;
 				}
 				a {
 					span {
@@ -2175,6 +2175,16 @@ body {
 					margin-bottom: 0;
 					&:nth-child(-n+4) {
 						margin-bottom: 2rem;
+					}
+				}
+			}
+		}
+		.post-list {
+			.post-wide {
+				.copy {
+					.tagline, .sponsored {
+						padding-left: 15px;
+						padding-right: 15px;
 					}
 				}
 			}

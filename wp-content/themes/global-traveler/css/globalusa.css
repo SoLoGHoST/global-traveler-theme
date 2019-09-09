@@ -8596,8 +8596,8 @@ h5.sponsored span {
   #home-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text, #main-content .post-grid.row .post-tall .img-wrapper:hover + .copy a span.text {
     color: #3FA2DA; }
 #home-content .post-list .post-wide .copy .tagline, #home-content .post-list .post-wide .copy .sponsored, #main-content .post-list .post-wide .copy .tagline, #main-content .post-list .post-wide .copy .sponsored {
-  padding-left: 15px;
-  padding-right: 15px; }
+  padding-left: 0;
+  padding-right: 0; }
 #home-content .post-list .post-wide .copy a span.text, #main-content .post-list .post-wide .copy a span.text {
   color: #12222D;
   -webkit-transition: all 0.3s ease;
@@ -9141,6 +9141,9 @@ body {
     margin-bottom: 0; }
     #home-content .post-grid.row .post-tall:nth-child(-n+4), #main-content .post-grid.row .post-tall:nth-child(-n+4) {
       margin-bottom: 2rem; }
+  #home-content .post-list .post-wide .copy .tagline, #home-content .post-list .post-wide .copy .sponsored, #main-content .post-list .post-wide .copy .tagline, #main-content .post-list .post-wide .copy .sponsored {
+    padding-left: 15px;
+    padding-right: 15px; }
 
   body.site-globalusa .posts-slider .slide-item .image .details-wrapper .details .info h1 {
     font-size: 46px; } }

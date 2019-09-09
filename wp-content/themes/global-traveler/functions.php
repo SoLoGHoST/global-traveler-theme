@@ -27,7 +27,7 @@ $all_sites = array(
 			'image' => get_stylesheet_directory_uri() . '/images/globalusa-logo.svg',
 			'classes' => array(
 				'link' => 'default-top order-2',
-				'image' => '',
+				'image' => 'mt-2',
 				'button' => 'order-1',
 			), 
 			'width' => 175,
