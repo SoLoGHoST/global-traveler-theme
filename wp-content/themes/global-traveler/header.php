@@ -46,7 +46,7 @@ if (wp_is_mobile())
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-KX663FG');</script>
+	})(window,document,'script','dataLayer','<?php echo $all_sites[$global_site]['google_tag_id']; ?>');</script>
 	<!-- End Google Tag Manager -->
 	
 
@@ -60,7 +60,7 @@ if (wp_is_mobile())
 <body <?php body_class(!empty($class) ? $class : array()); ?>>
 	
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX663FG"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $all_sites[$global_site]['google_tag_id']; ?>"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
