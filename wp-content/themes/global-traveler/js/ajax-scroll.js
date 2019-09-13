@@ -61,7 +61,7 @@ jQuery(document).ready(function($) {
 	        noMoreLeft = true;
 
 	        var $wrapper = $('#content'),
-	        	$start = $('.post-item').not('.archive-post').length + (Scroll.haspostinhero ? 1 : 0),
+	        	$start = $('.post-item').not('.archive-post').not('.is_sponsored_post_item').length + (Scroll.haspostinhero ? 1 : 0),
 	        	$args = $('input#args').length ? JSON.parse(JSON.stringify($('input#args').val())) : {},
 	        	randomSponsor = 0,
 	        	sponsors = [],

@@ -50,7 +50,7 @@ if (!empty($post_data)):
 			$categories = apply_filters('get_the_primary_category_with_child', array(), $data->ID, '');
 	} ?>
 	
-	<div class="post-wide post-item<?php echo !empty($post_item_class) ? ' ' . $post_item_class : ''; ?> row<?php echo $post_wide_classes; ?>">
+	<div class="post-wide post-item<?php echo !empty($post_item_class) ? ' ' . $post_item_class : ''; ?><?php echo isset($data->is_sponsored_post_item) && !empty($data->is_sponsored_post_item) ? ' is_sponsored_post_item' : ''; ?> row<?php echo $post_wide_classes; ?>">
 		<div class="img-wrapper col-10 col-sm">
 			<?php
 			/*

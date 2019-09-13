@@ -108,6 +108,9 @@ if (!empty($term) && !empty($taxonomy)) {
 }
 
 if (!empty($author_id)) {
+
+	$add_sponsored_class = true;
+
 	$args['meta_query'] = array(
 		'relation' => 'OR',
 		array(
@@ -154,6 +157,10 @@ if (!empty($the_query->posts))
 		'first_set' => !empty($the_ads) ? 5 : 6,
 		'last_set' => (3 - $total_sponsored)
 	);
+	// 1 ad, 1 sponsored
+	// array('first_set' => 5, 'last_set' => 2);
+	// first_set 0, 1, ad, 2, 3, 4
+	// last_set 
 
 	foreach($order_pattern as $key => $value)
 	{
@@ -175,6 +182,10 @@ if (!empty($the_query->posts))
 
 			if ($key == 'last_set' && !empty($ordered_array[$key]) && !empty($current_sponsored)) {
 					$ordered_array[$key] = array_merge(array_slice($ordered_array[$key], 0, 1), array_splice($current_sponsored, 0, 1), array_slice($ordered_array[$key], 1));
+
+				if (!empty($add_sponsored_class)) {
+					$ordered_array[$key][1]->is_sponsored_post_item = true;
+				}
 			}
 		}
 	}
