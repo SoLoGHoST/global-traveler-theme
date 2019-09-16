@@ -11,6 +11,8 @@ get_header(); ?>
 
 <?php 
 
+error_log('category page here...');
+
 $global_site = apply_filters('get_global_site', $global_site);
 tif_get_template('inc/' . $global_site . '/heroes.php', array('type' => 'category', 'title' => $category->name));
 tif_get_template('inc/' . $global_site . '/base-template.php', array('global_site' => $global_site, 'cat_id' => $cat_id, 'category' => $category));

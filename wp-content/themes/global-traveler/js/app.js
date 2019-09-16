@@ -18,6 +18,34 @@ var scrollLock = false;
 
 jQuery(document).ready(function($) {
 
+
+	function OpenPopupWindow(content, title, w, h, opts) {
+       var _innerOpts = '';
+       if(opts !== null && typeof opts === 'object' ){
+           for (var p in opts ) {
+               if (opts.hasOwnProperty(p)) {
+                   _innerOpts += p + '=' + opts[p] + ',';
+               }
+           }
+       }
+         // Fixes dual-screen position, Most browsers, Firefox
+       var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+       var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+       var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+       var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+       var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+       var top = ((height / 2) - (h / 2)) + dualScreenTop;
+       var w = window.open('', title, _innerOpts + ' width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+       $(w.document.body).html(content);
+       // $(w.document.body).html('<!doctype html><html><head><meta charset="utf-8"><title>' + title + '</title></head>' + content + '</html>');
+        // Puts focus on the newWindow
+       if (window.focus) {
+           w.focus();
+       }
+       return w;
+    }
+
+
 	var $navMenu = $('.header-1 .navbar'),
     	menuVal = $navMenu.offset().top;
 
@@ -35,6 +63,20 @@ jQuery(document).ready(function($) {
 		if ($this.val() !== '')
 			document.location.href = $this.val();
 	});
+
+	if (Main.hasOwnProperty('newsletter_content')) {
+		// @TODO:  Need to add Main.newsletter_content into the iframe with the id of "newsletter-body"
+
+		$('.newsletter-link').click(function(e) {
+			e.preventDefault();
+
+			OpenPopupWindow(Main.newsletter_content, '', '700', '500', {toolbar: 'no', location: 'no', status: 'no', menubar: 'no', scrollbars: 'yes', resizable: 'yes'});
+		});
+
+		var iframe = $('<iframe />');
+		iframe.attr('frameborder', '0').attr('width', '100%').attr('height', '100%').attr('src', 'data:text/html;charset=utf-8,' + encodeURIComponent(Main.newsletter_content));
+		$('#newsletter-wrapper').append(iframe);
+	}
 
 	if ($('.posts-slider').length) {
 		$('.posts-slider').slick({

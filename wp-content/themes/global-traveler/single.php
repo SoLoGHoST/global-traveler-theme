@@ -54,8 +54,20 @@ $excluded_categories = array(); ?>
 						<?php endif; ?>
 						<span class="date mb-5"><?php echo $date; ?></span>
 					<?php
+					endif; 
+
+					if ($global_site == 'globalusa' && get_post_type() == 'newsletter'):
+						echo '
+						<p>
+							<a href="javascript:void(0);" class="newsletter-link post">Click here to View this Newsletter in a new window.</a>
+						</p>';
+
+						echo '
+						<div id="newsletter-wrapper" class="w-100 h-100 m-0"></div>';
+
+					else:
+						the_content(); 
 					endif; ?>
-					<?php the_content(); ?>
 				</div>
 				<div class="sidebar col-22 offset-1 col-sm-7 offset-sm-0 py-2 my-sm-5 order-first order-sm-last">
 					<?php 

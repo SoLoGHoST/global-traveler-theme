@@ -222,6 +222,57 @@ function globalusa_add_local_field_groups()
 				'description' => '',
 			));
 
+			acf_add_local_field_group(array(
+				'key' => 'group_5bb25255cdec4',
+				'title' => 'Newsletter Details',
+				'fields' => array(
+					array(
+						'key' => 'field_506b3682a70fa',
+						'label' => 'Newsletter HTML',
+						'name' => 'newsletter-html',
+						'type' => 'textarea',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'new_lines' => '',
+						'maxlength' => '',
+						'placeholder' => '',
+						'rows' => '',
+					),
+				),
+				'location' => array(
+					array(
+						array(
+							'param' => 'post_type',
+							'operator' => '==',
+							'value' => 'newsletter',
+						),
+					),
+				),
+				'menu_order' => 0,
+				'position' => 'normal',
+				'style' => 'default',
+				'label_placement' => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen' => array(
+					0 => 'the_content',
+					1 => 'custom_fields',
+					2 => 'discussion',
+					3 => 'comments',
+					4 => 'author',
+					5 => 'format',
+					6 => 'featured_image',
+				),
+				'active' => true,
+				'description' => '',
+			));
+
 			// Blog Article Authors Custom Field:
 			acf_add_local_field_group(array(
 				'key' => 'group_5bb252548312d',
@@ -1141,7 +1192,7 @@ function tif_scripts() {
     $load_ajax_scroll = false;
 
     if ($global_site == 'globalusa') {
-    	$load_ajax_scroll = is_page() || is_post_type_archive(array('deal', 'blog')) || is_tax('deal_category') || is_tag() || is_singular(array('authors', 'deal'));
+    	$load_ajax_scroll = is_page() || is_post_type_archive(array('deal', 'blog')) || is_tax('deal_category') || is_tax('flyers') || is_tag() || is_singular(array('authors', 'deal', 'newsletter'));
     }
 
     if (empty($load_ajax_scroll)) {
@@ -1173,10 +1224,25 @@ function tif_scripts() {
 	// wp_enqueue_script('script-rellax', get_stylesheet_directory_uri() . '/js/rellax.min.js', array('jquery'));
 	wp_enqueue_script('script-app', get_stylesheet_directory_uri() . '/js/app.js', array_merge(array('jquery'), $dependants), filemtime(get_template_directory() . '/js/app.js'));
 
-	wp_localize_script('script-app', 'Main', array(
+
+	if (!empty($global_site) && $global_site == 'globalusa') {
+		if (!empty($post) && is_object($post)) {
+			if (get_post_type($post->ID) == 'newsletter') {
+				$newsletter_content = get_field('newsletter-html', $post->ID);
+			}
+		}
+	}
+
+	$main_localized_array = array(
 		'ajax_url' => admin_url('admin-ajax.php'),
 		'load_site_posts_nonce' => wp_create_nonce('load-site-posts')
-	));
+	);
+
+	if (!empty($newsletter_content)) {
+		$main_localized_array['newsletter_content'] = $newsletter_content;
+	}
+
+	wp_localize_script('script-app', 'Main', $main_localized_array);
 }
 
 function tif_styles() {
@@ -1229,6 +1295,15 @@ function tif_register_setup()
 
 	if ($global_site == 'globalusa') {
 
+		register_taxonomy('flyers', 'newsletter', array(
+		    'hierarchical' => true,
+		    'label' => 'Flyers',
+		    'show_ui' => true,
+		    'query_var' => true,
+		    'rewrite' => array('slug' => 'flyers'),
+		    'singular_label' => 'Flyer'
+		));
+
 		register_taxonomy(
 			'excursions_category_type',
 			'excursions',
@@ -1273,6 +1348,38 @@ function tif_register_setup()
 				'show_in_nav_menus' => true
 			)
 		);
+
+		register_post_type('newsletter', array(
+		    'label' => 'Newsletters',
+		    'description' => '',
+		    'public' => true,
+		    'show_ui' => true,
+		    'show_in_menu' => true,
+		    'capability_type' => 'post',
+		    'hierarchical' => false,
+		    'rewrite' => array('slug' => 'newsletter'),
+		    'query_var' => true,
+		    'exclude_from_search' => false,
+		    'menu_position' => 7,
+		    'supports' => array('title','editor','excerpt','custom-fields','author'),
+		    'taxonomies' => array('flyers'),
+		    'labels' => array(
+		        'name' => 'Newsletters',
+		        'singular_name' => 'Newsletter',
+		        'menu_name' => 'Newsletters',
+		        'add_new' => 'Add Newsletter',
+		        'add_new_item' => 'Add New Newsletter',
+		        'edit' => 'Edit',
+		        'edit_item' => 'Edit Newsletter',
+		        'new_item' => 'New Newsletter',
+		        'view' => 'View Newsletter',
+		        'view_item' => 'View Newsletter',
+		        'search_items' => 'Search Newsletters',
+		        'not_found' => 'No Newsletters Found',
+		        'not_found_in_trash' => 'No Newsletters Found in Trash',
+		        'parent' => 'Parent Newsletter',
+		    )
+		));
 
 		register_post_type('deal', array(
 			'label' => __('deal'),
