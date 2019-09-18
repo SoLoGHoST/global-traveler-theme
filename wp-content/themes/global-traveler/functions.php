@@ -2761,7 +2761,7 @@ function trazee_pre_get_posts($query)
 		}
 
 		// Do not show any eflyer- posts on the homepage only...
-		if (!$query->is_main_query() && is_front_page()) {
+		if (!$query->is_main_query() && (is_front_page() || (defined('REST_REQUEST') && REST_REQUEST))) {
 			$eflyer_ids = apply_filters('get_eflyer_category_ids', array());
 			// error_log(var_export($eflyer_ids, true));
 			$query->set('category__not_in', $eflyer_ids);
