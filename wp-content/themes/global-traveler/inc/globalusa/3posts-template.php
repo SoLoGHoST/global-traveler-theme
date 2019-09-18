@@ -69,12 +69,14 @@ if (!empty($post_data)):
 			<?php
 			endif;
 			*/
+			/*
 			if (!empty($image_caption)): ?>
 			<div class="caption px-4">
 				<?php echo apply_filters('the_content', $image_caption); ?>
 			</div>
 			<?php
 			endif; ?>
+			*/ ?>
 			<a href="<?php echo get_the_permalink($data->ID); ?>" class="image<?php echo !empty($has_placeholder_image) ? ' placeholder' : ''; ?>"<?php echo !empty($post_image) ? ' style="background-image: url(' . $post_image . ');"' : ''; ?>></a>
 		</div>
 		<div class="copy col-14 offset-0 offset-sm-1 col-sm my-2">

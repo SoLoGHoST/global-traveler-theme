@@ -235,6 +235,8 @@ if (!empty($second_query->posts)) {
 		endif; ?>
 	</div>
 </div>
+<?php // exclude eflyer- categories from homepage... ?>
+<input id="args" type="hidden" value='<?php echo json_encode(array('category__not_in' => apply_filters('get_eflyer_category_ids', array()))); ?>' />
 <?php
 endif; ?>
 
