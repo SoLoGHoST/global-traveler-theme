@@ -103,13 +103,17 @@ if (!empty($second_query->posts)) {
 		<?php
 			tif_get_template('inc/' . $global_site . '/6posts-template.php', array('post_data' => $first_set, 'has_ads' => !empty($first_set_ads), 'ad_type' => !empty($first_set_ads) ? 'homepage-skyscraper' : ''));
 
-			if(function_exists('the_ad_placement') && placement_has_ads('homepage-leaderboard_2'))
+			if(function_exists('the_ad_placement') && (placement_has_ads('homepage-leaderboard_2') || placement_has_ads('homepage-leaderboard-2')))
 			{
 			echo '
 				<div class="ad-home-leaderboard-2 px-4 mt-2 mb-5 mb-sm-0">
 					<div class="row">
 						<div class="d-flex mx-auto">';
+						if (placement_has_ads('homepage-leaderboard_2')):
 							the_ad_placement('homepage-leaderboard_2');
+						elseif (placement_has_ads('homepage-leaderboard-2')):
+							the_ad_placement('homepage-leaderboard-2');
+						endif;
 			echo '
 						</div>
 					</div>
