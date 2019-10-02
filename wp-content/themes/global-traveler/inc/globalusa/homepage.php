@@ -5,11 +5,6 @@ if (!defined('ABSPATH')) exit;
 global $post, $page_id, $wpdb, $the_ads, $global_site;
 
 $sponsored_posts = $current_sponsored = $the_ads = array();
-$featured_post_id = 0;
-// $offset = 0;
-
-// Grab a Random Sponsored Post
-$total_sponsored = 0;
 $exclude_sponsored_ids = array();
 $sponsored_ids = array();
 
@@ -20,19 +15,13 @@ if (!empty($sponsored_posts))
 	foreach($sponsored_posts as $sponsored)
 		$sponsored_ids[] = $sponsored->ID;
 
-	$random_sponsored_keys = count($sponsored_posts) > 1 ? array_rand($sponsored_posts, 2) : array(0);
+	if (!empty($sponsored_posts)) {
+		$random_sponsored_key = array_rand($sponsored_posts, 1);
 
-	if (!empty($random_sponsored_keys))
-	{
-		foreach($random_sponsored_keys as $random_sponsored_key)
-		{
-			$current_sponsored[] = $sponsored_posts[$random_sponsored_key];
-			$exclude_sponsored_ids[] = $sponsored_posts[$random_sponsored_key]->ID;
+		$current_sponsored[] = $sponsored_posts[$random_sponsored_key];
+		$exclude_sponsored_ids[] = $sponsored_posts[$random_sponsored_key]->ID;
 
-			$total_sponsored++;
-		}
-
-		$sponsored_posts = array_diff_key($sponsored_posts, array_keys($random_sponsored_keys));
+		unset($sponsored_posts[$random_sponsored_key]);
 	}
 }
 
@@ -155,10 +144,11 @@ if (!empty($second_query->posts)) {
 		$the_ads[] = get_ad_group($posts_group_id);
 	}
 
-	// Reset in order to get the correct # of sponsored posts...
-	// $total_sponsored = !empty($sponsored_ids) ? count($sponsored_ids) - $total_sponsored : 0;
-	$total_sponsors_count = count($sponsored_ids);
-	$sponsors_difference = !empty($total_sponsors_count) ? ($total_sponsors_count - $total_sponsored) : 0;
+	if (!empty($sponsored_posts)) {
+		$sponsors_difference = count($sponsored_posts) > 1 ? 2 : 1;
+	} else {
+		$sponsors_difference = 0;
+	}
 
 	$posts_per_page = !empty($the_ads) ? 12 : 13;
 	$args = array(
@@ -176,10 +166,28 @@ if (!empty($second_query->posts)) {
 	{
 		$total_posts = count($the_query->posts);
 
-		if ($total_posts > (($posts_per_page - $total_sponsored) - 1))
+		if ($total_posts > (($posts_per_page - $sponsors_difference) - 1))
 		{
 			array_pop($the_query->posts);
 			$has_more = true;
+		}
+
+		// Reset this array...
+		$current_sponsored = array();
+
+		// Get remaining sponsored posts if any...
+		if (!empty($sponsored_posts)) {
+			$random_sponsored_keys = count($sponsored_posts) > 1 ? array_rand($sponsored_posts, 2) : array(array_key_first($sponsored_posts));
+
+			if (!empty($random_sponsored_keys))
+			{
+				foreach($random_sponsored_keys as $random_sponsored_key)
+				{
+					$current_sponsored[] = $sponsored_posts[$random_sponsored_key];
+					$exclude_sponsored_ids[] = $sponsored_posts[$random_sponsored_key]->ID;
+					unset($sponsored_posts[$random_sponsored_key]);
+				}
+			}
 		}
 
 		$first_sponsored = !empty($sponsors_difference) ? 1 : 0;
@@ -208,6 +216,8 @@ if (!empty($second_query->posts)) {
 
 					$ordered_array[$key] = array_merge(array_slice($ordered_array[$key], 0, 2), $rAD[$key], array_slice($ordered_array[$key], 2));
 				}
+
+				// $current_sponsored is the problem here...
 
 				if (($key == 'first_set' || $key == 'last_set') && !empty($ordered_array[$key]) && !empty($current_sponsored)) {
 					$ordered_array[$key] = array_merge(array_slice($ordered_array[$key], 0, 1), array_splice($current_sponsored, 0, 1), array_slice($ordered_array[$key], 1));
