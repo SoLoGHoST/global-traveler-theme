@@ -2,7 +2,7 @@
 
 defined('ABSPATH') || exit;
 
-global $post, $page_id, $global_site, $wpdb; 
+global $post, $page_id, $global_site, $wpdb;
 
 $hero_type = get_field('hero_type');
 
@@ -18,13 +18,14 @@ if (function_exists('get_ad_group')) {
 } ?>
 
 <div id="content">
+	<?php if (!isset($page_content)): ?>
 	<div class="container-fluid">
 		<div id="posts-section" class="section content<?php echo !empty($hero_type) && $hero_type == 'alternative' ? ' my-0' : ''; ?>">
 			<?php
-			if (!empty($excursion_page)): 
+			if (!empty($excursion_page)):
 				$tags = get_terms(array('taxonomy' => 'excursions_tag_type', 'hide_empty' => false)); ?>
 				<div class="tags d-none d-sm-block py-3 col-22 offset-1">
-					<?php 
+					<?php
 					if (!empty($tags)) : ?>
 					<ul class="list-inline text-center">
 						<?php foreach ($tags as $tag) : ?>
@@ -52,7 +53,7 @@ if (function_exists('get_ad_group')) {
 			<div class="single-wrapper no-pad row">
 				<div id="body-content" class="col-22 offset-1 col-sm-17 offset-sm-0 py-2<?php echo !empty($excursion_page) ? ' my-sm-4' : ' my-sm-5'; ?> px-3 px-md-5">
 					<?php
-					if (!empty($hero_type) && $hero_type == 'alternative'): 
+					if (!empty($hero_type) && $hero_type == 'alternative'):
 						$author_name = get_field('post_author', $post_id);
 						$date = get_the_date('M j, Y', $post_id); ?>
 						<h1 class="title my-3">
@@ -64,7 +65,7 @@ if (function_exists('get_ad_group')) {
 						<span class="date mb-5"><?php echo $date; ?></span>
 					<?php
 					endif; ?>
-					<?php 
+					<?php
 					if (!empty($excursion_page)): ?>
 					<h3 class="mb-4"><?php echo apply_filters('the_title', 'FX Excursions: ' . $excursion_page['title']); ?></h3>
 					<?php
@@ -79,7 +80,7 @@ if (function_exists('get_ad_group')) {
 					if (!empty($excursion_page)): ?>
 					<div id="excursions-wrapper" class="row">
 						<?php
-						// Get all excursions for the current category to be outputted, no need for pagination here... 
+						// Get all excursions for the current category to be outputted, no need for pagination here...
 						$excursion_args = array(
 						    'post_type' => 'excursions',
 						    'orderby' => 'date',
@@ -95,7 +96,7 @@ if (function_exists('get_ad_group')) {
 						    )
 						);
 
-						$excursions_query = new WP_Query($excursion_args); 
+						$excursions_query = new WP_Query($excursion_args);
 
 						if (!empty($excursions_query->posts)): ?>
 
@@ -118,7 +119,7 @@ if (function_exists('get_ad_group')) {
 					<?php
 					if (!empty($the_ad)): ?>
 					<div class="ad px-md-5 py-3 d-none d-sm-flex justify-content-center">
-						<?php 
+						<?php
 						echo $the_ad; ?>
 					</div>
 					<?php
@@ -131,7 +132,7 @@ if (function_exists('get_ad_group')) {
 					endif;
 					if (!empty($the_ad2)): ?>
 					<div class="ad px-md-5 py-3 d-none d-sm-flex justify-content-center">
-						<?php 
+						<?php
 						echo $the_ad2; ?>
 					</div>
 					<?php
@@ -158,8 +159,9 @@ if (function_exists('get_ad_group')) {
 			endif; ?>
 		</div>
 	</div>
+	<?php endif; ?>
 <?php
-	tif_get_template('inc/instagram-feed.php', array()); 
+	tif_get_template('inc/instagram-feed.php', array());
 
 	$sponsored_posts = $current_sponsored = $initial_posts = array();
 	$total_sponsored = 0;

@@ -33,14 +33,14 @@ if (wp_is_mobile())
 	<meta name="format-detection" content="telephone=no">
 	<title><?php wp_title(' | ', true, 'right'); ?></title>
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	
+
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
 	<script src="<?php bloginfo('template_directory');?>/js/required/html5shiv.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('template_directory');?>/js/required/respond.js" type="text/javascript"></script>
 	<![endif]-->
-	
+
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -48,17 +48,17 @@ if (wp_is_mobile())
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','<?php echo $all_sites[$global_site]['google_tag_id']; ?>');</script>
 	<!-- End Google Tag Manager -->
-	
 
-	<?php 
+
+	<?php
 	if (!empty($hero_type) && $hero_type == 'hometakeover')
 		$class[] = 'hometakeover';
 
 	wp_head(); ?>
-	
+
 </head>
 <body <?php body_class(!empty($class) ? $class : array()); ?>>
-	
+
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $all_sites[$global_site]['google_tag_id']; ?>"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -83,9 +83,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	}
 
 	$site_links[] = array(
-		'class' => array('external-link', 'd-none', 'd-sm-inline-block'),
-		'href' => $all_sites['globalusa']['url'] . '/fx-excursions/itineraries/',
-		'target' => '_blank',
+		// Removed Href/Target
+		// Added id + data-site for dropdown functionality
+		// Added .api-link class
+		'attrs' => 'id="link-fx-excursions" data-site="fxexcursions"',
+		'class' => array('external-link', 'd-none', 'd-sm-inline-block', 'api-link'),
+		'href' => '#',
 		'title' => __('FX Excursions')
 	);
 	$site_links[] = array(
@@ -99,21 +102,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				'main' => 'position-relative',
 				'menu' => array('d-flex', 'w-100', 'align-items-center')
 			),
-			'depth' => 1, 
+			'depth' => 1,
 			'links' => $site_links,
 			'wrap' => array(
 				'before' => '<div class="container-fluid"><div class="row">',
 				'after' => '</div></div>'
 			)
-		), 
+		),
 		'main_menu' => array_merge(
 			array(
 				'classes' => array(
-					'main' => array('navbar-light'), 
-					'menu' => array('align-self-start', 'flex-row'), 
+					'main' => array('navbar-light'),
+					'menu' => array('align-self-start', 'flex-row'),
 					'container' => ''
 				),
-				'location' => 'main_navigation', 
+				'location' => 'main_navigation',
 				'depth' => 2
 			), array('logo' => $all_sites[$global_site]['logo'])
 		)

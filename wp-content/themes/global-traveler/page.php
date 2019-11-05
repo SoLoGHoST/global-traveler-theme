@@ -15,7 +15,7 @@
  * @version 1.0
  */
 global $post, $page_id, $global_site;
-get_header(); 
+get_header();
 
 if (empty($global_site))
 	$global_site = apply_filters('get_global_site', $global_site);
@@ -46,7 +46,7 @@ if ($global_site == 'globalusa') {
 }
 
 $hero_args = array('main_post' => $post, 'type' => !empty($hero_type) ? $hero_type : 'post', 'excursion_landing_pages' => $excursion_landing_pages, 'excursion_page' => $excursion_page);
-	
+
 $page_args = array('excursion_landing_pages' => $excursion_landing_pages, 'excursion_page' => $excursion_page);
 
 if (!empty($vc_category_id)) {

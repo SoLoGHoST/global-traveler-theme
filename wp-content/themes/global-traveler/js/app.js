@@ -175,7 +175,7 @@ jQuery(document).ready(function($) {
 			var el = $('.lock-scroll');
 			var stickyTop = $('.lock-scroll').offset().top;
 			var stickyHeight = $('.lock-scroll').height();
-			
+
 			$('.lock-scroll').css({position: 'absolute', top: 60});
 
 			$(window).on('scroll', function() {
@@ -184,13 +184,13 @@ jQuery(document).ready(function($) {
 				{
 					var limit = $('.home-news-section').offset().top - stickyHeight - 230;
 					var windowTop = $(window).scrollTop();
-		
+
 					if (stickyTop < windowTop) {
 						el.css({ position: 'fixed', top: 160});
 					} else {
 						el.css({position: 'absolute', top: 60});
 					}
-		
+
 					if (limit < windowTop) {
 						var diff = limit - windowTop + 180;
 						el.css({top: diff});
@@ -210,7 +210,9 @@ jQuery(document).ready(function($) {
 	var siteapi_loaded = {
 		trazeetravel: false,
 		globalusa: false,
-		whereverfamily: false
+		whereverfamily: false,
+		// Added static FX Excursions with no API call
+		fxexcursions: true
 	};
 
 	$('.topline').on('mouseover', function(e) {

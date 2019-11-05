@@ -30,7 +30,7 @@ $all_sites = array(
 				'link' => 'default-top order-2',
 				'image' => 'mt-2',
 				'button' => 'order-1',
-			), 
+			),
 			'width' => 175,
 			'height' => 55
 		),
@@ -79,7 +79,7 @@ $all_sites = array(
 				'link' => 'default-top order-2',
 				'image' => '',
 				'button' => 'order-1',
-			), 
+			),
 			'width' => 208,
 			'height' => 38
 		),
@@ -125,7 +125,7 @@ $all_sites = array(
 				'link' => 'default-top order-2',
 				'image' => '',
 				'button' => 'order-1',
-			), 
+			),
 			'width' => 300,
 			'height' => 26
 		),
@@ -422,7 +422,7 @@ function globalusa_add_local_field_groups()
 							0 => 'featured_image',
 						),
 						'min' => '',
-						'max' => 3,
+						'max' => 4,
 						'return_format' => 'object',
 					),
 				),
@@ -1319,7 +1319,7 @@ function tif_register_setup()
 				'show_in_nav_menus' => false
 			)
 		);
-		
+
 		register_taxonomy(
 			'excursions_tag_type',
 			'excursions',
@@ -1417,7 +1417,7 @@ function tif_register_setup()
 			'capability_type'		=> 'page',
 			'rewrite'				=> array('slug' => 'deal', 'with_front' => true, 'hierarchical' => false, 'ep_mask' => 'EP_PERMALINK')
 		));
-		
+
 		register_post_type('blog', array(
 			'label' => __('blog'),
 			'description' => __('Blogs'),
@@ -1454,7 +1454,7 @@ function tif_register_setup()
 			'capability_type'		=> 'page',
 			'rewrite'				=> array('slug' => 'blog', 'with_front' => true, 'hierarchical' => false, 'ep_mask' => 'EP_PERMALINK')
 		));
-		
+
 		register_post_type('excursions', array(
 			'label'					=> __('excursions'),
 			'description'			=> __('Excursions'),
@@ -1852,7 +1852,7 @@ function get_tif_posts_pagination($args = array()) {
 
 		if ($current > 1)
 			$links = array_merge(array('<a class="pagenav" href="' . $pagenum_link . '">Start</a>'), $links);
-		
+
 		if ($current < $total)
 			$links[] = '<a class="pagenav" href="' . $pagenum_link . 'page/' . $total . '/">End</a>';
 
@@ -1925,7 +1925,7 @@ function get_primary_category_id($category_id = 0, $post_id = 0, $category_slug 
 				$category_id = $category[0]->term_id;
 			else
 				$category_id = $term->term_id;
-		} 
+		}
 		else
 			$category_id = $category[0]->term_id;
 	}
@@ -1963,7 +1963,7 @@ function get_primary_category($primary_category, $post_id, $category_slug)
 			$wpseo_primary_term = new WPSEO_Primary_Term($category_slug, $post_id);
 			$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
 			$term = get_term($wpseo_primary_term);
-			if (is_wp_error($term)) { 
+			if (is_wp_error($term)) {
 				// Default to first category (not Yoast) if an error is returned
 				$primary_category['id'] = $category[0]->term_id;
 				$primary_category['title'] = $category[0]->name;
@@ -1976,13 +1976,13 @@ function get_primary_category($primary_category, $post_id, $category_slug)
 				}
 				$primary_category['slug'] = $category[0]->slug;
 
-			} else { 
+			} else {
 				$primary_category['id'] = $term->term_id;
 				$primary_category['title'] = $term->name;
 				$primary_category['link'] = $category_slug == 'category' ? get_category_link($term->term_id) : get_term_link($term->term_id);
 				$primary_category['slug'] = $term->slug;
 			}
-		} 
+		}
 		else {
 			// Default, display the first category in WP's list of assigned categories
 			$primary_category['id'] = $category[0]->term_id;
@@ -2304,7 +2304,7 @@ function tif_posts_scroll()
 			ob_end_clean();
 
 			unset($result['error']);
-		}		
+		}
 	}
 
 	wp_send_json($result);
@@ -2351,10 +2351,10 @@ function tif_restrict_manage_posts($post_type, $which) {
 			'name' => 'author',
 			'show_option_all' => 'All Authors'
 		);
-	 
+
 		if (isset($_GET['user']))
 			$params['selected'] = $_GET['user'];
-	 
+
 		wp_dropdown_users($params);
 	}
 	else if ($post_type == 'member')
@@ -2370,7 +2370,7 @@ function tif_restrict_manage_posts($post_type, $which) {
 		));
 	}
 }
- 
+
 add_action('restrict_manage_posts', 'tif_restrict_manage_posts', 10, 2);
 
 
@@ -2466,6 +2466,12 @@ function trazee_before_after_menu($menu, $location = '', $class = '')
 				<div class="site-section py-3 py-sm-5 fade" id="section-' . $site_key . '"></div>';
 			}
 		}
+		// New .site-section for static FX Excursions dropdown
+		echo '
+		<div class="site-section py-3 py-sm-5 fade no-api" id="section-fxexcursions">';
+		tif_get_template("inc/fx-dropdown.php");
+		echo '
+		</div>';
 	}
 
 
@@ -2500,7 +2506,7 @@ function trazee_before_after_menu($menu, $location = '', $class = '')
 			</div>';
 
 			if ($global_site == 'globalusa') {
-				
+
 				$theme_locations = get_nav_menu_locations();
 				$submenu_html = '';
 
@@ -2571,7 +2577,7 @@ function trazee_get_seo_socials($return)
 	if (!empty($social_media))
 	{
 		$social_media = array_filter($social_media);
-		
+
 		$social_keys = array('instagram_url' => 'fa-instagram', 'facebook_site' => 'fa-facebook-f', 'twitter_site' => 'fa-twitter', 'linkedin_url' => 'fa-linkedin', 'pinterest_url' => 'fa-pinterest-p', 'youtube_url' => 'fa-youtube-play');
 
 		if (!empty($social_media))
@@ -2775,7 +2781,7 @@ function trazee_pre_get_posts($query)
 function related_posts_relationship_query($args, $field, $post_id)
 {
     $args['posts_per_page'] = 10;
-    return $args;    
+    return $args;
 }
 
 add_filter('acf/fields/relationship/query', 'related_posts_relationship_query', 10, 3);
@@ -2963,7 +2969,7 @@ function tif_global_get_the_post_author_info($author = array(), $post_data)
 add_filter( 'upload_mimes', 'my_myme_types', 1, 1 );
 function my_myme_types( $mime_types ) {
   $mime_types['webp'] = 'image/webp';
-  
+
   return $mime_types;
 }
 
