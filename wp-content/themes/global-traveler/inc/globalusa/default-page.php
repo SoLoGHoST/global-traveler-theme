@@ -124,11 +124,14 @@ if (function_exists('get_ad_group')) {
 					</div>
 					<?php
 					endif;
-					if ($global_site == 'globalusa'): ?>
+					if ($global_site == 'globalusa'):
+						$newsletter_disabled = get_field('sidebar_newsletter_form');
+						if (empty($newsletter_disabled)): ?>
 					<div class="newsletter px-md-5 pt-3 d-sm-flex justify-content-center">
 						<?php echo do_shortcode('[gravityform id=15 title=true description=true ajax=true]'); ?>
 					</div>
 					<?php
+						endif;
 					endif;
 					if (!empty($the_ad2)): ?>
 					<div class="ad px-md-5 py-3 d-none d-sm-flex justify-content-center">
