@@ -223,6 +223,54 @@ function globalusa_add_local_field_groups()
 			));
 
 			acf_add_local_field_group(array(
+				'key' => 'group_5dc5881fcca01',
+				'title' => 'Newsletter Form',
+				'fields' => array(
+					array(
+						'key' => 'field_5dc588310bf3e',
+						'label' => 'Disabled',
+						'name' => 'sidebar_newsletter_form',
+						'type' => 'true_false',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'message' => '',
+						'default_value' => 0,
+						'ui' => 1,
+						'ui_on_text' => 'Yes',
+						'ui_off_text' => 'No',
+					),
+				),
+				'location' => array(
+					array(
+						array(
+							'param' => 'post_type',
+							'operator' => '!=',
+							'value' => 'advanced_ads',
+						),
+						array(
+							'param' => 'post_type',
+							'operator' => '!=',
+							'value' => 'authors',
+						),
+					),
+				),
+				'menu_order' => 0,
+				'position' => 'side',
+				'style' => 'default',
+				'label_placement' => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen' => '',
+				'active' => true,
+				'description' => '',
+			));
+
+			acf_add_local_field_group(array(
 				'key' => 'group_5bb25255cdec4',
 				'title' => 'Newsletter Details',
 				'fields' => array(
