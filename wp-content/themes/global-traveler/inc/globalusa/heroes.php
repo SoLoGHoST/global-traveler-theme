@@ -15,6 +15,8 @@ if (!empty($type)): ?>
 	if (!empty($main_post)):
 
 		$categories = apply_filters('get_the_primary_category_with_child', array(), $main_post->ID);
+		$vertical_position = get_field('hero_vertical_position', $main_post->ID);
+		$vertical_position = !empty($vertical_position) ? $vertical_position : 'center';
 
 		if ($type == 'post'):
 
@@ -48,7 +50,7 @@ if (!empty($type)): ?>
 			$style = '';
 			if ($the_post_type != 'deal') {
 				if (!empty($post_image))
-					$style = ' style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(' . $post_image . ') no-repeat center center; background-size: cover;"';
+					$style = ' style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(' . $post_image . ') no-repeat ' . $vertical_position . ' center; background-size: cover;"';
 				/*
 				if ($the_post_type == 'blog' && !empty($post_image)) {
 					$style = ' style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(' . $post_image . ') no-repeat center center; background-size: cover;"';
@@ -139,7 +141,7 @@ if (!empty($type)): ?>
 		elseif ($type == 'alternative'):
 			$post_image = get_field('featured_image', $main_post->ID);
 			$main_categories = apply_filters('get_the_primary_category_with_child', array(), $main_post->ID);
-			$sponsored_post = get_field('is_sponsored', $main_post->ID); 
+			$sponsored_post = get_field('is_sponsored', $main_post->ID);
 
 			if (empty($post_image))
 			{
@@ -153,7 +155,7 @@ if (!empty($type)): ?>
 				$image_caption = $post_image['caption'];
 				$post_image = $post_image['url'];
 			} ?>
-		<div class="hero-body" style="background: url(<?php echo $post_image; ?>) no-repeat center center; background-size: cover;">
+		<div class="hero-body" style="background: url(<?php echo $post_image; ?>) no-repeat <?php echo $vertical_position; ?> center; background-size: cover;">
 			<div class="container-fluid <?php echo is_page() || !empty($page) ? 'page' : 'post'; ?>-wrapper">
 				<div class="overlay d-flex align-items-center justify-content-center">
 					<?php if (!empty($sponsored_post)): ?>
@@ -253,7 +255,7 @@ if (!empty($type)): ?>
 
 							body.site-globalusa .posts-slider .slide-item.slider-image-hover-<?php echo $index; ?> .image {
 
-								background: linear-gradient(to bottom, rgba(56, 56, 56, 0.3) 100%, rgba(56, 56, 56, 0.3) 100%), url('<?php echo $post_image; ?>') no-repeat center center !important;
+								background: linear-gradient(to bottom, rgba(56, 56, 56, 0.3) 100%, rgba(56, 56, 56, 0.3) 100%), url('<?php echo $post_image; ?>') no-repeat <?php echo $vertical_position; ?> center !important;
 								background-size: cover !important;
 								background-position: 50% 50% !important;
 								/*
@@ -271,7 +273,7 @@ if (!empty($type)): ?>
 								*/
 							}
 						</style>
-						<div class="image"<?php echo !empty($post_image) ?' style="background: linear-gradient(to bottom, rgba(56, 56, 56, 0.4) 100%, rgba(56, 56, 56, 0.4) 100%), url(' . $post_image . ') no-repeat center center; background-size: cover; -webkit-backface-visibility: hidden; backface-visibility: hidden;"' : ''; ?>>
+						<div class="image"<?php echo !empty($post_image) ?' style="background: linear-gradient(to bottom, rgba(56, 56, 56, 0.4) 100%, rgba(56, 56, 56, 0.4) 100%), url(' . $post_image . ') no-repeat ' . $vertical_position . ' center; background-size: cover; -webkit-backface-visibility: hidden; backface-visibility: hidden;"' : ''; ?>>
 							<a href="<?php the_permalink(); ?>" class="post-link" target="_blank"></a>
 							<div class="details-wrapper">
 								<a href="<?php the_permalink(); ?>" class="post-link" target="_blank"></a>
@@ -317,7 +319,7 @@ if (!empty($type)): ?>
 			$image_caption = !empty($tag_image) && !empty($tag_image['caption']) ? $tag_image['caption'] : '';
 			$post_image = !empty($tag_image) && !empty($tag_image['url']) ? $tag_image['url'] : ''; ?>
 
-			<div class="hero-body fx-excursions-hero" style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(<?php echo $post_image; ?>) no-repeat center center; background-size: cover;">
+			<div class="hero-body fx-excursions-hero" style="background: linear-gradient(to bottom, rgba(0, 54, 70, 0.3) 100%, rgba(0, 54, 70, 0.3) 100%), url(<?php echo $post_image; ?>) no-repeat <?php echo $vertical_position; ?> center; background-size: cover;">
 				<div class="container-fluid tag-wrapper">
 					<div class="overlay">
 						<div class="excursion-hero-wrapper">
