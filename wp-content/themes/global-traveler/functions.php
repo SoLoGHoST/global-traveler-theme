@@ -36,7 +36,7 @@ $all_sites = array(
 		),
 		// 'url' => 'http://global-cp.flywheelstaging.com',
 		// 'url' => 'https://global-traveler-cp.local',
-		'url' => 'https://global-traveler-cp.local', // https://www.globaltravelerusa.com',
+		'url' => 'https://www.globaltravelerusa.com',
 		'api_keys' => array(
 			'map' => 'AIzaSyB-2O1yhYU5IX51hplCHmyaNs2jO1-d1sE'
 			// 'map' => 'AIzaSyCnyO53wzqf_VMbByvqVBhbbCOBs7p-9oA'
@@ -84,8 +84,8 @@ $all_sites = array(
 			'height' => 38
 		),
 		// 'url' => 'http://trazeetravel.flywheelstaging.com',
-		'url' => 'https://trazee-travel-cp.local',
-		// 'url' => 'https://www.trazeetravel.com',
+		// 'url' => 'https://trazee-travel-cp.local',
+		'url' => 'https://www.trazeetravel.com',
 		'api_keys' => array(),
 		'api_categories' => array(
 			array(
@@ -130,8 +130,8 @@ $all_sites = array(
 			'height' => 26
 		),
 		// 'url' => 'http://staging.wherever-family.flywheelsites.com',
-		'url' => 'https://wherever-family.local',
-		// 'url' => 'https://www.whereverfamily.com',
+		// 'url' => 'https://wherever-family.local',
+		'url' => 'https://www.whereverfamily.com',
 		'api_keys' => array(),
 		'api_categories' => array(
 			array(
