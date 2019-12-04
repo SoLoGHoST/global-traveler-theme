@@ -78,14 +78,8 @@ function tif_global_get_posts_via_rest($return = array(), $site = '') {
 				'per_page' => 4
 			);
 
-			if ($site == 'globalusa') {
-
-				$category_response = wp_remote_get(untrailingslashit($the_site_url) . '/wp-json/wp/v2/categories?slug=press-releases,eflyer-deals', array('sslverify' => false));
-
-				error_log(var_export($category_response, true));
-
-				// $query_array['exclude_categories'] = '';
-			}
+			if ($site == 'globalusa')
+				$query_array['exclude_categories'] = '125,3482,3483,3484,3485';
 
 			$response = wp_remote_get(untrailingslashit($the_site_url) . '/wp-json/wp/v2/posts?' . http_build_query($query_array), array('sslverify' => false));
 
