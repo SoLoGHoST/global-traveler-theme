@@ -74,11 +74,14 @@ function tif_global_get_posts_via_rest($return = array(), $site = '') {
 
 		if (empty($api_data)) {
 
-			$query_array = array(
-				'per_page' => 4
-			);
+			$query_array = array();
 
-			$query_string = ($site == 'globalusa' ? 'exclude_categories=125,3482,3483,3484,3485&' : '') . http_build_query($query_array);
+			if ($site == 'globalusa')
+				$query_array['categories_exclude'] = '125,3482,3483,3484,3485';
+
+			$query_array['per_page'] = 4;
+
+			$query_string = http_build_query($query_array);
 
 			error_log($query_string);
 
