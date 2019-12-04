@@ -7,8 +7,18 @@ global $post, $page_id, $wpdb, $the_ads, $global_site;
 $sponsored_posts = $current_sponsored = $the_ads = array();
 $exclude_sponsored_ids = array();
 $sponsored_ids = array();
-
+$eflyer_category_ids = apply_filters('get_eflyer_category_ids', array());
 $sponsored_posts = apply_filters('get_sponsored_posts', array(), array());
+$tax_query = array(
+	'tax_query' => array(
+    	array(
+            'taxonomy' => 'category',
+            'field' => 'slug',
+            'terms' => array('press-releases'),
+            'operator' => 'NOT IN'
+        )
+    )
+);
 
 if (!empty($sponsored_posts))
 {
@@ -38,13 +48,13 @@ else {
 
 $first_set = $second_set = array();
 
-$args = array(
+$args = array_merge(array(
 	'post_type' => 'post',
 	'orderby' => 'date',
 	'post_status' => 'publish',
 	'offset' => $offset,
 	'post__not_in' => $sponsored_ids,
-	'posts_per_page' => $per_page,
+	'posts_per_page' => $per_page), $tax_query
 );
 
 $the_query = new WP_Query($args);
@@ -64,13 +74,14 @@ if (!empty($first_set_ads))
 
 $offset = $offset + $per_page;
 
-$args = array(
-	'post_type' => 'post',
-	'orderby' => 'date',
-	'post_status' => 'publish',
-	'offset' => $offset,
-	'post__not_in' => $sponsored_ids,
-	'posts_per_page' => 3
+$args = array_merge(array(
+		'post_type' => 'post',
+		'orderby' => 'date',
+		'post_status' => 'publish',
+		'offset' => $offset,
+		'post__not_in' => $sponsored_ids,
+		'posts_per_page' => 3
+	), $tax_query
 );
 
 $second_query = new WP_Query($args);
@@ -151,13 +162,14 @@ if (!empty($second_query->posts)) {
 	}
 
 	$posts_per_page = !empty($the_ads) ? 12 : 13;
-	$args = array(
+	$args = array_merge(array(
 		'post_type' => 'post',
 		'orderby' => 'date',
 		'post_status' => 'publish',
 		'post__not_in' => $sponsored_ids,
 		'offset' => $offset,
 		'posts_per_page' => ($posts_per_page - $sponsors_difference) // If no ad defined, we get all posts (13), otherwise, only need 12
+		), $tax_query
 	);
 
 	$the_query = new WP_Query($args);
@@ -250,7 +262,7 @@ if (!empty($second_query->posts)) {
 	</div>
 </div>
 <?php // exclude eflyer- categories from homepage... ?>
-<input id="args" type="hidden" value='<?php echo json_encode(array('category__not_in' => apply_filters('get_eflyer_category_ids', array()))); ?>' />
+<input id="args" type="hidden" value='<?php echo json_encode(array_merge(array('category__not_in' => $eflyer_category_ids), $tax_query)); ?>' />
 <?php
 endif; ?>
 

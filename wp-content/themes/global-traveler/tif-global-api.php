@@ -74,7 +74,20 @@ function tif_global_get_posts_via_rest($return = array(), $site = '') {
 
 		if (empty($api_data)) {
 
-			$response = wp_remote_get(untrailingslashit($the_site_url) . '/wp-json/wp/v2/posts?per_page=4', array('sslverify' => false));
+			$query_array = array(
+				'per_page' => 4
+			);
+
+			if ($site == 'globalusa') {
+
+				$category_response = wp_remote_get(untrailingslashit($the_site_url) . '/wp-json/wp/v2/categories?slug=press-releases', array('sslverify' => false));
+
+				error_log(var_export($category_response, true));
+
+				// $query_array['exclude_categories'] = '';
+			}
+
+			$response = wp_remote_get(untrailingslashit($the_site_url) . '/wp-json/wp/v2/posts?' . http_build_query($query_array), array('sslverify' => false));
 
 			if (is_wp_error($response)) {
 				return $return;

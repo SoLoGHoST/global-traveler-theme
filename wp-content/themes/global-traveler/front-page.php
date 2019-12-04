@@ -41,7 +41,15 @@ if (!empty($is_globalusa)) {
 		'post_type' => 'post',
 		'orderby' => 'date',
 		'post_status' => 'publish',
-		'posts_per_page' => 3
+		'posts_per_page' => 3,
+		'tax_query' => array(
+        	array(
+	            'taxonomy' => 'category',
+	            'field' => 'slug',
+	            'terms' => array('press-releases'),
+	            'operator' => 'NOT IN'
+            )
+        )
 	);
 	$the_loop = new WP_Query($args);
 
