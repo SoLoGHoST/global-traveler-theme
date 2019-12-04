@@ -79,9 +79,13 @@ function tif_global_get_posts_via_rest($return = array(), $site = '') {
 			);
 
 			if ($site == 'globalusa')
-				$query_array['exclude_categories'] = '125,3482,3483,3484,3485';
+				$query_array['exclude_categories'] = urlencode('125+3482+3483+3484+3485');
 
-			$response = wp_remote_get(untrailingslashit($the_site_url) . '/wp-json/wp/v2/posts?' . http_build_query($query_array), array('sslverify' => false));
+			$query_string = http_build_query($query_array);
+
+			error_log($query_string);
+
+			$response = wp_remote_get(untrailingslashit($the_site_url) . '/wp-json/wp/v2/posts?' . $query_string, array('sslverify' => false));
 
 			if (is_wp_error($response)) {
 				return $return;
